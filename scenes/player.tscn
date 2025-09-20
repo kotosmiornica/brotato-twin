@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dpi6hxo5ndgqr"]
+[gd_scene load_steps=9 format=3 uid="uid://dpi6hxo5ndgqr"]
 
 [ext_resource type="Script" uid="uid://bx0ncnqoovrt4" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="2_dqkch"]
 [ext_resource type="PackedScene" uid="uid://kvg3tmks0ch2" path="res://scenes/gun.tscn" id="3_qlg0r"]
-[ext_resource type="PackedScene" uid="uid://ckc78makin50v" path="res://scenes/pizzacutter.tscn" id="4_dqkch"]
 [ext_resource type="PackedScene" uid="uid://blovw1i2x1ax5" path="res://scenes/plasma.tscn" id="5_qlg0r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
@@ -43,22 +42,6 @@ shape = SubResource("CircleShape2D_onrkg")
 
 [node name="gun" parent="." instance=ExtResource("3_qlg0r")]
 position = Vector2(-2, -48)
-
-[node name="pizzacutter2" parent="." instance=ExtResource("4_dqkch")]
-unique_name_in_owner = true
-visible = false
-
-[node name="pizzacutter3" parent="." instance=ExtResource("4_dqkch")]
-visible = false
-rotation = -3.14159
-
-[node name="pizzacutter4" parent="." instance=ExtResource("4_dqkch")]
-visible = false
-rotation = 1.5708
-
-[node name="pizzacutter5" parent="." instance=ExtResource("4_dqkch")]
-visible = false
-rotation = -1.5708
 
 [node name="plasma" parent="." instance=ExtResource("5_qlg0r")]
 visible = false

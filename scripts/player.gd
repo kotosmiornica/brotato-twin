@@ -3,6 +3,7 @@ extends CharacterBody2D
 signal health_depleted
 
 var health = 150.0
+var orbit_angle: float = 0.0
 var xp: int = 0
 var level: int = 1
 var xp_per_level: int = 10
@@ -14,12 +15,11 @@ var stain_scene = preload("res://scenes/BleachStain.tscn")
 var equipped_weapons = []  
 
 var _time_passed: float = 0.0
-
+var cutter_scene = preload("res://scenes/pizzacutter.tscn")
 
 var level_up_menu = null
 var pizza_cutters: Array = []
 const MAX_PIZZA_CUTTERS = 4
-
 
 
 func _physics_process(_delta: float) -> void:
@@ -62,8 +62,11 @@ func remove_cutter(cutter):
 
 func update_cutter_angles():
 	var n = cutters.size()
+	if n == 0:
+		return
 	for i in range(n):
-		cutters[i].angle_offset = 360.0 / n * i
+		cutters[i].rotation = (TAU / n) * i
+		cutters[i].angle_offset = (360.0 / n) * i # First cutter at 0°, next at 360/n, etc.
 
 func _ready():
 	pass 
@@ -166,6 +169,8 @@ func give_weapon(weapon_id):
 			weapon_scene = preload("res://scenes/plasma.tscn")
 		"pizzacutter2":
 			weapon_scene = preload("res://scenes/pizzacutter.tscn")
+			add_cutter(weapon_scene)
+			return
 		"gun":
 			weapon_scene = preload("res://scenes/gun.tscn")
 		"bleach3":
@@ -179,14 +184,17 @@ func give_weapon(weapon_id):
 	weapons_container.add_child(weapon)
 
 
-	if weapon_id == "pizzacutter2":
-		if pizza_cutters.size() >= MAX_PIZZA_CUTTERS:
-			print("Max pizza cutters reached!")
-			weapon.queue_free()
-			return
 
-		pizza_cutters.append(weapon)
-		_update_pizza_cutters()
+	#if weapon_id == "pizzacutter2":
+		#
+		#if pizza_cutters.size() >= MAX_PIZZA_CUTTERS:
+			#print("Max pizza cutters reached!")
+			#weapon.queue_free()
+			#return
+
+		#pizza_cutters.append(weapon)
+	
+		#_update_pizza_cutters()
 
 func _update_pizza_cutters():
 	var count = pizza_cutters.size()

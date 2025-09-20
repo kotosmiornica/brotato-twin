@@ -17,7 +17,6 @@ func _physics_process(delta):
 
 
 func _on_body_entered(body):
-	print(body)
 	if body.has_method("take_damage"):
 		body.take_damage(4)
 	_on_hit()
@@ -25,7 +24,7 @@ func _on_body_entered(body):
 
 func _on_hit():
 	var stream = preload("res://music/lasershot.wav")
-	print("Sound length:", stream.get_length())
+	#print("Sound length:", stream.get_length())
 	play_detached_sound(stream, global_position)
 	queue_free()
 

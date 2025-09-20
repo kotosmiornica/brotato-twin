@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://dsl247xnk6knu"]
 
 [ext_resource type="Script" uid="uid://crgvxr0vdaef6" path="res://scripts/survivors_game.gd" id="1_vt6sv"]
-[ext_resource type="PackedScene" uid="uid://dpi6hxo5ndgqr" path="res://player.tscn" id="2_mrt1k"]
+[ext_resource type="PackedScene" uid="uid://dpi6hxo5ndgqr" path="res://scenes/player.tscn" id="2_mrt1k"]
 [ext_resource type="PackedScene" uid="uid://bhtwpmbf3myar" path="res://scenes/Tree.tscn" id="4_hfi5g"]
 [ext_resource type="PackedScene" uid="uid://ddpfrgrfgtlu3" path="res://scenes/game_over.tscn" id="5_tg6hx"]
 [ext_resource type="AudioStream" uid="uid://ivyoomujhpkw" path="res://music/retro-arcade-game-music-396890.mp3" id="6_bg3rl"]
