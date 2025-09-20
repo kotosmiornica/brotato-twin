@@ -12,3 +12,5 @@
 
 ### Learning Godot
 <img src="https://hackatime-badge.hackclub.com/U09CC6Y8LSE/Your First 2D Game With Godot 4: START (GDQuest)">
+
+![flag orpheus left](https://assets.hackclub.com/flag-orpheus-left.svg)
