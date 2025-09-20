@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://i1onmpal7tpf"]
+
+[ext_resource type="Script" uid="uid://ch3i4fnvptr74" path="res://area_2d.gd" id="1_ypdhd"]
+[ext_resource type="Texture2D" uid="uid://dxvyaijb50y7h" path="res://images/pouch_5896513.png" id="2_ypdhd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_knfid"]
+radius = 34.0147
+
+[node name="XPpickups" type="Area2D"]
+script = ExtResource("1_ypdhd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.38419e-07, 2.38419e-07)
+scale = Vector2(0.118652, 0.111618)
+texture = ExtResource("2_ypdhd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_knfid")

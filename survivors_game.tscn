@@ -1,0 +1,240 @@
+[gd_scene load_steps=19 format=3 uid="uid://dsl247xnk6knu"]
+
+[ext_resource type="PackedScene" uid="uid://camnbxdsec21s" path="res://player.tscn" id="1_3cish"]
+[ext_resource type="Script" uid="uid://crgvxr0vdaef6" path="res://survivors_game.gd" id="1_l26od"]
+[ext_resource type="PackedScene" uid="uid://bhtwpmbf3myar" path="res://scenes/Tree.tscn" id="2_y3pti"]
+[ext_resource type="PackedScene" uid="uid://ckc78makin50v" path="res://scenes/pizzacutter.tscn" id="3_3uxnc"]
+[ext_resource type="PackedScene" uid="uid://d3r36ku8h15y4" path="res://game_over.tscn" id="4_qqaft"]
+[ext_resource type="AudioStream" uid="uid://ivyoomujhpkw" path="res://music/retro-arcade-game-music-396890.mp3" id="5_7jj1j"]
+[ext_resource type="PackedScene" uid="uid://cwyddtn83ubaj" path="res://scenes/pause_menu.tscn" id="6_edxvn"]
+[ext_resource type="PackedScene" uid="uid://i1onmpal7tpf" path="res://scenes/XPpickups.tscn" id="7_pk6fm"]
+[ext_resource type="Script" uid="uid://cneh2if8htw2" path="res://x_pbar.gd" id="8_getvi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l26od"]
+bg_color = Color(0.152941, 0.168627, 0.188235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqaft"]
+bg_color = Color(0, 0.901032, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Curve2D" id="Curve2D_qqaft"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -286, -303, 0, 0, 0, 0, 2216, -298, 0, 0, 0, 0, 2218, 1317, 0, 0, 0, 0, -288, 1313, 0, 0, 0, 0, -291, -303)
+}
+point_count = 5
+
+[sub_resource type="Animation" id="Animation_qqaft"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7jj1j"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_l26od"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_edxvn"]
+_data = {
+&"RESET": SubResource("Animation_qqaft"),
+&"fade_in": SubResource("Animation_7jj1j"),
+&"fade_out": SubResource("Animation_l26od")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk6fm"]
+bg_color = Color(0.152941, 0.168627, 0.188235, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_getvi"]
+bg_color = Color(0, 0.760784, 0.94902, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_l26od")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -30
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Brotat" parent="." instance=ExtResource("1_3cish")]
+position = Vector2(936, 525)
+
+[node name="Weapons" type="Node2D" parent="Brotat"]
+
+[node name="ProgressBar" type="ProgressBar" parent="Brotat"]
+unique_name_in_owner = true
+offset_left = -82.0
+offset_top = -138.0
+offset_right = 82.0
+offset_bottom = -111.0
+theme_override_styles/background = SubResource("StyleBoxFlat_l26od")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qqaft")
+value = 100.0
+show_percentage = false
+
+[node name="Path2D" type="Path2D" parent="Brotat"]
+position = Vector2(-936, -525)
+curve = SubResource("Curve2D_qqaft")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Brotat/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-286, -303)
+rotation = 0.0019983985
+
+[node name="pizzacutter2" parent="Brotat" instance=ExtResource("3_3uxnc")]
+unique_name_in_owner = true
+visible = false
+
+[node name="pizzacutter3" parent="Brotat" instance=ExtResource("3_3uxnc")]
+visible = false
+rotation = -3.14159
+
+[node name="pizzacutter4" parent="Brotat" instance=ExtResource("3_3uxnc")]
+visible = false
+rotation = 1.5708
+
+[node name="pizzacutter5" parent="Brotat" instance=ExtResource("3_3uxnc")]
+visible = false
+rotation = -1.5708
+
+[node name="tri" parent="." instance=ExtResource("2_y3pti")]
+position = Vector2(386, 405)
+
+[node name="tri2" parent="." instance=ExtResource("2_y3pti")]
+position = Vector2(1277, 158)
+
+[node name="tri3" parent="." instance=ExtResource("2_y3pti")]
+position = Vector2(1744, 971)
+
+[node name="tri4" parent="." instance=ExtResource("2_y3pti")]
+position = Vector2(401, 1039)
+
+[node name="tri6" parent="." instance=ExtResource("2_y3pti")]
+position = Vector2(1922, 276)
+
+[node name="tri7" parent="." instance=ExtResource("2_y3pti")]
+position = Vector2(1109, 701)
+
+[node name="tri8" parent="." instance=ExtResource("2_y3pti")]
+position = Vector2(-18, 739)
+
+[node name="tri9" parent="." instance=ExtResource("2_y3pti")]
+position = Vector2(468, 340)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="Fade" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Fade"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fade/ColorRect"]
+process_mode = 3
+libraries = {
+&"": SubResource("AnimationLibrary_edxvn")
+}
+autoplay = "fade_out"
+
+[node name="GameOver" parent="." instance=ExtResource("4_qqaft")]
+visible = false
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_7jj1j")
+volume_db = -0.075
+autoplay = true
+bus = &"Music"
+
+[node name="Pause" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="Pause" instance=ExtResource("6_edxvn")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 905.0
+offset_top = 521.0
+offset_right = 905.0
+offset_bottom = 521.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="XPpickups" parent="." instance=ExtResource("7_pk6fm")]
+visible = false
+
+[node name="Bar" type="CanvasLayer" parent="."]
+
+[node name="XPbar" type="ProgressBar" parent="Bar"]
+offset_left = 200.0
+offset_top = 15.0
+offset_right = 1658.0
+offset_bottom = 57.0
+theme_override_styles/background = SubResource("StyleBoxFlat_pk6fm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_getvi")
+max_value = 10.0
+show_percentage = false
+script = ExtResource("8_getvi")
+
+[connection signal="health_depleted" from="Brotat" to="." method="_on_brotat_health_depleted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="Fade/ColorRect/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

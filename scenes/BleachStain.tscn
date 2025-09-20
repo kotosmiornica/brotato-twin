@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctd7foytxh81m"]
+
+[ext_resource type="Script" uid="uid://xca07ewuj6vr" path="res://scenes/bleach_stain.gd" id="1_scysm"]
+[ext_resource type="Texture2D" uid="uid://d1idbpvrn0b7q" path="res://images/stainn.png" id="2_y0w8r"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wivt3"]
+radius = 200.346
+height = 556.319
+
+[node name="BleachStain" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_scysm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -2)
+scale = Vector2(1.23584, 1.14258)
+texture = ExtResource("2_y0w8r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(37, -10)
+rotation = 2.19515
+shape = SubResource("CapsuleShape2D_wivt3")
+
+[node name="Timer" type="Timer" parent="."]

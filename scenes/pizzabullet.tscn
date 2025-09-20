@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhfvr5j4cpj2t"]
+
+[ext_resource type="Script" uid="uid://dwk1qw44ct3o7" path="res://scenes/pizzabullet.gd" id="1_jrq3d"]
+[ext_resource type="Texture2D" uid="uid://cfug706gfmik" path="res://pistol/pizza-cutter_184486.png" id="2_ewphn"]
+[ext_resource type="AudioStream" uid="uid://x6n81gfyplq7" path="res://music/simpleshot.mp3" id="3_5n7m5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h1aey"]
+radius = 149.214
+
+[node name="pizzabullet" type="Area2D"]
+top_level = true
+rotation = 0.722176
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_jrq3d")
+
+[node name="Projectile3" type="Sprite2D" parent="."]
+position = Vector2(-25.2983, 30.282)
+scale = Vector2(0.729019, 0.729019)
+texture = ExtResource("2_ewphn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-101.8, 108.336)
+shape = SubResource("CircleShape2D_h1aey")
+
+[node name="shot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5n7m5")
+volume_db = -20.175
+bus = &"shot"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

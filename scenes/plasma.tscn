@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://blovw1i2x1ax5"]
+
+[ext_resource type="Script" uid="uid://tbrikas40dfd" path="res://scenes/plasma.gd" id="1_mtell"]
+[ext_resource type="Texture2D" uid="uid://dk11aksievdi8" path="res://pistol/redpistol.png" id="2_mtell"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_og67c"]
+radius = 995.382
+
+[node name="plasma" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_mtell")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_og67c")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+
+[node name="Pistol" type="Sprite2D" parent="WeaponPivot"]
+position = Vector2(108, -26)
+texture = ExtResource("2_mtell")
+
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
+unique_name_in_owner = true
+position = Vector2(26, -10)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

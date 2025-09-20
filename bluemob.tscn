@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bh300tefnsbd6"]
+
+[ext_resource type="Script" uid="uid://foueo18lbmjv" path="res://scenes/Enemy.gd" id="1_4dx2d"]
+[ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="2_cl0n7"]
+[ext_resource type="Texture2D" uid="uid://dpkonqn0ecgvq" path="res://characters/slime/blue_slime_body.png" id="3_10l6m"]
+[ext_resource type="Texture2D" uid="uid://d1sb67dtptg35" path="res://characters/slime/blue_slime_face.png" id="4_4dx2d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bsing"]
+radius = 64.3817
+
+[node name="mob" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+platform_floor_layers = 0
+script = ExtResource("1_4dx2d")
+
+[node name="Slime" parent="." instance=ExtResource("2_cl0n7")]
+unique_name_in_owner = true
+position = Vector2(2, 6)
+
+[node name="BlueSlimeBody" type="Sprite2D" parent="."]
+position = Vector2(3, -48.25)
+scale = Vector2(1.46296, 1.43889)
+texture = ExtResource("3_10l6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1, -33)
+shape = SubResource("CircleShape2D_bsing")
+
+[node name="SlimeFace" type="Sprite2D" parent="."]
+position = Vector2(2, -31)
+scale = Vector2(1.38393, 1.46429)
+texture = ExtResource("4_4dx2d")

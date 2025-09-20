@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://b10vmdj5ekbwi"]
+
+[ext_resource type="Texture2D" uid="uid://i4cjdwy1kcoj" path="res://icon.png" id="1_64rhb"]
+[ext_resource type="Script" uid="uid://da5csliysvjgr" path="res://PlayButton.gd" id="2_eigck"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upctu"]
+bg_color = Color(0.596078, 0.6, 0.603922, 0)
+
+[node name="weaponmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+process_mode = 3
+custom_minimum_size = Vector2(1901, 1072)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.952941, 0.380392, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -327.0
+offset_top = -274.0
+offset_right = 293.0
+offset_bottom = -164.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_upctu")
+text = "Brotato - twin :3"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 50.0
+offset_right = 192.0
+offset_bottom = 178.0
+texture = ExtResource("1_64rhb")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 491.0
+offset_right = 1239.0
+offset_bottom = 568.0
+theme_override_font_sizes/font_size = 50
+text = "PLAY"
+script = ExtResource("2_eigck")

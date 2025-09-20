@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=3 uid="uid://dpi6hxo5ndgqr"]
+
+[ext_resource type="Script" uid="uid://bx0ncnqoovrt4" path="res://player.gd" id="1_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="2_dqkch"]
+[ext_resource type="PackedScene" uid="uid://kvg3tmks0ch2" path="res://scenes/gun.tscn" id="3_qlg0r"]
+[ext_resource type="PackedScene" uid="uid://ckc78makin50v" path="res://scenes/pizzacutter.tscn" id="4_dqkch"]
+[ext_resource type="PackedScene" uid="uid://blovw1i2x1ax5" path="res://scenes/plasma.tscn" id="5_qlg0r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
+radius = 23.0217
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qlg0r"]
+radius = 35.0
+height = 134.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhqgy"]
+bg_color = Color(0.152941, 0.168627, 0.188235, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqkch"]
+bg_color = Color(0, 0.901032, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Brotat" type="CharacterBody2D"]
+top_level = true
+platform_floor_layers = 0
+script = ExtResource("1_qhqgy")
+
+[node name="Weapons" type="Node2D" parent="."]
+
+[node name="HappyBoo" parent="." instance=ExtResource("2_dqkch")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.12, 1.16)
+shape = SubResource("CircleShape2D_onrkg")
+
+[node name="gun" parent="." instance=ExtResource("3_qlg0r")]
+visible = false
+position = Vector2(-2, -48)
+
+[node name="pizzacutter2" parent="." instance=ExtResource("4_dqkch")]
+unique_name_in_owner = true
+
+[node name="pizzacutter3" parent="." instance=ExtResource("4_dqkch")]
+rotation = -3.14159
+
+[node name="pizzacutter4" parent="." instance=ExtResource("4_dqkch")]
+rotation = 1.5708
+
+[node name="pizzacutter5" parent="." instance=ExtResource("4_dqkch")]
+rotation = -1.5708
+
+[node name="plasma" parent="." instance=ExtResource("5_qlg0r")]
+visible = false
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-1, -33)
+shape = SubResource("CapsuleShape2D_qlg0r")
+debug_color = Color(0.854248, 0.314498, 0.503126, 0.42)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = -100.0
+offset_top = -138.0
+offset_right = 100.0
+offset_bottom = -111.0
+theme_override_styles/background = SubResource("StyleBoxFlat_qhqgy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dqkch")
+max_value = 150.0
+value = 150.0
+show_percentage = false

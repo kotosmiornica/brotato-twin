@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://be8tpxxc3acpp"]
+
+[ext_resource type="Script" uid="uid://ds5tgr03uxpb4" path="res://level_up_menu.gd" id="1_nt8lk"]
+[ext_resource type="Texture2D" uid="uid://cyewdxpsjhg74" path="res://pistol/testtube_17718063.png" id="2_eslux"]
+[ext_resource type="Texture2D" uid="uid://cfug706gfmik" path="res://pistol/pizza-cutter_184486.png" id="3_o5r7b"]
+[ext_resource type="Texture2D" uid="uid://dxhoxtbv2h5os" path="res://images/bleach_2797128.png" id="4_o5r7b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nt8lk"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.593298, 0, 0.201006, 0.392157)
+
+[node name="LevelUpMenu" type="Control"]
+process_mode = 3
+top_level = true
+layout_mode = 3
+anchor_left = 0.515
+anchor_top = 0.43
+anchor_right = 1.444
+anchor_bottom = 1.0
+offset_left = -988.8
+offset_top = -447.4
+offset_right = -852.48
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nt8lk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+top_level = true
+y_sort_enabled = true
+anchors_preset = -1
+anchor_left = 0.448
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.549
+offset_left = 99.84
+offset_bottom = -52.92
+theme_override_styles/panel = SubResource("StyleBoxFlat_nt8lk")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = -857.0
+offset_top = -477.0
+offset_right = 853.0
+offset_bottom = 503.0
+color = Color(0.350798, 0.750945, 1, 0.682353)
+
+[node name="plasma1" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = -144.0
+offset_right = 820.0
+offset_bottom = 376.0
+icon = ExtResource("2_eslux")
+
+[node name="pizzacutter2" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = -806.0
+offset_top = -148.0
+offset_right = -286.0
+offset_bottom = 372.0
+icon = ExtResource("3_o5r7b")
+
+[node name="bleach3" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = -255.0
+offset_top = -184.0
+offset_right = 265.0
+offset_bottom = 410.0
+icon = ExtResource("4_o5r7b")
+
+[node name="Label2" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = -66.0
+offset_top = -410.0
+offset_right = 81.0
+offset_bottom = -368.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Level up!!!"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+offset_left = -490.0
+offset_top = -350.0
+offset_right = 507.0
+offset_bottom = -254.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+text = "CHOOSE YOUR NEW WEAPON"
