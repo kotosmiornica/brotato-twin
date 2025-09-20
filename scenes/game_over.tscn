@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddpfrgrfgtlu3"]
+[gd_scene load_steps=2 format=3 uid="uid://d3r36ku8h15y4"]
 
-[ext_resource type="Script" uid="uid://dack4hty3vn01" path="res://button.gd" id="1_xeevv"]
+[ext_resource type="Script" uid="uid://dack4hty3vn01" path="res://scripts/button.gd" id="1_y26ei"]
 
 [node name="GameOver" type="CanvasLayer"]
 unique_name_in_owner = true
@@ -29,6 +29,16 @@ offset_bottom = 789.0
 theme_override_font_sizes/font_size = 70
 text = "retry
 "
-script = ExtResource("1_xeevv")
+script = ExtResource("1_y26ei")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.631373)
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

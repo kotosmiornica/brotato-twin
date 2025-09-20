@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ctd7foytxh81m"]
 
-[ext_resource type="Script" uid="uid://xca07ewuj6vr" path="res://scenes/bleach_stain.gd" id="1_scysm"]
+[ext_resource type="Script" uid="uid://xca07ewuj6vr" path="res://scripts/bleach_stain.gd" id="1_scysm"]
 [ext_resource type="Texture2D" uid="uid://d1idbpvrn0b7q" path="res://images/stainn.png" id="2_y0w8r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wivt3"]

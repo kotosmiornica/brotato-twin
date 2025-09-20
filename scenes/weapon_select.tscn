@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://c752jax0du1jh"]
 
-[ext_resource type="Script" uid="uid://df44rdrfabhvy" path="res://scenes/weapon_select.gd" id="1_trn4b"]
-[ext_resource type="Script" uid="uid://kxhkget1003f" path="res://scenes/weapon_1.gd" id="2_kkspt"]
-[ext_resource type="Script" uid="uid://br410gn3c4ja1" path="res://scenes/weapon_2.gd" id="3_1mgpk"]
-[ext_resource type="Script" uid="uid://c0otph77q4ma4" path="res://scenes/weapon_3.gd" id="4_qsdhm"]
+[ext_resource type="Script" uid="uid://df44rdrfabhvy" path="res://scripts/weapon_select.gd" id="1_trn4b"]
+[ext_resource type="Script" uid="uid://kxhkget1003f" path="res://scripts/weapon_1.gd" id="2_kkspt"]
+[ext_resource type="Script" uid="uid://br410gn3c4ja1" path="res://scripts/weapon_2.gd" id="3_1mgpk"]
+[ext_resource type="Script" uid="uid://c0otph77q4ma4" path="res://scripts/weapon_3.gd" id="4_qsdhm"]
 
 [node name="WeaponSelect" type="Control"]
 layout_mode = 3

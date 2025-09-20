@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ckc78makin50v"]
 
-[ext_resource type="Script" uid="uid://dtc1mtnys6gnm" path="res://scenes/pizzacutter.gd" id="1_jyhhi"]
+[ext_resource type="Script" uid="uid://dtc1mtnys6gnm" path="res://scripts/pizzacutter.gd" id="1_jyhhi"]
 [ext_resource type="Texture2D" uid="uid://cfug706gfmik" path="res://pistol/pizza-cutter_184486.png" id="2_jyhhi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_og67c"]

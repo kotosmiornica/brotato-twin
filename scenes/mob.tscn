@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://i3060v1tubje"]
 
 [ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="1_4are2"]
-[ext_resource type="Script" uid="uid://foueo18lbmjv" path="res://scenes/Enemy.gd" id="1_bsing"]
+[ext_resource type="Script" uid="uid://foueo18lbmjv" path="res://Enemy.gd" id="1_bsing"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bsing"]
 radius = 64.3817

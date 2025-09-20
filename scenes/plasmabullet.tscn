@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cys6rvt3oroae"]
 
-[ext_resource type="Script" uid="uid://dww80s1jtet75" path="res://scenes/plasmabullet.gd" id="1_tgk8v"]
+[ext_resource type="Script" uid="uid://dww80s1jtet75" path="res://scripts/plasmabullet.gd" id="1_tgk8v"]
 [ext_resource type="Texture2D" uid="uid://cyewdxpsjhg74" path="res://pistol/testtube_17718063.png" id="2_tgk8v"]
 [ext_resource type="AudioStream" uid="uid://dhimn67vj0wsg" path="res://music/lasershot.wav" id="3_tgk8v"]
 

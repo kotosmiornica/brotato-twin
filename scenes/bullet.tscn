@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bsv2rmjhatw1m"]
 
-[ext_resource type="Script" uid="uid://cl3rrd6squb5y" path="res://bullet.gd" id="1_y25gk"]
+[ext_resource type="Script" uid="uid://cl3rrd6squb5y" path="res://scripts/bullet.gd" id="1_y25gk"]
 [ext_resource type="Texture2D" uid="uid://dftkbqwsfd68r" path="res://pistol/projectile.png" id="2_l5glv"]
 [ext_resource type="AudioStream" uid="uid://x6n81gfyplq7" path="res://music/simpleshot.mp3" id="3_l5glv"]
 

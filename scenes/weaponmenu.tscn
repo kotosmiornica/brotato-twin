@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b10vmdj5ekbwi"]
 
 [ext_resource type="Texture2D" uid="uid://i4cjdwy1kcoj" path="res://icon.png" id="1_64rhb"]
-[ext_resource type="Script" uid="uid://da5csliysvjgr" path="res://PlayButton.gd" id="2_eigck"]
+[ext_resource type="Script" uid="uid://da5csliysvjgr" path="res://scripts/PlayButton.gd" id="2_eigck"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upctu"]
 bg_color = Color(0.596078, 0.6, 0.603922, 0)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ctsd1kcu2et62"]
 
-[ext_resource type="Script" uid="uid://iprvwrpyhjr8" path="res://scenes/bleach.gd" id="1_x1bti"]
+[ext_resource type="Script" uid="uid://iprvwrpyhjr8" path="res://scripts/bleach.gd" id="1_x1bti"]
 [ext_resource type="Texture2D" uid="uid://dxhoxtbv2h5os" path="res://images/bleach_2797128.png" id="2_x1bti"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wjs48"]
