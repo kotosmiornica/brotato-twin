@@ -1,5 +1,7 @@
 # Brotato Twin
 
+[HackClub Shiba Game Page ↗️](https://shiba.hackclub.com/games/U09CC6Y8LSE/emo%20game%20%3A3)
+
 ## Time tracked
 
 ### Main
