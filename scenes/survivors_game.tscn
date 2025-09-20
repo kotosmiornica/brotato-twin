@@ -11,6 +11,11 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l26od"]
 bg_color = Color(0.152941, 0.168627, 0.188235, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -18,6 +23,11 @@ corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqaft"]
 bg_color = Color(0, 0.901032, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -83,6 +93,11 @@ _data = {
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk6fm"]
 bg_color = Color(0.152941, 0.168627, 0.188235, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -91,6 +106,11 @@ corner_detail = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_getvi"]
 bg_color = Color(0, 0.760784, 0.94902, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -119,13 +139,14 @@ position = Vector2(936, 525)
 
 [node name="ProgressBar" type="ProgressBar" parent="Brotat"]
 unique_name_in_owner = true
-offset_left = -82.0
+offset_left = -94.0
 offset_top = -138.0
-offset_right = 82.0
+offset_right = 94.0
 offset_bottom = -111.0
 theme_override_styles/background = SubResource("StyleBoxFlat_l26od")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qqaft")
-value = 100.0
+max_value = 150.0
+value = 150.0
 show_percentage = false
 
 [node name="Path2D" type="Path2D" parent="Brotat"]
@@ -166,6 +187,7 @@ wait_time = 0.3
 autostart = true
 
 [node name="Fade" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Fade"]
 anchors_preset = 15

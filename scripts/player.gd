@@ -66,7 +66,7 @@ func update_cutter_angles():
 		return
 	for i in range(n):
 		cutters[i].rotation = (TAU / n) * i
-		cutters[i].angle_offset = (360.0 / n) * i # First cutter at 0°, next at 360/n, etc.
+		cutters[i].angle_offset = (360.0 / n) * i
 
 func _ready():
 	pass 
@@ -165,8 +165,8 @@ func give_weapon(weapon_id):
 	var weapon_scene: PackedScene
 
 	match weapon_id:
-		"plasma1":
-			weapon_scene = preload("res://scenes/plasma.tscn")
+		"soda1":
+			weapon_scene = preload("res://scenes/soda.tscn")
 		"pizzacutter2":
 			weapon_scene = preload("res://scenes/pizzacutter.tscn")
 			add_cutter(weapon_scene)

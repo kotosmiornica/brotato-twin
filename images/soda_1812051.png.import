@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn80eu1qs371v"
-path="res://.godot/imported/circle.png-a2fa3270dee1c1c7e1cb0869903e82df.ctex"
+uid="uid://5dqd22nuwgd2"
+path="res://.godot/imported/soda_1812051.png-2f67ea3f098d4300b8460bb216b54078.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pistol/impact/circle.png"
-dest_files=["res://.godot/imported/circle.png-a2fa3270dee1c1c7e1cb0869903e82df.ctex"]
+source_file="res://images/soda_1812051.png"
+dest_files=["res://.godot/imported/soda_1812051.png-2f67ea3f098d4300b8460bb216b54078.ctex"]
 
 [params]
 

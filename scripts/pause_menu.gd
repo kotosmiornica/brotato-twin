@@ -1,6 +1,7 @@
 extends Control
 
 func _ready() -> void:
+
 	$AnimationPlayer.play("RESET")
 	hide_pause_menu()
 

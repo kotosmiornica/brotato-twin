@@ -48,9 +48,9 @@ offset_left = -857.0
 offset_top = -477.0
 offset_right = 853.0
 offset_bottom = 503.0
-color = Color(0.350798, 0.750945, 1, 0.682353)
+color = Color(0.34901962, 0.7490196, 1, 0.84705883)
 
-[node name="plasma1" type="Button" parent="CanvasLayer/Panel"]
+[node name="soda1" type="Button" parent="CanvasLayer/Panel"]
 layout_mode = 0
 offset_left = 300.0
 offset_top = -144.0
@@ -76,12 +76,12 @@ icon = ExtResource("4_o5r7b")
 
 [node name="Label2" type="Label" parent="CanvasLayer/Panel"]
 layout_mode = 0
-offset_left = -66.0
-offset_top = -410.0
-offset_right = 81.0
-offset_bottom = -368.0
+offset_left = -114.0
+offset_top = -425.0
+offset_right = 128.0
+offset_bottom = -356.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
 text = "Level up!!!"
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel"]
