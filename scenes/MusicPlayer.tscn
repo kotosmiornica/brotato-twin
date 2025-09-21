@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdhy1pn6we8kg"]
+
+[sub_resource type="GDScript" id="GDScript_gugna"]
+script/source = "extends Node
+
+@onready var audio = $AudioStreamPlayer
+
+# Only start music if not already playing
+func play_music():
+	if not audio.playing:
+		audio.play()
+
+func stop_music():
+	if audio.playing:
+		audio.stop()
+"
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+script = SubResource("GDScript_gugna")

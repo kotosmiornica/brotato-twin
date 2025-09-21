@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 signal health_depleted
 
+
 var health = 150.0
 var orbit_angle: float = 0.0
 var xp: int = 0
@@ -40,9 +41,8 @@ func _physics_process(_delta: float) -> void:
 		$ProgressBar.value = health
 		if health <= 0.0:
 			health_depleted.emit()
-			if health <= 0.0:
-				get_tree().paused = false
-				get_tree().change_scene_to_file("res://scenes/Menu.tscn")
+			get_tree().paused = false
+			get_tree().change_scene_to_file("res://scenes/Menu.tscn")
 				
 
 var cutters: Array = []

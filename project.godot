@@ -76,14 +76,19 @@ Settings/Show_Tooltips=true
 
 config/name="Brotato Twin First Game :3"
 run/main_scene="uid://cqcwtk4w1gpdv"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.png"
+
+[autoload]
+
+PlayerData="*res://scripts/PlayerData.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="uid://cxl0ui3b31o3f"
 
 [dotnet]
 

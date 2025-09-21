@@ -1,0 +1,35 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://dsq4oypst8yrs"
+path="res://.godot/imported/Dusk Font B3.ttf-f839bb7ae0c748d45be937f1e684528c.fontdata"
+
+[deps]
+
+source_file="res://Dusk Fonts/Dusk Font B3.ttf"
+dest_files=["res://.godot/imported/Dusk Font B3.ttf-f839bb7ae0c748d45be937f1e684528c.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=4
+keep_rounding_remainders=true
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

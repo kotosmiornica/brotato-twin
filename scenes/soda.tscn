@@ -12,12 +12,10 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_fy4ic")
 
-[node name="Pistol" type="Sprite2D" parent="."]
-scale = Vector2(0.41316682, 0.41316682)
+[node name="Soda" type="Sprite2D" parent="."]
+scale = Vector2(0.413167, 0.413167)
 texture = ExtResource("2_fy4ic")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 6)
 shape = SubResource("CapsuleShape2D_nksmf")
-
-[node name="Node2D" type="Node2D" parent="."]

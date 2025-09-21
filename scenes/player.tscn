@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dpi6hxo5ndgqr"]
+[gd_scene load_steps=9 format=3 uid="uid://dpi6hxo5ndgqr"]
 
 [ext_resource type="Script" uid="uid://bx0ncnqoovrt4" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="2_dqkch"]
+[ext_resource type="Script" uid="uid://btg3vkpyhl62d" path="res://scripts/HappyBoo.gd" id="3_dqkch"]
 [ext_resource type="PackedScene" uid="uid://kvg3tmks0ch2" path="res://scenes/gun.tscn" id="3_qlg0r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
@@ -12,7 +13,7 @@ radius = 35.0
 height = 134.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhqgy"]
-bg_color = Color(0.15294118, 0.16862746, 0.1882353, 1)
+bg_color = Color(0.152941, 0.168627, 0.188235, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -46,6 +47,7 @@ script = ExtResource("1_qhqgy")
 
 [node name="HappyBoo" parent="." instance=ExtResource("2_dqkch")]
 unique_name_in_owner = true
+script = ExtResource("3_dqkch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.12, 1.16)
@@ -77,3 +79,4 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_dqkch")
 max_value = 150.0
 value = 150.0
 show_percentage = false
+metadata/_edit_use_anchors_ = true

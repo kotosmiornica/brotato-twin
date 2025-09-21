@@ -1,7 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqcwtk4w1gpdv"]
+[gd_scene load_steps=11 format=3 uid="uid://cqcwtk4w1gpdv"]
 
+[ext_resource type="Script" uid="uid://d1wrmtooq2n67" path="res://scripts/menu.gd" id="1_jmdev"]
+[ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="1_o0tnf"]
 [ext_resource type="Texture2D" uid="uid://i4cjdwy1kcoj" path="res://icon.png" id="1_uubjt"]
 [ext_resource type="Script" uid="uid://da5csliysvjgr" path="res://scripts/PlayButton.gd" id="2_5yleq"]
+[ext_resource type="PackedScene" uid="uid://wehan00wdsi5" path="res://scenes/Coin.tscn" id="2_b6cxs"]
+[ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://images/icon.jpg" id="6_1abgu"]
+[ext_resource type="AudioStream" uid="uid://bpbp3s3y853s5" path="res://music/mobile-casual-video-game-music-158301.mp3" id="7_aaywf"]
+[ext_resource type="Texture2D" uid="uid://bablixbbdhdc" path="res://images/coin (2).png" id="8_1abgu"]
+[ext_resource type="PackedScene" uid="uid://ir2j60as2m8m" path="res://scripts/ChooseYourPlayer.tscn" id="9_yt8fu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upctu"]
 bg_color = Color(0.596078, 0.6, 0.603922, 0)
@@ -13,6 +20,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jmdev")
+coin_scene = ExtResource("2_b6cxs")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 process_mode = 3
@@ -25,37 +34,99 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.952941, 0.380392, 0, 1)
 
-[node name="Label" type="Label" parent="ColorRect"]
+[node name="EatingPet" type="Sprite2D" parent="ColorRect"]
+position = Vector2(1664, 601)
+scale = Vector2(0.56543, 0.387695)
+texture = ExtResource("6_1abgu")
+
+[node name="GameName" type="Label" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -327.0
-offset_top = -274.0
-offset_right = 293.0
-offset_bottom = -164.0
+offset_left = -437.0
+offset_top = -501.0
+offset_right = 403.0
+offset_bottom = -342.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_o0tnf")
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_upctu")
+text = "FOOD FIGHTERS!!!"
+
+[node name="CoinsLabel" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -945.0
+offset_top = -349.0
+offset_right = -748.0
+offset_bottom = -227.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_upctu")
-text = "Brotato - twin :3"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 50.0
-offset_right = 192.0
-offset_bottom = 178.0
+offset_left = 1751.0
+offset_top = 886.0
+offset_right = 1879.0
+offset_bottom = 1014.0
 texture = ExtResource("1_uubjt")
 
 [node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 690.0
-offset_top = 491.0
-offset_right = 1239.0
-offset_bottom = 568.0
-theme_override_font_sizes/font_size = 50
-text = "PLAY"
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -335.0
+offset_top = -328.0
+offset_right = 336.0
+offset_bottom = -182.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_o0tnf")
+theme_override_font_sizes/font_size = 100
+text = "Go to sleeep
+"
 script = ExtResource("2_5yleq")
+
+[node name="FishButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 918.0
+offset_right = 898.0
+offset_bottom = 1006.0
+theme_override_fonts/font = ExtResource("1_o0tnf")
+theme_override_font_sizes/font_size = 80
+text = "FISHIN IN PROGRESS!!
+"
+
+[node name="FlyingFoodsContainer" type="Node2D" parent="."]
+
+[node name="FlyingCoinsContainer" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_aaywf")
+autoplay = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(180, 74)
+scale = Vector2(0.480469, 0.191406)
+texture = ExtResource("8_1abgu")
+
+[node name="MakeYourPlayer" parent="." instance=ExtResource("9_yt8fu")]
+position = Vector2(199, 619)
+scale = Vector2(2, 2)
+
+[connection signal="pressed" from="FishButton" to="Button" method="_on_fish_button_pressed"]

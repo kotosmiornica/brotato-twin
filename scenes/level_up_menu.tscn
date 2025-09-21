@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://be8tpxxc3acpp"]
+[gd_scene load_steps=7 format=3 uid="uid://be8tpxxc3acpp"]
 
 [ext_resource type="Script" uid="uid://ds5tgr03uxpb4" path="res://scripts/level_up_menu.gd" id="1_nt8lk"]
-[ext_resource type="Texture2D" uid="uid://cyewdxpsjhg74" path="res://pistol/testtube_17718063.png" id="2_eslux"]
+[ext_resource type="Texture2D" uid="uid://5dqd22nuwgd2" path="res://images/soda_1812051.png" id="2_d3utp"]
 [ext_resource type="Texture2D" uid="uid://cfug706gfmik" path="res://pistol/pizza-cutter_184486.png" id="3_o5r7b"]
 [ext_resource type="Texture2D" uid="uid://dxhoxtbv2h5os" path="res://images/bleach_2797128.png" id="4_o5r7b"]
+[ext_resource type="FontFile" uid="uid://b8ok8fndx02wu" path="res://Pansy Hand/pansyhand.ttf" id="5_yu4sn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nt8lk"]
 content_margin_left = 0.0
@@ -48,15 +49,15 @@ offset_left = -857.0
 offset_top = -477.0
 offset_right = 853.0
 offset_bottom = 503.0
-color = Color(0.34901962, 0.7490196, 1, 0.84705883)
+color = Color(0.34902, 0.74902, 1, 0.847059)
 
 [node name="soda1" type="Button" parent="CanvasLayer/Panel"]
 layout_mode = 0
-offset_left = 300.0
-offset_top = -144.0
-offset_right = 820.0
-offset_bottom = 376.0
-icon = ExtResource("2_eslux")
+offset_left = 298.0
+offset_top = -131.0
+offset_right = 818.0
+offset_bottom = 389.0
+icon = ExtResource("2_d3utp")
 
 [node name="pizzacutter2" type="Button" parent="CanvasLayer/Panel"]
 layout_mode = 0
@@ -76,20 +77,22 @@ icon = ExtResource("4_o5r7b")
 
 [node name="Label2" type="Label" parent="CanvasLayer/Panel"]
 layout_mode = 0
-offset_left = -114.0
-offset_top = -425.0
-offset_right = 128.0
-offset_bottom = -356.0
+offset_left = -148.0
+offset_top = -457.0
+offset_right = 130.0
+offset_bottom = -354.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("5_yu4sn")
+theme_override_font_sizes/font_size = 120
 text = "Level up!!!"
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel"]
 layout_mode = 1
-offset_left = -490.0
-offset_top = -350.0
-offset_right = 507.0
-offset_bottom = -254.0
+offset_left = -502.0
+offset_top = -373.0
+offset_right = 511.0
+offset_bottom = -244.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 70
-text = "CHOOSE YOUR NEW WEAPON"
+theme_override_fonts/font = ExtResource("5_yu4sn")
+theme_override_font_sizes/font_size = 150
+text = "CHOOSE YOUR NEW WEAPON :0"

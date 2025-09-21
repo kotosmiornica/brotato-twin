@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://ir2j60as2m8m"]
+
+[ext_resource type="Script" uid="uid://c5itg1txyrjtx" path="res://scripts/ChooseYourPlayer.gd" id="1_how2j"]
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="2_jqici"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
+radius = 23.0217
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qlg0r"]
+radius = 35.0
+height = 134.0
+
+[node name="MakeYourPlayer" type="CharacterBody2D"]
+top_level = true
+platform_floor_layers = 0
+script = ExtResource("1_how2j")
+
+[node name="SadBoo" parent="." instance=ExtResource("2_jqici")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.12, 1.16)
+shape = SubResource("CircleShape2D_onrkg")
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-1, -33)
+shape = SubResource("CapsuleShape2D_qlg0r")
+debug_color = Color(0.854248, 0.314498, 0.503126, 0.42)
