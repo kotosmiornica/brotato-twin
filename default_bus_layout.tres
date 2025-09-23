@@ -1,7 +1,7 @@
 [gd_resource type="AudioBusLayout" format=3 uid="uid://c0r1synmqj70v"]
 
 [resource]
-bus/0/volume_db = -3.6153884
+bus/0/volume_db = -3.61539
 bus/1/name = &"Music"
 bus/1/solo = false
 bus/1/mute = false
@@ -30,5 +30,11 @@ bus/5/name = &"laser"
 bus/5/solo = false
 bus/5/mute = false
 bus/5/bypass_fx = false
-bus/5/volume_db = 2.51368
+bus/5/volume_db = -19.2131
 bus/5/send = &"Master"
+bus/6/name = &"menu music"
+bus/6/solo = false
+bus/6/mute = false
+bus/6/bypass_fx = false
+bus/6/volume_db = -0.792653
+bus/6/send = &"Master"

@@ -2,25 +2,30 @@ extends CharacterBody2D
 
 signal health_depleted
 
+@export var soda_cooldown: float = 10.0
+@export var throw_force: float = 600.0
+@onready var weapons_container = get_node("/root/game/Brotat/Weapons")
 
-var health = 150.0
+var health = 180.0
 var orbit_angle: float = 0.0
 var xp: int = 0
 var level: int = 1
 var xp_per_level: int = 10
-
+var can_throw_soda: bool = true
 var current_weapon: String = "gun"
 var weapons: Array = []
-@onready var weapons_container = get_node("/root/game/Brotat/Weapons")
 var stain_scene = preload("res://scenes/BleachStain.tscn")
 var equipped_weapons = []  
-
 var _time_passed: float = 0.0
 var cutter_scene = preload("res://scenes/pizzacutter.tscn")
-
 var level_up_menu = null
 var pizza_cutters: Array = []
+var can_throw: bool = true
+var throw_cooldown: float = 10.0
+var xp_growth_factor = 1.4
+
 const MAX_PIZZA_CUTTERS = 4
+
 
 
 func _physics_process(_delta: float) -> void:
@@ -83,6 +88,9 @@ func _on_xp_collected():
 func level_up():
 	get_tree().paused = true
 
+	# Increase XP needed for next level
+	xp_per_level = int(xp_per_level * xp_growth_factor)
+
 	var LevelUpMenuScene = preload("res://scenes/level_up_menu.tscn")
 	level_up_menu = LevelUpMenuScene.instantiate()
 	get_tree().current_scene.add_child(level_up_menu)
@@ -104,6 +112,7 @@ func update_xp_bar():
 
 
 func _process(delta: float) -> void:
+	
 	_time_passed += delta
 	if _time_passed >= cooldown:
 		_time_passed = 0
@@ -124,6 +133,9 @@ func _process(delta: float) -> void:
 	if _time_passed >= cooldown:
 		_time_passed = 0
 		spawn_stain()
+	if "soda1" in equipped_weapons and Input.is_action_just_pressed("throw") and can_throw_soda:
+		throw_soda()
+
 
 
 func spawn_stain() -> void:
@@ -166,7 +178,7 @@ func give_weapon(weapon_id):
 
 	match weapon_id:
 		"soda1":
-			weapon_scene = preload("res://scenes/soda.tscn")
+			weapon_scene = preload("res://scenes/SodaCan.tscn")
 		"pizzacutter2":
 			weapon_scene = preload("res://scenes/pizzacutter.tscn")
 			add_cutter(weapon_scene)
@@ -178,7 +190,7 @@ func give_weapon(weapon_id):
 		_:
 			print("Unknown weapon:", weapon_id)
 			return
-
+			
 	var weapon = weapon_scene.instantiate()
 	weapon.player = self
 	weapons_container.add_child(weapon)
@@ -195,6 +207,47 @@ func give_weapon(weapon_id):
 		#pizza_cutters.append(weapon)
 	
 		#_update_pizza_cutters()
+
+# Call this when the player clicks
+
+func _input(event):
+	if event is InputEventMouseButton and event.pressed:
+		# Only spawn SodaCan if the player actually chose it
+		if "soda1" in equipped_weapons:
+			spawn_soda(event.position)
+
+
+func spawn_soda(mouse_pos: Vector2) -> void:
+	var soda_scene = preload("res://scenes/SodaCan.tscn")
+	var soda = soda_scene.instantiate() as Area2D
+	soda.global_position = mouse_pos  # <- appears exactly under the click
+	get_tree().current_scene.add_child(soda)
+
+
+func throw_soda() -> void:
+	if not can_throw_soda or "soda1" not in equipped_weapons:
+		return
+
+	can_throw_soda = false
+
+	var soda_scene = preload("res://scenes/SodaCan.tscn")
+	var soda = soda_scene.instantiate() as Area2D
+	soda.global_position = global_position
+	soda.player = self
+
+	var mouse_pos = get_viewport().get_mouse_position()
+	var dir = (mouse_pos - global_position).normalized()
+	if dir == Vector2.ZERO:
+		dir = Vector2.UP
+	soda.direction = dir
+
+	# Add soda to scene
+	get_tree().current_scene.add_child(soda)
+
+	# Cooldown handled here
+	await get_tree().create_timer(soda_cooldown).timeout
+	can_throw_soda = true
+
 
 func _update_pizza_cutters():
 	var count = pizza_cutters.size()

@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://x6n81gfyplq7" path="res://music/simpleshot.mp3" id="3_gp1hk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_og67c"]
-radius = 646.696
+radius = 573.785
 
 [node name="gun" type="Area2D"]
 collision_layer = 0

@@ -112,6 +112,7 @@ theme_override_font_sizes/font_size = 50
 text = "Restart"
 
 [node name="Quit" type="Button" parent="CanvasLayer/ColorRect/PanelContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Quit :("

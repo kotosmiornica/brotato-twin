@@ -6,22 +6,24 @@ extends Node2D
 
 # Exported variables
 @export var food_scene: PackedScene
-@export var spawn_interval = 0.2
-@export var hook_end_y = 50.0       # top Y of hook
-@export var base_speed = 100.0      # hook start speed
-@export var max_speed = 300.0       # hook max speed
+@export var spawn_interval = 0.3
+@export var hook_end_y = 50.0    
+@export var base_speed = 120.0      # hook start speed
+@export var max_speed = 350.0       # hook max speed
+@export var hook_start_offset = 500  # default at current bottom
+
 
 # State
 var fishing_active = true
 var spawn_timer = 0.0
-var hook_rise_speed = 0.0
+var hook_rise_speed = 6.0
 var caught_foods := []
 
 func _ready():
 	var screen_size = get_viewport_rect().size
-	hook.position = Vector2(screen_size.x / 2, screen_size.y - hook.texture.get_size().y)
-	hook.visible = true
-	hook_rise_speed = base_speed
+	hook.position = Vector2(
+		screen_size.x / 2, 
+		screen_size.y - hook.texture.get_size().y + hook_start_offset)
 
 
 func _process(delta):
@@ -63,7 +65,7 @@ func _process(delta):
 func spawn_food():
 	if food_scene == null:
 		return
-	for i in range(5):  # spawn 2 foods at a time
+	for i in range(4):  # spawn 2 foods at a time
 		var new_food = food_scene.instantiate()
 		var y = randf_range(100, get_viewport_rect().size.y - 150)
 		new_food.position = Vector2(-50, y)

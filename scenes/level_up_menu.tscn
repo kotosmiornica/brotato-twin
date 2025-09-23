@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://be8tpxxc3acpp"]
+[gd_scene load_steps=12 format=3 uid="uid://be8tpxxc3acpp"]
 
 [ext_resource type="Script" uid="uid://ds5tgr03uxpb4" path="res://scripts/level_up_menu.gd" id="1_nt8lk"]
 [ext_resource type="Texture2D" uid="uid://5dqd22nuwgd2" path="res://images/soda_1812051.png" id="2_d3utp"]
+[ext_resource type="StyleBox" uid="uid://ctnedtyf78d1o" path="res://scenes/basicblu.tres" id="2_yu4sn"]
 [ext_resource type="Texture2D" uid="uid://cfug706gfmik" path="res://pistol/pizza-cutter_184486.png" id="3_o5r7b"]
+[ext_resource type="StyleBox" uid="uid://diaewu28mnlyu" path="res://scenes/pressedbasicblu.tres" id="3_sogc5"]
 [ext_resource type="Texture2D" uid="uid://dxhoxtbv2h5os" path="res://images/bleach_2797128.png" id="4_o5r7b"]
 [ext_resource type="FontFile" uid="uid://b8ok8fndx02wu" path="res://Pansy Hand/pansyhand.ttf" id="5_yu4sn"]
 
@@ -11,10 +13,49 @@ content_margin_left = 0.0
 content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
-bg_color = Color(0.593298, 0, 0.201006, 0.392157)
+bg_color = Color(0, 0.333333, 0.513726, 1)
+corner_radius_top_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yu4sn"]
+bg_color = Color(0, 0.654902, 0.878431, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+corner_detail = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 15
+shadow_offset = Vector2(0, 20)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sogc5"]
+content_margin_left = 5.0
+content_margin_top = 2.0
+content_margin_right = 5.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0.654902, 0.878431, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 200
+corner_detail = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 15
+shadow_offset = Vector2(0, 20)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_buj6g"]
+bg_color = Color(7.89344e-06, 0.653494, 0.876982, 1)
+corner_radius_top_left = 200
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+corner_radius_bottom_left = 199
+corner_detail = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 15
+shadow_offset = Vector2(0, 20)
 
 [node name="LevelUpMenu" type="Control"]
 process_mode = 3
+visible = false
 top_level = true
 layout_mode = 3
 anchor_left = 0.515
@@ -35,63 +76,77 @@ script = ExtResource("1_nt8lk")
 top_level = true
 y_sort_enabled = true
 anchors_preset = -1
-anchor_left = 0.448
-anchor_top = 0.5
+anchor_left = 0.477
+anchor_top = 0.471
 anchor_right = 0.5
 anchor_bottom = 0.549
-offset_left = 99.84
+offset_left = 44.16
+offset_top = 31.32
 offset_bottom = -52.92
 theme_override_styles/panel = SubResource("StyleBoxFlat_nt8lk")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Panel"]
 layout_mode = 0
-offset_left = -857.0
+offset_left = -781.0
 offset_top = -477.0
-offset_right = 853.0
-offset_bottom = 503.0
-color = Color(0.34902, 0.74902, 1, 0.847059)
+offset_right = 771.0
+offset_bottom = 489.0
+color = Color(0.458824, 0.784314, 1, 0.909804)
 
 [node name="soda1" type="Button" parent="CanvasLayer/Panel"]
+visible = false
 layout_mode = 0
-offset_left = 298.0
-offset_top = -131.0
-offset_right = 818.0
-offset_bottom = 389.0
+offset_left = 315.0
+offset_top = -133.0
+offset_right = 827.0
+offset_bottom = 432.0
+focus_mode = 0
+theme_override_styles/hover = ExtResource("2_yu4sn")
+theme_override_styles/pressed = ExtResource("3_sogc5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yu4sn")
 icon = ExtResource("2_d3utp")
 
 [node name="pizzacutter2" type="Button" parent="CanvasLayer/Panel"]
 layout_mode = 0
-offset_left = -806.0
-offset_top = -148.0
-offset_right = -286.0
-offset_bottom = 372.0
+offset_left = -719.0
+offset_top = -176.0
+offset_right = -157.0
+offset_bottom = 413.0
+focus_mode = 0
+theme_override_styles/hover = ExtResource("2_yu4sn")
+theme_override_styles/pressed = ExtResource("3_sogc5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_sogc5")
 icon = ExtResource("3_o5r7b")
 
 [node name="bleach3" type="Button" parent="CanvasLayer/Panel"]
 layout_mode = 0
-offset_left = -255.0
-offset_top = -184.0
-offset_right = 265.0
-offset_bottom = 410.0
+offset_left = 152.0
+offset_top = -158.0
+offset_right = 664.0
+offset_bottom = 423.0
+focus_mode = 0
+theme_override_styles/hover = ExtResource("2_yu4sn")
+theme_override_styles/pressed = ExtResource("3_sogc5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_buj6g")
 icon = ExtResource("4_o5r7b")
 
 [node name="Label2" type="Label" parent="CanvasLayer/Panel"]
 layout_mode = 0
-offset_left = -148.0
-offset_top = -457.0
-offset_right = 130.0
-offset_bottom = -354.0
+offset_left = -222.0
+offset_top = -461.0
+offset_right = 195.0
+offset_bottom = -307.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_yu4sn")
-theme_override_font_sizes/font_size = 120
+theme_override_font_sizes/font_size = 180
 text = "Level up!!!"
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel"]
 layout_mode = 1
-offset_left = -502.0
-offset_top = -373.0
-offset_right = 511.0
-offset_bottom = -244.0
+offset_left = -496.0
+offset_top = -328.0
+offset_right = 517.0
+offset_bottom = -191.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_yu4sn")
 theme_override_font_sizes/font_size = 150

@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dxjcywb4hgl76" path="res://free-underwater-world-pixel-art-backgrounds/background 1/1.png" id="1_o24hs"]
 [ext_resource type="Script" uid="uid://catu5hvsoll6o" path="res://scripts/fishin.gd" id="1_wacnr"]
 [ext_resource type="PackedScene" uid="uid://dtd252iudfgoo" path="res://scenes/Food.tscn" id="2_aafxh"]
-[ext_resource type="Texture2D" uid="uid://fqh3iln4mxum" path="res://icon.svg" id="2_o24hs"]
 [ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://images/icon.jpg" id="3_aafxh"]
+[ext_resource type="Texture2D" uid="uid://bdghbxy6moeia" path="res://images/hook_4294182.png" id="4_2kclr"]
 [ext_resource type="AudioStream" uid="uid://w42b6prhlxu6" path="res://music/fishmusic.mp3" id="6_2kclr"]
 
 [node name="Control" type="Control"]
@@ -17,22 +17,25 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.059
-anchor_bottom = 1.046
-offset_right = -113.28
-offset_bottom = -610.68
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = 18.0
+offset_right = 28.0
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_o24hs")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 65.0
+offset_left = -93.0
+offset_right = 62.0
+offset_bottom = -598.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_o24hs")
@@ -42,11 +45,10 @@ script = ExtResource("1_wacnr")
 food_scene = ExtResource("2_aafxh")
 
 [node name="Hook" type="Sprite2D" parent="FishingGame"]
-visible = false
 top_level = true
-position = Vector2(551, 745)
-scale = Vector2(0.367188, 0.695313)
-texture = ExtResource("2_o24hs")
+position = Vector2(953, 982)
+scale = Vector2(0.0820311, 0.11792)
+texture = ExtResource("4_2kclr")
 
 [node name="PlayerFood" type="Sprite2D" parent="FishingGame"]
 visible = false

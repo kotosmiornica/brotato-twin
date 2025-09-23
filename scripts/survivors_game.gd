@@ -8,8 +8,8 @@ func _ready() -> void:
 	start_next_wave()
 
 func _physics_process(_delta: float) -> void:
-	if Input.is_action_just_pressed("restart") and !$CanvasLayer2/ColorRect/AnimationPlayer.is_playing():
-		$CanvasLayer2/ColorRect/AnimationPlayer.play("fade_in")
+	if Input.is_action_just_pressed("restart") and !$Fade/ColorRect/AnimationPlayer.is_playing():
+		$Fade/ColorRect/AnimationPlayer.play("fade_in")
 		get_tree().paused = false
 
 

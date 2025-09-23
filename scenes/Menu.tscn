@@ -1,17 +1,162 @@
-[gd_scene load_steps=11 format=3 uid="uid://cqcwtk4w1gpdv"]
+[gd_scene load_steps=17 format=3 uid="uid://cqcwtk4w1gpdv"]
 
 [ext_resource type="Script" uid="uid://d1wrmtooq2n67" path="res://scripts/menu.gd" id="1_jmdev"]
 [ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="1_o0tnf"]
-[ext_resource type="Texture2D" uid="uid://i4cjdwy1kcoj" path="res://icon.png" id="1_uubjt"]
 [ext_resource type="Script" uid="uid://da5csliysvjgr" path="res://scripts/PlayButton.gd" id="2_5yleq"]
 [ext_resource type="PackedScene" uid="uid://wehan00wdsi5" path="res://scenes/Coin.tscn" id="2_b6cxs"]
 [ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://images/icon.jpg" id="6_1abgu"]
+[ext_resource type="Script" uid="uid://dyra1ld5cd5o2" path="res://scenes/fish_button.gd" id="6_yt8fu"]
 [ext_resource type="AudioStream" uid="uid://bpbp3s3y853s5" path="res://music/mobile-casual-video-game-music-158301.mp3" id="7_aaywf"]
 [ext_resource type="Texture2D" uid="uid://bablixbbdhdc" path="res://images/coin (2).png" id="8_1abgu"]
-[ext_resource type="PackedScene" uid="uid://ir2j60as2m8m" path="res://scripts/ChooseYourPlayer.tscn" id="9_yt8fu"]
+[ext_resource type="PackedScene" uid="uid://ir2j60as2m8m" path="res://scenes/ChooseYourPlayer.tscn" id="9_yt8fu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upctu"]
-bg_color = Color(0.596078, 0.6, 0.603922, 0)
+content_margin_left = 48.0
+content_margin_top = 23.0
+content_margin_right = 23.0
+content_margin_bottom = 23.0
+bg_color = Color(1, 0.235435, 0.677047, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(1, 0.760784, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+shadow_color = Color(0, 0, 0, 0.682353)
+shadow_size = 10
+shadow_offset = Vector2(10, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4umqm"]
+content_margin_left = 25.0
+content_margin_right = 20.0
+bg_color = Color(1, 0.54131, 0.194125, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.770593, 0.330888, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+expand_margin_left = 10.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 15
+shadow_offset = Vector2(2, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pp5m5"]
+content_margin_left = 25.0
+content_margin_right = 20.0
+bg_color = Color(0.723401, 0.354722, 1.92523e-07, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.792444, 0.570892, 9.62615e-07, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+expand_margin_left = 10.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_offset = Vector2(2, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yt8fu"]
+bg_color = Color(0.914398, 0.454448, 5.77569e-07, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.759345, 0.291028, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+expand_margin_left = 10.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 22
+shadow_offset = Vector2(2, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thu7x"]
+content_margin_left = 25.0
+content_margin_right = 20.0
+bg_color = Color(1, 0.54131, 0.194125, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.770593, 0.330888, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+expand_margin_left = 10.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 15
+shadow_offset = Vector2(2, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2af52"]
+content_margin_left = 25.0
+content_margin_right = 20.0
+bg_color = Color(0.723401, 0.354722, 1.92523e-07, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.792444, 0.570892, 9.62615e-07, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+expand_margin_left = 10.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_offset = Vector2(2, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_el213"]
+bg_color = Color(0.914398, 0.454448, 5.77569e-07, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.759345, 0.291028, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+expand_margin_left = 10.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 20
+shadow_offset = Vector2(2, 10)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -32,11 +177,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.952941, 0.380392, 0, 1)
+color = Color(0.57204, 0.360086, 0.924628, 1)
 
 [node name="EatingPet" type="Sprite2D" parent="ColorRect"]
-position = Vector2(1664, 601)
-scale = Vector2(0.56543, 0.387695)
+position = Vector2(1701, 687)
+scale = Vector2(0.56543, 0.270019)
 texture = ExtResource("6_1abgu")
 
 [node name="GameName" type="Label" parent="ColorRect"]
@@ -46,15 +191,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -437.0
-offset_top = -501.0
-offset_right = 403.0
-offset_bottom = -342.0
+offset_left = -483.0
+offset_top = -515.0
+offset_right = 525.0
+offset_bottom = -379.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 120
-theme_override_styles/normal = SubResource("StyleBoxFlat_upctu")
 text = "FOOD FIGHTERS!!!"
 
 [node name="CoinsLabel" type="Label" parent="ColorRect"]
@@ -72,15 +216,28 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxFlat_upctu")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 1751.0
-offset_top = 886.0
-offset_right = 1879.0
-offset_bottom = 1014.0
-texture = ExtResource("1_uubjt")
+[node name="Instructions!" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1034.0
+offset_top = -322.0
+offset_right = -32.0
+offset_bottom = -43.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_o0tnf")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_upctu")
+text = "WASD/arrows - move
+P -pause menu
+Mouse and click - choose weapons
+R - restart"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -90,27 +247,38 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -335.0
-offset_top = -328.0
-offset_right = 336.0
-offset_bottom = -182.0
+offset_top = -366.0
+offset_right = 366.0
+offset_bottom = -220.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 105
+theme_override_styles/hover = SubResource("StyleBoxFlat_4umqm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pp5m5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yt8fu")
 text = "Go to sleeep
 "
 script = ExtResource("2_5yleq")
 
 [node name="FishButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 918.0
-offset_right = 898.0
-offset_bottom = 1006.0
+offset_left = 543.0
+offset_top = 390.0
+offset_right = 1416.0
+offset_bottom = 480.0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 80
-text = "FISHIN IN PROGRESS!!
+theme_override_styles/hover = SubResource("StyleBoxFlat_thu7x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2af52")
+theme_override_styles/normal = SubResource("StyleBoxFlat_el213")
+text = "FISHIN (in progress)
 "
+script = ExtResource("6_yt8fu")
 
 [node name="FlyingFoodsContainer" type="Node2D" parent="."]
 
@@ -119,10 +287,11 @@ text = "FISHIN IN PROGRESS!!
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_aaywf")
 autoplay = true
+bus = &"menu music"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(180, 74)
-scale = Vector2(0.480469, 0.191406)
+position = Vector2(118.75, 66)
+scale = Vector2(0.231446, 0.191406)
 texture = ExtResource("8_1abgu")
 
 [node name="MakeYourPlayer" parent="." instance=ExtResource("9_yt8fu")]

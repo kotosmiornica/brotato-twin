@@ -1,6 +1,8 @@
 extends CharacterBody2D
+
 var health = 100
 var health_depleted 
+
 func _physics_process(_delta: float) -> void:	
 	if velocity.length() > 0.0:
 		%Sadboo.play_walk_animation()
