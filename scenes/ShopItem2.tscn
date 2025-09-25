@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc3g7aitbriuf"]
+
+[ext_resource type="Script" uid="uid://dwgtf6m0khrk3" path="res://scripts/ShopItem.gd" id="1_dombn"]
+[ext_resource type="Texture2D" uid="uid://dpppftujlidpp" path="res://images/eyeball_12657493.png" id="2_r0gfi"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 1.0
+offset_right = 5.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dombn")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 863.0
+offset_top = 553.0
+offset_right = 1081.0
+offset_bottom = 771.0
+texture = ExtResource("2_r0gfi")
+expand_mode = 1
+
+[node name="ItemName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 845.0
+offset_top = 398.0
+offset_right = 1113.0
+offset_bottom = 508.0
+theme_override_font_sizes/font_size = 80
+text = "Heart"
+
+[node name="ItemPrice" type="Label" parent="."]
+layout_mode = 0
+offset_left = 752.0
+offset_top = 811.0
+offset_right = 890.0
+offset_bottom = 952.0
+theme_override_font_sizes/font_size = 50
+text = " 150
+ coins"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 918.0
+offset_top = 834.0
+offset_right = 1101.0
+offset_bottom = 934.0
+theme_override_font_sizes/font_size = 60
+text = "BUY"

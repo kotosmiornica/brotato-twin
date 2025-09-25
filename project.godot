@@ -82,6 +82,7 @@ config/icon="res://icon.png"
 [autoload]
 
 PlayerData="*res://scripts/PlayerData.gd"
+Global="*res://Global.gd"
 
 [display]
 
@@ -145,3 +146,7 @@ esc={
 [layer_names]
 
 3d_physics/layer_2="player"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

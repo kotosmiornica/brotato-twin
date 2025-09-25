@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://gfuphujdhgtd" path="res://images/leek.png" id="2_2jwtx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jwtx"]
-radius = 43.8981
-height = 114.241
+radius = 46.1264
+height = 128.356
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_2jwtx")
@@ -14,7 +14,7 @@ script = ExtResource("1_2jwtx")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 position = Vector2(-8, 9.53674e-07)
-scale = Vector2(0.128906, 0.128906)
+scale = Vector2(0.171875, 0.171875)
 texture = ExtResource("2_2jwtx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

@@ -1,14 +1,71 @@
-[gd_scene load_steps=17 format=3 uid="uid://cqcwtk4w1gpdv"]
+[gd_scene load_steps=23 format=3 uid="uid://cqcwtk4w1gpdv"]
 
 [ext_resource type="Script" uid="uid://d1wrmtooq2n67" path="res://scripts/menu.gd" id="1_jmdev"]
 [ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="1_o0tnf"]
 [ext_resource type="Script" uid="uid://da5csliysvjgr" path="res://scripts/PlayButton.gd" id="2_5yleq"]
 [ext_resource type="PackedScene" uid="uid://wehan00wdsi5" path="res://scenes/Coin.tscn" id="2_b6cxs"]
-[ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://images/icon.jpg" id="6_1abgu"]
+[ext_resource type="PackedScene" uid="uid://58ityb3umon8" path="res://scenes/Shopp.tscn" id="3_pp5m5"]
+[ext_resource type="Texture2D" uid="uid://dv6si3qh0nol5" path="res://images/kraken_14724220.png" id="3_yt8fu"]
+[ext_resource type="Script" uid="uid://ca282vhax10g3" path="res://scenes/ShopButton.gd" id="6_4umqm"]
 [ext_resource type="Script" uid="uid://dyra1ld5cd5o2" path="res://scenes/fish_button.gd" id="6_yt8fu"]
 [ext_resource type="AudioStream" uid="uid://bpbp3s3y853s5" path="res://music/mobile-casual-video-game-music-158301.mp3" id="7_aaywf"]
+[ext_resource type="StyleBox" uid="uid://bf5lod7pf26wg" path="res://scenes/orange.tres" id="7_el213"]
 [ext_resource type="Texture2D" uid="uid://bablixbbdhdc" path="res://images/coin (2).png" id="8_1abgu"]
 [ext_resource type="PackedScene" uid="uid://ir2j60as2m8m" path="res://scenes/ChooseYourPlayer.tscn" id="9_yt8fu"]
+
+[sub_resource type="Animation" id="Animation_auux5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1000)]
+}
+
+[sub_resource type="Animation" id="Animation_2srsy"]
+resource_name = "TransIn"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333334, 1.13333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -1000), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_r2k62"]
+resource_name = "TransOut"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1000)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w135h"]
+_data = {
+&"RESET": SubResource("Animation_auux5"),
+&"TransIn": SubResource("Animation_2srsy"),
+&"TransOut": SubResource("Animation_r2k62")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upctu"]
 content_margin_left = 48.0
@@ -27,7 +84,6 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 corner_detail = 20
 shadow_color = Color(0, 0, 0, 0.682353)
-shadow_size = 10
 shadow_offset = Vector2(10, 10)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4umqm"]
@@ -91,7 +147,7 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 shadow_color = Color(0, 0, 0, 1)
-shadow_size = 22
+shadow_size = 18
 shadow_offset = Vector2(2, 10)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thu7x"]
@@ -138,26 +194,6 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_size = 4
 shadow_offset = Vector2(2, 10)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_el213"]
-bg_color = Color(0.914398, 0.454448, 5.77569e-07, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(1, 0.759345, 0.291028, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-corner_detail = 10
-expand_margin_left = 10.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 20
-shadow_offset = Vector2(2, 10)
-
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -177,12 +213,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.57204, 0.360086, 0.924628, 1)
+color = Color(0.505654, 0.285451, 0.878053, 1)
+
+[node name="Shop" parent="ColorRect" instance=ExtResource("3_pp5m5")]
+offset = Vector2(0, -1000)
+transform = Transform2D(1, 0, 0, 1, 0, -1000)
+
+[node name="Anim" type="AnimationPlayer" parent="ColorRect/Shop"]
+root_node = NodePath("../Panel")
+libraries = {
+&"": SubResource("AnimationLibrary_w135h")
+}
 
 [node name="EatingPet" type="Sprite2D" parent="ColorRect"]
-position = Vector2(1701, 687)
-scale = Vector2(0.56543, 0.270019)
-texture = ExtResource("6_1abgu")
+position = Vector2(1328, 737)
+scale = Vector2(1.8125, 1.63762)
+texture = ExtResource("3_yt8fu")
 
 [node name="GameName" type="Label" parent="ColorRect"]
 layout_mode = 1
@@ -191,10 +237,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -483.0
-offset_top = -515.0
-offset_right = 525.0
-offset_bottom = -379.0
+offset_left = -746.0
+offset_top = -511.0
+offset_right = 262.0
+offset_bottom = -375.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_o0tnf")
@@ -208,10 +254,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -945.0
-offset_top = -349.0
-offset_right = -748.0
-offset_bottom = -227.0
+offset_left = -942.0
+offset_top = -374.0
+offset_right = -745.0
+offset_bottom = -252.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_o0tnf")
@@ -224,15 +270,15 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1034.0
-offset_top = -322.0
-offset_right = -32.0
-offset_bottom = -43.0
+offset_left = -966.0
+offset_top = -291.0
+offset_right = -27.0
+offset_bottom = -36.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
-theme_override_font_sizes/font_size = 55
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_upctu")
 text = "WASD/arrows - move
 P -pause menu
@@ -246,10 +292,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -335.0
-offset_top = -366.0
-offset_right = 366.0
-offset_bottom = -220.0
+offset_left = 215.0
+offset_top = -382.0
+offset_right = 916.0
+offset_bottom = -236.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
@@ -259,25 +305,39 @@ theme_override_font_sizes/font_size = 105
 theme_override_styles/hover = SubResource("StyleBoxFlat_4umqm")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pp5m5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_yt8fu")
-text = "Go to sleeep
+text = "Go to FIGHT
 "
+autowrap_mode = 3
 script = ExtResource("2_5yleq")
+
+[node name="ShopButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1639.0
+offset_top = 18.0
+offset_right = 1892.0
+offset_bottom = 110.0
+theme_override_fonts/font = ExtResource("1_o0tnf")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = ExtResource("7_el213")
+text = "Shop"
+script = ExtResource("6_4umqm")
 
 [node name="FishButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 543.0
-offset_top = 390.0
-offset_right = 1416.0
-offset_bottom = 480.0
+offset_left = 1107.0
+offset_top = 348.0
+offset_right = 1893.0
+offset_bottom = 444.0
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 70
 theme_override_styles/hover = SubResource("StyleBoxFlat_thu7x")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2af52")
-theme_override_styles/normal = SubResource("StyleBoxFlat_el213")
+theme_override_styles/normal = ExtResource("7_el213")
 text = "FISHIN (in progress)
 "
+autowrap_mode = 3
 script = ExtResource("6_yt8fu")
 
 [node name="FlyingFoodsContainer" type="Node2D" parent="."]
@@ -290,12 +350,13 @@ autoplay = true
 bus = &"menu music"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(118.75, 66)
+position = Vector2(78, 96)
 scale = Vector2(0.231446, 0.191406)
 texture = ExtResource("8_1abgu")
 
 [node name="MakeYourPlayer" parent="." instance=ExtResource("9_yt8fu")]
-position = Vector2(199, 619)
-scale = Vector2(2, 2)
+unique_name_in_owner = true
+position = Vector2(356, 904)
 
+[connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="FishButton" to="Button" method="_on_fish_button_pressed"]
