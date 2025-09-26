@@ -2,78 +2,109 @@ extends Control
 
 # Nodes
 @onready var eating_pet = $ColorRect/EatingPet
-@onready var foods_container = $FlyingFoodsContainer
-@onready var coins_container = $FlyingCoinsContainer
+@onready var coins_container = $ColorRect/FlyingCoinsContainer
 @onready var coins_label = $ColorRect/CoinsLabel
 
 # Scenes
 @export var coin_scene: PackedScene
-var food_scene: PackedScene = preload("res://scenes/Food.tscn")  # preload once
+var food_scene: PackedScene = preload("res://scenes/Food.tscn")
+
+# Config
+@export var coins_per_food: int = 4
+@export var coin_stagger: float = 0.05
 
 # State
-var displayed_coins = 0
+var displayed_coins: int = 0
+var active_coins := []
+
 
 func _ready():
-	# Start the coin counter at 0
-	displayed_coins = 0
+	# Safe connection (only if not already connected)
+	var callable = Callable(%CoinsLabel, "_on_coins_changed")
+	if not Global.is_connected("coins_changed", callable):
+		Global.connect("coins_changed", callable)
+
+	# Set initial value
+	%CoinsLabel.text = str(Global.coins)
+	# Clear leftover coins
+	for coin in active_coins:
+		if is_instance_valid(coin):
+			coin.queue_free()
+	active_coins.clear()
+	for coin in coins_container.get_children():
+		if is_instance_valid(coin):
+			coin.queue_free()
+
+	# Reset coin display
+	displayed_coins = Global.coins
 	coins_label.text = str(displayed_coins)
 
-	# Spawn flying foods for all caught foods
+
+# Call this AFTER fishing finishes
+func trigger_flying_foods():
+	if PlayerData.caught_food_count <= 0:
+		return
+
 	for i in range(PlayerData.caught_food_count):
 		spawn_flying_food()
-
-	# Reset caught foods
 	PlayerData.caught_food_count = 0
+
 
 func spawn_flying_food():
 	var food = food_scene.instantiate()
-	foods_container.add_child(food)
+	add_child(food) # add to the root node
 
-	# Start at bottom of the screen with random X
+	# Start at bottom of the screen
 	var screen_size = get_viewport_rect().size
-	food.position = Vector2(randf_range(100, screen_size.x - 100), screen_size.y - 50)
+	food.global_position = Vector2(randf_range(100, screen_size.x - 100), screen_size.y + 20)
 
-	# Tween food to the pet
+	# Tween directly to the EatingPet
 	var food_tween = create_tween()
-	food_tween.tween_property(food, "position", eating_pet.global_position, 0.7)
+	food_tween.tween_property(food, "global_position", eating_pet.global_position, 0.7)
 	food_tween.tween_callback(Callable(self, "_on_food_reached_pet").bind(food))
 
+
 func _on_food_reached_pet(food):
-	if is_instance_valid(food):
-		food.queue_free()
-		spawn_flying_coin()
+	if not is_instance_valid(food):
+		return
 
-func spawn_flying_coin(amount = 4):
-	for i in range(amount):
-		var coin = coin_scene.instantiate()
-		coins_container.add_child(coin)
+	food.queue_free()
 
-		# Start at pet's position with small random offset
-		coin.position = eating_pet.global_position
-		coin.position.x += randf_range(-10, 10)
-		coin.position.y += randf_range(-10, 10)
+	# Spawn coins at pet
+	for i in range(coins_per_food):
+		spawn_single_coin(i * coin_stagger)
 
-		# Target is the center of the coins_label
-		var label_pos = coins_label.get_global_position()
-		var label_size = coins_label.get_size()
-		var target_pos = label_pos + Vector2(label_size.x / 2, label_size.y / 2)
 
-		# Tween coin to label
-		var coin_tween = create_tween()
-		coin_tween.tween_interval(i * 0.05)  # stagger coins slightly
-		coin_tween.tween_property(coin, "position", target_pos, 0.5 + randf() * 0.2)
-		coin_tween.tween_callback(Callable(self, "_on_coin_reached_label").bind(coin))
+func spawn_single_coin(delay: float = 0.0):
+	var coin = coin_scene.instantiate()
+	coins_container.add_child(coin)
+	active_coins.append(coin)
+	coin.set_meta("counted", false)
+
+	# Start at EatingPet global position
+	coin.global_position = eating_pet.global_position + Vector2(randf_range(-10, 10), randf_range(-10, 10))
+
+	# Target is coin label center global position
+	var target_pos = coins_label.global_position + coins_label.size / 2
+
+	# Create a tween attached to the coin to prevent garbage collection
+	var coin_tween = create_tween()
+	coin_tween.tween_interval(delay)
+	coin_tween.tween_property(coin, "global_position", target_pos, 0.7)
+	coin_tween.tween_callback(Callable(self, "_on_coin_reached_label").bind(coin))
+
 
 func _on_coin_reached_label(coin):
-	if is_instance_valid(coin):
+	if not is_instance_valid(coin):
+		return
+
+	if coin.has_meta("counted") and coin.get_meta("counted") == true:
 		coin.queue_free()
-		_increment_coin()
+		return
 
-func _increment_coin():
-	displayed_coins += 1
-	coins_label.text = str(displayed_coins)
-	PlayerData.coins += 1
+	coin.set_meta("counted", true)
+	coin.queue_free()
+	active_coins.erase(coin)
 
-
-func _on_shop_button_pressed() -> void:
-	pass # Replace with function body.
+	# Use Global method so the signal is emitted
+	Global.add_coins(1)

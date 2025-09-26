@@ -7,7 +7,7 @@ func _ready():
 func _on_pressed():
 	print("Button clicked!")
 
-	var anim = get_node("../ColorRect/Shop/Anim")
+	var anim = get_node("/root/Control/Shop/Anim")
 	if anim:
 		print("AnimationPlayer found!")
 		anim.play("TransIn")

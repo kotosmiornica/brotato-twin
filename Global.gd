@@ -1,28 +1,46 @@
 extends Node
 
-var coins = 100
+var coins = 0
+signal coins_changed(new_amount)
 
-var items = {
-	0: {
-		"Name": "MikuWig",
-		"Des": "Cool shi",
-		"Cost": 5
+
+func add_coins(amount):
+	coins += amount
+	emit_signal("coins_changed", coins)
+
+func spend_coins(amount: int) -> bool:
+	if coins >= amount:
+		coins -= amount
+		emit_signal("coins_changed", coins)
+		return true
+	return false
+
+
+var items = [
+	{
+		"Name": "BlueWig",
+		"Des": "Suddenly you want to sing at 750BPM.",
+		"Cost": 50
 	},
-	1: {
+	{
 		"Name": "Heart",
-		"Des": "Equipping this fills you with...something.",
-		"Cost": 10
+		"Des": "Equipping this fills you with determination.",
+		"Cost": 80
+	}
+]
+
+
+
+
+var inventory = [
+	{
+		"Name": "BlueWig",
+		"Des": "Suddenly you want to sing at 750BPM.",
+		"Cost": 50
 	},
-}
-
-
-
-var inventory = {
-	0: {
-		"Name": "MikuWig",
-		"Des": "Cool shi",
-		"Cost": 5,
-		"Count": 1
-	},
-	
-}
+	{
+		"Name": "Heart",
+		"Des": "Equipping this fills you with determination.",
+		"Cost": 80
+	}
+]

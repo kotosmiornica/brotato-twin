@@ -137,24 +137,25 @@ color = Color(0.870379, 1, 0.92146, 1)
 [node name="Brotat" parent="." instance=ExtResource("2_mrt1k")]
 position = Vector2(936, 525)
 
-[node name="Camera2D" type="Camera2D" parent="Brotat"]
-
-[node name="Weapons2" type="Node2D" parent="Brotat"]
-
 [node name="ProgressBar" type="ProgressBar" parent="Brotat"]
 unique_name_in_owner = true
-offset_left = -94.0
-offset_top = -138.0
-offset_right = 94.0
-offset_bottom = -111.0
+offset_left = -93.0
+offset_top = -169.0
+offset_right = 95.0
+offset_bottom = -142.0
 theme_override_styles/background = SubResource("StyleBoxFlat_l26od")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qqaft")
 max_value = 180.0
 value = 180.0
 show_percentage = false
 
+[node name="Camera2D" type="Camera2D" parent="Brotat"]
+
+[node name="Weapons2" type="Node2D" parent="Brotat"]
+
 [node name="Path2D" type="Path2D" parent="Brotat"]
-position = Vector2(-936, -525)
+position = Vector2(-1228.62, -678.978)
+scale = Vector2(1.3037, 1.3037)
 curve = SubResource("Curve2D_qqaft")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Brotat/Path2D"]
@@ -216,19 +217,6 @@ volume_db = -0.075
 autoplay = true
 bus = &"Music"
 
-[node name="Pause" type="CanvasLayer" parent="."]
-
-[node name="PauseMenu" parent="Pause" instance=ExtResource("7_hs66j")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 905.0
-offset_top = 521.0
-offset_right = 905.0
-offset_bottom = 521.0
-grow_horizontal = 1
-grow_vertical = 1
-
 [node name="XPpickups" parent="." instance=ExtResource("8_fp0yo")]
 visible = false
 
@@ -244,6 +232,19 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_getvi")
 max_value = 10.0
 show_percentage = false
 script = ExtResource("9_7yhjp")
+
+[node name="Pause" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="Pause" instance=ExtResource("7_hs66j")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 905.0
+offset_top = 521.0
+offset_right = 905.0
+offset_bottom = 521.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [connection signal="health_depleted" from="Brotat" to="." method="_on_brotat_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

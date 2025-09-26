@@ -33,7 +33,7 @@ func _on_button_pressed() -> void:
 
 func start_next_wave():
 	current_wave += 1
-	var enemy_count = base_enemy_count * pow(2, current_wave - 1)
+	var enemy_count = base_enemy_count * pow(1.2, current_wave - 1)
 	print("Wave %d: Spawning %d enemies" % [current_wave, enemy_count])
 	
 	for i in range(enemy_count):

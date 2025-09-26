@@ -59,7 +59,7 @@ func _process(delta):
 			hook.visible = false
 			# Update singleton with caught food
 			PlayerData.caught_food_count = caught_foods.size()
-			PlayerData.coins += caught_foods.size() * 10
+			Global.coins += caught_foods.size() * 10
 			get_tree().change_scene_to_file("res://scenes/Menu.tscn")
 
 func spawn_food():

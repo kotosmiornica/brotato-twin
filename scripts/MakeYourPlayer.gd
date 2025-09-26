@@ -4,7 +4,7 @@ var health = 100
 var health_depleted 
 
 # Cache the AnimatedSprite2D child for easy access
-@onready var anim_sprite = $AnimatedSprite2D  # Make sure this path matches your scene tree
+@onready var anim_sprite = $Car  # Make sure this path matches your scene tree
 
 func _physics_process(_delta: float) -> void:	
 	# Play the correct animation based on movement
@@ -23,3 +23,16 @@ func _physics_process(_delta: float) -> void:
 			health_depleted.emit()
 			get_tree().paused = false
 			get_tree().change_scene_to_file("res://scenes/Menu.tscn")
+
+
+func buy_miku_wig() -> void:
+	var wig_node = $MikuWig
+	if wig_node:
+		wig_node.visible = true
+		if wig_node.has_method("play") and wig_node.animation_names.size() > 0:
+			wig_node.animation = wig_node.animation_names[0]
+			wig_node.play()
+		wig_node.z_index = 10
+		print("Miku wig activated!")
+	else:
+		print("MikuWig node not found!")
