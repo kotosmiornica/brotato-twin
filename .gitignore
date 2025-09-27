@@ -25,3 +25,4 @@ mono_crash.*.json
 # Custom
 *.tmp
 /build
+*.exe
