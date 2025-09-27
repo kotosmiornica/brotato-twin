@@ -4,19 +4,18 @@ extends Control
 @export var price: int
 @export var description: String
 
-# Safe references to child nodes
+
 @onready var buy_button = $Button if has_node("Button") else null
 @onready var name_label = $NameLabel if has_node("NameLabel") else null
 @onready var price_label = $PriceLabel if has_node("PriceLabel") else null
 
 func _ready():
-	# Set labels safely
 	if name_label:
 		name_label.text = item_name
 	if price_label:
 		price_label.text = str(price) + " Coins"
 	
-	# Connect buy button safely
+
 	if buy_button:
 		buy_button.pressed.connect(Callable(self, "_on_buy_pressed"))
 

@@ -703,6 +703,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(-561, 873)
 script = ExtResource("1_jmdev")
 coin_scene = ExtResource("2_b6cxs")
 
@@ -717,15 +718,17 @@ position = Vector2(458, 688)
 scale = Vector2(6.58, 6.58)
 sprite_frames = SubResource("SpriteFrames_sm01i")
 animation = &"BlueWig"
+autoplay = "BlueWig"
 frame_progress = 0.687838
 
 [node name="Heart" type="AnimatedSprite2D" parent="MakeYourPlayer"]
 visible = false
 top_level = true
-position = Vector2(455, 486)
+position = Vector2(455, 565)
 scale = Vector2(7.02, 7.02)
 sprite_frames = SubResource("SpriteFrames_36bst")
 animation = &"Heart"
+autoplay = "Heart"
 frame_progress = 0.91653
 
 [node name="Shop" parent="." instance=ExtResource("3_pp5m5")]

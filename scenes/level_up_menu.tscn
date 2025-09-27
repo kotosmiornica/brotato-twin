@@ -31,7 +31,7 @@ expand_margin_left = 5.0
 expand_margin_top = 5.0
 expand_margin_right = 5.0
 expand_margin_bottom = 5.0
-shadow_color = Color(0, 0, 0, 0.670588)
+shadow_color = Color(0, 0, 0, 0.847059)
 shadow_size = 26
 shadow_offset = Vector2(0, 20)
 
@@ -177,6 +177,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_buj6g")
 script = ExtResource("10_jqsxd")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel/bleach3"]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 59.0
 offset_right = 380.0
@@ -215,6 +216,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="Label3" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
 offset_left = 37.0
 offset_top = 732.0
 offset_right = 1446.0

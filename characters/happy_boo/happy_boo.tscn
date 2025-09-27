@@ -471,4 +471,3 @@ position = Vector2(0, -74)
 scale = Vector2(2.08, 2.08)
 sprite_frames = SubResource("SpriteFrames_lvkgr")
 animation = &"idle"
-frame_progress = 0.906566

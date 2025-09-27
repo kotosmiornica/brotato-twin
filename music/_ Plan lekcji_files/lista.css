@@ -1,0 +1,18 @@
+body{
+	background-color:#e1e6f5;
+	color:#000000;
+	font:11px verdana,sans-serif;
+	margin:10}
+h4{
+	font:bold 11px verdana,sans-serif;
+	margin-bottom:0}
+ul{
+	margin-top:0}
+p{
+	font:bold 11px verdana,sans-serif}
+a:link{color:#2e448f}
+a:visited{color:#4e6ac7}
+a:hover{color:#2e448f;text-decoration:none}
+a.pp:link,a.pp:visited{color:#2e448f;font-weight:bold}
+a.pp:hover{text-decoration:none}
+.logo{text-align:center;margin-bottom:10px}

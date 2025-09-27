@@ -707,15 +707,17 @@ scale = Vector2(6.56, 6.56)
 sprite_frames = SubResource("SpriteFrames_pxwo6")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.657319
+frame_progress = 0.0793627
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1, -4)
 scale = Vector2(1.12, 1.16)
 shape = SubResource("CapsuleShape2D_rxf2w")
 
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true
+visible = false
 position = Vector2(67, -15)
 collision_layer = 0
 collision_mask = 2
@@ -741,4 +743,4 @@ position = Vector2(1, -275)
 scale = Vector2(6.7, 6.7)
 sprite_frames = SubResource("SpriteFrames_ico8o")
 autoplay = "default"
-frame_progress = 0.589379
+frame_progress = 0.549469

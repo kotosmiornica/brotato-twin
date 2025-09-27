@@ -3,17 +3,16 @@ extends CharacterBody2D
 var health = 100
 var health_depleted 
 
-# Cache the AnimatedSprite2D child for easy access
-@onready var anim_sprite = $Car  # Make sure this path matches your scene tree
+
+@onready var anim_sprite = $Car
 
 func _physics_process(_delta: float) -> void:	
-	# Play the correct animation based on movement
 	if velocity.length() > 0.0:
 		anim_sprite.play("walk")
 	else:
 		anim_sprite.play("idle")
 
-	# Damage logic
+
 	const DAMAGE_RATE = 25.0
 	var overlapping_mobs = $HurtBox.get_overlapping_bodies()
 	if overlapping_mobs.size() > 0:
@@ -36,3 +35,16 @@ func buy_miku_wig() -> void:
 		print("Miku wig activated!")
 	else:
 		print("MikuWig node not found!")
+
+
+func buy_heart() -> void:
+	var heart_node = $Heart
+	if heart_node:
+		heart_node.visible = true
+		if heart_node.has_method("play") and heart_node.animation_names.size() > 0:
+			heart_node.animation = heart_node.animation_names[0]
+			heart_node.play()
+		heart_node.z_index = 10
+		print("Heart activated!")
+	else:
+		print("Heart not found!")
