@@ -238,12 +238,12 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rxf2w"]
-radius = 83.0357
-height = 175.0
+radius = 71.5515
+height = 143.103
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qlg0r"]
-radius = 75.0
-height = 394.0
+radius = 55.0
+height = 298.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6c8sk"]
 atlas = ExtResource("3_teihm")
@@ -702,15 +702,15 @@ script = ExtResource("1_28sph")
 
 [node name="Car" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0, -179)
-scale = Vector2(4.36, 4.36)
+position = Vector2(3, -265)
+scale = Vector2(6.56, 6.56)
 sprite_frames = SubResource("SpriteFrames_pxwo6")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.998033
+frame_progress = 0.657319
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 12)
+position = Vector2(-1, -4)
 scale = Vector2(1.12, 1.16)
 shape = SubResource("CapsuleShape2D_rxf2w")
 
@@ -721,7 +721,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(-67, -105)
+position = Vector2(-66, -83)
 shape = SubResource("CapsuleShape2D_qlg0r")
 debug_color = Color(0.854248, 0.314498, 0.503126, 0.42)
 
@@ -732,7 +732,7 @@ position = Vector2(-1, -130)
 scale = Vector2(6.4, 6.4)
 sprite_frames = SubResource("SpriteFrames_wxvjd")
 autoplay = "default"
-frame_progress = 0.367388
+frame_progress = 0.589908
 
 [node name="3Heart" type="AnimatedSprite2D" parent="."]
 visible = false

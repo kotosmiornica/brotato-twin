@@ -110,3 +110,4 @@ offset_bottom = 23.0
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_2kclr")
 autoplay = true
+bus = &"fishin idle"

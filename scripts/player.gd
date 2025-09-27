@@ -52,7 +52,7 @@ func _physics_process(_delta: float) -> void:
 
 var cutters: Array = []
 
-func add_cutter(cutter_scene: PackedScene):
+func add_cutter(cutter_scene):
 	var cutter = cutter_scene.instantiate()
 	cutter.player = self
 	add_child(cutter)

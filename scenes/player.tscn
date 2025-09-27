@@ -1,42 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://dpi6hxo5ndgqr"]
+[gd_scene load_steps=7 format=3 uid="uid://dpi6hxo5ndgqr"]
 
 [ext_resource type="Script" uid="uid://bx0ncnqoovrt4" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="2_dqkch"]
 [ext_resource type="Script" uid="uid://btg3vkpyhl62d" path="res://scripts/HappyBoo.gd" id="3_dqkch"]
 [ext_resource type="PackedScene" uid="uid://kvg3tmks0ch2" path="res://scenes/gun.tscn" id="3_qlg0r"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
-radius = 23.0217
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dqkch"]
+radius = 30.3571
+height = 91.3793
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qlg0r"]
 radius = 35.0
 height = 134.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhqgy"]
-bg_color = Color(0.152941, 0.168627, 0.188235, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-corner_detail = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqkch"]
-bg_color = Color(0, 0.901032, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
 
 [node name="Brotat" type="CharacterBody2D"]
 top_level = true
@@ -50,11 +25,13 @@ unique_name_in_owner = true
 script = ExtResource("3_dqkch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15)
 scale = Vector2(1.12, 1.16)
-shape = SubResource("CircleShape2D_onrkg")
+shape = SubResource("CapsuleShape2D_dqkch")
 
 [node name="gun" parent="." instance=ExtResource("3_qlg0r")]
 position = Vector2(-2, -48)
+audio_bus_name = &"shot"
 
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -65,18 +42,3 @@ collision_mask = 2
 position = Vector2(-1, -33)
 shape = SubResource("CapsuleShape2D_qlg0r")
 debug_color = Color(0.854248, 0.314498, 0.503126, 0.42)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
-unique_name_in_owner = true
-offset_left = -100.0
-offset_top = -138.0
-offset_right = 100.0
-offset_bottom = -111.0
-theme_override_styles/background = SubResource("StyleBoxFlat_qhqgy")
-theme_override_styles/fill = SubResource("StyleBoxFlat_dqkch")
-max_value = 150.0
-value = 150.0
-show_percentage = false
-metadata/_edit_use_anchors_ = true

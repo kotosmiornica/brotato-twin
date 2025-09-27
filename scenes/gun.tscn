@@ -18,7 +18,8 @@ shape = SubResource("CircleShape2D_og67c")
 [node name="WeaponPivot" type="Marker2D" parent="."]
 
 [node name="Pistol" type="Sprite2D" parent="WeaponPivot"]
-position = Vector2(110, 3)
+position = Vector2(155, 3)
+scale = Vector2(0.84, 0.84)
 texture = ExtResource("1_x77fm")
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
@@ -31,5 +32,7 @@ autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_gp1hk")
+volume_db = 24.0
+bus = &"shot"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

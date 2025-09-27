@@ -166,8 +166,284 @@ rotation = 0.0019984
 [node name="tri" parent="." instance=ExtResource("4_hfi5g")]
 position = Vector2(386, 405)
 
+[node name="tri" parent="tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(1491, -622)
+
+[node name="tri" parent="tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-1412, -212)
+
+[node name="tri" parent="tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(1287, 108)
+
+[node name="tri" parent="tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-1712, -922)
+
+[node name="tri" parent="tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(2076, 440)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-1582, 2502)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(2772, -289)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-5831, -1162)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(4521, -2250)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-2478, 4826)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(1315, 26)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(1330, -20)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(1102, -506)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(836, -3408)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-1091, 281)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-4852, 1544)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(1170, 1464)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-555, -4167)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-1479, 3922)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(35, -880)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-620, -1119)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-64, -724)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(760, -1423)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(5889, -158)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(1857, 1141)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-692, 4458)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-1860, 1265)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-1663, -624)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-1544, 548)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-1170, -1538)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-2124, -929)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-128, -2154)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-589, -983)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(64, 1752)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(6728, 901)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(72, 82)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-3630, -1103)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(1017, 1244)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-176, -147)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(1281, -3330)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(596, 9)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-301, 232)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-64, 98)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(136, 3)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(69, 65)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-269, 0)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(352, 19)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-437, 3)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(516, -28)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-604, -8)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(665, -53)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-730, -8)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(729, -57)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-730, -24)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(0, 47)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(5, 59)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(59, 62)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(70, 53)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(87, -7)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(75, -31)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(77, -105)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(67, 63)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(59, 45)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(81, 43)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(79, -28)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(60, -64)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(16, -47)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(3, 65)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(-659, -408)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(588, -8)
+
+[node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
+position = Vector2(476, -60)
+
 [node name="tri2" parent="." instance=ExtResource("4_hfi5g")]
 position = Vector2(1277, 158)
+
+[node name="tri2" parent="tri2" instance=ExtResource("4_hfi5g")]
+position = Vector2(-2446, -705)
+
+[node name="tri2" parent="tri2/tri2" instance=ExtResource("4_hfi5g")]
+position = Vector2(2466, -390)
+
+[node name="tri2" parent="tri2/tri2/tri2" instance=ExtResource("4_hfi5g")]
+position = Vector2(-2746, 1512)
+
+[node name="tri2" parent="tri2/tri2/tri2/tri2" instance=ExtResource("4_hfi5g")]
+position = Vector2(5916, 1579)
+
+[node name="tri2" parent="tri2/tri2/tri2/tri2/tri2" instance=ExtResource("4_hfi5g")]
+position = Vector2(-2261, 88)
+
+[node name="tri2" parent="tri2/tri2/tri2/tri2/tri2/tri2" instance=ExtResource("4_hfi5g")]
+position = Vector2(1860, -2205)
+
+[node name="tri2" parent="tri2/tri2/tri2/tri2/tri2/tri2/tri2" instance=ExtResource("4_hfi5g")]
+position = Vector2(-8032, -1922)
+
+[node name="tri2" parent="tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2" instance=ExtResource("4_hfi5g")]
+position = Vector2(5091, -1350)
+
+[node name="tri2" parent="tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2" instance=ExtResource("4_hfi5g")]
+position = Vector2(-2049, 4646)
+
+[node name="tri2" parent="tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2" instance=ExtResource("4_hfi5g")]
+position = Vector2(-1671, -2085)
+
+[node name="tri2" parent="tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2" instance=ExtResource("4_hfi5g")]
+position = Vector2(8782, -2958)
+
+[node name="tri2" parent="tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2" instance=ExtResource("4_hfi5g")]
+position = Vector2(-1792, 365)
+
+[node name="tri2" parent="tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2" instance=ExtResource("4_hfi5g")]
+position = Vector2(-5431, 3)
+
+[node name="tri2" parent="tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2" instance=ExtResource("4_hfi5g")]
+position = Vector2(1477, 996)
+
+[node name="tri2" parent="tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2" instance=ExtResource("4_hfi5g")]
+position = Vector2(6434, 3239)
+
+[node name="tri2" parent="tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2" instance=ExtResource("4_hfi5g")]
+position = Vector2(-8102, 2202)
+
+[node name="tri2" parent="tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2" instance=ExtResource("4_hfi5g")]
+position = Vector2(2484, -985)
+
+[node name="tri2" parent="tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2" instance=ExtResource("4_hfi5g")]
+position = Vector2(3145, -1350)
+
+[node name="tri2" parent="tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2" instance=ExtResource("4_hfi5g")]
+position = Vector2(-4834, -735)
+
+[node name="tri2" parent="tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2" instance=ExtResource("4_hfi5g")]
+position = Vector2(-2338, -1557)
+
+[node name="tri2" parent="tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2/tri2" instance=ExtResource("4_hfi5g")]
+position = Vector2(893, 2857)
 
 [node name="tri3" parent="." instance=ExtResource("4_hfi5g")]
 position = Vector2(1744, 971)
@@ -175,8 +451,23 @@ position = Vector2(1744, 971)
 [node name="tri4" parent="." instance=ExtResource("4_hfi5g")]
 position = Vector2(401, 1039)
 
-[node name="tri6" parent="." instance=ExtResource("4_hfi5g")]
-position = Vector2(1922, 276)
+[node name="tri15" parent="." instance=ExtResource("4_hfi5g")]
+position = Vector2(-336, -1685)
+
+[node name="tri14" parent="." instance=ExtResource("4_hfi5g")]
+position = Vector2(-391, 1387)
+
+[node name="tri13" parent="." instance=ExtResource("4_hfi5g")]
+position = Vector2(3230, -201)
+
+[node name="tri12" parent="." instance=ExtResource("4_hfi5g")]
+position = Vector2(2946, -1008)
+
+[node name="tri11" parent="." instance=ExtResource("4_hfi5g")]
+position = Vector2(2309, 463)
+
+[node name="tri10" parent="." instance=ExtResource("4_hfi5g")]
+position = Vector2(1234, 1878)
 
 [node name="tri7" parent="." instance=ExtResource("4_hfi5g")]
 position = Vector2(1109, 701)
@@ -192,6 +483,7 @@ wait_time = 0.3
 autostart = true
 
 [node name="Fade" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Fade"]
 anchors_preset = 15

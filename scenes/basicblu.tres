@@ -3,7 +3,12 @@
 [resource]
 content_margin_top = 10.0
 content_margin_bottom = 10.0
-bg_color = Color(4.42803e-06, 0.722603, 0.96745, 1)
+bg_color = Color(1.92523e-06, 0.746415, 0.998759, 1)
+border_width_left = 4
+border_width_top = 5
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.359869, 0.792895, 1, 1)
 corner_radius_top_left = 200
 corner_radius_top_right = 200
 corner_radius_bottom_right = 200

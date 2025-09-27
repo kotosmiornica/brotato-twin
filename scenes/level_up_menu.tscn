@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://be8tpxxc3acpp"]
+[gd_scene load_steps=16 format=3 uid="uid://be8tpxxc3acpp"]
 
 [ext_resource type="Script" uid="uid://ds5tgr03uxpb4" path="res://scripts/level_up_menu.gd" id="1_nt8lk"]
 [ext_resource type="Texture2D" uid="uid://5dqd22nuwgd2" path="res://images/soda_1812051.png" id="2_d3utp"]
@@ -6,15 +6,34 @@
 [ext_resource type="Texture2D" uid="uid://cfug706gfmik" path="res://pistol/pizza-cutter_184486.png" id="3_o5r7b"]
 [ext_resource type="StyleBox" uid="uid://diaewu28mnlyu" path="res://scenes/pressedbasicblu.tres" id="3_sogc5"]
 [ext_resource type="Texture2D" uid="uid://dxhoxtbv2h5os" path="res://images/bleach_2797128.png" id="4_o5r7b"]
+[ext_resource type="Script" uid="uid://cd3proto745io" path="res://scenes/soda_1.gd" id="5_2tu1p"]
+[ext_resource type="AudioStream" uid="uid://cn254y6phru30" path="res://music/plop.wav" id="5_buj6g"]
 [ext_resource type="FontFile" uid="uid://b8ok8fndx02wu" path="res://Pansy Hand/pansyhand.ttf" id="5_yu4sn"]
+[ext_resource type="Script" uid="uid://dh3omuiod7mt8" path="res://scenes/pizzacutter_2.gd" id="8_pwcma"]
+[ext_resource type="Script" uid="uid://ofh0s2kyo5el" path="res://scenes/bleach_3.gd" id="10_jqsxd"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nt8lk"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0, 0.333333, 0.513726, 1)
-corner_radius_top_left = 30
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2tu1p"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0.527263, 0.798925, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.654442, 0.847053, 1, 1)
+corner_radius_top_left = 95
+corner_radius_top_right = 95
+corner_radius_bottom_right = 95
+corner_radius_bottom_left = 95
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.670588)
+shadow_size = 26
+shadow_offset = Vector2(0, 20)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yu4sn"]
 bg_color = Color(0, 0.654902, 0.878431, 1)
@@ -33,6 +52,11 @@ content_margin_top = 2.0
 content_margin_right = 5.0
 content_margin_bottom = 2.0
 bg_color = Color(0, 0.654902, 0.878431, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.219608, 0.764706, 1, 1)
 corner_radius_top_left = 200
 corner_radius_top_right = 200
 corner_radius_bottom_right = 200
@@ -44,10 +68,15 @@ shadow_offset = Vector2(0, 20)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_buj6g"]
 bg_color = Color(7.89344e-06, 0.653494, 0.876982, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.220482, 0.766534, 0.999998, 1)
 corner_radius_top_left = 200
 corner_radius_top_right = 200
 corner_radius_bottom_right = 200
-corner_radius_bottom_left = 199
+corner_radius_bottom_left = 200
 corner_detail = 10
 shadow_color = Color(0, 0, 0, 1)
 shadow_size = 15
@@ -75,23 +104,20 @@ script = ExtResource("1_nt8lk")
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 top_level = true
 y_sort_enabled = true
-anchors_preset = -1
-anchor_left = 0.477
-anchor_top = 0.471
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.549
-offset_left = 44.16
-offset_top = 31.32
-offset_bottom = -52.92
-theme_override_styles/panel = SubResource("StyleBoxFlat_nt8lk")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Panel"]
-layout_mode = 0
-offset_left = -781.0
-offset_top = -477.0
-offset_right = 771.0
-offset_bottom = 489.0
-color = Color(0.458824, 0.784314, 1, 0.909804)
+anchor_bottom = 0.5
+offset_left = -746.0
+offset_top = -437.0
+offset_right = 746.0
+offset_bottom = 437.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_2tu1p")
 
 [node name="soda1" type="Button" parent="CanvasLayer/Panel"]
 visible = false
@@ -105,49 +131,97 @@ theme_override_styles/hover = ExtResource("2_yu4sn")
 theme_override_styles/pressed = ExtResource("3_sogc5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_yu4sn")
 icon = ExtResource("2_d3utp")
+script = ExtResource("5_2tu1p")
+
+[node name="click" type="AudioStreamPlayer" parent="CanvasLayer/Panel/soda1"]
+stream = ExtResource("5_buj6g")
+autoplay = true
+bus = &"popup"
 
 [node name="pizzacutter2" type="Button" parent="CanvasLayer/Panel"]
 layout_mode = 0
-offset_left = -719.0
-offset_top = -176.0
-offset_right = -157.0
-offset_bottom = 413.0
+offset_left = 185.0
+offset_top = 281.0
+offset_right = 623.0
+offset_bottom = 716.0
 focus_mode = 0
 theme_override_styles/hover = ExtResource("2_yu4sn")
 theme_override_styles/pressed = ExtResource("3_sogc5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_sogc5")
-icon = ExtResource("3_o5r7b")
+script = ExtResource("8_pwcma")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel/pizzacutter2"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 73.0
+offset_right = 371.0
+offset_bottom = 375.0
+texture = ExtResource("3_o5r7b")
+expand_mode = 1
+
+[node name="click" type="AudioStreamPlayer" parent="CanvasLayer/Panel/pizzacutter2"]
+stream = ExtResource("5_buj6g")
+autoplay = true
+bus = &"popup"
 
 [node name="bleach3" type="Button" parent="CanvasLayer/Panel"]
 layout_mode = 0
-offset_left = 152.0
-offset_top = -158.0
-offset_right = 664.0
-offset_bottom = 423.0
+offset_left = 849.0
+offset_top = 287.0
+offset_right = 1287.0
+offset_bottom = 724.0
 focus_mode = 0
 theme_override_styles/hover = ExtResource("2_yu4sn")
 theme_override_styles/pressed = ExtResource("3_sogc5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_buj6g")
-icon = ExtResource("4_o5r7b")
+script = ExtResource("10_jqsxd")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel/bleach3"]
+offset_left = 64.0
+offset_top = 59.0
+offset_right = 380.0
+offset_bottom = 375.0
+texture = ExtResource("4_o5r7b")
+expand_mode = 1
+
+[node name="click" type="AudioStreamPlayer" parent="CanvasLayer/Panel/bleach3"]
+stream = ExtResource("5_buj6g")
+autoplay = true
+bus = &"popup"
 
 [node name="Label2" type="Label" parent="CanvasLayer/Panel"]
+top_level = true
 layout_mode = 0
-offset_left = -222.0
-offset_top = -461.0
-offset_right = 195.0
-offset_bottom = -307.0
+offset_left = 743.0
+offset_top = 74.0
+offset_right = 1217.0
+offset_bottom = 250.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_yu4sn")
-theme_override_font_sizes/font_size = 180
+theme_override_font_sizes/font_size = 205
 text = "Level up!!!"
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel"]
 layout_mode = 1
-offset_left = -496.0
-offset_top = -328.0
-offset_right = 517.0
-offset_bottom = -191.0
+offset_left = 68.9199
+offset_top = 106.0
+offset_right = 1416.92
+offset_bottom = 260.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_yu4sn")
-theme_override_font_sizes/font_size = 150
-text = "CHOOSE YOUR NEW WEAPON :0"
+theme_override_font_sizes/font_size = 180
+text = "CHOOSE YOUR NEW WEAPON!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="CanvasLayer/Panel"]
+offset_left = 37.0
+offset_top = 732.0
+offset_right = 1446.0
+offset_bottom = 840.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_yu4sn")
+theme_override_font_sizes/font_size = 125
+text = "or upgrade the one you already have :3"
+horizontal_alignment = 1
+autowrap_mode = 3

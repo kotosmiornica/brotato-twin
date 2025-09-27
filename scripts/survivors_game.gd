@@ -1,5 +1,6 @@
 extends Node2D
 
+
 @export var base_enemy_count: int = 10
 var current_wave: int = 0
 

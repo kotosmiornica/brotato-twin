@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://cqcwtk4w1gpdv"]
+[gd_scene load_steps=93 format=3 uid="uid://cqcwtk4w1gpdv"]
 
 [ext_resource type="Script" uid="uid://d1wrmtooq2n67" path="res://scripts/menu.gd" id="1_jmdev"]
 [ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="1_o0tnf"]
@@ -13,6 +13,7 @@
 [ext_resource type="StyleBox" uid="uid://bf5lod7pf26wg" path="res://scenes/orange.tres" id="7_el213"]
 [ext_resource type="Texture2D" uid="uid://bablixbbdhdc" path="res://images/coin (2).png" id="8_1abgu"]
 [ext_resource type="PackedScene" uid="uid://ir2j60as2m8m" path="res://scenes/ChooseYourPlayer.tscn" id="9_yt8fu"]
+[ext_resource type="AudioStream" uid="uid://bnda3v2s6m0k3" path="res://music/menuclick.wav" id="11_rtd1e"]
 [ext_resource type="Texture2D" uid="uid://cvgt8kixrabpy" path="res://images/sheets/Miku_idlewig_sheet.png" id="14_7ycwl"]
 [ext_resource type="Texture2D" uid="uid://bkcljvg88hmay" path="res://images/sheets/UndHeartSheet.png" id="15_rtd1e"]
 
@@ -712,8 +713,8 @@ position = Vector2(455, 904)
 [node name="BlueWig" type="AnimatedSprite2D" parent="MakeYourPlayer"]
 visible = false
 top_level = true
-position = Vector2(455, 757)
-scale = Vector2(4.34, 4.34)
+position = Vector2(458, 688)
+scale = Vector2(6.58, 6.58)
 sprite_frames = SubResource("SpriteFrames_sm01i")
 animation = &"BlueWig"
 frame_progress = 0.687838
@@ -721,8 +722,8 @@ frame_progress = 0.687838
 [node name="Heart" type="AnimatedSprite2D" parent="MakeYourPlayer"]
 visible = false
 top_level = true
-position = Vector2(455, 690)
-scale = Vector2(5.2, 5.2)
+position = Vector2(455, 486)
+scale = Vector2(7.02, 7.02)
 sprite_frames = SubResource("SpriteFrames_36bst")
 animation = &"Heart"
 frame_progress = 0.91653
@@ -843,6 +844,9 @@ text = "Go to FIGHT.
 "
 autowrap_mode = 3
 script = ExtResource("2_5yleq")
+
+[node name="click" type="AudioStreamPlayer" parent="Button"]
+stream = ExtResource("11_rtd1e")
 
 [node name="ShopButton" type="Button" parent="."]
 layout_mode = 0

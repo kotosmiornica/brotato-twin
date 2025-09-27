@@ -1,12 +1,12 @@
 [gd_resource type="AudioBusLayout" format=3 uid="uid://c0r1synmqj70v"]
 
 [resource]
-bus/0/volume_db = -3.61539
+bus/0/volume_db = -14.6228
 bus/1/name = &"Music"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
-bus/1/volume_db = -11.7854
+bus/1/volume_db = -3.05179
 bus/1/send = &"Master"
 bus/2/name = &"Sounds"
 bus/2/solo = false
@@ -14,11 +14,11 @@ bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = -24.6756
 bus/2/send = &"Master"
-bus/3/name = &"IdleMusic"
+bus/3/name = &"fishin idle"
 bus/3/solo = false
 bus/3/mute = false
 bus/3/bypass_fx = false
-bus/3/volume_db = -12.1257
+bus/3/volume_db = 2.647
 bus/3/send = &"Master"
 bus/4/name = &"shot"
 bus/4/solo = false
@@ -36,5 +36,17 @@ bus/6/name = &"menu music"
 bus/6/solo = false
 bus/6/mute = false
 bus/6/bypass_fx = false
-bus/6/volume_db = -5.13696
+bus/6/volume_db = -1.45259
 bus/6/send = &"Master"
+bus/7/name = &"click"
+bus/7/solo = false
+bus/7/mute = false
+bus/7/bypass_fx = false
+bus/7/volume_db = 6.02
+bus/7/send = &"Master"
+bus/8/name = &"popup"
+bus/8/solo = false
+bus/8/mute = false
+bus/8/bypass_fx = false
+bus/8/volume_db = -10.5236
+bus/8/send = &"Master"
