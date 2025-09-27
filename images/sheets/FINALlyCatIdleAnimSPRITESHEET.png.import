@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3paknk2uxog7"
-path="res://.godot/imported/FinalCatIdleAnimSheet.png-11d58d7f69bb446d486ba0b2c73251e0.ctex"
+uid="uid://5eiwexwlw540"
+path="res://.godot/imported/FINALlyCatIdleAnimSPRITESHEET.png-730c079ea4bdbed001ad7b5a01258968.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/sheets/FinalCatIdleAnimSheet.png"
-dest_files=["res://.godot/imported/FinalCatIdleAnimSheet.png-11d58d7f69bb446d486ba0b2c73251e0.ctex"]
+source_file="res://images/sheets/FINALlyCatIdleAnimSPRITESHEET.png"
+dest_files=["res://.godot/imported/FINALlyCatIdleAnimSPRITESHEET.png-730c079ea4bdbed001ad7b5a01258968.ctex"]
 
 [params]
 

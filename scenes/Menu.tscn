@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://cqcwtk4w1gpdv"]
+[gd_scene load_steps=95 format=3 uid="uid://cqcwtk4w1gpdv"]
 
 [ext_resource type="Script" uid="uid://d1wrmtooq2n67" path="res://scripts/menu.gd" id="1_jmdev"]
 [ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="1_o0tnf"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://wehan00wdsi5" path="res://scenes/Coin.tscn" id="2_b6cxs"]
 [ext_resource type="PackedScene" uid="uid://58ityb3umon8" path="res://scenes/Shopp.tscn" id="3_pp5m5"]
 [ext_resource type="Texture2D" uid="uid://dv6si3qh0nol5" path="res://images/kraken_14724220.png" id="3_yt8fu"]
+[ext_resource type="Texture2D" uid="uid://btlwbyjjf7a0l" path="res://images/sheets/MIKUMIKU.png" id="4_rtd1e"]
 [ext_resource type="Script" uid="uid://ca282vhax10g3" path="res://scenes/ShopButton.gd" id="6_4umqm"]
 [ext_resource type="Script" uid="uid://qe0t1w0hbi1v" path="res://scenes/coins_label.gd" id="6_thu7x"]
 [ext_resource type="Script" uid="uid://dyra1ld5cd5o2" path="res://scenes/fish_button.gd" id="6_yt8fu"]
@@ -14,128 +15,135 @@
 [ext_resource type="Texture2D" uid="uid://bablixbbdhdc" path="res://images/coin (2).png" id="8_1abgu"]
 [ext_resource type="PackedScene" uid="uid://ir2j60as2m8m" path="res://scenes/ChooseYourPlayer.tscn" id="9_yt8fu"]
 [ext_resource type="AudioStream" uid="uid://bnda3v2s6m0k3" path="res://music/menuclick.wav" id="11_rtd1e"]
-[ext_resource type="Texture2D" uid="uid://cvgt8kixrabpy" path="res://images/sheets/Miku_idlewig_sheet.png" id="14_7ycwl"]
 [ext_resource type="Texture2D" uid="uid://bkcljvg88hmay" path="res://images/sheets/UndHeartSheet.png" id="15_rtd1e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6c8sk"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(0, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(0, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5p0sf"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(100, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(100, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7t7qg"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(200, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(200, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l3wcu"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(300, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(300, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i7htd"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(400, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(400, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dek3k"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(500, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(500, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8fhjo"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(600, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(600, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_760fv"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(700, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(700, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rehui"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(800, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(800, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yvxia"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(900, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(900, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nxcfj"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(1000, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(1000, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uwbky"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(1100, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(1100, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r54wa"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(1200, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(1200, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uds2g"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(1300, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(1300, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jvsdq"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(1400, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(1400, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m74h7"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(1500, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(1500, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gut0v"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(1600, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(1600, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5fdov"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(1700, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(1700, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yqqfh"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(1800, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(1800, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_22i10"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(1900, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(1900, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gwo1h"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(2000, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(2000, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_btpd2"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(2100, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(2100, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ksyst"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(2200, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(2200, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_27abv"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(2300, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(2300, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_prgnb"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(2400, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(2400, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0d5s4"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(2500, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(2500, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pa8yy"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(2600, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(2600, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ftgtj"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(2700, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(2700, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xt522"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(2800, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(2800, 0, 100, 115)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dcs4r"]
-atlas = ExtResource("14_7ycwl")
-region = Rect2(2900, 0, 100, 100)
+atlas = ExtResource("4_rtd1e")
+region = Rect2(2900, 0, 100, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sm01i"]
+atlas = ExtResource("4_rtd1e")
+region = Rect2(3000, 0, 100, 115)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36bst"]
+atlas = ExtResource("4_rtd1e")
+region = Rect2(3100, 0, 100, 115)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sm01i"]
 animations = [{
@@ -229,10 +237,16 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dcs4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sm01i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36bst")
 }],
 "loop": true,
 "name": &"BlueWig",
-"speed": 17.0
+"speed": 15.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kbgxq"]
@@ -464,7 +478,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Heart",
-"speed": 16.0
+"speed": 15.0
 }]
 
 [sub_resource type="Animation" id="Animation_auux5"]
@@ -540,15 +554,13 @@ corner_detail = 20
 shadow_color = Color(0, 0, 0, 0.682353)
 shadow_offset = Vector2(10, 10)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4umqm"]
-content_margin_left = 25.0
-content_margin_right = 20.0
-bg_color = Color(1, 0.54131, 0.194125, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yt8fu"]
+bg_color = Color(0.914398, 0.454448, 5.77569e-07, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color(1, 0.770593, 0.330888, 1)
+border_color = Color(1, 0.759345, 0.291028, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -559,7 +571,7 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 shadow_color = Color(0, 0, 0, 1)
-shadow_size = 15
+shadow_size = 18
 shadow_offset = Vector2(2, 10)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pp5m5"]
@@ -584,37 +596,15 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_size = 4
 shadow_offset = Vector2(2, 10)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yt8fu"]
-bg_color = Color(0.914398, 0.454448, 5.77569e-07, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4umqm"]
+content_margin_left = 25.0
+content_margin_right = 20.0
+bg_color = Color(1, 0.54131, 0.194125, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color(1, 0.759345, 0.291028, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-corner_detail = 10
-expand_margin_left = 10.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 18
-shadow_offset = Vector2(2, 10)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ycwl"]
-content_margin_left = 2.0
-content_margin_top = 4.0
-content_margin_right = 2.0
-content_margin_bottom = 4.0
-bg_color = Color(0.98834, 0.493307, 1.73271e-06, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(1, 0.759345, 0.291028, 1)
+border_color = Color(1, 0.770593, 0.330888, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -652,15 +642,17 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_size = 9
 shadow_offset = Vector2(2, 10)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thu7x"]
-content_margin_left = 25.0
-content_margin_right = 20.0
-bg_color = Color(1, 0.54131, 0.194125, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ycwl"]
+content_margin_left = 2.0
+content_margin_top = 4.0
+content_margin_right = 2.0
+content_margin_bottom = 4.0
+bg_color = Color(0.98834, 0.493307, 1.73271e-06, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color(1, 0.770593, 0.330888, 1)
+border_color = Color(1, 0.759345, 0.291028, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -696,6 +688,28 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_size = 4
 shadow_offset = Vector2(2, 10)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thu7x"]
+content_margin_left = 25.0
+content_margin_right = 20.0
+bg_color = Color(1, 0.54131, 0.194125, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.770593, 0.330888, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+expand_margin_left = 10.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 15
+shadow_offset = Vector2(2, 10)
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -712,26 +726,24 @@ unique_name_in_owner = true
 position = Vector2(455, 904)
 
 [node name="BlueWig" type="AnimatedSprite2D" parent="MakeYourPlayer"]
-visible = false
 top_level = true
-position = Vector2(458, 688)
+position = Vector2(388.00003, 577)
 scale = Vector2(6.58, 6.58)
 sprite_frames = SubResource("SpriteFrames_sm01i")
 animation = &"BlueWig"
 autoplay = "BlueWig"
-frame_progress = 0.687838
+offset = Vector2(10.638298, 9.422493)
 
 [node name="Heart" type="AnimatedSprite2D" parent="MakeYourPlayer"]
-visible = false
 top_level = true
 position = Vector2(455, 565)
 scale = Vector2(7.02, 7.02)
 sprite_frames = SubResource("SpriteFrames_36bst")
 animation = &"Heart"
 autoplay = "Heart"
-frame_progress = 0.91653
 
 [node name="Shop" parent="." instance=ExtResource("3_pp5m5")]
+visible = false
 offset = Vector2(0, -1000)
 transform = Transform2D(1, 0, 0, 1, 0, -1000)
 
@@ -840,9 +852,9 @@ focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 105
-theme_override_styles/hover = SubResource("StyleBoxFlat_4umqm")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_pp5m5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_yt8fu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pp5m5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4umqm")
 text = "Go to FIGHT.
 "
 autowrap_mode = 3
@@ -860,9 +872,9 @@ offset_bottom = 110.0
 focus_mode = 0
 theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 70
-theme_override_styles/hover = SubResource("StyleBoxFlat_7ycwl")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_rtd1e")
 theme_override_styles/normal = ExtResource("7_el213")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rtd1e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7ycwl")
 text = "Shop :3"
 script = ExtResource("6_4umqm")
 
@@ -878,9 +890,9 @@ focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 70
-theme_override_styles/hover = SubResource("StyleBoxFlat_thu7x")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2af52")
 theme_override_styles/normal = ExtResource("7_el213")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2af52")
+theme_override_styles/hover = SubResource("StyleBoxFlat_thu7x")
 text = "FISHIN (in progress)
 "
 autowrap_mode = 3

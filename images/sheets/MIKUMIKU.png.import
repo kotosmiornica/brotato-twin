@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c202d1sxxtxl6"
-path="res://.godot/imported/FINALlyCatIdleAnim.png-e6144f7b2ccdabd1ede241b441bdd356.ctex"
+uid="uid://btlwbyjjf7a0l"
+path="res://.godot/imported/MIKUMIKU.png-9c37a3ea4c7e4ea120c60de05e25ab47.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/sheets/FINALlyCatIdleAnim.png"
-dest_files=["res://.godot/imported/FINALlyCatIdleAnim.png-e6144f7b2ccdabd1ede241b441bdd356.ctex"]
+source_file="res://images/sheets/MIKUMIKU.png"
+dest_files=["res://.godot/imported/MIKUMIKU.png-9c37a3ea4c7e4ea120c60de05e25ab47.ctex"]
 
 [params]
 

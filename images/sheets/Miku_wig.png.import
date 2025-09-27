@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqbuibpdcrrc3"
-path="res://.godot/imported/FinalCatIdleAnimaion-Sheet.webp-61a6e951ccb27dcb95cee2a5832152d9.ctex"
+uid="uid://c5gf16jd6tymj"
+path="res://.godot/imported/Miku_wig.png-4947e31f4d32421bec757f22a8205337.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/sheets/FinalCatIdleAnimaion-Sheet.webp"
-dest_files=["res://.godot/imported/FinalCatIdleAnimaion-Sheet.webp-61a6e951ccb27dcb95cee2a5832152d9.ctex"]
+source_file="res://images/sheets/Miku_wig.png"
+dest_files=["res://.godot/imported/Miku_wig.png-4947e31f4d32421bec757f22a8205337.ctex"]
 
 [params]
 
