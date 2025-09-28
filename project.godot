@@ -97,7 +97,7 @@ project/assembly_name="Getting started with Godot 4"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/colorpicker_presets/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [input]
 
