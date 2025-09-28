@@ -4,7 +4,7 @@ var player: Node = null
 @export var shooting_point: Node2D
 
 const BULLET = preload("res://scenes/bullet.tscn")
-var shoot_sound = preload("res://music/simpleshot.mp3")
+var shoot_sound = preload("res://SOUNDS/sounds/simpleshot.mp3")
 
 func _physics_process(_delta: float) -> void:
 	var enemies_in_range = get_overlapping_bodies()
@@ -13,19 +13,19 @@ func _physics_process(_delta: float) -> void:
 		look_at(target_enemy.global_position)
 
 func shoot():
-	# spawn bullet
+
 	var new_bullet = BULLET.instantiate()
 	new_bullet.global_position = %ShootingPoint.global_position
 	new_bullet.global_rotation = %ShootingPoint.global_rotation
 	get_tree().current_scene.add_child(new_bullet)
 
-	# play sound
+
 	_play_detached_sound(shoot_sound, global_position)
 
 func _on_timer_timeout() -> void:
 	shoot()
 
-# helper: plays sound and frees it after it finishes
+
 func _play_detached_sound(sound_stream: AudioStream, sound_position: Vector2):
 	var sound = AudioStreamPlayer2D.new()
 	sound.stream = sound_stream

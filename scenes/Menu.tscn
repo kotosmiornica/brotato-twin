@@ -1,21 +1,24 @@
-[gd_scene load_steps=95 format=3 uid="uid://cqcwtk4w1gpdv"]
+[gd_scene load_steps=101 format=3 uid="uid://cqcwtk4w1gpdv"]
 
 [ext_resource type="Script" uid="uid://d1wrmtooq2n67" path="res://scripts/menu.gd" id="1_jmdev"]
 [ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="1_o0tnf"]
 [ext_resource type="Script" uid="uid://da5csliysvjgr" path="res://scripts/PlayButton.gd" id="2_5yleq"]
-[ext_resource type="PackedScene" uid="uid://wehan00wdsi5" path="res://scenes/Coin.tscn" id="2_b6cxs"]
 [ext_resource type="PackedScene" uid="uid://58ityb3umon8" path="res://scenes/Shopp.tscn" id="3_pp5m5"]
 [ext_resource type="Texture2D" uid="uid://dv6si3qh0nol5" path="res://images/kraken_14724220.png" id="3_yt8fu"]
 [ext_resource type="Texture2D" uid="uid://btlwbyjjf7a0l" path="res://images/sheets/MIKUMIKU.png" id="4_rtd1e"]
-[ext_resource type="Script" uid="uid://ca282vhax10g3" path="res://scenes/ShopButton.gd" id="6_4umqm"]
-[ext_resource type="Script" uid="uid://qe0t1w0hbi1v" path="res://scenes/coins_label.gd" id="6_thu7x"]
-[ext_resource type="Script" uid="uid://dyra1ld5cd5o2" path="res://scenes/fish_button.gd" id="6_yt8fu"]
-[ext_resource type="AudioStream" uid="uid://bpbp3s3y853s5" path="res://music/mobile-casual-video-game-music-158301.mp3" id="7_aaywf"]
-[ext_resource type="StyleBox" uid="uid://bf5lod7pf26wg" path="res://scenes/orange.tres" id="7_el213"]
+[ext_resource type="Script" uid="uid://ca282vhax10g3" path="res://scripts/ShopButton.gd" id="6_4umqm"]
+[ext_resource type="AudioStream" uid="uid://c5mhvf1525jn4" path="res://SOUNDS/sounds/wrong-47985.mp3" id="6_5p0sf"]
+[ext_resource type="Script" uid="uid://qe0t1w0hbi1v" path="res://scripts/coins_label.gd" id="6_thu7x"]
+[ext_resource type="Script" uid="uid://dyra1ld5cd5o2" path="res://scripts/fish_button.gd" id="6_yt8fu"]
+[ext_resource type="AudioStream" uid="uid://c6op7wtebnfrw" path="res://SOUNDS/sounds/cash-register-purchase-87313.mp3" id="7_7t7qg"]
+[ext_resource type="AudioStream" uid="uid://bpbp3s3y853s5" path="res://SOUNDS/music/mobile-casual-video-game-music-158301.mp3" id="7_aaywf"]
+[ext_resource type="StyleBox" uid="uid://bf5lod7pf26wg" path="res://scenes/fonts/orange.tres" id="7_el213"]
 [ext_resource type="Texture2D" uid="uid://bablixbbdhdc" path="res://images/coin (2).png" id="8_1abgu"]
 [ext_resource type="PackedScene" uid="uid://ir2j60as2m8m" path="res://scenes/ChooseYourPlayer.tscn" id="9_yt8fu"]
-[ext_resource type="AudioStream" uid="uid://bnda3v2s6m0k3" path="res://music/menuclick.wav" id="11_rtd1e"]
+[ext_resource type="AudioStream" uid="uid://bnda3v2s6m0k3" path="res://SOUNDS/sounds/menuclick.wav" id="11_rtd1e"]
+[ext_resource type="AudioStream" uid="uid://byna2qakpej8u" path="res://SOUNDS/sounds/popping-bubbles-406647.mp3" id="14_6c8sk"]
 [ext_resource type="Texture2D" uid="uid://bkcljvg88hmay" path="res://images/sheets/UndHeartSheet.png" id="15_rtd1e"]
+[ext_resource type="Script" uid="uid://cqleq4oyen4mn" path="res://scripts/EatingPet.gd" id="18_5p0sf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6c8sk"]
 atlas = ExtResource("4_rtd1e")
@@ -493,12 +496,11 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -1000)]
+"values": [Vector2(0, -1100)]
 }
 
 [sub_resource type="Animation" id="Animation_2srsy"]
 resource_name = "TransIn"
-length = 1.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -506,10 +508,10 @@ tracks/0/path = NodePath("..:offset")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0333334, 1.13333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.0333334, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, -1000), Vector2(0, 0)]
+"values": [Vector2(0, -1100), Vector2(0, -1000), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_r2k62"]
@@ -522,10 +524,10 @@ tracks/0/path = NodePath("..:offset")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 1.0333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 1000)]
+"values": [Vector2(0, 0), Vector2(0, 1100)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w135h"]
@@ -710,6 +712,42 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_size = 15
 shadow_offset = Vector2(2, 10)
 
+[sub_resource type="Animation" id="Animation_6c8sk"]
+resource_name = "Fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fading:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5p0sf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fading:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7t7qg"]
+_data = {
+&"Fade": SubResource("Animation_6c8sk"),
+&"RESET": SubResource("Animation_5p0sf")
+}
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -719,13 +757,13 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(-561, 873)
 script = ExtResource("1_jmdev")
-coin_scene = ExtResource("2_b6cxs")
 
 [node name="MakeYourPlayer" parent="." instance=ExtResource("9_yt8fu")]
 unique_name_in_owner = true
 position = Vector2(455, 904)
 
 [node name="BlueWig" type="AnimatedSprite2D" parent="MakeYourPlayer"]
+visible = false
 top_level = true
 position = Vector2(388.00003, 577)
 scale = Vector2(6.58, 6.58)
@@ -735,23 +773,29 @@ autoplay = "BlueWig"
 offset = Vector2(10.638298, 9.422493)
 
 [node name="Heart" type="AnimatedSprite2D" parent="MakeYourPlayer"]
+visible = false
 top_level = true
 position = Vector2(455, 565)
 scale = Vector2(7.02, 7.02)
 sprite_frames = SubResource("SpriteFrames_36bst")
 animation = &"Heart"
 autoplay = "Heart"
+frame_progress = 0.32969782
 
 [node name="Shop" parent="." instance=ExtResource("3_pp5m5")]
-visible = false
-offset = Vector2(0, -1000)
-transform = Transform2D(1, 0, 0, 1, 0, -1000)
 
 [node name="Anim" type="AnimationPlayer" parent="Shop"]
 root_node = NodePath("../Panel")
 libraries = {
 &"": SubResource("AnimationLibrary_w135h")
 }
+
+[node name="NotEnough" type="AudioStreamPlayer" parent="Shop"]
+stream = ExtResource("6_5p0sf")
+bus = &"click"
+
+[node name="buy" type="AudioStreamPlayer" parent="Shop"]
+stream = ExtResource("7_7t7qg")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 process_mode = 3
@@ -764,18 +808,19 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.505882, 0.286275, 0.878431, 0.768627)
 
-[node name="FlyingFoodsContainer2" type="Control" parent="ColorRect"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 112.0
+offset_right = 162.0
+offset_bottom = 162.0
+theme_override_colors/font_color = Color(1, 0.8666667, 0.17254902, 1)
+theme_override_fonts/font = ExtResource("1_o0tnf")
+theme_override_font_sizes/font_size = 50
+text = "Coins:"
 
 [node name="FlyingCoinsContainer" type="Control" parent="ColorRect"]
 anchors_preset = 0
-
-[node name="EatingPet" type="Sprite2D" parent="ColorRect"]
-position = Vector2(1322, 684)
-scale = Vector2(1.8125, 1.63762)
-texture = ExtResource("3_yt8fu")
 
 [node name="GameName" type="Label" parent="ColorRect"]
 layout_mode = 1
@@ -784,10 +829,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -746.0
-offset_top = -511.0
-offset_right = 262.0
-offset_bottom = -375.0
+offset_left = -603.0
+offset_top = -522.0
+offset_right = 405.0
+offset_bottom = -402.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_o0tnf")
@@ -802,12 +847,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -942.0
-offset_top = -374.0
-offset_right = -745.0
-offset_bottom = -252.0
+offset_left = -940.0
+offset_top = -370.0
+offset_right = -738.0
+offset_bottom = -274.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0.2627451, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.8039216, 0, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 80
 script = ExtResource("6_thu7x")
@@ -819,10 +866,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -966.0
-offset_top = -291.0
-offset_right = -27.0
-offset_bottom = -36.0
+offset_left = -808.0
+offset_top = -275.0
+offset_right = -22.0
+offset_bottom = -20.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -831,7 +878,6 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_upctu")
 text = "WASD/arrows - move
 P -pause menu
-Mouse and click - choose weapons
 Move mouse - fish
 R - restart"
 
@@ -842,21 +888,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 215.0
-offset_top = -382.0
-offset_right = 916.0
-offset_bottom = -236.0
+offset_left = 221.0
+offset_top = -373.0
+offset_right = 922.0
+offset_bottom = -250.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
-theme_override_font_sizes/font_size = 105
+theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxFlat_yt8fu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pp5m5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4umqm")
-text = "Go to FIGHT.
-"
+text = "Go to FIGHT"
 autowrap_mode = 3
 script = ExtResource("2_5yleq")
 
@@ -878,6 +923,9 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_7ycwl")
 text = "Shop :3"
 script = ExtResource("6_4umqm")
 
+[node name="click" type="AudioStreamPlayer" parent="ShopButton"]
+stream = ExtResource("11_rtd1e")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ShopButton"]
 
 [node name="FishButton" type="Button" parent="."]
@@ -898,15 +946,53 @@ text = "FISHIN (in progress)
 autowrap_mode = 3
 script = ExtResource("6_yt8fu")
 
+[node name="Fading" type="ColorRect" parent="FishButton"]
+visible = false
+top_level = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -375.0
+offset_top = -370.0
+offset_right = 339.09033
+offset_bottom = 335.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="bubbles" type="AudioStreamPlayer" parent="FishButton"]
+stream = ExtResource("14_6c8sk")
+bus = &"click"
+
+[node name="FishingStarts" type="AnimationPlayer" parent="FishButton"]
+libraries = {
+&"": SubResource("AnimationLibrary_7t7qg")
+}
+
+[node name="Sprite2D" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 123.000015
+offset_top = 198.0
+offset_right = 397.3606
+offset_bottom = 472.3606
+scale = Vector2(0.231446, 0.191406)
+texture = ExtResource("8_1abgu")
+expand_mode = 1
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_aaywf")
 autoplay = true
 bus = &"menu music"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(78, 96)
-scale = Vector2(0.231446, 0.191406)
-texture = ExtResource("8_1abgu")
+[node name="EatingPet" type="Sprite2D" parent="."]
+position = Vector2(1354, 732.99994)
+scale = Vector2(2.531249, 2.28702)
+texture = ExtResource("3_yt8fu")
+script = ExtResource("18_5p0sf")
+
+[node name="FlyingFoodsContainer" type="Node2D" parent="."]
 
 [connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="FishButton" to="Button" method="_on_fish_button_pressed"]

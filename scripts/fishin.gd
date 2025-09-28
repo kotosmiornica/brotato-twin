@@ -51,12 +51,12 @@ func _process(delta):
 					food.queue_free()  
 
 
-		if hook.position.y <= hook_end_y:
-			fishing_active = false
-			hook.visible = false
-			PlayerData.caught_food_count = caught_foods.size()
-			Global.coins += caught_foods.size() * 10
-			get_tree().change_scene_to_file("res://scenes/Menu.tscn")
+	if hook.position.y <= hook_end_y:
+		fishing_active = false
+		hook.visible = false
+		PlayerData.caught_food_count = caught_foods.size()
+		get_tree().change_scene_to_file("res://scenes/Menu.tscn")
+
 
 func spawn_food():
 	if food_scene == null:

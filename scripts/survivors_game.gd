@@ -21,9 +21,6 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "fade_in":
 		get_tree().reload_current_scene()
 
-func _on_brotat_health_depleted() -> void:
-	%GameOver.visible = true
-	get_tree().paused = true
 
 func _on_button_pressed() -> void:
 	get_tree().reload_current_scene()

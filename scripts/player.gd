@@ -28,7 +28,14 @@ const MAX_PIZZA_CUTTERS = 4
 
 
 
+
+
+
 func _physics_process(_delta: float) -> void:
+	#print("Player:", position, "| BlueWig:", %BlueWig.global_position)
+	#if %BlueWig:
+	#	print("BlueWig's parent:", %BlueWig.get_parent())
+
 	var direction = Input.get_vector("move_left", "move_right","move_up","move_down")
 	velocity = direction * 600
 	move_and_slide()
@@ -74,8 +81,8 @@ func update_cutter_angles():
 		cutters[i].angle_offset = (360.0 / n) * i
 
 func _ready():
-	pass 
-
+	pass
+#
 func _on_xp_collected():
 	xp += 1
 	print("Collected XP. Current: %d" % xp)
@@ -220,7 +227,7 @@ func _input(event):
 func spawn_soda(mouse_pos: Vector2) -> void:
 	var soda_scene = preload("res://scenes/SodaCan.tscn")
 	var soda = soda_scene.instantiate() as Area2D
-	soda.global_position = mouse_pos  # <- appears exactly under the click
+	soda.global_position = mouse_pos
 	get_tree().current_scene.add_child(soda)
 
 
@@ -241,10 +248,9 @@ func throw_soda() -> void:
 		dir = Vector2.UP
 	soda.direction = dir
 
-	# Add soda to scene
 	get_tree().current_scene.add_child(soda)
 
-	# Cooldown handled here
+
 	await get_tree().create_timer(soda_cooldown).timeout
 	can_throw_soda = true
 
@@ -267,3 +273,15 @@ func show_weapon_menu():
 	var stain = stain_scene.instantiate() 
 	stain.global_position = global_position 
 	get_parent().add_child(stain)
+
+
+func apply_accessories():
+	for accessory_id in PlayerData.owned_items:
+		equip_accessory(accessory_id)
+
+func equip_accessory(accessory_id):
+	match accessory_id:
+		"BlueWig":
+			%BlueWig.visible = true
+		"Heart":
+			%Heart.visible = true

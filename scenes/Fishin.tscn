@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dtd252iudfgoo" path="res://scenes/Food.tscn" id="2_aafxh"]
 [ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://images/icon.jpg" id="3_aafxh"]
 [ext_resource type="Texture2D" uid="uid://bdghbxy6moeia" path="res://images/hook_4294182.png" id="4_2kclr"]
-[ext_resource type="AudioStream" uid="uid://w42b6prhlxu6" path="res://music/fishmusic.mp3" id="6_2kclr"]
+[ext_resource type="AudioStream" uid="uid://w42b6prhlxu6" path="res://SOUNDS/music/fishmusic.mp3" id="6_2kclr"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

@@ -1,16 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://be8tpxxc3acpp"]
+[gd_scene load_steps=13 format=3 uid="uid://be8tpxxc3acpp"]
 
 [ext_resource type="Script" uid="uid://ds5tgr03uxpb4" path="res://scripts/level_up_menu.gd" id="1_nt8lk"]
-[ext_resource type="Texture2D" uid="uid://5dqd22nuwgd2" path="res://images/soda_1812051.png" id="2_d3utp"]
-[ext_resource type="StyleBox" uid="uid://ctnedtyf78d1o" path="res://scenes/basicblu.tres" id="2_yu4sn"]
+[ext_resource type="StyleBox" uid="uid://ctnedtyf78d1o" path="res://scenes/fonts/basicblu.tres" id="2_yu4sn"]
 [ext_resource type="Texture2D" uid="uid://cfug706gfmik" path="res://pistol/pizza-cutter_184486.png" id="3_o5r7b"]
-[ext_resource type="StyleBox" uid="uid://diaewu28mnlyu" path="res://scenes/pressedbasicblu.tres" id="3_sogc5"]
+[ext_resource type="StyleBox" uid="uid://diaewu28mnlyu" path="res://scenes/fonts/pressedbasicblu.tres" id="3_sogc5"]
 [ext_resource type="Texture2D" uid="uid://dxhoxtbv2h5os" path="res://images/bleach_2797128.png" id="4_o5r7b"]
-[ext_resource type="Script" uid="uid://cd3proto745io" path="res://scenes/soda_1.gd" id="5_2tu1p"]
-[ext_resource type="AudioStream" uid="uid://cn254y6phru30" path="res://music/plop.wav" id="5_buj6g"]
+[ext_resource type="AudioStream" uid="uid://cn254y6phru30" path="res://SOUNDS/sounds/plop.wav" id="5_buj6g"]
 [ext_resource type="FontFile" uid="uid://b8ok8fndx02wu" path="res://Pansy Hand/pansyhand.ttf" id="5_yu4sn"]
-[ext_resource type="Script" uid="uid://dh3omuiod7mt8" path="res://scenes/pizzacutter_2.gd" id="8_pwcma"]
-[ext_resource type="Script" uid="uid://ofh0s2kyo5el" path="res://scenes/bleach_3.gd" id="10_jqsxd"]
+[ext_resource type="Script" uid="uid://dh3omuiod7mt8" path="res://pizzacutter_2.gd" id="8_pwcma"]
+[ext_resource type="Script" uid="uid://ofh0s2kyo5el" path="res://bleach_3.gd" id="10_jqsxd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2tu1p"]
 content_margin_left = 2.0
@@ -33,17 +31,6 @@ expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 shadow_color = Color(0, 0, 0, 0.847059)
 shadow_size = 26
-shadow_offset = Vector2(0, 20)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yu4sn"]
-bg_color = Color(0, 0.654902, 0.878431, 1)
-corner_radius_top_left = 200
-corner_radius_top_right = 200
-corner_radius_bottom_right = 200
-corner_radius_bottom_left = 200
-corner_detail = 10
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 15
 shadow_offset = Vector2(0, 20)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sogc5"]
@@ -119,25 +106,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_2tu1p")
 
-[node name="soda1" type="Button" parent="CanvasLayer/Panel"]
-visible = false
-layout_mode = 0
-offset_left = 315.0
-offset_top = -133.0
-offset_right = 827.0
-offset_bottom = 432.0
-focus_mode = 0
-theme_override_styles/hover = ExtResource("2_yu4sn")
-theme_override_styles/pressed = ExtResource("3_sogc5")
-theme_override_styles/normal = SubResource("StyleBoxFlat_yu4sn")
-icon = ExtResource("2_d3utp")
-script = ExtResource("5_2tu1p")
-
-[node name="click" type="AudioStreamPlayer" parent="CanvasLayer/Panel/soda1"]
-stream = ExtResource("5_buj6g")
-autoplay = true
-bus = &"popup"
-
 [node name="pizzacutter2" type="Button" parent="CanvasLayer/Panel"]
 layout_mode = 0
 offset_left = 185.0
@@ -145,9 +113,9 @@ offset_top = 281.0
 offset_right = 623.0
 offset_bottom = 716.0
 focus_mode = 0
-theme_override_styles/hover = ExtResource("2_yu4sn")
-theme_override_styles/pressed = ExtResource("3_sogc5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_sogc5")
+theme_override_styles/pressed = ExtResource("3_sogc5")
+theme_override_styles/hover = ExtResource("2_yu4sn")
 script = ExtResource("8_pwcma")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel/pizzacutter2"]
@@ -171,9 +139,9 @@ offset_top = 287.0
 offset_right = 1287.0
 offset_bottom = 724.0
 focus_mode = 0
-theme_override_styles/hover = ExtResource("2_yu4sn")
-theme_override_styles/pressed = ExtResource("3_sogc5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_buj6g")
+theme_override_styles/pressed = ExtResource("3_sogc5")
+theme_override_styles/hover = ExtResource("2_yu4sn")
 script = ExtResource("10_jqsxd")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel/bleach3"]

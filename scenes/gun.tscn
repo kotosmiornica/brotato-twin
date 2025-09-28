@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cwx78pc2dcoay" path="res://scripts/gun.gd" id="1_og67c"]
 [ext_resource type="Texture2D" uid="uid://cswb5do8rrj7q" path="res://pistol/pistol.png" id="1_x77fm"]
-[ext_resource type="AudioStream" uid="uid://x6n81gfyplq7" path="res://music/simpleshot.mp3" id="3_gp1hk"]
+[ext_resource type="AudioStream" uid="uid://x6n81gfyplq7" path="res://SOUNDS/sounds/simpleshot.mp3" id="3_gp1hk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_og67c"]
 radius = 573.785
@@ -18,7 +18,7 @@ shape = SubResource("CircleShape2D_og67c")
 [node name="WeaponPivot" type="Marker2D" parent="."]
 
 [node name="Pistol" type="Sprite2D" parent="WeaponPivot"]
-position = Vector2(155, 3)
+position = Vector2(130, 3)
 scale = Vector2(0.84, 0.84)
 texture = ExtResource("1_x77fm")
 

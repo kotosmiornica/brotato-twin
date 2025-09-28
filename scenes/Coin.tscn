@@ -2,8 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://bablixbbdhdc" path="res://images/coin (2).png" id="1_owubc"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -14.999998
+offset_top = -18.999998
+offset_right = 357.3636
+offset_bottom = 353.3636
 scale = Vector2(0.0859375, 0.0859375)
 texture = ExtResource("1_owubc")
+expand_mode = 1

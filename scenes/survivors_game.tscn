@@ -1,10 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://dsl247xnk6knu"]
+[gd_scene load_steps=17 format=3 uid="uid://dsl247xnk6knu"]
 
 [ext_resource type="Script" uid="uid://crgvxr0vdaef6" path="res://scripts/survivors_game.gd" id="1_vt6sv"]
 [ext_resource type="PackedScene" uid="uid://dpi6hxo5ndgqr" path="res://scenes/player.tscn" id="2_mrt1k"]
 [ext_resource type="PackedScene" uid="uid://bhtwpmbf3myar" path="res://scenes/Tree.tscn" id="4_hfi5g"]
-[ext_resource type="PackedScene" uid="uid://ddpfrgrfgtlu3" path="res://scenes/game_over.tscn" id="5_tg6hx"]
-[ext_resource type="AudioStream" uid="uid://ivyoomujhpkw" path="res://music/retro-arcade-game-music-396890.mp3" id="6_bg3rl"]
+[ext_resource type="AudioStream" uid="uid://ivyoomujhpkw" path="res://SOUNDS/music/retro-arcade-game-music-396890.mp3" id="6_bg3rl"]
 [ext_resource type="PackedScene" uid="uid://cwyddtn83ubaj" path="res://scenes/pause_menu.tscn" id="7_hs66j"]
 [ext_resource type="PackedScene" uid="uid://i1onmpal7tpf" path="res://scenes/XPpickups.tscn" id="8_fp0yo"]
 [ext_resource type="Script" uid="uid://cneh2if8htw2" path="res://scripts/x_pbar.gd" id="9_7yhjp"]
@@ -132,17 +131,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.870379, 1, 0.92146, 1)
+color = Color(0.77290356, 1, 0.8377933, 1)
 
 [node name="Brotat" parent="." instance=ExtResource("2_mrt1k")]
 position = Vector2(936, 525)
 
 [node name="ProgressBar" type="ProgressBar" parent="Brotat"]
 unique_name_in_owner = true
-offset_left = -93.0
-offset_top = -169.0
-offset_right = 95.0
-offset_bottom = -142.0
+offset_left = -69.0
+offset_top = -179.0
+offset_right = 71.0
+offset_bottom = -155.44681
 theme_override_styles/background = SubResource("StyleBoxFlat_l26od")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qqaft")
 max_value = 180.0
@@ -161,19 +160,19 @@ curve = SubResource("Curve2D_qqaft")
 [node name="PathFollow2D" type="PathFollow2D" parent="Brotat/Path2D"]
 unique_name_in_owner = true
 position = Vector2(-286, -303)
-rotation = 0.0019984
+rotation = 0.0019983985
 
 [node name="tri" parent="." instance=ExtResource("4_hfi5g")]
 position = Vector2(386, 405)
 
 [node name="tri" parent="tri" instance=ExtResource("4_hfi5g")]
-position = Vector2(1491, -622)
+position = Vector2(1607, -703)
 
 [node name="tri" parent="tri/tri" instance=ExtResource("4_hfi5g")]
 position = Vector2(-1412, -212)
 
 [node name="tri" parent="tri/tri/tri" instance=ExtResource("4_hfi5g")]
-position = Vector2(1287, 108)
+position = Vector2(1252, -150)
 
 [node name="tri" parent="tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
 position = Vector2(-1712, -922)
@@ -209,7 +208,7 @@ position = Vector2(1102, -506)
 position = Vector2(836, -3408)
 
 [node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
-position = Vector2(-1091, 281)
+position = Vector2(-717, 392)
 
 [node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
 position = Vector2(-4852, 1544)
@@ -269,10 +268,10 @@ position = Vector2(-589, -983)
 position = Vector2(64, 1752)
 
 [node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
-position = Vector2(6728, 901)
+position = Vector2(6839, 870)
 
 [node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
-position = Vector2(72, 82)
+position = Vector2(79, 30)
 
 [node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
 position = Vector2(-3630, -1103)
@@ -284,7 +283,7 @@ position = Vector2(1017, 1244)
 position = Vector2(-176, -147)
 
 [node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
-position = Vector2(1281, -3330)
+position = Vector2(-2247, -5064)
 
 [node name="tri" parent="tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri/tri" instance=ExtResource("4_hfi5g")]
 position = Vector2(596, 9)
@@ -500,9 +499,6 @@ libraries = {
 }
 autoplay = "fade_out"
 
-[node name="GameOver" parent="." instance=ExtResource("5_tg6hx")]
-visible = false
-
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_bg3rl")
 volume_db = -0.075
@@ -526,6 +522,7 @@ show_percentage = false
 script = ExtResource("9_7yhjp")
 
 [node name="Pause" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="PauseMenu" parent="Pause" instance=ExtResource("7_hs66j")]
 anchors_preset = 0
