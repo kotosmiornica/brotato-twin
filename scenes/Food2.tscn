@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bafhs3ix31cy"]
+
+[ext_resource type="Script" uid="uid://bww6gvdjx017p" path="res://scripts/food.gd" id="1_wbade"]
+[ext_resource type="Texture2D" uid="uid://kc5ltioajpbp" path="res://images/MonsterEnergyDrink.png" id="2_wbade"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jwtx"]
+radius = 46.1264
+height = 153.93292
+
+[node name="Monster" type="Node2D"]
+script = ExtResource("1_wbade")
+food_type = "Black Monster"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(-8, 9.53674e-07)
+rotation = 0.3723859
+scale = Vector2(1.5599998, 1.5599998)
+texture = ExtResource("2_wbade")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-6.0000005, -8)
+rotation = 0.4340433
+shape = SubResource("CapsuleShape2D_2jwtx")

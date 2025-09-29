@@ -881,6 +881,15 @@ P -pause menu
 Move mouse - fish
 R - restart"
 
+[node name="FoodCounterLabel" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 290.0
+offset_right = 186.0
+offset_bottom = 379.0
+theme_override_fonts/font = ExtResource("1_o0tnf")
+theme_override_font_sizes/font_size = 40
+
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8

@@ -7,8 +7,9 @@
 radius = 46.1264
 height = 128.356
 
-[node name="Node2D" type="Node2D"]
+[node name="Leek" type="Node2D"]
 script = ExtResource("1_2jwtx")
+food_type = "Leek"
 
 [node name="Area2D" type="Area2D" parent="."]
 

@@ -4,11 +4,12 @@ extends Control
 @onready var flying_foods_container = $FlyingFoodsContainer
 @onready var coins_container = $ColorRect/FlyingCoinsContainer
 @onready var coins_label = $ColorRect/CoinsLabel
+@onready var food_counter_label = $ColorRect/FoodCounterLabel
 
 @export var coins_per_food: int = 14
 @export var coin_stagger: float = 0.05
 
-
+var food_counts := {}
 var food_scene: PackedScene = preload("res://scenes/Food.tscn")
 var coin_scene: PackedScene = preload("res://scenes/Coin.tscn")
 
@@ -72,6 +73,20 @@ func _on_coin_reached_label(coin):
 	Global.coins += 1
 	coins_label.text = str(Global.coins)
 
-
 func _on_food_reached_pet(food):
 	eating_pet.call_deferred("on_food_arrived", food)
+	
+	# Track the type of food caught
+	var food_type = food.get("food_type")  # assuming Food.tscn has an exported "food_type" variable
+	if not food_counts.has(food_type):
+		food_counts[food_type] = 0
+	food_counts[food_type] += 1
+	
+	update_food_counter_label()
+
+
+func update_food_counter_label():
+	var text = ""
+	for food_type in food_counts.keys():
+		text += "%s: %d\n" % [food_type, food_counts[food_type]]
+	food_counter_label.text = text

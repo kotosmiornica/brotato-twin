@@ -81,7 +81,7 @@ func update_cutter_angles():
 		cutters[i].angle_offset = (360.0 / n) * i
 
 func _ready():
-	pass
+	add_to_group("player")
 #
 func _on_xp_collected():
 	xp += 1
@@ -285,3 +285,9 @@ func equip_accessory(accessory_id):
 			%BlueWig.visible = true
 		"Heart":
 			%Heart.visible = true
+
+
+func heal(amount: int) -> void:
+	health = min(health + amount, 180) # or use your max health variable
+	%ProgressBar.value = health
+	print("Healed by %d! Current HP: %d" % [amount, health])
