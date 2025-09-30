@@ -16,6 +16,7 @@ var coin_scene: PackedScene = preload("res://scenes/Coin.tscn")
 var active_coins := []
 
 func _ready():
+	apply_equipped_hair()
 	coins_label.text = str(Global.coins)
 	if PlayerData.caught_food_count > 0:
 		trigger_flying_foods()
@@ -47,7 +48,7 @@ func spawn_single_coin(delay: float = 0.0):
 	get_tree().root.add_child(coin)  
 	active_coins.append(coin)
 	coin.set_meta("counted", false)
-	coin.global_position = eating_pet.global_position + Vector2(randf_range(-10, 10), randf_range(-10, 10))
+	coin.global_position = eating_pet.global_position + Vector2(randf_range(-70, 10), randf_range(-70, 10))
 
 
 	var target_pos = coins_label.global_position + coins_label.size / 2
@@ -74,19 +75,36 @@ func _on_coin_reached_label(coin):
 	coins_label.text = str(Global.coins)
 
 func _on_food_reached_pet(food):
+	print("Food reached pet:", food)
+
 	eating_pet.call_deferred("on_food_arrived", food)
-	
-	# Track the type of food caught
-	var food_type = food.get("food_type")  # assuming Food.tscn has an exported "food_type" variable
-	if not food_counts.has(food_type):
-		food_counts[food_type] = 0
-	food_counts[food_type] += 1
-	
+
+	var food_type = food.food_type
+	print("Food type:", food_type)   # 👈 check this
+
+	if food_type == null or food_type == "":
+		food_type = "Unknown"
+
+	if not PlayerData.food_counts.has(food_type):
+		PlayerData.food_counts[food_type] = 0
+	PlayerData.food_counts[food_type] += 1
+
 	update_food_counter_label()
+
 
 
 func update_food_counter_label():
 	var text = ""
-	for food_type in food_counts.keys():
-		text += "%s: %d\n" % [food_type, food_counts[food_type]]
+	for food_type in PlayerData.food_counts.keys():
+		text += "%s: %d\n" % [food_type, PlayerData.food_counts[food_type]]
 	food_counter_label.text = text
+
+
+func apply_equipped_hair():
+	var hair_name = PlayerData.equipped_hair
+	var player_node = $MakeYourPlayer
+	var wig_node = player_node.get_node_or_null(hair_name)
+	if wig_node:
+		wig_node.visible = true
+		wig_node.play(hair_name)
+		wig_node.z_index = 10

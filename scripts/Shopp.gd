@@ -47,6 +47,9 @@ func _on_buy_pressed() -> void:
 			wig_node.play("BlueWig")
 			wig_node.z_index = 10
 
+			# save globally which hair is equipped
+			PlayerData.equipped_hair = "BlueWig"
+
 			Global.coins -= cost
 			item_data["Owned"] = true
 			PlayerData.owned_items.append(item_data["Name"])
@@ -54,12 +57,15 @@ func _on_buy_pressed() -> void:
 
 		print("Bought:", item_data["Name"], "Remaining coins:", Global.coins)
 
+
 	elif item_data["Name"] == "Heart":
 		var heart_node = player_node.get_node_or_null("Heart")
 		if heart_node:
 			heart_node.visible = true
 			heart_node.play("Heart")
 			heart_node.z_index = 10
+
+			PlayerData.equipped_hair = "Heart"
 
 			Global.coins -= cost
 			item_data["Owned"] = true

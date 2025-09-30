@@ -82,6 +82,7 @@ func update_cutter_angles():
 
 func _ready():
 	add_to_group("player")
+	apply_equipped_hair()
 #
 func _on_xp_collected():
 	xp += 1
@@ -291,3 +292,18 @@ func heal(amount: int) -> void:
 	health = min(health + amount, 180) # or use your max health variable
 	%ProgressBar.value = health
 	print("Healed by %d! Current HP: %d" % [amount, health])
+
+
+func apply_equipped_hair():
+	# Get the hair saved in PlayerData
+	var hair_name = PlayerData.equipped_hair
+	# Hide all hairs first (optional, in case multiple exist)
+	%BlueWig.visible = false
+	%Heart.visible = false
+
+	# Enable the selected hair
+	var hair_node = get_node_or_null(hair_name)
+	if hair_node:
+		hair_node.visible = true
+		hair_node.play(hair_name)  # if it has an animation
+		hair_node.z_index = 10
