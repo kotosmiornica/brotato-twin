@@ -15,11 +15,11 @@ food_type = "Black Monster"
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 position = Vector2(-8, 9.53674e-07)
-rotation = 0.3723859
+rotation = 0.42605457
 scale = Vector2(1.5599998, 1.5599998)
 texture = ExtResource("2_wbade")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-6.0000005, -8)
-rotation = 0.4340433
+rotation = 0.43466216
 shape = SubResource("CapsuleShape2D_2jwtx")

@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jwtx"]
 radius = 46.1264
-height = 128.356
+height = 133.10736
 
 [node name="Leek" type="Node2D"]
 script = ExtResource("1_2jwtx")

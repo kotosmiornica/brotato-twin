@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbo0bd7qla4yd"]
+[gd_scene load_steps=8 format=3 uid="uid://cbo0bd7qla4yd"]
 
 [ext_resource type="Texture2D" uid="uid://dxjcywb4hgl76" path="res://free-underwater-world-pixel-art-backgrounds/background 1/1.png" id="1_o24hs"]
 [ext_resource type="Script" uid="uid://catu5hvsoll6o" path="res://scripts/fishin.gd" id="1_wacnr"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://images/icon.jpg" id="3_aafxh"]
 [ext_resource type="Texture2D" uid="uid://bdghbxy6moeia" path="res://images/hook_4294182.png" id="4_2kclr"]
 [ext_resource type="AudioStream" uid="uid://w42b6prhlxu6" path="res://SOUNDS/music/fishmusic.mp3" id="6_2kclr"]
+[ext_resource type="AudioStream" uid="uid://lcfme426035c" path="res://SOUNDS/sounds/pop-402324.mp3" id="6_pqhp0"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -106,6 +107,10 @@ text = "Go Deeper"
 visible = false
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="caught" type="AudioStreamPlayer" parent="FishingGame"]
+stream = ExtResource("6_pqhp0")
+bus = &"caught"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_2kclr")

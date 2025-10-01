@@ -60,6 +60,7 @@ func spawn_single_coin(delay: float = 0.0):
 
 
 func _on_coin_reached_label(coin):
+	$ColorRect/CoinsLabel/CoinSound.play()
 	if not is_instance_valid(coin):
 		return
 
@@ -109,4 +110,7 @@ func apply_equipped_hair():
 		wig_node.play(hair_name)
 		wig_node.z_index = 10
 		
-		
+
+
+func _on_wardrobe_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/Wardrobe.tscn")

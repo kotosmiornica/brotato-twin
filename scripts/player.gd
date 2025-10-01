@@ -28,8 +28,61 @@ const MAX_PIZZA_CUTTERS = 4
 
 
 
+# -------------------------
+#  HAIR HANDLING
+# -------------------------
+func apply_equipped_hair():
+	var possible_hairs = ["BlueWig"]  # only BlueWig for now
 
+	# hide all possible hairs
+	for hair_id in possible_hairs:
+		var n = $HappyBoo.get_node_or_null(NodePath(hair_id))
+		if n:
+			n.visible = false
 
+	var hair_name = PlayerData.equipped_hair
+	if hair_name == null or hair_name == "":
+		return
+
+	var hair_node = $HappyBoo.get_node_or_null(NodePath(hair_name))
+	if not hair_node:
+		hair_node = get_node_or_null(NodePath(hair_name))
+		if hair_node:
+			hair_node.get_parent().remove_child(hair_node)
+			$HappyBoo.add_child(hair_node)
+
+	if hair_node:
+		hair_node.position = Vector2.ZERO
+		hair_node.visible = true
+		hair_node.z_index = 10
+
+# -------------------------
+#  ACCESSORY HANDLING
+# -------------------------
+func apply_equipped_accessories():
+	var possible_accessories = ["Heart"]
+
+	# hide all possible accessories
+	for acc_id in possible_accessories:
+		var n = $HappyBoo.get_node_or_null(NodePath(acc_id))
+		if n:
+			n.visible = false
+
+	var accessory_name = PlayerData.equipped_accessory
+	if accessory_name == null or accessory_name == "":
+		return
+
+	var acc_node = $HappyBoo.get_node_or_null(NodePath(accessory_name))
+	if not acc_node:
+		acc_node = get_node_or_null(NodePath(accessory_name))
+		if acc_node:
+			acc_node.get_parent().remove_child(acc_node)
+			$HappyBoo.add_child(acc_node)
+
+	if acc_node:
+		acc_node.position = Vector2.ZERO
+		acc_node.visible = true
+		acc_node.z_index = 11
 
 func _physics_process(_delta: float) -> void:
 	#print("Player:", position, "| BlueWig:", %BlueWig.global_position)
@@ -83,7 +136,11 @@ func update_cutter_angles():
 func _ready():
 	add_to_group("player")
 	apply_equipped_hair()
-#
+	apply_equipped_accessories()
+
+
+
+
 func _on_xp_collected():
 	xp += 1
 	print("Collected XP. Current: %d" % xp)
@@ -292,19 +349,3 @@ func heal(amount: int) -> void:
 	health = min(health + amount, 180) # or use your max health variable
 	%ProgressBar.value = health
 	print("Healed by %d! Current HP: %d" % [amount, health])
-
-
-func apply_equipped_hair():
-	var hair_name = PlayerData.equipped_hair
-	var hair_node = get_node_or_null(hair_name)
-	if hair_node:
-		# Remove it from its old parent
-		if hair_node.get_parent() != %HappyBoo:
-			hair_node.get_parent().remove_child(hair_node)
-			# Add it as a child of the sprite so it moves with the player
-			%HappyBoo.add_child(hair_node)
-
-		hair_node.visible = true
-		hair_node.play(hair_name)  # if it has an animation
-		hair_node.position = Vector2.ZERO  # reset local position relative to sprite
-		hair_node.z_index = 10

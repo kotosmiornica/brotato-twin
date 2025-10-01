@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://dsl247xnk6knu"]
+[gd_scene load_steps=94 format=3 uid="uid://dsl247xnk6knu"]
 
 [ext_resource type="Script" uid="uid://crgvxr0vdaef6" path="res://scripts/survivors_game.gd" id="1_vt6sv"]
 [ext_resource type="PackedScene" uid="uid://dpi6hxo5ndgqr" path="res://scenes/player.tscn" id="2_mrt1k"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://kvg3tmks0ch2" path="res://scenes/gun.tscn" id="7_bg3rl"]
 [ext_resource type="PackedScene" uid="uid://cwyddtn83ubaj" path="res://scenes/pause_menu.tscn" id="7_hs66j"]
 [ext_resource type="PackedScene" uid="uid://i1onmpal7tpf" path="res://scenes/XPpickups.tscn" id="8_fp0yo"]
+[ext_resource type="AudioStream" uid="uid://c5wfgdpwu06th" path="res://SOUNDS/sounds/dead.mp3" id="8_tg6hx"]
 [ext_resource type="Script" uid="uid://cneh2if8htw2" path="res://scripts/x_pbar.gd" id="9_7yhjp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l26od"]
@@ -516,6 +517,54 @@ height = 91.3793
 radius = 35.0
 height = 134.0
 
+[sub_resource type="Animation" id="Animation_tg6hx"]
+resource_name = "deadge"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Background/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Death:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bg3rl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Death:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hs66j"]
+_data = {
+&"RESET": SubResource("Animation_bg3rl"),
+&"deadge": SubResource("Animation_tg6hx")
+}
+
 [sub_resource type="Animation" id="Animation_qqaft"]
 length = 0.001
 tracks/0/type = "value"
@@ -599,6 +648,20 @@ corner_radius_bottom_left = 20
 y_sort_enabled = true
 script = ExtResource("1_vt6sv")
 
+[node name="Death" type="ColorRect" parent="."]
+visible = false
+top_level = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -92.44446
+offset_top = -52.0
+offset_right = 92.44446
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -30
 
@@ -611,14 +674,15 @@ grow_vertical = 2
 color = Color(0.77290356, 1, 0.8377933, 1)
 
 [node name="Brotat" parent="." instance=ExtResource("2_mrt1k")]
+top_level = false
 position = Vector2(936, 525)
 
 [node name="ProgressBar" type="ProgressBar" parent="Brotat"]
 unique_name_in_owner = true
-offset_left = -57.0
-offset_top = 53.0
-offset_right = 63.0
-offset_bottom = 76.55319
+offset_left = -55.0
+offset_top = 55.0
+offset_right = 65.0
+offset_bottom = 78.55322
 theme_override_styles/background = SubResource("StyleBoxFlat_l26od")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qqaft")
 max_value = 180.0
@@ -680,6 +744,15 @@ collision_mask = 2
 position = Vector2(-1, -33)
 shape = SubResource("CapsuleShape2D_46648")
 debug_color = Color(0.854248, 0.314498, 0.503126, 0.42)
+
+[node name="Death" type="AudioStreamPlayer" parent="Brotat"]
+stream = ExtResource("8_tg6hx")
+bus = &"click"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Brotat"]
+libraries = {
+&"": SubResource("AnimationLibrary_hs66j")
+}
 
 [node name="tri" parent="." instance=ExtResource("4_hfi5g")]
 position = Vector2(386, 405)

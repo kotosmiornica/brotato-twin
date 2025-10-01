@@ -49,7 +49,8 @@ func _process(delta):
 				if not caught_foods.has(food):
 					caught_foods.append(food)
 					food.queue_free()  
-
+					
+					$caught.play()
 
 	if hook.position.y <= hook_end_y:
 		fishing_active = false

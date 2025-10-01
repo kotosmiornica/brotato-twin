@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://58ityb3umon8"]
+[gd_scene load_steps=94 format=3 uid="uid://58ityb3umon8"]
 
 [ext_resource type="Script" uid="uid://de51rx2m8hibh" path="res://scripts/Shopp.gd" id="1_24207"]
 [ext_resource type="Texture2D" uid="uid://bkcljvg88hmay" path="res://images/sheets/UndHeartSheet.png" id="2_24207"]
@@ -14,8 +14,6 @@
 [ext_resource type="AudioStream" uid="uid://bnda3v2s6m0k3" path="res://SOUNDS/sounds/menuclick.wav" id="10_oahkd"]
 [ext_resource type="AudioStream" uid="uid://c6op7wtebnfrw" path="res://SOUNDS/sounds/cash-register-purchase-87313.mp3" id="12_xsnv8"]
 [ext_resource type="AudioStream" uid="uid://c5mhvf1525jn4" path="res://SOUNDS/sounds/wrong-47985.mp3" id="13_cn3sd"]
-[ext_resource type="StyleBox" uid="uid://cphxerjchfv3f" path="res://scenes/closenormal.tres" id="14_cb6n5"]
-[ext_resource type="StyleBox" uid="uid://b46akb13x31je" path="res://scenes/fonts/hovershop.tres" id="15_hcwdo"]
 
 [sub_resource type="Animation" id="Animation_auux5"]
 length = 0.001
@@ -629,6 +627,57 @@ shadow_color = Color(0, 0, 0, 0.9137255)
 shadow_size = 7
 shadow_offset = Vector2(0, 15)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xsnv8"]
+content_margin_left = 5.0
+bg_color = Color(0, 0, 0, 0.658824)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.7764706, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+shadow_color = Color(0, 0, 0, 0.9411765)
+shadow_size = 14
+shadow_offset = Vector2(0, 12)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cn3sd"]
+content_margin_left = 5.0
+bg_color = Color(0.0117647, 0.0117647, 0.0117647, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.62557507, 1.4318898e-06, 5.7756904e-07, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 60
+corner_detail = 10
+shadow_color = Color(0, 0, 0, 0.662745)
+shadow_size = 2
+shadow_offset = Vector2(0, 8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcwdo"]
+content_margin_left = 5.0
+bg_color = Color(0.0117647, 0.0117647, 0.0117647, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.99999994, 0.174173, 0.12721539, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+corner_detail = 10
+shadow_color = Color(0, 0, 0, 0.8117647)
+shadow_size = 10
+shadow_offset = Vector2(0, 8)
+
 [node name="Shop" type="CanvasLayer"]
 process_mode = 3
 offset = Vector2(0, -1100)
@@ -782,22 +831,24 @@ bus = &"click"
 top_level = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.004166667
-anchor_top = 0.036111113
+anchor_left = -0.009375
+anchor_top = -0.0009259259
 anchor_right = -0.009375
 anchor_bottom = -0.0009259259
-offset_left = 1534.0
+offset_left = 1559.0
 offset_top = 84.0
-offset_right = 1677.0
-offset_bottom = 172.0
+offset_right = 1652.0
+offset_bottom = 156.61539
 focus_mode = 0
+theme_override_colors/font_color = Color(0.76862746, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.66560405, 8.061901e-07, 4.3317675e-07, 1)
+theme_override_colors/font_hover_color = Color(0.9682372, 0.003346892, 0.0018343591, 1)
 theme_override_fonts/font = ExtResource("4_402gu")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = ExtResource("14_cb6n5")
-theme_override_styles/pressed = ExtResource("3_ur338")
-theme_override_styles/hover = ExtResource("15_hcwdo")
-text = "Close
-"
+theme_override_styles/normal = SubResource("StyleBoxFlat_xsnv8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cn3sd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hcwdo")
+text = "X"
 script = ExtResource("9_fqaxf")
 
 [node name="click" type="AudioStreamPlayer" parent="Control/Close"]

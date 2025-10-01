@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://cqcwtk4w1gpdv"]
+[gd_scene load_steps=103 format=3 uid="uid://cqcwtk4w1gpdv"]
 
 [ext_resource type="Script" uid="uid://d1wrmtooq2n67" path="res://scripts/menu.gd" id="1_jmdev"]
 [ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="1_o0tnf"]
@@ -15,9 +15,11 @@
 [ext_resource type="StyleBox" uid="uid://bf5lod7pf26wg" path="res://scenes/fonts/orange.tres" id="7_el213"]
 [ext_resource type="Texture2D" uid="uid://bablixbbdhdc" path="res://images/coin (2).png" id="8_1abgu"]
 [ext_resource type="PackedScene" uid="uid://ir2j60as2m8m" path="res://scenes/ChooseYourPlayer.tscn" id="9_yt8fu"]
+[ext_resource type="AudioStream" uid="uid://v4y5xtej0idp" path="res://SOUNDS/sounds/coin-and-money-bag-1-185262.mp3" id="10_i7htd"]
 [ext_resource type="AudioStream" uid="uid://bnda3v2s6m0k3" path="res://SOUNDS/sounds/menuclick.wav" id="11_rtd1e"]
 [ext_resource type="AudioStream" uid="uid://byna2qakpej8u" path="res://SOUNDS/sounds/popping-bubbles-406647.mp3" id="14_6c8sk"]
 [ext_resource type="Texture2D" uid="uid://bkcljvg88hmay" path="res://images/sheets/UndHeartSheet.png" id="15_rtd1e"]
+[ext_resource type="Script" uid="uid://bbnfxam3713v5" path="res://scripts/WardrobeButton.gd" id="16_i7htd"]
 [ext_resource type="Script" uid="uid://cqleq4oyen4mn" path="res://scripts/EatingPet.gd" id="18_5p0sf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6c8sk"]
@@ -760,12 +762,12 @@ script = ExtResource("1_jmdev")
 
 [node name="MakeYourPlayer" parent="." instance=ExtResource("9_yt8fu")]
 unique_name_in_owner = true
-position = Vector2(455, 904)
+position = Vector2(568, 904)
 
 [node name="BlueWig" type="AnimatedSprite2D" parent="MakeYourPlayer"]
 visible = false
 top_level = true
-position = Vector2(388.00003, 577)
+position = Vector2(500, 577)
 scale = Vector2(6.58, 6.58)
 sprite_frames = SubResource("SpriteFrames_sm01i")
 animation = &"BlueWig"
@@ -775,7 +777,7 @@ offset = Vector2(10.638298, 9.422493)
 [node name="Heart" type="AnimatedSprite2D" parent="MakeYourPlayer"]
 visible = false
 top_level = true
-position = Vector2(455, 565)
+position = Vector2(576, 565)
 scale = Vector2(7.02, 7.02)
 sprite_frames = SubResource("SpriteFrames_36bst")
 animation = &"Heart"
@@ -810,13 +812,13 @@ color = Color(0.505882, 0.286275, 0.878431, 0.768627)
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 112.0
-offset_right = 162.0
-offset_bottom = 162.0
-theme_override_colors/font_color = Color(1, 0.8666667, 0.17254902, 1)
+offset_left = 8.0
+offset_top = 85.0
+offset_right = 191.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(0.75686276, 0.8666667, 0.17254902, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 61
 text = "Coins:"
 
 [node name="FlyingCoinsContainer" type="Control" parent="ColorRect"]
@@ -829,15 +831,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -603.0
-offset_top = -522.0
-offset_right = 405.0
-offset_bottom = -402.0
+offset_left = -651.0
+offset_top = -523.0
+offset_right = 562.0
+offset_bottom = -397.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.88235295, 0.3019608, 1, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
-theme_override_font_sizes/font_size = 120
-text = "BLOB FIGHTERS!!!"
+theme_override_font_sizes/font_size = 110
+text = "DESTROY THE BLOBS!!!"
 
 [node name="CoinsLabel" type="Label" parent="ColorRect"]
 unique_name_in_owner = true
@@ -847,10 +850,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -940.0
-offset_top = -370.0
-offset_right = -738.0
-offset_bottom = -274.0
+offset_left = -944.0
+offset_top = -397.0
+offset_right = -742.0
+offset_bottom = -301.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 0.2627451, 1)
@@ -858,6 +861,10 @@ theme_override_colors/font_shadow_color = Color(1, 0.8039216, 0, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 80
 script = ExtResource("6_thu7x")
+
+[node name="CoinSound" type="AudioStreamPlayer" parent="ColorRect/CoinsLabel"]
+stream = ExtResource("10_i7htd")
+bus = &"caught"
 
 [node name="Instructions!" type="Label" parent="ColorRect"]
 layout_mode = 1
@@ -883,10 +890,10 @@ R - restart"
 
 [node name="FoodCounterLabel" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 290.0
-offset_right = 186.0
-offset_bottom = 379.0
+offset_left = 10.0
+offset_top = 267.0
+offset_right = 184.0
+offset_bottom = 356.0
 theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 40
 
@@ -897,20 +904,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 221.0
-offset_top = -373.0
-offset_right = 922.0
-offset_bottom = -250.0
+offset_left = 178.0
+offset_top = -324.0
+offset_right = 924.0
+offset_bottom = -139.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 85
 theme_override_styles/normal = SubResource("StyleBoxFlat_yt8fu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pp5m5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4umqm")
-text = "Go to FIGHT"
+text = "Go to FIGHT! (endless)"
 autowrap_mode = 3
 script = ExtResource("2_5yleq")
 
@@ -935,14 +942,31 @@ script = ExtResource("6_4umqm")
 [node name="click" type="AudioStreamPlayer" parent="ShopButton"]
 stream = ExtResource("11_rtd1e")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ShopButton"]
+[node name="WardrobeButton" type="Button" parent="."]
+top_level = true
+layout_mode = 0
+offset_left = 63.0
+offset_top = 960.0
+offset_right = 378.0
+offset_bottom = 1039.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_o0tnf")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("7_el213")
+theme_override_styles/pressed = ExtResource("7_el213")
+theme_override_styles/hover = ExtResource("7_el213")
+text = "Wardrobe"
+script = ExtResource("16_i7htd")
+
+[node name="click" type="AudioStreamPlayer" parent="WardrobeButton"]
+stream = ExtResource("11_rtd1e")
 
 [node name="FishButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1107.0
-offset_top = 348.0
-offset_right = 1893.0
-offset_bottom = 444.0
+offset_left = 1099.0
+offset_top = 449.0
+offset_right = 1885.0
+offset_bottom = 545.0
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
@@ -972,7 +996,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="bubbles" type="AudioStreamPlayer" parent="FishButton"]
 stream = ExtResource("14_6c8sk")
-bus = &"click"
+bus = &"bubbles"
 
 [node name="FishingStarts" type="AnimationPlayer" parent="FishButton"]
 libraries = {
@@ -1004,4 +1028,5 @@ script = ExtResource("18_5p0sf")
 [node name="FlyingFoodsContainer" type="Node2D" parent="."]
 
 [connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="WardrobeButton" to="." method="_on_wardrobe_pressed"]
 [connection signal="pressed" from="FishButton" to="Button" method="_on_fish_button_pressed"]
