@@ -108,3 +108,5 @@ func apply_equipped_hair():
 		wig_node.visible = true
 		wig_node.play(hair_name)
 		wig_node.z_index = 10
+		
+		

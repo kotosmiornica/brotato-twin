@@ -1,11 +1,14 @@
-[gd_scene load_steps=85 format=3 uid="uid://dsl247xnk6knu"]
+[gd_scene load_steps=90 format=3 uid="uid://dsl247xnk6knu"]
 
 [ext_resource type="Script" uid="uid://crgvxr0vdaef6" path="res://scripts/survivors_game.gd" id="1_vt6sv"]
 [ext_resource type="PackedScene" uid="uid://dpi6hxo5ndgqr" path="res://scenes/player.tscn" id="2_mrt1k"]
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="3_hfi5g"]
 [ext_resource type="Texture2D" uid="uid://btlwbyjjf7a0l" path="res://images/sheets/MIKUMIKU.png" id="3_vt6sv"]
 [ext_resource type="PackedScene" uid="uid://bhtwpmbf3myar" path="res://scenes/Tree.tscn" id="4_hfi5g"]
 [ext_resource type="Texture2D" uid="uid://bkcljvg88hmay" path="res://images/sheets/UndHeartSheet.png" id="4_mrt1k"]
+[ext_resource type="Script" uid="uid://btg3vkpyhl62d" path="res://scripts/HappyBoo.gd" id="4_tg6hx"]
 [ext_resource type="AudioStream" uid="uid://ivyoomujhpkw" path="res://SOUNDS/music/retro-arcade-game-music-396890.mp3" id="6_bg3rl"]
+[ext_resource type="PackedScene" uid="uid://kvg3tmks0ch2" path="res://scenes/gun.tscn" id="7_bg3rl"]
 [ext_resource type="PackedScene" uid="uid://cwyddtn83ubaj" path="res://scenes/pause_menu.tscn" id="7_hs66j"]
 [ext_resource type="PackedScene" uid="uid://i1onmpal7tpf" path="res://scenes/XPpickups.tscn" id="8_fp0yo"]
 [ext_resource type="Script" uid="uid://cneh2if8htw2" path="res://scripts/x_pbar.gd" id="9_7yhjp"]
@@ -169,7 +172,7 @@ region = Rect2(3000, 0, 100, 115)
 atlas = ExtResource("3_vt6sv")
 region = Rect2(3100, 0, 100, 115)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4i4ie"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_hs66j"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -401,7 +404,7 @@ region = Rect2(3000, 0, 100, 115)
 atlas = ExtResource("4_mrt1k")
 region = Rect2(3100, 0, 100, 115)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_hfi5g"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_fp0yo"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -504,6 +507,14 @@ animations = [{
 "name": &"Heart",
 "speed": 15.0
 }]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7yhjp"]
+radius = 30.3571
+height = 91.3793
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_46648"]
+radius = 35.0
+height = 134.0
 
 [sub_resource type="Animation" id="Animation_qqaft"]
 length = 0.001
@@ -616,7 +627,7 @@ show_percentage = false
 
 [node name="Camera2D" type="Camera2D" parent="Brotat"]
 
-[node name="Weapons2" type="Node2D" parent="Brotat"]
+[node name="Weapons" type="Node2D" parent="Brotat"]
 
 [node name="Path2D" type="Path2D" parent="Brotat"]
 position = Vector2(-1228.62, -678.978)
@@ -628,26 +639,47 @@ unique_name_in_owner = true
 position = Vector2(-286, -303)
 rotation = 0.0019983985
 
-[node name="BlueWig" type="AnimatedSprite2D" parent="Brotat"]
+[node name="HappyBoo" parent="Brotat" instance=ExtResource("3_hfi5g")]
 unique_name_in_owner = true
+script = ExtResource("4_tg6hx")
+
+[node name="BlueWig" type="AnimatedSprite2D" parent="Brotat/HappyBoo"]
 visible = false
 top_level = true
 position = Vector2(914, 431)
 scale = Vector2(2.0676599, 2.0676599)
-sprite_frames = SubResource("SpriteFrames_4i4ie")
+sprite_frames = SubResource("SpriteFrames_hs66j")
 animation = &"BlueWig"
 autoplay = "BlueWig"
 offset = Vector2(10.638298, 9.422493)
 
-[node name="Heart" type="AnimatedSprite2D" parent="Brotat"]
-unique_name_in_owner = true
+[node name="Heart" type="AnimatedSprite2D" parent="Brotat/HappyBoo"]
 visible = false
 top_level = true
 position = Vector2(936.99994, 419.00003)
 scale = Vector2(2.5600002, 2.5599997)
-sprite_frames = SubResource("SpriteFrames_hfi5g")
+sprite_frames = SubResource("SpriteFrames_fp0yo")
 animation = &"Heart"
 autoplay = "Heart"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Brotat"]
+position = Vector2(0, -15)
+scale = Vector2(1.12, 1.16)
+shape = SubResource("CapsuleShape2D_7yhjp")
+
+[node name="gun" parent="Brotat" instance=ExtResource("7_bg3rl")]
+position = Vector2(-2, -48)
+audio_bus_name = &"shot"
+
+[node name="HurtBox" type="Area2D" parent="Brotat"]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Brotat/HurtBox"]
+position = Vector2(-1, -33)
+shape = SubResource("CapsuleShape2D_46648")
+debug_color = Color(0.854248, 0.314498, 0.503126, 0.42)
 
 [node name="tri" parent="." instance=ExtResource("4_hfi5g")]
 position = Vector2(386, 405)

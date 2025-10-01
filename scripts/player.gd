@@ -295,15 +295,16 @@ func heal(amount: int) -> void:
 
 
 func apply_equipped_hair():
-	# Get the hair saved in PlayerData
 	var hair_name = PlayerData.equipped_hair
-	# Hide all hairs first (optional, in case multiple exist)
-	%BlueWig.visible = false
-	%Heart.visible = false
-
-	# Enable the selected hair
 	var hair_node = get_node_or_null(hair_name)
 	if hair_node:
+		# Remove it from its old parent
+		if hair_node.get_parent() != %HappyBoo:
+			hair_node.get_parent().remove_child(hair_node)
+			# Add it as a child of the sprite so it moves with the player
+			%HappyBoo.add_child(hair_node)
+
 		hair_node.visible = true
 		hair_node.play(hair_name)  # if it has an animation
+		hair_node.position = Vector2.ZERO  # reset local position relative to sprite
 		hair_node.z_index = 10
