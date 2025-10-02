@@ -5,6 +5,7 @@ extends Control
 @onready var coins_container = $ColorRect/FlyingCoinsContainer
 @onready var coins_label = $ColorRect/CoinsLabel
 @onready var food_counter_label = $ColorRect/FoodCounterLabel
+@onready var fishing_level_label = $UnlockLevel
 
 @export var coins_per_food: int = 14
 @export var coin_stagger: float = 0.05
@@ -114,3 +115,28 @@ func apply_equipped_hair():
 
 func _on_wardrobe_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/Wardrobe.tscn")
+
+
+
+
+# ------------------------
+# Unlock next fishing level
+# ------------------------
+func _on_unlock_next_fishing_level_pressed():
+	var next_level = PlayerData.unlocked_fishing_levels + 1
+	var cost = 20  # 20 Leeks needed
+
+	if PlayerData.food_counts.get("Leek", 0) < cost:
+		print("Not enough Leeks to unlock this level!")
+		$UnlockLevel/NotEnough.play()
+		return
+
+	# Deduct Leeks
+	PlayerData.food_counts["Leek"] -= cost
+
+	# Unlock next level
+	PlayerData.unlocked_fishing_levels = next_level
+	print("Unlocked fishing level", next_level)
+
+	# Update UI
+	fishing_level_label.text = "Fishing Level " + str(next_level) + " unlocked!"

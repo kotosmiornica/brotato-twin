@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://cqcwtk4w1gpdv"]
+[gd_scene load_steps=104 format=3 uid="uid://cqcwtk4w1gpdv"]
 
 [ext_resource type="Script" uid="uid://d1wrmtooq2n67" path="res://scripts/menu.gd" id="1_jmdev"]
 [ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="1_o0tnf"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bkcljvg88hmay" path="res://images/sheets/UndHeartSheet.png" id="15_rtd1e"]
 [ext_resource type="Script" uid="uid://bbnfxam3713v5" path="res://scripts/WardrobeButton.gd" id="16_i7htd"]
 [ext_resource type="Script" uid="uid://cqleq4oyen4mn" path="res://scripts/EatingPet.gd" id="18_5p0sf"]
+[ext_resource type="Script" uid="uid://4pnebljmh7ua" path="res://scenes/unlock_level.gd" id="18_dek3k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6c8sk"]
 atlas = ExtResource("4_rtd1e")
@@ -816,7 +817,7 @@ offset_left = 8.0
 offset_top = 85.0
 offset_right = 191.0
 offset_bottom = 147.0
-theme_override_colors/font_color = Color(0.75686276, 0.8666667, 0.17254902, 1)
+theme_override_colors/font_color = Color(0.69426936, 1, 0.6830813, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 61
 text = "Coins:"
@@ -856,8 +857,8 @@ offset_right = -742.0
 offset_bottom = -301.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 0.2627451, 1)
-theme_override_colors/font_shadow_color = Color(1, 0.8039216, 0, 1)
+theme_override_colors/font_color = Color(0.54901963, 1, 0.4627451, 1)
+theme_override_colors/font_shadow_color = Color(0.47843137, 0.63529414, 0.28235295, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 80
 script = ExtResource("6_thu7x")
@@ -873,10 +874,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -808.0
-offset_top = -275.0
-offset_right = -22.0
-offset_bottom = -20.0
+offset_left = -986.0
+offset_top = -273.0
+offset_right = -410.0
+offset_bottom = -18.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -904,16 +905,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 178.0
-offset_top = -324.0
+offset_left = 355.0
+offset_top = -370.0
 offset_right = 924.0
-offset_bottom = -139.0
+offset_bottom = -200.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
-theme_override_font_sizes/font_size = 85
+theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_yt8fu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pp5m5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4umqm")
@@ -963,14 +964,14 @@ stream = ExtResource("11_rtd1e")
 
 [node name="FishButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1099.0
-offset_top = 449.0
-offset_right = 1885.0
-offset_bottom = 545.0
+offset_left = 1145.0
+offset_top = 415.0
+offset_right = 1883.0
+offset_bottom = 500.0
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 65
 theme_override_styles/normal = ExtResource("7_el213")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2af52")
 theme_override_styles/hover = SubResource("StyleBoxFlat_thu7x")
@@ -1003,6 +1004,37 @@ libraries = {
 &"": SubResource("AnimationLibrary_7t7qg")
 }
 
+[node name="UnlockLevel" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 498.0
+offset_top = 17.0
+offset_right = 922.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_o0tnf")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_yt8fu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pp5m5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4umqm")
+text = "Unlock level 2!"
+autowrap_mode = 3
+script = ExtResource("18_dek3k")
+
+[node name="click" type="AudioStreamPlayer" parent="UnlockLevel"]
+stream = ExtResource("11_rtd1e")
+
+[node name="NotEnough" type="AudioStreamPlayer" parent="UnlockLevel"]
+stream = ExtResource("6_5p0sf")
+bus = &"click"
+
 [node name="Sprite2D" type="TextureRect" parent="."]
 visible = false
 layout_mode = 0
@@ -1020,7 +1052,7 @@ autoplay = true
 bus = &"menu music"
 
 [node name="EatingPet" type="Sprite2D" parent="."]
-position = Vector2(1354, 732.99994)
+position = Vector2(1204.9999, 740)
 scale = Vector2(2.531249, 2.28702)
 texture = ExtResource("3_yt8fu")
 script = ExtResource("18_5p0sf")
@@ -1030,3 +1062,4 @@ script = ExtResource("18_5p0sf")
 [connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="WardrobeButton" to="." method="_on_wardrobe_pressed"]
 [connection signal="pressed" from="FishButton" to="Button" method="_on_fish_button_pressed"]
+[connection signal="pressed" from="UnlockLevel" to="." method="_on_unlock_next_fishing_level_pressed"]
