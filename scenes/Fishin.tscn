@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbo0bd7qla4yd"]
+[gd_scene load_steps=10 format=3 uid="uid://cbo0bd7qla4yd"]
 
 [ext_resource type="Texture2D" uid="uid://dxjcywb4hgl76" path="res://free-underwater-world-pixel-art-backgrounds/background 1/1.png" id="1_o24hs"]
 [ext_resource type="Script" uid="uid://catu5hvsoll6o" path="res://scripts/fishin.gd" id="1_wacnr"]
 [ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://images/icon.jpg" id="3_aafxh"]
+[ext_resource type="PackedScene" uid="uid://dtd252iudfgoo" path="res://scenes/Food.tscn" id="3_tmcrs"]
 [ext_resource type="Texture2D" uid="uid://bdghbxy6moeia" path="res://images/hook_4294182.png" id="4_2kclr"]
+[ext_resource type="PackedScene" uid="uid://4nunmvouvjg3" path="res://Food3.tscn" id="4_5qsvn"]
+[ext_resource type="PackedScene" uid="uid://bafhs3ix31cy" path="res://scenes/Food2.tscn" id="5_a230o"]
 [ext_resource type="AudioStream" uid="uid://w42b6prhlxu6" path="res://SOUNDS/music/fishmusic.mp3" id="6_2kclr"]
 [ext_resource type="AudioStream" uid="uid://lcfme426035c" path="res://SOUNDS/sounds/pop-402324.mp3" id="6_pqhp0"]
 
@@ -42,6 +45,9 @@ texture = ExtResource("1_o24hs")
 
 [node name="FishingGame" type="Node2D" parent="."]
 script = ExtResource("1_wacnr")
+leek_scene = ExtResource("3_tmcrs")
+knife_scene = ExtResource("4_5qsvn")
+monster_scene = ExtResource("5_a230o")
 
 [node name="Hook" type="Sprite2D" parent="FishingGame"]
 top_level = true

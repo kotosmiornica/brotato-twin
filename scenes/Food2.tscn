@@ -1,15 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://bafhs3ix31cy"]
 
-[ext_resource type="Script" uid="uid://bww6gvdjx017p" path="res://scripts/food.gd" id="1_wbade"]
+[ext_resource type="Script" uid="uid://q3d33ocpjtey" path="res://scenes/Food2.gd" id="1_wbade"]
 [ext_resource type="Texture2D" uid="uid://kc5ltioajpbp" path="res://images/MonsterEnergyDrink.png" id="2_wbade"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jwtx"]
-radius = 46.1264
-height = 153.93292
+radius = 48.6852
+height = 168.53041
 
 [node name="Monster" type="Node2D"]
 script = ExtResource("1_wbade")
-food_type = "Black Monster"
+food_type = "BlackMonster"
 
 [node name="Area2D" type="Area2D" parent="."]
 

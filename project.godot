@@ -81,8 +81,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-PlayerData="*res://scripts/PlayerData.gd"
 Global="*res://Global.gd"
+PlayerData="*res://scripts/PlayerData.gd"
 
 [display]
 
