@@ -5,7 +5,8 @@ extends Control
 @onready var coins_container = $ColorRect/FlyingCoinsContainer
 @onready var coins_label = $ColorRect/CoinsLabel
 @onready var food_counter_label = $ColorRect/FoodCounterLabel
-@onready var fishing_level_label = $UnlockLevel
+@onready var fishing_level2_label = $UnlockLevel2
+@onready var fishing_level3_label = $UnlockLevel3
 
 @export var coins_per_food: int = 14
 @export var coin_stagger: float = 0.05
@@ -143,9 +144,9 @@ func _on_wardrobe_button_pressed():
 # ------------------------
 # Unlock next fishing level
 # ------------------------
-func _on_unlock_next_fishing_level_pressed():
+func _on_unlock_fishing_level2_pressed() -> void:
 	var next_level = PlayerData.unlocked_fishing_levels + 1
-	var cost = 5  # 20 Leeks needed
+	var cost = 10
 
 	if PlayerData.food_counts.get("Leek", 0) < cost:
 		print("Not enough Leeks to unlock this level!")
@@ -160,4 +161,25 @@ func _on_unlock_next_fishing_level_pressed():
 	print("Unlocked fishing level", next_level)
 
 	# Update UI
-	fishing_level_label.text = "Fishing Level " + str(next_level) + " unlocked!"
+	fishing_level2_label.text = "Fishing Level " + str(next_level) + " unlocked!"
+	$UnlockLevel2/buy.play()
+
+func _on_unlock_level_3_pressed() -> void:
+	var next_level = PlayerData.unlocked_fishing_levels + 1
+	var cost = 10
+
+	if PlayerData.food_counts.get("ToyKnife", 0) < cost:
+		print("Not enough Knives to unlock this level!")
+		$UnlockLevel3/NotEnough.play()
+		return
+
+	# Deduct Leeks
+	PlayerData.food_counts["ToyKnife"] -= cost
+
+	# Unlock next level
+	PlayerData.unlocked_fishing_levels = next_level
+	print("Unlocked fishing level", next_level)
+
+	# Update UI
+	fishing_level3_label.text = "Fishing Level " + str(next_level) + " unlocked!"
+	$UnlockLevel3/buy.play()

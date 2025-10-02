@@ -3,7 +3,6 @@ extends Node2D
 
 @onready var hook = $Hook
 @onready var foods_container = $Foods
-@export var food_scene: PackedScene
 @export var spawn_interval = 0.3
 @export var hook_end_y = 50.0    
 @export var base_speed = 300.0  
@@ -66,16 +65,21 @@ func _process(delta):
 		PlayerData.caught_food_count = caught_foods.size()
 		get_tree().change_scene_to_file("res://scenes/Menu.tscn")
 
+func get_food_scene() -> PackedScene:
+	var level = PlayerData.unlocked_fishing_levels
+	if level == 1:
+		return preload("res://scenes/Leek.tscn")
+	elif level == 2:
+		return preload("res://scenes/ToyKnife.tscn")
+	elif level == 3:
+		return preload("res://scenes/BlackMonster.tscn")
+	# fallback
+	return preload("res://scenes/Leek.tscn")
 
 func spawn_food():
-	if food_scene == null:
-		return
-
+	var food_scene = get_food_scene()  # get correct scene for current level
 	for i in range(4):
 		var new_food = food_scene.instantiate()
-		new_food.position = Vector2(-50, randf_range(100, get_viewport_rect().size.y - 150))
+		var y = randf_range(100, get_viewport_rect().size.y - 150)
+		new_food.position = Vector2(-50, y)
 		foods_container.add_child(new_food)
-
-		# Optional: explicitly set type, in case exported property is missing
-		if not new_food.has_method("food_type"):
-			new_food.set("food_type", "ToyKnife")
