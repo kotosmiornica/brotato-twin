@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var speed = 600.0
-@export var food_type: String = "DefaultFood"  # << add this
+@export var food_type: String = "ToyKnife"  # << add this
 
 func _process(delta):
 	position.x += speed * delta  # move right

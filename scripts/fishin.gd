@@ -18,6 +18,7 @@ var hook_rise_speed = 6.0
 var caught_foods := []
 
 func _ready():
+	PlayerData.caught_foods.clear()  # reset from previous fishing
 	var screen_size = get_viewport_rect().size
 	hook.position = Vector2(
 		screen_size.x / 2, 
@@ -49,8 +50,13 @@ func _process(delta):
 			if hook.global_position.distance_to(food.global_position) < 32:
 				if not caught_foods.has(food):
 					caught_foods.append(food)
-					food.queue_free()  
-					
+					if "food_type" in food:
+						PlayerData.caught_foods.append(food.food_type)
+					else:
+						PlayerData.caught_foods.append("Unknown")
+
+
+					food.queue_free()
 					$caught.play()
 
 	if hook.position.y <= hook_end_y:

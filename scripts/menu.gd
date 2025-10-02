@@ -11,7 +11,12 @@ extends Control
 @export var coin_stagger: float = 0.05
 
 var food_counts := {}
-var food_scene: PackedScene = preload("res://scenes/Food.tscn")
+var food_scenes := {
+	"Leek": preload("res://scenes/Leek.tscn"),
+	"ToyKnife": preload("res://scenes/ToyKnife.tscn"),
+	"BlackMonster": preload("res://scenes/BlackMonster.tscn")
+}
+
 var coin_scene: PackedScene = preload("res://scenes/Coin.tscn")
 
 var active_coins := []
@@ -24,10 +29,24 @@ func _ready():
 		PlayerData.caught_food_count = 0
 
 func trigger_flying_foods():
-	for i in range(PlayerData.caught_food_count):
-		spawn_flying_food()
+	for food_type in PlayerData.caught_foods:
+		spawn_flying_food(food_type)
+	PlayerData.caught_foods.clear()
 
-func spawn_flying_food():
+func spawn_flying_food(food_type: String):
+	var scene_path = ""
+	
+	match food_type:
+		"Leek":
+			scene_path = "res://scenes/Leek.tscn"
+		"ToyKnife":
+			scene_path = "res://scenes/ToyKnife.tscn"
+		"BlackMonster":
+			scene_path = "res://scenes/BlackMonster.tscn"
+
+
+	# Use load() instead of preload() for dynamic path
+	var food_scene = load(scene_path)
 	var food = food_scene.instantiate()
 	flying_foods_container.add_child(food)
 
@@ -35,10 +54,10 @@ func spawn_flying_food():
 	food.global_position = Vector2(randf_range(100, screen_size.x - 100), screen_size.y + 20)
 
 	var pet_pos = eating_pet.global_position
-
 	var food_tween = create_tween()
 	food_tween.tween_property(food, "global_position", pet_pos, 0.7).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	food_tween.tween_callback(Callable(self, "_on_food_reached_pet").bind(food))
+
 
 func spawn_coins_for_food():
 	for i in range(coins_per_food):
@@ -75,15 +94,16 @@ func _on_coin_reached_label(coin):
 
 	Global.coins += 1
 	coins_label.text = str(Global.coins)
-
+	
 func _on_food_reached_pet(food):
-	print("Food reached pet:", food)
+	if not is_instance_valid(food):
+		return
 
-	eating_pet.call_deferred("on_food_arrived", food)
+	# Remove the food immediately
+	food.queue_free()
 
-	var food_type = food.food_type
-	print("Food type:", food_type)   # 👈 check this
-
+	# Handle food type
+	var food_type = food.food_type  # assumes Food.gd script exists
 	if food_type == null or food_type == "":
 		food_type = "Unknown"
 
@@ -92,6 +112,7 @@ func _on_food_reached_pet(food):
 	PlayerData.food_counts[food_type] += 1
 
 	update_food_counter_label()
+	spawn_coins_for_food()
 
 
 
@@ -124,7 +145,7 @@ func _on_wardrobe_button_pressed():
 # ------------------------
 func _on_unlock_next_fishing_level_pressed():
 	var next_level = PlayerData.unlocked_fishing_levels + 1
-	var cost = 20  # 20 Leeks needed
+	var cost = 5  # 20 Leeks needed
 
 	if PlayerData.food_counts.get("Leek", 0) < cost:
 		print("Not enough Leeks to unlock this level!")

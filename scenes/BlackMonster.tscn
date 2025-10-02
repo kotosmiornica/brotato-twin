@@ -1,14 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bafhs3ix31cy"]
+[gd_scene load_steps=4 format=3 uid="uid://d5ay458jqmq3"]
 
-[ext_resource type="Script" uid="uid://q3d33ocpjtey" path="res://scenes/Food2.gd" id="1_wbade"]
-[ext_resource type="Texture2D" uid="uid://kc5ltioajpbp" path="res://images/MonsterEnergyDrink.png" id="2_wbade"]
+[ext_resource type="Script" uid="uid://q3d33ocpjtey" path="res://scenes/Food2.gd" id="1_yvqha"]
+[ext_resource type="Texture2D" uid="uid://kc5ltioajpbp" path="res://images/MonsterEnergyDrink.png" id="2_tygs8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jwtx"]
 radius = 48.6852
 height = 168.53041
 
 [node name="Monster" type="Node2D"]
-script = ExtResource("1_wbade")
+script = ExtResource("1_yvqha")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -16,7 +16,7 @@ script = ExtResource("1_wbade")
 position = Vector2(-8, 9.53674e-07)
 rotation = 0.42605457
 scale = Vector2(1.5599998, 1.5599998)
-texture = ExtResource("2_wbade")
+texture = ExtResource("2_tygs8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-6.0000005, -8)

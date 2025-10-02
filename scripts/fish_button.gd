@@ -16,7 +16,18 @@ func _pressed() -> void:
 
 
 func _on_bubbles_finished():
-	get_tree().change_scene_to_file("res://scenes/Fishin.tscn")
+	var level = PlayerData.unlocked_fishing_levels
+
+	var scene_path = ""
+	match level:
+		1:
+			scene_path = "res://scenes/Fishin.tscn"
+		2:
+			scene_path = "res://scenes/Fishin2.tscn"
+		3:
+			scene_path = "res://scenes/Fishin3.tscn"
+
+	get_tree().change_scene_to_file(scene_path)
 
 
 func _process(_delta: float) -> void:

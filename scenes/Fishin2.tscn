@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://cmj0v7hcyqsom"]
 
 [ext_resource type="Texture2D" uid="uid://btejwt6evkxt" path="res://free-underwater-world-pixel-art-backgrounds/background 3/orig_big.png" id="1_2ix2l"]
-[ext_resource type="Script" uid="uid://catu5hvsoll6o" path="res://scripts/fishin.gd" id="2_g4jqp"]
-[ext_resource type="PackedScene" uid="uid://dtd252iudfgoo" path="res://scenes/Food.tscn" id="3_orsyg"]
+[ext_resource type="Script" uid="uid://c4o1njtusidya" path="res://scenes/fishing_game_2.gd" id="2_v7d26"]
+[ext_resource type="PackedScene" uid="uid://dsukki213sd11" path="res://ToyKnife.tscn" id="3_2ix2l"]
 [ext_resource type="Texture2D" uid="uid://bdghbxy6moeia" path="res://images/hook_4294182.png" id="4_h7oma"]
 [ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://images/icon.jpg" id="5_2pfiv"]
 [ext_resource type="AudioStream" uid="uid://lcfme426035c" path="res://SOUNDS/sounds/pop-402324.mp3" id="6_7at5k"]
@@ -21,17 +21,18 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -192.0
-offset_top = -108.0
-offset_right = 192.0
-offset_bottom = 108.0
+offset_left = -5.333252
+offset_top = -3.0
+offset_right = 5.333252
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_2ix2l")
+expand_mode = 1
 
 [node name="FishingGame2" type="Node2D" parent="."]
-script = ExtResource("2_g4jqp")
-food_scene = ExtResource("3_orsyg")
+script = ExtResource("2_v7d26")
+food_scene = ExtResource("3_2ix2l")
 
 [node name="Hook" type="Sprite2D" parent="FishingGame2"]
 top_level = true
