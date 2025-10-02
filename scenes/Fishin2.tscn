@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=3 uid="uid://cmj0v7hcyqsom"]
+
+[ext_resource type="Texture2D" uid="uid://btejwt6evkxt" path="res://free-underwater-world-pixel-art-backgrounds/background 3/orig_big.png" id="1_2ix2l"]
+[ext_resource type="Script" uid="uid://catu5hvsoll6o" path="res://scripts/fishin.gd" id="2_g4jqp"]
+[ext_resource type="PackedScene" uid="uid://dtd252iudfgoo" path="res://scenes/Food.tscn" id="3_orsyg"]
+[ext_resource type="Texture2D" uid="uid://bdghbxy6moeia" path="res://images/hook_4294182.png" id="4_h7oma"]
+[ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://images/icon.jpg" id="5_2pfiv"]
+[ext_resource type="AudioStream" uid="uid://lcfme426035c" path="res://SOUNDS/sounds/pop-402324.mp3" id="6_7at5k"]
+[ext_resource type="AudioStream" uid="uid://w42b6prhlxu6" path="res://SOUNDS/music/fishmusic.mp3" id="7_48j6j"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -108.0
+offset_right = 192.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2ix2l")
+
+[node name="FishingGame2" type="Node2D" parent="."]
+script = ExtResource("2_g4jqp")
+food_scene = ExtResource("3_orsyg")
+
+[node name="Hook" type="Sprite2D" parent="FishingGame2"]
+top_level = true
+position = Vector2(953, 982)
+scale = Vector2(0.0820311, 0.11792)
+texture = ExtResource("4_h7oma")
+
+[node name="PlayerFood" type="Sprite2D" parent="FishingGame2"]
+visible = false
+position = Vector2(1492, 878)
+scale = Vector2(0.761719, 0.414062)
+texture = ExtResource("5_2pfiv")
+
+[node name="Foods" type="Node2D" parent="FishingGame2"]
+
+[node name="Panel" type="Panel" parent="FishingGame2"]
+visible = false
+offset_left = 110.0
+offset_top = 137.0
+offset_right = 1071.0
+offset_bottom = 674.0
+
+[node name="CoinsLabel" type="Label" parent="FishingGame2/Panel"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "COINS
+"
+
+[node name="CapacityLabel" type="Label" parent="FishingGame2/Panel"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="DepthLabel" type="Label" parent="FishingGame2"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="UpgradeButton" type="Button" parent="FishingGame2"]
+visible = false
+offset_left = 29.0
+offset_top = 17.0
+offset_right = 463.0
+offset_bottom = 94.0
+theme_override_font_sizes/font_size = 50
+text = "Upgrade Capacity"
+
+[node name="DeeperButton" type="Button" parent="FishingGame2"]
+visible = false
+offset_left = 33.0
+offset_top = 106.0
+offset_right = 297.0
+offset_bottom = 183.0
+theme_override_font_sizes/font_size = 50
+text = "Go Deeper"
+
+[node name="LogLabel" type="Label" parent="FishingGame2"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="caught" type="AudioStreamPlayer" parent="FishingGame2"]
+stream = ExtResource("6_7at5k")
+bus = &"caught"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_48j6j")
+autoplay = true
+bus = &"fishin idle"

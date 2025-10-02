@@ -9,7 +9,7 @@ height = 168.53041
 
 [node name="ToyKnife" type="Node2D"]
 script = ExtResource("1_0y71u")
-food_type = "Toy Knife"
+food_type = "ToyKnife"
 
 [node name="Area2D" type="Area2D" parent="."]
 

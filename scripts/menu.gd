@@ -17,12 +17,10 @@ var active_coins := []
 
 func _ready():
 	apply_equipped_hair()
-
-	if PlayerData.caught_foods.size() > 0:
-		for food_type in PlayerData.caught_foods:
-			print("Caught:", food_type)  # Replace with UI update
-	else:
-		print("No foods caught")
+	coins_label.text = str(Global.coins)
+	if PlayerData.caught_food_count > 0:
+		trigger_flying_foods()
+		PlayerData.caught_food_count = 0
 
 func trigger_flying_foods():
 	for i in range(PlayerData.caught_food_count):
