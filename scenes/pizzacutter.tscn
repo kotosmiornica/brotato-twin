@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ckc78makin50v"]
 
 [ext_resource type="Script" uid="uid://dtc1mtnys6gnm" path="res://scripts/pizzacutter.gd" id="1_jyhhi"]
-[ext_resource type="Texture2D" uid="uid://cfug706gfmik" path="res://pistol/pizza-cutter_184486.png" id="2_jyhhi"]
+[ext_resource type="Texture2D" uid="uid://bvsmxyogik7jp" path="res://images/pizzacutter.png" id="2_jyhhi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_og67c"]
 radius = 48.0104
@@ -12,9 +12,9 @@ collision_mask = 2
 script = ExtResource("1_jyhhi")
 
 [node name="Pistol" type="Sprite2D" parent="."]
-position = Vector2(265, -0.318141)
-rotation = -2.37316
-scale = Vector2(0.30026, 0.30026)
+position = Vector2(112, -3)
+rotation = 1.5707964
+scale = Vector2(4.18236, 4.1823587)
 texture = ExtResource("2_jyhhi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
