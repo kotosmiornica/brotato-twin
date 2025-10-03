@@ -1,0 +1,17 @@
+
+=====================================================================
+
+--- Big Green 32 tilemap for top down view gaming - 32x32 ---
+
+	Created by lorian77
+	
+	LICENSE CC0
+	You can edit and use the asset in any commercial or 
+	non-commercial project, modify it to suit your own needs.
+	You may not resell the asset to others, edit and resell 
+	the asset to others. 
+	Credit is not necessary, but highly appreciated.
+	
+	Support me by crediting https://lorian77.itch.io/
+
+======================================================================

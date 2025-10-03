@@ -783,12 +783,12 @@ script = ExtResource("1_jmdev")
 
 [node name="MakeYourPlayer" parent="." instance=ExtResource("9_yt8fu")]
 unique_name_in_owner = true
-position = Vector2(568, 904)
+position = Vector2(467, 904)
 
 [node name="BlueWig" type="AnimatedSprite2D" parent="MakeYourPlayer"]
 visible = false
 top_level = true
-position = Vector2(500, 577)
+position = Vector2(400, 577)
 scale = Vector2(6.58, 6.58)
 sprite_frames = SubResource("SpriteFrames_sm01i")
 animation = &"BlueWig"
@@ -798,7 +798,7 @@ offset = Vector2(10.638298, 9.422493)
 [node name="Heart" type="AnimatedSprite2D" parent="MakeYourPlayer"]
 visible = false
 top_level = true
-position = Vector2(576, 565)
+position = Vector2(476, 565)
 scale = Vector2(7.02, 7.02)
 sprite_frames = SubResource("SpriteFrames_36bst")
 animation = &"Heart"
@@ -858,7 +858,7 @@ offset_right = 562.0
 offset_bottom = -397.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.88235295, 0.3019608, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 110
 text = "DESTROY THE BLOBS!!!"
@@ -965,6 +965,7 @@ script = ExtResource("6_4umqm")
 stream = ExtResource("11_rtd1e")
 
 [node name="WardrobeButton" type="Button" parent="."]
+visible = false
 top_level = true
 layout_mode = 0
 offset_left = 63.0
