@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var spin_speed: float = 75
+@export var spin_speed: float = 100
 @export var orbit_radius: float = 25
 @export var orbit_speed: float = 70
 @export var damage: int = 2
@@ -26,4 +26,4 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
 	if body.has_method("take_damage"):
-		body.take_damage(1)
+		body.take_damage(1.5)

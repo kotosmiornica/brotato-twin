@@ -248,7 +248,7 @@ _data = {
 }
 
 [node name="Slime" type="Node2D"]
-scale = Vector2(0.624967, 0.624967)
+scale = Vector2(0.74327016, 0.74327016)
 script = ExtResource("1_87y5x")
 
 [node name="GroundShadow" type="Sprite2D" parent="."]

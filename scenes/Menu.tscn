@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://cqcwtk4w1gpdv"]
+[gd_scene load_steps=106 format=3 uid="uid://cqcwtk4w1gpdv"]
 
 [ext_resource type="Script" uid="uid://d1wrmtooq2n67" path="res://scripts/menu.gd" id="1_jmdev"]
 [ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="1_o0tnf"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://bbnfxam3713v5" path="res://scripts/WardrobeButton.gd" id="16_i7htd"]
 [ext_resource type="Script" uid="uid://cqleq4oyen4mn" path="res://scripts/EatingPet.gd" id="18_5p0sf"]
 [ext_resource type="Script" uid="uid://4pnebljmh7ua" path="res://scenes/unlock_level.gd" id="18_dek3k"]
+[ext_resource type="Script" uid="uid://hvak8g7kn2xr" path="res://scenes/settings.gd" id="23_8fhjo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6c8sk"]
 atlas = ExtResource("4_rtd1e")
@@ -815,7 +816,6 @@ libraries = {
 
 [node name="NotEnough" type="AudioStreamPlayer" parent="Shop"]
 stream = ExtResource("6_5p0sf")
-bus = &"not enough"
 
 [node name="buy" type="AudioStreamPlayer" parent="Shop"]
 stream = ExtResource("7_7t7qg")
@@ -829,6 +829,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(722, 316)
 color = Color(0.505882, 0.286275, 0.878431, 0.768627)
 
 [node name="Label" type="Label" parent="ColorRect"]
@@ -1056,7 +1057,6 @@ stream = ExtResource("11_rtd1e")
 
 [node name="NotEnough" type="AudioStreamPlayer" parent="UnlockLevel3"]
 stream = ExtResource("6_5p0sf")
-bus = &"not enough"
 
 [node name="buy" type="AudioStreamPlayer" parent="UnlockLevel3"]
 stream = ExtResource("7_7t7qg")
@@ -1091,7 +1091,6 @@ stream = ExtResource("11_rtd1e")
 
 [node name="NotEnough" type="AudioStreamPlayer" parent="UnlockLevel2"]
 stream = ExtResource("6_5p0sf")
-bus = &"not enough"
 
 [node name="buy" type="AudioStreamPlayer" parent="UnlockLevel2"]
 stream = ExtResource("7_7t7qg")
@@ -1119,6 +1118,34 @@ texture = ExtResource("3_yt8fu")
 script = ExtResource("18_5p0sf")
 
 [node name="FlyingFoodsContainer" type="Node2D" parent="."]
+
+[node name="Settings" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 698.0
+offset_top = 449.0
+offset_right = 926.0
+offset_bottom = 505.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(-672, 231)
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_o0tnf")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_dek3k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pp5m5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4umqm")
+text = "Settings"
+autowrap_mode = 3
+script = ExtResource("23_8fhjo")
+
+[node name="click" type="AudioStreamPlayer" parent="Settings"]
+stream = ExtResource("11_rtd1e")
 
 [connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="WardrobeButton" to="." method="_on_wardrobe_pressed"]
