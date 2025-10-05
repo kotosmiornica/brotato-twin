@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gfuphujdhgtd"
-path="res://.godot/imported/Leek.png-a050e901b06e82e7a1dc9e5233d96aa0.ctex"
+uid="uid://dt4xpyitap6p1"
+path="res://.godot/imported/Cartoon_green_texture_grass.jpg-2e1da1a4fb37e54e465d32fb5dcd753e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Leek.png"
-dest_files=["res://.godot/imported/Leek.png-a050e901b06e82e7a1dc9e5233d96aa0.ctex"]
+source_file="res://images/Cartoon_green_texture_grass.jpg"
+dest_files=["res://.godot/imported/Cartoon_green_texture_grass.jpg-2e1da1a4fb37e54e465d32fb5dcd753e.ctex"]
 
 [params]
 

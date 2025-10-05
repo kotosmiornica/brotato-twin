@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://d4m44cc8pskx4"]
 
 [ext_resource type="Script" uid="uid://bww6gvdjx017p" path="res://scripts/food.gd" id="1_xs1tk"]
-[ext_resource type="Texture2D" uid="uid://gfuphujdhgtd" path="res://images/leek.png" id="2_j1n3m"]
+[ext_resource type="Texture2D" uid="uid://gfuphujdhgtd" path="res://images/Leek.png" id="2_j1n3m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jwtx"]
-radius = 39.647133
-height = 148.46385
+radius = 45.19928
+height = 153.94647
 
 [node name="Leek" type="Node2D"]
 script = ExtResource("1_xs1tk")
@@ -13,12 +13,12 @@ script = ExtResource("1_xs1tk")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(-4, 6.0000005)
-rotation = 1.4735104
-scale = Vector2(1.8352185, 1.5826571)
+position = Vector2(1.0000019, 4.000002)
+rotation = -0.35597646
+scale = Vector2(1.7442573, 1.6327882)
 texture = ExtResource("2_j1n3m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-7, 2)
-rotation = 0.7976879
+position = Vector2(2.3841858e-07, 6)
+rotation = -1.0274271
 shape = SubResource("CapsuleShape2D_2jwtx")

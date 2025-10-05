@@ -248,10 +248,12 @@ _data = {
 }
 
 [node name="Slime" type="Node2D"]
+scale = Vector2(0.624967, 0.624967)
 script = ExtResource("1_87y5x")
 
 [node name="GroundShadow" type="Sprite2D" parent="."]
-modulate = Color(0.898039, 0.878431, 0.831373, 1)
+modulate = Color(0.3825025, 0.7545171, 0.44244516, 1)
+self_modulate = Color(0.32730642, 0.6632922, 0.3830831, 1)
 z_index = -1
 z_as_relative = false
 position = Vector2(0, 20.999998)

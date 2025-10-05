@@ -2,7 +2,7 @@ extends Node2D
 
 @export var base_enemy_count: int = 10
 @export var kills_for_medkit: int = 5
-
+const MobScene = preload("res://scenes/mob.tscn")
 var current_wave: int = 0
 var alive_enemies: int = 0
 var kill_count: int = 0
@@ -34,17 +34,34 @@ func start_next_wave():
 	current_wave += 1
 	var enemy_count = int(round(base_enemy_count * pow(1.2, current_wave - 1)))
 	print("Wave %d: Spawning %d enemies" % [current_wave, enemy_count])
-	
-	for i in range(enemy_count):
-		spawn_mob()
 
-func spawn_mob():
-	var new_mob = preload("res://scenes/mob.tscn").instantiate()
-	%PathFollow2D.progress_ratio = randf()
-	new_mob.global_position = %PathFollow2D.global_position
+	_spawn_wave(enemy_count)
+
+
+func _spawn_wave(enemy_count: int):
+	var half = enemy_count / 2
+
+	# Spawn from PathFollow2D
+	for i in range(half):
+		_spawn_mob(%PathFollow2D)
+
+	# Spawn from PathFollow2DSecond
+	for i in range(half):
+		_spawn_mob(%PathFollow2DSecond)
+
+	# If enemy_count is odd, spawn the extra one from PathFollow2DSecond (or alternate each wave if you want)
+	if enemy_count % 2 != 0:
+		_spawn_mob(%PathFollow2DSecond)
+
+
+func _spawn_mob(path: PathFollow2D):
+	var new_mob = MobScene.instantiate()
+	path.progress_ratio = randf()
+	new_mob.global_position = path.global_position
 	add_child(new_mob)
 	alive_enemies += 1
 	new_mob.connect("died", Callable(self, "_on_enemy_died").bind(new_mob))
+
 
 func _on_enemy_died(mob: Node):
 	alive_enemies -= 1

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gfuphujdhgtd"
-path="res://.godot/imported/Leek.png-a050e901b06e82e7a1dc9e5233d96aa0.ctex"
+uid="uid://brfso2am24v6j"
+path="res://.godot/imported/Tulip.png-3f2c58621bf6ef31e8eb3536b75dabe0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Leek.png"
-dest_files=["res://.godot/imported/Leek.png-a050e901b06e82e7a1dc9e5233d96aa0.ctex"]
+source_file="res://images/Flowers_Without_Outline/Tulip.png"
+dest_files=["res://.godot/imported/Tulip.png-3f2c58621bf6ef31e8eb3536b75dabe0.ctex"]
 
 [params]
 

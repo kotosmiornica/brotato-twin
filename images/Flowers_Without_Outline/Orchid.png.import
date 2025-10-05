@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gfuphujdhgtd"
-path="res://.godot/imported/Leek.png-a050e901b06e82e7a1dc9e5233d96aa0.ctex"
+uid="uid://qdtc0vmfeuun"
+path="res://.godot/imported/Orchid.png-04cf2df9d39f4fd93d45d570a13466e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Leek.png"
-dest_files=["res://.godot/imported/Leek.png-a050e901b06e82e7a1dc9e5233d96aa0.ctex"]
+source_file="res://images/Flowers_Without_Outline/Orchid.png"
+dest_files=["res://.godot/imported/Orchid.png-04cf2df9d39f4fd93d45d570a13466e9.ctex"]
 
 [params]
 

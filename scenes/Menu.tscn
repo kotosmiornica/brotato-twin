@@ -815,7 +815,7 @@ libraries = {
 
 [node name="NotEnough" type="AudioStreamPlayer" parent="Shop"]
 stream = ExtResource("6_5p0sf")
-bus = &"click"
+bus = &"not enough"
 
 [node name="buy" type="AudioStreamPlayer" parent="Shop"]
 stream = ExtResource("7_7t7qg")
@@ -1056,7 +1056,7 @@ stream = ExtResource("11_rtd1e")
 
 [node name="NotEnough" type="AudioStreamPlayer" parent="UnlockLevel3"]
 stream = ExtResource("6_5p0sf")
-bus = &"click"
+bus = &"not enough"
 
 [node name="buy" type="AudioStreamPlayer" parent="UnlockLevel3"]
 stream = ExtResource("7_7t7qg")
@@ -1091,7 +1091,7 @@ stream = ExtResource("11_rtd1e")
 
 [node name="NotEnough" type="AudioStreamPlayer" parent="UnlockLevel2"]
 stream = ExtResource("6_5p0sf")
-bus = &"click"
+bus = &"not enough"
 
 [node name="buy" type="AudioStreamPlayer" parent="UnlockLevel2"]
 stream = ExtResource("7_7t7qg")

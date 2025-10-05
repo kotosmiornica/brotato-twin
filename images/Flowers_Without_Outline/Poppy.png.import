@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gfuphujdhgtd"
-path="res://.godot/imported/Leek.png-a050e901b06e82e7a1dc9e5233d96aa0.ctex"
+uid="uid://ceje7lu54gvnc"
+path="res://.godot/imported/Poppy.png-04bfbed3a3042b6e86b1928c31749573.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Leek.png"
-dest_files=["res://.godot/imported/Leek.png-a050e901b06e82e7a1dc9e5233d96aa0.ctex"]
+source_file="res://images/Flowers_Without_Outline/Poppy.png"
+dest_files=["res://.godot/imported/Poppy.png-04bfbed3a3042b6e86b1928c31749573.ctex"]
 
 [params]
 

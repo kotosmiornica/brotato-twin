@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gfuphujdhgtd"
-path="res://.godot/imported/Leek.png-a050e901b06e82e7a1dc9e5233d96aa0.ctex"
+uid="uid://ci8x7r1isu0vx"
+path="res://.godot/imported/Pansy.png-e44dd4a6ccc7235ee6d503935f0add43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Leek.png"
-dest_files=["res://.godot/imported/Leek.png-a050e901b06e82e7a1dc9e5233d96aa0.ctex"]
+source_file="res://images/Flowers_Without_Outline/Pansy.png"
+dest_files=["res://.godot/imported/Pansy.png-e44dd4a6ccc7235ee6d503935f0add43.ctex"]
 
 [params]
 
