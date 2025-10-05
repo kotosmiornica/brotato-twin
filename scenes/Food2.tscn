@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bafhs3ix31cy"]
 
-[ext_resource type="Script" uid="uid://q3d33ocpjtey" path="res://scenes/Food2.gd" id="1_wbade"]
+[ext_resource type="Script" uid="uid://q3d33ocpjtey" path="res://scripts/Food2.gd" id="1_wbade"]
 [ext_resource type="Texture2D" uid="uid://kc5ltioajpbp" path="res://images/MonsterEnergyDrink.png" id="2_wbade"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jwtx"]

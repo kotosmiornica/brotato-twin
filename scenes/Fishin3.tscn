@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ca504y61ha5df"]
 
 [ext_resource type="Texture2D" uid="uid://ck407cxkj4a3g" path="res://free-underwater-world-pixel-art-backgrounds/background 2/orig_big.png" id="1_c2xbu"]
-[ext_resource type="Script" uid="uid://c4o1njtusidya" path="res://scenes/fishing_game_2.gd" id="2_v2s22"]
+[ext_resource type="Script" uid="uid://c4o1njtusidya" path="res://scripts/fishing_game_2.gd" id="2_v2s22"]
 [ext_resource type="Texture2D" uid="uid://bdghbxy6moeia" path="res://images/hook_4294182.png" id="3_jue2y"]
 [ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://images/icon.jpg" id="4_utonk"]
 [ext_resource type="AudioStream" uid="uid://lcfme426035c" path="res://SOUNDS/sounds/pop-402324.mp3" id="5_cvod5"]

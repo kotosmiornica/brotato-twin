@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://cqcwtk4w1gpdv"]
+[gd_scene load_steps=108 format=3 uid="uid://cqcwtk4w1gpdv"]
 
 [ext_resource type="Script" uid="uid://d1wrmtooq2n67" path="res://scripts/menu.gd" id="1_jmdev"]
 [ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="1_o0tnf"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://58ityb3umon8" path="res://scenes/Shopp.tscn" id="3_pp5m5"]
 [ext_resource type="Texture2D" uid="uid://dv6si3qh0nol5" path="res://images/kraken_14724220.png" id="3_yt8fu"]
 [ext_resource type="Texture2D" uid="uid://btlwbyjjf7a0l" path="res://images/sheets/MIKUMIKU.png" id="4_rtd1e"]
+[ext_resource type="PackedScene" uid="uid://bkqp1n5b6xmb2" path="res://scenes/Volume.tscn" id="5_760fv"]
 [ext_resource type="Script" uid="uid://ca282vhax10g3" path="res://scripts/ShopButton.gd" id="6_4umqm"]
 [ext_resource type="AudioStream" uid="uid://c5mhvf1525jn4" path="res://SOUNDS/sounds/wrong-47985.mp3" id="6_5p0sf"]
 [ext_resource type="Script" uid="uid://qe0t1w0hbi1v" path="res://scripts/coins_label.gd" id="6_thu7x"]
@@ -13,7 +14,6 @@
 [ext_resource type="AudioStream" uid="uid://c6op7wtebnfrw" path="res://SOUNDS/sounds/cash-register-purchase-87313.mp3" id="7_7t7qg"]
 [ext_resource type="AudioStream" uid="uid://bpbp3s3y853s5" path="res://SOUNDS/music/mobile-casual-video-game-music-158301.mp3" id="7_aaywf"]
 [ext_resource type="StyleBox" uid="uid://bf5lod7pf26wg" path="res://scenes/fonts/orange.tres" id="7_el213"]
-[ext_resource type="Texture2D" uid="uid://bablixbbdhdc" path="res://images/coin (2).png" id="8_1abgu"]
 [ext_resource type="PackedScene" uid="uid://ir2j60as2m8m" path="res://scenes/ChooseYourPlayer.tscn" id="9_yt8fu"]
 [ext_resource type="AudioStream" uid="uid://v4y5xtej0idp" path="res://SOUNDS/sounds/coin-and-money-bag-1-185262.mp3" id="10_i7htd"]
 [ext_resource type="AudioStream" uid="uid://bnda3v2s6m0k3" path="res://SOUNDS/sounds/menuclick.wav" id="11_rtd1e"]
@@ -21,8 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://bkcljvg88hmay" path="res://images/sheets/UndHeartSheet.png" id="15_rtd1e"]
 [ext_resource type="Script" uid="uid://bbnfxam3713v5" path="res://scripts/WardrobeButton.gd" id="16_i7htd"]
 [ext_resource type="Script" uid="uid://cqleq4oyen4mn" path="res://scripts/EatingPet.gd" id="18_5p0sf"]
-[ext_resource type="Script" uid="uid://4pnebljmh7ua" path="res://scenes/unlock_level.gd" id="18_dek3k"]
-[ext_resource type="Script" uid="uid://hvak8g7kn2xr" path="res://scenes/settings.gd" id="23_8fhjo"]
+[ext_resource type="Script" uid="uid://4pnebljmh7ua" path="res://scripts/unlock_level.gd" id="18_dek3k"]
+[ext_resource type="Script" uid="uid://hvak8g7kn2xr" path="res://scripts/settings.gd" id="23_8fhjo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6c8sk"]
 atlas = ExtResource("4_rtd1e")
@@ -772,6 +772,48 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_size = 18
 shadow_offset = Vector2(2, 10)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fhjo"]
+bg_color = Color(0.914398, 0.454448, 5.77569e-07, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.759345, 0.291028, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+expand_margin_left = 10.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 12
+shadow_offset = Vector2(2, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_760fv"]
+content_margin_left = 25.0
+content_margin_right = 20.0
+bg_color = Color(1, 0.54131, 0.194125, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.770593, 0.330888, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+expand_margin_left = 10.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 9
+shadow_offset = Vector2(2, 10)
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -805,6 +847,8 @@ sprite_frames = SubResource("SpriteFrames_36bst")
 animation = &"Heart"
 autoplay = "Heart"
 frame_progress = 0.32969782
+
+[node name="SettingsMenu" parent="." instance=ExtResource("5_760fv")]
 
 [node name="Shop" parent="." instance=ExtResource("3_pp5m5")]
 
@@ -1095,30 +1139,6 @@ stream = ExtResource("6_5p0sf")
 [node name="buy" type="AudioStreamPlayer" parent="UnlockLevel2"]
 stream = ExtResource("7_7t7qg")
 
-[node name="Sprite2D" type="TextureRect" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 123.000015
-offset_top = 198.0
-offset_right = 397.3606
-offset_bottom = 472.3606
-scale = Vector2(0.231446, 0.191406)
-texture = ExtResource("8_1abgu")
-expand_mode = 1
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_aaywf")
-autoplay = true
-bus = &"menu music"
-
-[node name="EatingPet" type="Sprite2D" parent="."]
-position = Vector2(1204.9999, 740)
-scale = Vector2(2.531249, 2.28702)
-texture = ExtResource("3_yt8fu")
-script = ExtResource("18_5p0sf")
-
-[node name="FlyingFoodsContainer" type="Node2D" parent="."]
-
 [node name="Settings" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -1137,9 +1157,9 @@ focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_dek3k")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8fhjo")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pp5m5")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4umqm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_760fv")
 text = "Settings"
 autowrap_mode = 3
 script = ExtResource("23_8fhjo")
@@ -1147,8 +1167,25 @@ script = ExtResource("23_8fhjo")
 [node name="click" type="AudioStreamPlayer" parent="Settings"]
 stream = ExtResource("11_rtd1e")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_aaywf")
+autoplay = true
+bus = &"menu music"
+
+[node name="EatingPet" type="Sprite2D" parent="."]
+position = Vector2(1204.9999, 740)
+scale = Vector2(2.531249, 2.28702)
+texture = ExtResource("3_yt8fu")
+script = ExtResource("18_5p0sf")
+
+[node name="FlyingFoodsContainer" type="Node2D" parent="."]
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_rtd1e")
+
 [connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="WardrobeButton" to="." method="_on_wardrobe_pressed"]
 [connection signal="pressed" from="FishButton" to="Button" method="_on_fish_button_pressed"]
 [connection signal="pressed" from="UnlockLevel3" to="." method="_on_unlock_level_3_pressed"]
 [connection signal="pressed" from="UnlockLevel2" to="." method="_on_unlock_fishing_level2_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]

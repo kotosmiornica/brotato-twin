@@ -1,8 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bkqp1n5b6xmb2"]
+[gd_scene load_steps=17 format=3 uid="uid://bkqp1n5b6xmb2"]
 
-[ext_resource type="Script" uid="uid://d3cf6jg56kb2h" path="res://scenes/volume.gd" id="1_6a28u"]
+[ext_resource type="Script" uid="uid://d3cf6jg56kb2h" path="res://scripts/volume.gd" id="1_6a28u"]
 [ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="2_jvxff"]
-[ext_resource type="Script" uid="uid://dnf2d832xwwjo" path="res://scripts/close.gd" id="3_ejxin"]
+[ext_resource type="Script" uid="uid://d33027ggn042o" path="res://scripts/closing.gd" id="3_jvxff"]
 [ext_resource type="AudioStream" uid="uid://bnda3v2s6m0k3" path="res://SOUNDS/sounds/menuclick.wav" id="4_d5voq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_415nn"]
@@ -115,41 +115,122 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[node name="Settings" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = 0.0009765625
-grow_horizontal = 2
-grow_vertical = 2
+[sub_resource type="Animation" id="Animation_ejxin"]
+resource_name = "FadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(244.99965, -1051.9996), Vector2(244.99965, 53.000366)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menusettings:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(208, -1082), Vector2(208, 23)]
+}
+
+[sub_resource type="Animation" id="Animation_jvxff"]
+resource_name = "FadeOut"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(244.99965, 53.000366), Vector2(244.99965, 1197.0004)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menusettings:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(208, 23), Vector2(208, 1167)]
+}
+
+[sub_resource type="Animation" id="Animation_d5voq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(244.99965, 1197.0004)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menusettings:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(208, 1167)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_415nn"]
+_data = {
+&"FadeIn": SubResource("Animation_ejxin"),
+&"FadeOut": SubResource("Animation_jvxff"),
+&"RESET": SubResource("Animation_d5voq")
+}
+
+[node name="Settings" type="CanvasLayer"]
 script = ExtResource("1_6a28u")
 
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.127604
-anchor_top = -1.0027775
+anchor_top = 0.082406275
 anchor_right = 0.872917
-anchor_bottom = -0.10092576
+anchor_bottom = 0.9842577
 offset_left = -1.5258789e-05
-offset_top = 1136.001
-offset_bottom = 1136.0007
+offset_top = 1108.0016
+offset_bottom = 1108.0017
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_415nn")
 metadata/_edit_use_anchors_ = true
 
 [node name="Menusettings" type="Control" parent="."]
-layout_mode = 1
+layout_mode = 3
 anchor_left = -0.47218996
-anchor_top = -0.83260185
+anchor_top = 0.2525819
 anchor_right = 0.3080185
-anchor_bottom = 0.10886717
+anchor_bottom = 1.1940508
 offset_left = 1114.6047
-offset_top = 922.2108
+offset_top = 894.21155
 offset_right = 1114.6045
-offset_bottom = 922.2106
+offset_bottom = 894.2118
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -163,6 +244,7 @@ offset_bottom = 151.0
 theme_override_fonts/font = ExtResource("2_jvxff")
 theme_override_font_sizes/font_size = 70
 text = "Settings!"
+metadata/_edit_use_anchors_ = true
 
 [node name="master" type="Label" parent="Menusettings"]
 layout_mode = 0
@@ -176,8 +258,37 @@ theme_override_font_sizes/font_size = 55
 theme_override_styles/normal = SubResource("StyleBoxFlat_fbos0")
 text = " Master"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="Close" type="Button" parent="Menusettings"]
+[node name="music" type="Label" parent="Menusettings"]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 497.0
+offset_right = 460.0
+offset_bottom = 573.0
+theme_override_colors/font_color = Color(0.50980395, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jvxff")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_fbos0")
+text = "Music"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="sfx" type="Label" parent="Menusettings"]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 722.0
+offset_right = 460.0
+offset_bottom = 798.0
+theme_override_colors/font_color = Color(0.50980395, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jvxff")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_fbos0")
+text = "Sfx"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Closing" type="Button" parent="Menusettings"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.14819759
@@ -185,9 +296,9 @@ anchor_top = -0.023603775
 anchor_right = -0.14819759
 anchor_bottom = -0.023603775
 offset_left = 1559.0
-offset_top = 84.000015
+offset_top = 84.00002
 offset_right = 1652.0
-offset_bottom = 156.6154
+offset_bottom = 156.61542
 focus_mode = 0
 theme_override_colors/font_color = Color(0.76862746, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.66560405, 8.061901e-07, 4.3317675e-07, 1)
@@ -198,10 +309,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1iri3")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_aosop")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qdkmh")
 text = "X"
-script = ExtResource("3_ejxin")
+script = ExtResource("3_jvxff")
 metadata/_edit_use_anchors_ = true
 
-[node name="click" type="AudioStreamPlayer" parent="Menusettings/Close"]
+[node name="click" type="AudioStreamPlayer" parent="Menusettings/Closing"]
 stream = ExtResource("4_d5voq")
 
 [node name="Master" type="HSlider" parent="Menusettings"]
@@ -212,7 +323,7 @@ anchor_top = -0.05154858
 anchor_right = 0.47263026
 anchor_bottom = -0.05154858
 offset_left = -110.0
-offset_top = 227.0
+offset_top = 227.00002
 offset_right = 391.2461
 offset_bottom = 277.0188
 scale = Vector2(1.49583, 6.0576634)
@@ -233,9 +344,9 @@ anchor_top = -0.062943354
 anchor_right = 0.47329774
 anchor_bottom = -0.062943354
 offset_left = -110.0
-offset_top = 448.0
+offset_top = 448.00003
 offset_right = 391.2461
-offset_bottom = 498.0185
+offset_bottom = 498.01852
 scale = Vector2(1.49583, 6.0576634)
 theme_override_styles/slider = SubResource("StyleBoxFlat_jvxff")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ejxin")
@@ -254,9 +365,9 @@ anchor_top = -0.11417487
 anchor_right = 0.47329774
 anchor_bottom = -0.11417487
 offset_left = -110.0
-offset_top = 725.0
+offset_top = 725.00006
 offset_right = 391.2461
-offset_bottom = 775.01855
+offset_bottom = 775.0186
 scale = Vector2(1.49583, 6.0576634)
 theme_override_styles/slider = SubResource("StyleBoxFlat_jvxff")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ejxin")
@@ -267,33 +378,12 @@ value = 0.4
 ticks_position = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="master2" type="Label" parent="Menusettings"]
-layout_mode = 0
-offset_left = 233.0
-offset_top = 497.0
-offset_right = 460.0
-offset_bottom = 573.0
-theme_override_colors/font_color = Color(0.50980395, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_jvxff")
-theme_override_font_sizes/font_size = 55
-theme_override_styles/normal = SubResource("StyleBoxFlat_fbos0")
-text = " Master"
-horizontal_alignment = 1
+[node name="Animations" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_415nn")
+}
 
-[node name="master3" type="Label" parent="Menusettings"]
-layout_mode = 0
-offset_left = 233.0
-offset_top = 722.0
-offset_right = 460.0
-offset_bottom = 798.0
-theme_override_colors/font_color = Color(0.50980395, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_jvxff")
-theme_override_font_sizes/font_size = 55
-theme_override_styles/normal = SubResource("StyleBoxFlat_fbos0")
-text = " Master"
-horizontal_alignment = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
-[connection signal="pressed" from="Menusettings/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Menusettings/Closing" to="." method="_on_closing_pressed"]
 [connection signal="value_changed" from="Menusettings/Master" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="Menusettings/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="Menusettings/SFX" to="." method="_on_sfx_value_changed"]

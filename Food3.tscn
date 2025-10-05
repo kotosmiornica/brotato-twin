@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://4nunmvouvjg3"]
 
-[ext_resource type="Script" uid="uid://co2ru2dp3hfh" path="res://scenes/Food3.gd" id="1_0y71u"]
+[ext_resource type="Script" uid="uid://co2ru2dp3hfh" path="res://scripts/Food3.gd" id="1_0y71u"]
 [ext_resource type="Texture2D" uid="uid://d0mvvhslqi5n" path="res://images/toyknife.png" id="2_dn1dn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jwtx"]

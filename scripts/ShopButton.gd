@@ -14,10 +14,3 @@ func _on_pressed():
 		anim.play("TransIn")
 	else:
 		print("Animation node not found!")
-
-func _on_shop_button_pressed():
-	var anim = get_node("../ColorRect/Shop/Anim")
-	if anim:
-		anim.play("TransIn")
-	else:
-		print("Animation node not found!")

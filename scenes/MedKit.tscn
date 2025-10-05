@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://vov3h2h8f6qo"]
 
 [ext_resource type="Texture2D" uid="uid://djide5oc8rrc5" path="res://images/first-aid-kit_647357.png" id="1_3vnt6"]
-[ext_resource type="Script" uid="uid://k14k30bt514s" path="res://scenes/med_kit.gd" id="1_owvgc"]
+[ext_resource type="Script" uid="uid://k14k30bt514s" path="res://scripts/med_kit.gd" id="1_owvgc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vnt6"]
 size = Vector2(608, 591.8334)
