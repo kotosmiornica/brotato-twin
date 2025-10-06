@@ -102,4 +102,4 @@ bus = &"caught"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ivjuv")
 autoplay = true
-bus = &"fishin idle"
+bus = &"Music"

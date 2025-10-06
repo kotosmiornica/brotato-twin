@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://dsl247xnk6knu"]
+[gd_scene load_steps=115 format=3 uid="uid://dsl247xnk6knu"]
 
 [ext_resource type="Script" uid="uid://crgvxr0vdaef6" path="res://scripts/survivors_game.gd" id="1_vt6sv"]
 [ext_resource type="PackedScene" uid="uid://dpi6hxo5ndgqr" path="res://scenes/player.tscn" id="2_mrt1k"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://i1onmpal7tpf" path="res://scenes/XPpickups.tscn" id="8_fp0yo"]
 [ext_resource type="AudioStream" uid="uid://c5wfgdpwu06th" path="res://SOUNDS/sounds/dead.mp3" id="8_tg6hx"]
 [ext_resource type="Script" uid="uid://cneh2if8htw2" path="res://scripts/x_pbar.gd" id="9_7yhjp"]
+[ext_resource type="AudioStream" uid="uid://bnda3v2s6m0k3" path="res://SOUNDS/sounds/menuclick.wav" id="13_nkvhx"]
 [ext_resource type="Texture2D" uid="uid://0jocifbj0ijg" path="res://images/Flowers_Without_Outline/Daisy.png" id="14_8gmy3"]
 [ext_resource type="Texture2D" uid="uid://bkbrur7ck36fl" path="res://images/Flowers_Without_Outline/Daffodil.png" id="15_cjyux"]
 [ext_resource type="Texture2D" uid="uid://wj1uemhib6dj" path="res://images/Flowers_Without_Outline/Cosmo.png" id="16_5fga3"]
@@ -26,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://qdtc0vmfeuun" path="res://images/Flowers_Without_Outline/Orchid.png" id="23_nvqit"]
 [ext_resource type="Texture2D" uid="uid://ceje7lu54gvnc" path="res://images/Flowers_Without_Outline/Poppy.png" id="24_5plyu"]
 [ext_resource type="Texture2D" uid="uid://bi33b6apjbsmj" path="res://images/Flowers_Without_Outline/Lily.png" id="26_5fga3"]
+[ext_resource type="PackedScene" uid="uid://bkqp1n5b6xmb2" path="res://scenes/Volume.tscn" id="28_c0lnf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l26od"]
 bg_color = Color(0.152941, 0.168627, 0.188235, 1)
@@ -663,6 +665,95 @@ normal = Vector2(1, 0)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5fga3"]
 normal = Vector2(-1, 0)
 
+[sub_resource type="Animation" id="Animation_ejxin"]
+resource_name = "FadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(244.99965, -1051.9996), Vector2(244.99965, 53.000366)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menusettings:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(208, -1082), Vector2(208, 23)]
+}
+
+[sub_resource type="Animation" id="Animation_jvxff"]
+resource_name = "FadeOut"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(244.99965, 53.000366), Vector2(244.99965, 1197.0004)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menusettings:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(208, 23), Vector2(208, 1167)]
+}
+
+[sub_resource type="Animation" id="Animation_d5voq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(244.99965, 1197.0004)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menusettings:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(208, 1167)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_415nn"]
+_data = {
+&"FadeIn": SubResource("Animation_ejxin"),
+&"FadeOut": SubResource("Animation_jvxff"),
+&"RESET": SubResource("Animation_d5voq")
+}
+
 [node name="game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_vt6sv")
@@ -781,7 +872,8 @@ debug_color = Color(0.854248, 0.314498, 0.503126, 0.42)
 stream = ExtResource("8_tg6hx")
 bus = &"click"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Brotat"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Brotat/Death"]
+root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_hs66j")
 }
@@ -816,6 +908,22 @@ bus = &"Music"
 
 [node name="XPpickups" parent="." instance=ExtResource("8_fp0yo")]
 visible = false
+top_level = true
+
+[node name="PauseMenu" parent="." instance=ExtResource("7_hs66j")]
+unique_name_in_owner = true
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 905.0
+offset_top = 521.0
+offset_right = 905.0
+offset_bottom = 521.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="click" type="AudioStreamPlayer" parent="PauseMenu"]
+stream = ExtResource("13_nkvhx")
 
 [node name="Bar" type="CanvasLayer" parent="."]
 
@@ -830,20 +938,6 @@ max_value = 10.0
 show_percentage = false
 script = ExtResource("9_7yhjp")
 metadata/_edit_use_anchors_ = true
-
-[node name="Pause" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="PauseMenu" parent="Pause" instance=ExtResource("7_hs66j")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 905.0
-offset_top = 521.0
-offset_right = 905.0
-offset_bottom = 521.0
-grow_horizontal = 1
-grow_vertical = 1
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
 
@@ -15449,6 +15543,14 @@ position = Vector2(683.1585, -2811.6401)
 rotation = -0.15265787
 scale = Vector2(1.1299095, 1.0950668)
 texture = ExtResource("24_5plyu")
+
+[node name="SettingsMenu" parent="." instance=ExtResource("28_c0lnf")]
+visible = false
+
+[node name="Animations" type="AnimationPlayer" parent="SettingsMenu"]
+libraries = {
+&"": SubResource("AnimationLibrary_415nn")
+}
 
 [connection signal="health_depleted" from="Brotat" to="." method="_on_brotat_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

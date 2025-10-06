@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cwyddtn83ubaj"]
+[gd_scene load_steps=8 format=3 uid="uid://cwyddtn83ubaj"]
 
 [ext_resource type="Script" uid="uid://bjsl6ysnftgno" path="res://scripts/pause_menu.gd" id="1_myx47"]
 [ext_resource type="Shader" uid="uid://b2w8n2w26ciqr" path="res://scenes/pause_menu.gdshader" id="1_n87rw"]
+[ext_resource type="AudioStream" uid="uid://bnda3v2s6m0k3" path="res://SOUNDS/sounds/menuclick.wav" id="3_kukqi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uahpa"]
 shader = ExtResource("1_n87rw")
@@ -87,7 +88,6 @@ offset_left = 13.0
 offset_top = 4.0
 offset_right = 1955.0
 offset_bottom = 1099.0
-metadata/_edit_lock_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/ColorRect"]
 modulate = Color(1, 1, 1, 0)
@@ -99,23 +99,30 @@ offset_bottom = 678.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect/PanelContainer"]
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Resume" type="Button" parent="CanvasLayer/ColorRect/PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Resume"
 
+[node name="click" type="AudioStreamPlayer" parent="CanvasLayer/ColorRect/PanelContainer/VBoxContainer/Resume"]
+stream = ExtResource("3_kukqi")
+
 [node name="Restart" type="Button" parent="CanvasLayer/ColorRect/PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "Restart"
+text = "Restart :("
 
-[node name="Quit" type="Button" parent="CanvasLayer/ColorRect/PanelContainer/VBoxContainer"]
-visible = false
+[node name="click" type="AudioStreamPlayer" parent="CanvasLayer/ColorRect/PanelContainer/VBoxContainer/Restart"]
+stream = ExtResource("3_kukqi")
+
+[node name="Settings" type="Button" parent="CanvasLayer/ColorRect/PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "Quit :("
+text = "Settings"
+
+[node name="click" type="AudioStreamPlayer" parent="CanvasLayer/ColorRect/PanelContainer/VBoxContainer/Settings"]
+stream = ExtResource("3_kukqi")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -124,4 +131,4 @@ libraries = {
 
 [connection signal="pressed" from="CanvasLayer/ColorRect/PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="CanvasLayer/ColorRect/PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/PanelContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
