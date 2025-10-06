@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bkqp1n5b6xmb2"]
+[gd_scene load_steps=20 format=3 uid="uid://bkqp1n5b6xmb2"]
 
 [ext_resource type="Script" uid="uid://d3cf6jg56kb2h" path="res://scripts/volume.gd" id="1_6a28u"]
 [ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="2_jvxff"]
@@ -150,6 +150,95 @@ border_color = Color(0, 0.80784315, 0.20392157, 1)
 corner_radius_top_right = 50
 corner_radius_bottom_left = 50
 
+[sub_resource type="Animation" id="Animation_ejxin"]
+resource_name = "FadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(244.99965, -1051.9996), Vector2(244.99965, 53.000366)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menusettings:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(208, -1082), Vector2(208, 23)]
+}
+
+[sub_resource type="Animation" id="Animation_jvxff"]
+resource_name = "FadeOut"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(244.99965, 53.000366), Vector2(244.99965, 1197.0004)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menusettings:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(208, 23), Vector2(208, 1167)]
+}
+
+[sub_resource type="Animation" id="Animation_d5voq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(244.99965, 1197.0004)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Menusettings:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(208, 1167)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_415nn"]
+_data = {
+&"FadeIn": SubResource("Animation_ejxin"),
+&"FadeOut": SubResource("Animation_jvxff"),
+&"RESET": SubResource("Animation_d5voq")
+}
+
 [node name="Settings" type="CanvasLayer"]
 script = ExtResource("1_6a28u")
 
@@ -160,8 +249,8 @@ anchor_top = 0.082406275
 anchor_right = 0.872917
 anchor_bottom = 0.9842577
 offset_left = -1.5258789e-05
-offset_top = -1140.9984
-offset_bottom = -1140.9983
+offset_top = 1108.0016
+offset_bottom = 1108.0017
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_415nn")
@@ -174,9 +263,9 @@ anchor_top = 0.2525819
 anchor_right = 0.3080185
 anchor_bottom = 1.1940508
 offset_left = 1114.6047
-offset_top = -1354.7885
+offset_top = 894.21155
 offset_right = 1114.6045
-offset_bottom = -1354.7882
+offset_bottom = 894.2118
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -263,6 +352,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="click" type="AudioStreamPlayer" parent="Menusettings/Closing"]
 stream = ExtResource("4_d5voq")
+bus = &"Sfx"
 
 [node name="Master" type="HSlider" parent="Menusettings"]
 layout_mode = 1
@@ -302,7 +392,7 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ejxin")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_d5voq")
 max_value = 1.0
 step = 0.01
-value = 0.55
+value = 0.42
 ticks_position = 1
 metadata/_edit_use_anchors_ = true
 
@@ -323,17 +413,17 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ejxin")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_d5voq")
 max_value = 1.0
 step = 0.01
-value = 0.4
+value = 0.6
 ticks_position = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Bullets" type="HSlider" parent="Menusettings"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.46995994
-anchor_top = 0.06722768
-anchor_right = 0.4731825
-anchor_bottom = 0.06722768
+anchor_left = 0.4732977
+anchor_top = 0.030488206
+anchor_right = 0.4747352
+anchor_bottom = 0.030488206
 offset_left = -110.0
 offset_top = 725.00006
 offset_right = 391.2461
@@ -344,7 +434,7 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_gv41u")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_2xyuk")
 max_value = 1.0
 step = 0.01
-value = 0.4
+value = 0.35
 ticks_position = 1
 metadata/_edit_use_anchors_ = true
 
@@ -366,6 +456,15 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_fbos0")
 text = "bullets"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Animations" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_415nn")
+}
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_d5voq")
+bus = &"Sfx"
 
 [connection signal="pressed" from="Menusettings/Closing" to="." method="_on_closing_pressed"]
 [connection signal="value_changed" from="Menusettings/Master" to="." method="_on_master_value_changed"]

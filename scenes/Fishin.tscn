@@ -117,7 +117,7 @@ offset_bottom = 23.0
 
 [node name="caught" type="AudioStreamPlayer" parent="FishingGame"]
 stream = ExtResource("6_pqhp0")
-bus = &"caught"
+bus = &"Sfx"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_2kclr")

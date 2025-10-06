@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://d0mvvhslqi5n" path="res://images/toyknife.png" id="2_0rmkt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jwtx"]
-radius = 48.6852
-height = 168.53041
+radius = 57.287403
+height = 171.59404
 
 [node name="ToyKnife" type="Node2D"]
 script = ExtResource("1_hdvt8")

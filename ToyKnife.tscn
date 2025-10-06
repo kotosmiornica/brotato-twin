@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d0mvvhslqi5n" path="res://images/toyknife.png" id="2_5laxp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jwtx"]
-radius = 46.1264
+radius = 52.44458
 height = 153.93292
 
 [node name="ToyKnife" type="Node2D"]

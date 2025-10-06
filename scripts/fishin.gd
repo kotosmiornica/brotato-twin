@@ -5,15 +5,15 @@ extends Node2D
 @onready var foods_container = $Foods
 @export var spawn_interval = 0.3
 @export var hook_end_y = 50.0    
-@export var base_speed = 300.0  
-@export var max_speed = 350.0     
+@export var base_speed = 280.0  
+@export var max_speed = 380.0     
 @export var hook_start_offset = 500  
 
 
 
 var fishing_active = true
 var spawn_timer = 0.0
-var hook_rise_speed = 6.0
+var hook_rise_speed = 5.0
 var caught_foods := []
 
 func _ready():
@@ -77,7 +77,7 @@ func get_food_scene() -> PackedScene:
 
 func spawn_food():
 	var food_scene = get_food_scene()  # get correct scene for current level
-	for i in range(4):
+	for i in range(5):
 		var new_food = food_scene.instantiate()
 		var y = randf_range(100, get_viewport_rect().size.y - 150)
 		new_food.position = Vector2(-50, y)

@@ -84,18 +84,18 @@ script = ExtResource("1_myx47")
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 process_mode = 3
 material = SubResource("ShaderMaterial_uahpa")
-offset_left = 13.0
-offset_top = 4.0
-offset_right = 1955.0
-offset_bottom = 1099.0
+offset_left = 7.0
+offset_top = 28.0
+offset_right = 1949.0
+offset_bottom = 1123.0
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/ColorRect"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 454.0
-offset_top = 439.0
-offset_right = 1411.0
-offset_bottom = 678.0
+offset_left = 549.0
+offset_top = 430.0
+offset_right = 1343.8306
+offset_bottom = 588.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect/PanelContainer"]
 layout_mode = 2
@@ -107,6 +107,7 @@ text = "Resume"
 
 [node name="click" type="AudioStreamPlayer" parent="CanvasLayer/ColorRect/PanelContainer/VBoxContainer/Resume"]
 stream = ExtResource("3_kukqi")
+bus = &"Sfx"
 
 [node name="Restart" type="Button" parent="CanvasLayer/ColorRect/PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -115,14 +116,7 @@ text = "Restart :("
 
 [node name="click" type="AudioStreamPlayer" parent="CanvasLayer/ColorRect/PanelContainer/VBoxContainer/Restart"]
 stream = ExtResource("3_kukqi")
-
-[node name="Settings" type="Button" parent="CanvasLayer/ColorRect/PanelContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Settings"
-
-[node name="click" type="AudioStreamPlayer" parent="CanvasLayer/ColorRect/PanelContainer/VBoxContainer/Settings"]
-stream = ExtResource("3_kukqi")
+bus = &"Sfx"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -131,4 +125,3 @@ libraries = {
 
 [connection signal="pressed" from="CanvasLayer/ColorRect/PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="CanvasLayer/ColorRect/PanelContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]

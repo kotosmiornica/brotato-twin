@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://cqcwtk4w1gpdv"]
+[gd_scene load_steps=108 format=3 uid="uid://cqcwtk4w1gpdv"]
 
 [ext_resource type="Script" uid="uid://d1wrmtooq2n67" path="res://scripts/menu.gd" id="1_jmdev"]
 [ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="1_o0tnf"]
@@ -488,95 +488,6 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="Animation" id="Animation_ejxin"]
-resource_name = "FadeIn"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(244.99965, -1051.9996), Vector2(244.99965, 53.000366)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Menusettings:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(208, -1082), Vector2(208, 23)]
-}
-
-[sub_resource type="Animation" id="Animation_jvxff"]
-resource_name = "FadeOut"
-length = 1.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(244.99965, 53.000366), Vector2(244.99965, 1197.0004)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Menusettings:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(208, 23), Vector2(208, 1167)]
-}
-
-[sub_resource type="Animation" id="Animation_d5voq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(244.99965, 1197.0004)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Menusettings:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(208, 1167)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_415nn"]
-_data = {
-&"FadeIn": SubResource("Animation_ejxin"),
-&"FadeOut": SubResource("Animation_jvxff"),
-&"RESET": SubResource("Animation_d5voq")
-}
-
 [sub_resource type="Animation" id="Animation_auux5"]
 length = 0.001
 tracks/0/type = "value"
@@ -939,11 +850,6 @@ frame_progress = 0.32969782
 
 [node name="SettingsMenu" parent="." instance=ExtResource("5_760fv")]
 
-[node name="Animations2" type="AnimationPlayer" parent="SettingsMenu"]
-libraries = {
-&"": SubResource("AnimationLibrary_415nn")
-}
-
 [node name="Shop" parent="." instance=ExtResource("3_pp5m5")]
 
 [node name="Anim" type="AnimationPlayer" parent="Shop"]
@@ -954,9 +860,11 @@ libraries = {
 
 [node name="NotEnough" type="AudioStreamPlayer" parent="Shop"]
 stream = ExtResource("6_5p0sf")
+bus = &"Sfx"
 
 [node name="buy" type="AudioStreamPlayer" parent="Shop"]
 stream = ExtResource("7_7t7qg")
+bus = &"Sfx"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 process_mode = 3
@@ -1024,7 +932,7 @@ script = ExtResource("6_thu7x")
 
 [node name="CoinSound" type="AudioStreamPlayer" parent="ColorRect/CoinsLabel"]
 stream = ExtResource("10_i7htd")
-bus = &"caught"
+bus = &"Sfx"
 
 [node name="Instructions!" type="Label" parent="ColorRect"]
 layout_mode = 1
@@ -1084,6 +992,7 @@ script = ExtResource("2_5yleq")
 
 [node name="click" type="AudioStreamPlayer" parent="Button"]
 stream = ExtResource("11_rtd1e")
+bus = &"Sfx"
 
 [node name="ShopButton" type="Button" parent="."]
 layout_mode = 0
@@ -1102,6 +1011,7 @@ script = ExtResource("6_4umqm")
 
 [node name="click" type="AudioStreamPlayer" parent="ShopButton"]
 stream = ExtResource("11_rtd1e")
+bus = &"Sfx"
 
 [node name="WardrobeButton" type="Button" parent="."]
 visible = false
@@ -1122,6 +1032,7 @@ script = ExtResource("16_i7htd")
 
 [node name="click" type="AudioStreamPlayer" parent="WardrobeButton"]
 stream = ExtResource("11_rtd1e")
+bus = &"Sfx"
 
 [node name="FishButton" type="Button" parent="."]
 layout_mode = 0
@@ -1158,7 +1069,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="bubbles" type="AudioStreamPlayer" parent="FishButton"]
 stream = ExtResource("14_6c8sk")
-bus = &"bubbles"
+bus = &"Sfx"
 
 [node name="FishingStarts" type="AnimationPlayer" parent="FishButton"]
 libraries = {
@@ -1186,18 +1097,21 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_yt8fu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pp5m5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4umqm")
 text = "Unlock level 3!
-Cost: 30 Knives"
+Cost: 20 Knives"
 autowrap_mode = 3
 script = ExtResource("18_dek3k")
 
 [node name="click" type="AudioStreamPlayer" parent="UnlockLevel3"]
 stream = ExtResource("11_rtd1e")
+bus = &"Sfx"
 
 [node name="NotEnough" type="AudioStreamPlayer" parent="UnlockLevel3"]
 stream = ExtResource("6_5p0sf")
+bus = &"Sfx"
 
 [node name="buy" type="AudioStreamPlayer" parent="UnlockLevel3"]
 stream = ExtResource("7_7t7qg")
+bus = &"Sfx"
 
 [node name="UnlockLevel2" type="Button" parent="."]
 layout_mode = 1
@@ -1220,18 +1134,21 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_yt8fu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pp5m5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4umqm")
 text = "Unlock level 2!
-Cost: 20 Leek"
+Cost: 15 Leek"
 autowrap_mode = 3
 script = ExtResource("18_dek3k")
 
 [node name="click" type="AudioStreamPlayer" parent="UnlockLevel2"]
 stream = ExtResource("11_rtd1e")
+bus = &"Sfx"
 
 [node name="NotEnough" type="AudioStreamPlayer" parent="UnlockLevel2"]
 stream = ExtResource("6_5p0sf")
+bus = &"Sfx"
 
 [node name="buy" type="AudioStreamPlayer" parent="UnlockLevel2"]
 stream = ExtResource("7_7t7qg")
+bus = &"Sfx"
 
 [node name="Settings" type="Button" parent="."]
 layout_mode = 1
@@ -1260,6 +1177,7 @@ script = ExtResource("23_8fhjo")
 
 [node name="click" type="AudioStreamPlayer" parent="Settings"]
 stream = ExtResource("11_rtd1e")
+bus = &"Sfx"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_aaywf")
@@ -1276,6 +1194,7 @@ script = ExtResource("18_5p0sf")
 
 [node name="click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_rtd1e")
+bus = &"Sfx"
 
 [connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="WardrobeButton" to="." method="_on_wardrobe_pressed"]

@@ -783,6 +783,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="click" type="AudioStreamPlayer" parent="Control/Prev"]
 stream = ExtResource("10_oahkd")
+bus = &"Sfx"
 
 [node name="Next" type="Button" parent="Control"]
 layout_mode = 0
@@ -803,6 +804,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="click" type="AudioStreamPlayer" parent="Control/Next"]
 stream = ExtResource("10_oahkd")
+bus = &"Sfx"
 
 [node name="Buy" type="Button" parent="Control"]
 layout_mode = 0
@@ -822,10 +824,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="buy" type="AudioStreamPlayer" parent="Control/Buy"]
 stream = ExtResource("12_xsnv8")
+bus = &"Sfx"
 
 [node name="NotEnough" type="AudioStreamPlayer" parent="Control/Buy"]
 stream = ExtResource("13_cn3sd")
-bus = &"click"
+bus = &"Sfx"
 
 [node name="Close" type="Button" parent="Control"]
 top_level = true
@@ -853,6 +856,7 @@ script = ExtResource("9_fqaxf")
 
 [node name="click" type="AudioStreamPlayer" parent="Control/Close"]
 stream = ExtResource("10_oahkd")
+bus = &"Sfx"
 
 [connection signal="pressed" from="Control/Prev" to="." method="_on_prev_pressed"]
 [connection signal="pressed" from="Control/Next" to="." method="_on_prev_pressed"]

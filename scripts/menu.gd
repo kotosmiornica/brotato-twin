@@ -146,7 +146,7 @@ func _on_wardrobe_button_pressed():
 # ------------------------
 func _on_unlock_fishing_level2_pressed() -> void:
 	var next_level = PlayerData.unlocked_fishing_levels + 1
-	var cost = 20
+	var cost = 15
 
 	if PlayerData.food_counts.get("Leek", 0) < cost:
 		print("Not enough Leeks to unlock this level!")
@@ -166,7 +166,7 @@ func _on_unlock_fishing_level2_pressed() -> void:
 
 func _on_unlock_level_3_pressed() -> void:
 	var next_level = PlayerData.unlocked_fishing_levels + 1
-	var cost = 30
+	var cost = 20
 
 	if PlayerData.food_counts.get("ToyKnife", 0) < cost:
 		print("Not enough Knives to unlock this level!")

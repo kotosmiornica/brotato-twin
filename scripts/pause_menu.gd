@@ -83,7 +83,7 @@ func _on_settings_pressed() -> void:
 	$click.play()
 	print("Button clicked!")
 
-	var anim = get_node("/root/game/PauseMenu")
+	var anim = get_node("/root/game/SettingsMenu/Animations")
 	if anim:
 		print("AnimationPlayer found!")
 		anim.play("FadeIn")
