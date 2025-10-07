@@ -778,7 +778,7 @@ scale = Vector2(1.12, 1.16)
 shape = SubResource("CapsuleShape2D_7yhjp")
 
 [node name="gun" parent="Brotat" instance=ExtResource("7_bg3rl")]
-position = Vector2(-2, -48)
+position = Vector2(2.0623207e-05, -43.433334)
 scale = Vector2(1.1416581, 1.120726)
 audio_bus_name = &"shot"
 

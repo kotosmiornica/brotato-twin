@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cl3rrd6squb5y" path="res://scripts/bullet.gd" id="1_y25gk"]
 [ext_resource type="Texture2D" uid="uid://dftkbqwsfd68r" path="res://pistol/projectile.png" id="2_l5glv"]
-[ext_resource type="AudioStream" uid="uid://x6n81gfyplq7" path="res://music/simpleshot.mp3" id="3_l5glv"]
+[ext_resource type="AudioStream" uid="uid://x6n81gfyplq7" path="res://SOUNDS/sounds/simpleshot.mp3" id="3_l5glv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h1aey"]
-radius = 12.0416
+radius = 12.206556
 
 [node name="bullet" type="Area2D"]
 top_level = true
@@ -15,10 +15,11 @@ collision_mask = 2
 script = ExtResource("1_y25gk")
 
 [node name="Projectile" type="Sprite2D" parent="."]
+scale = Vector2(0.8074461, 0.8074462)
 texture = ExtResource("2_l5glv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(11, 1)
+position = Vector2(9.879717, 0.6254505)
 shape = SubResource("CircleShape2D_h1aey")
 
 [node name="shot" type="AudioStreamPlayer2D" parent="."]

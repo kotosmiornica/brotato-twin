@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://kvg3tmks0ch2"]
 
 [ext_resource type="Script" uid="uid://cwx78pc2dcoay" path="res://scripts/gun.gd" id="1_og67c"]
-[ext_resource type="Texture2D" uid="uid://cswb5do8rrj7q" path="res://pistol/pistol.png" id="1_x77fm"]
+[ext_resource type="Texture2D" uid="uid://cpes41qvm30ho" path="res://images/bettergun.png" id="2_gp1hk"]
 [ext_resource type="AudioStream" uid="uid://x6n81gfyplq7" path="res://SOUNDS/sounds/simpleshot.mp3" id="3_gp1hk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_og67c"]
@@ -18,13 +18,14 @@ shape = SubResource("CircleShape2D_og67c")
 [node name="WeaponPivot" type="Marker2D" parent="."]
 
 [node name="Pistol" type="Sprite2D" parent="WeaponPivot"]
-position = Vector2(119, 3)
-scale = Vector2(0.75999993, 0.76)
-texture = ExtResource("1_x77fm")
+position = Vector2(126.00001, 3)
+scale = Vector2(2.2048316, 2.2048318)
+texture = ExtResource("2_gp1hk")
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
 unique_name_in_owner = true
-position = Vector2(26, -10)
+position = Vector2(13.970587, -4.4117646)
+scale = Vector2(0.18875425, 0.18875425)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
@@ -33,6 +34,6 @@ autostart = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_gp1hk")
 volume_db = 24.0
-bus = &"shot"
+bus = &"Bullets"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
