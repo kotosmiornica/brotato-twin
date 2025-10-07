@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://ds5tgr03uxpb4" path="res://scripts/level_up_menu.gd" id="1_nt8lk"]
 [ext_resource type="StyleBox" uid="uid://ctnedtyf78d1o" path="res://scenes/fonts/basicblu.tres" id="2_yu4sn"]
 [ext_resource type="StyleBox" uid="uid://diaewu28mnlyu" path="res://scenes/fonts/pressedbasicblu.tres" id="3_sogc5"]
-[ext_resource type="Texture2D" uid="uid://dxhoxtbv2h5os" path="res://images/bleach_2797128.png" id="4_o5r7b"]
 [ext_resource type="AudioStream" uid="uid://cn254y6phru30" path="res://SOUNDS/sounds/plop.wav" id="5_buj6g"]
 [ext_resource type="Texture2D" uid="uid://bvsmxyogik7jp" path="res://images/pizzacutter.png" id="5_vnbc4"]
 [ext_resource type="FontFile" uid="uid://b8ok8fndx02wu" path="res://Pansy Hand/pansyhand.ttf" id="5_yu4sn"]
 [ext_resource type="Script" uid="uid://dh3omuiod7mt8" path="res://scripts/pizzacutter_2.gd" id="8_pwcma"]
+[ext_resource type="Texture2D" uid="uid://ps4d75tkjyd0" path="res://images/detergent.png" id="8_vnbc4"]
 [ext_resource type="Script" uid="uid://ofh0s2kyo5el" path="res://scripts/bleach_3.gd" id="10_jqsxd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2tu1p"]
@@ -148,11 +148,12 @@ script = ExtResource("10_jqsxd")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel/bleach3"]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 59.0
-offset_right = 380.0
-offset_bottom = 375.0
-texture = ExtResource("4_o5r7b")
+offset_left = -34.0
+offset_top = -17.999998
+offset_right = 474.0
+offset_bottom = 490.0
+scale = Vector2(0.9286871, 0.9286871)
+texture = ExtResource("8_vnbc4")
 expand_mode = 1
 
 [node name="click" type="AudioStreamPlayer" parent="CanvasLayer/Panel/bleach3"]
