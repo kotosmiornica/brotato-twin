@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://x6n81gfyplq7" path="res://SOUNDS/sounds/simpleshot.mp3" id="3_gp1hk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_og67c"]
-radius = 573.785
+radius = 433.0104
 
 [node name="gun" type="Area2D"]
 collision_layer = 0
@@ -19,7 +19,7 @@ shape = SubResource("CircleShape2D_og67c")
 
 [node name="Pistol" type="Sprite2D" parent="WeaponPivot"]
 position = Vector2(126.00001, 3)
-scale = Vector2(2.2048316, 2.2048318)
+scale = Vector2(2.5093355, 2.5093358)
 texture = ExtResource("2_gp1hk")
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]

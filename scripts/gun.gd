@@ -24,8 +24,7 @@ func shoot():
 
 func _on_timer_timeout() -> void:
 	shoot()
-
-
+	
 func _play_detached_sound(sound_stream: AudioStream, sound_position: Vector2):
 	var sound = AudioStreamPlayer2D.new()
 	sound.stream = sound_stream
