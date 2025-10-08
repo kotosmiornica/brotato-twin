@@ -1,7 +1,7 @@
 [gd_resource type="AudioBusLayout" format=3 uid="uid://c0r1synmqj70v"]
 
 [resource]
-bus/0/volume_db = -11.957565
+bus/0/volume_db = -6.5788474
 bus/1/name = &"Sfx"
 bus/1/solo = false
 bus/1/mute = false
@@ -18,7 +18,7 @@ bus/3/name = &"Bullets"
 bus/3/solo = false
 bus/3/mute = false
 bus/3/bypass_fx = false
-bus/3/volume_db = -38.14492
+bus/3/volume_db = -80.0
 bus/3/send = &"Master"
 bus/4/name = &"fishin idle"
 bus/4/solo = false
