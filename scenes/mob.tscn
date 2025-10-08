@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://foueo18lbmjv" path="res://scripts/Enemy.gd" id="1_bsing"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bsing"]
-radius = 55.00909
+radius = 41.19466
 
 [node name="mob" type="CharacterBody2D"]
 top_level = true
@@ -17,6 +17,5 @@ script = ExtResource("1_bsing")
 unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_bsing")
