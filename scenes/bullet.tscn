@@ -110,7 +110,7 @@ position = Vector2(-2.733426, -1.5900884)
 scale = Vector2(2.385572, 2.366959)
 sprite_frames = SubResource("SpriteFrames_in4mv")
 animation = &"bullet_purple"
-frame_progress = 0.6141568
+frame_progress = 0.72458386
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(7.0569406, 0.44675028)
@@ -125,7 +125,8 @@ bus = &"Bullets"
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_eoqba")
-volume_db = -48.195
+volume_db = 1.813
+pitch_scale = 0.47
 bus = &"Sfx"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

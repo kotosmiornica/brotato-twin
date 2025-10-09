@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://dtc1mtnys6gnm" path="res://scripts/pizzacutter.gd" id="1_jyhhi"]
 [ext_resource type="Texture2D" uid="uid://bvsmxyogik7jp" path="res://images/pizzacutter.png" id="2_jyhhi"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_og67c"]
-radius = 63.25604
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jyhhi"]
+radius = 17.000122
+height = 56.42421
 
 [node name="pizzacutter" type="Area2D"]
 collision_layer = 0
@@ -14,13 +15,14 @@ script = ExtResource("1_jyhhi")
 [node name="Pistol" type="Sprite2D" parent="."]
 position = Vector2(227, -3)
 rotation = 1.5707964
-scale = Vector2(3.969629, 3.9696279)
+scale = Vector2(3.3947144, 3.3947134)
 texture = ExtResource("2_jyhhi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(264.5761, -3)
-scale = Vector2(0.8380138, 0.8380138)
-shape = SubResource("CircleShape2D_og67c")
+position = Vector2(234.00002, -2)
+rotation = 1.5428997
+scale = Vector2(2.7646852, 2.7646852)
+shape = SubResource("CapsuleShape2D_jyhhi")
 
 [node name="Node2D" type="Node2D" parent="."]
 

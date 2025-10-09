@@ -1,24 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://c05a6kpk2uuf3"]
+[gd_scene load_steps=4 format=3 uid="uid://dsukki213sd11"]
 
-[ext_resource type="Script" uid="uid://co2ru2dp3hfh" path="res://scripts/Food3.gd" id="1_hdvt8"]
-[ext_resource type="Texture2D" uid="uid://d0mvvhslqi5n" path="res://images/toyknife.png" id="2_0rmkt"]
+[ext_resource type="Script" uid="uid://bww6gvdjx017p" path="res://scripts/food.gd" id="1_mt8qc"]
+[ext_resource type="Texture2D" uid="uid://d0mvvhslqi5n" path="res://images/toyknife.png" id="2_5laxp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jwtx"]
-radius = 57.287403
-height = 171.59404
+radius = 52.44458
+height = 153.93292
 
 [node name="ToyKnife" type="Node2D"]
-script = ExtResource("1_hdvt8")
+script = ExtResource("1_mt8qc")
+food_type = "Black Monster"
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 position = Vector2(-8, 9.53674e-07)
-rotation = -0.18251385
-scale = Vector2(3.461122, 3.4611218)
-texture = ExtResource("2_0rmkt")
+rotation = -0.013810843
+scale = Vector2(2.9168181, 2.9168181)
+texture = ExtResource("2_5laxp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-6.0000005, -8)
-rotation = 0.6256222
+rotation = 0.43466216
 shape = SubResource("CapsuleShape2D_2jwtx")
