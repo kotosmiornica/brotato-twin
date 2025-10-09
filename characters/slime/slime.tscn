@@ -252,7 +252,7 @@ scale = Vector2(0.74327016, 0.74327016)
 script = ExtResource("1_87y5x")
 
 [node name="GroundShadow" type="Sprite2D" parent="."]
-modulate = Color(0.3825025, 0.7545171, 0.44244516, 1)
+modulate = Color(0.43165058, 0.8280059, 0.49295044, 1)
 self_modulate = Color(0.32730642, 0.6632922, 0.3830831, 1)
 z_index = -1
 z_as_relative = false
@@ -268,7 +268,7 @@ texture = ExtResource("1_3j35h")
 offset = Vector2(0, -36)
 
 [node name="SlimeBodyHurt" type="Sprite2D" parent="Anchor/SlimeBody"]
-modulate = Color(1, 1, 1, 0)
+modulate = Color(0.9443645, 0.7609742, 0.7678369, 0)
 texture = ExtResource("4_0qu0c")
 offset = Vector2(0, -36)
 

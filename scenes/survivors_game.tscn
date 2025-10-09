@@ -1080,14 +1080,12 @@ scale = Vector2(1.12, 1.16)
 shape = SubResource("CapsuleShape2D_7yhjp")
 
 [node name="gun" parent="Brotat" instance=ExtResource("7_bg3rl")]
-visible = false
 position = Vector2(2.0623207e-05, -43.433334)
 scale = Vector2(0.9318334, 0.99336606)
 audio_bus_name = &"shot"
 
 [node name="HurtBox" type="Area2D" parent="Brotat"]
 unique_name_in_owner = true
-visible = false
 collision_layer = 0
 collision_mask = 2
 
