@@ -120,14 +120,13 @@ script = ExtResource("8_pwcma")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel/pizzacutter2"]
 layout_mode = 0
-offset_left = -263.0
-offset_top = 265.00003
-offset_right = 376.0
-offset_bottom = 1168.4868
-rotation = -0.68883735
-scale = Vector2(1.2541306, 1.2541306)
+offset_left = 1.9999917
+offset_top = 122.999985
+offset_right = 39.553085
+offset_bottom = 172.99998
+rotation = -0.7000677
+scale = Vector2(5.635648, 7.7022038)
 texture = ExtResource("5_vnbc4")
-expand_mode = 1
 
 [node name="click" type="AudioStreamPlayer" parent="CanvasLayer/Panel/pizzacutter2"]
 stream = ExtResource("5_buj6g")

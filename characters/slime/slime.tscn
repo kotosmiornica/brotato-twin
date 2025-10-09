@@ -263,7 +263,6 @@ texture = ExtResource("1_cq7ej")
 [node name="Anchor" type="Marker2D" parent="."]
 
 [node name="SlimeBody" type="Sprite2D" parent="Anchor"]
-modulate = Color(0.53333336, 1, 0.9882353, 1)
 position = Vector2(0, 20)
 texture = ExtResource("1_3j35h")
 offset = Vector2(0, -36)

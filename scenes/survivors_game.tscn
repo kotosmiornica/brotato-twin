@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=4 uid="uid://dsl247xnk6knu"]
+[gd_scene load_steps=112 format=4 uid="uid://dsl247xnk6knu"]
 
 [ext_resource type="Script" uid="uid://crgvxr0vdaef6" path="res://scripts/survivors_game.gd" id="1_vt6sv"]
 [ext_resource type="FontFile" uid="uid://dafmtu36qyubr" path="res://Dusk Fonts/Dusk Font B2.ttf" id="2_c0lnf"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cwyddtn83ubaj" path="res://scenes/pause_menu.tscn" id="7_hs66j"]
 [ext_resource type="PackedScene" uid="uid://i1onmpal7tpf" path="res://scenes/XPpickups.tscn" id="8_fp0yo"]
 [ext_resource type="Script" uid="uid://cneh2if8htw2" path="res://scripts/x_pbar.gd" id="9_7yhjp"]
+[ext_resource type="PackedScene" uid="uid://ckc78makin50v" path="res://scenes/pizzacutter.tscn" id="11_q1qpi"]
 [ext_resource type="AudioStream" uid="uid://bnda3v2s6m0k3" path="res://SOUNDS/sounds/menuclick.wav" id="13_nkvhx"]
 [ext_resource type="Texture2D" uid="uid://0jocifbj0ijg" path="res://images/Flowers_Without_Outline/Daisy.png" id="14_8gmy3"]
 [ext_resource type="Texture2D" uid="uid://bkbrur7ck36fl" path="res://images/Flowers_Without_Outline/Daffodil.png" id="15_cjyux"]
@@ -978,13 +979,12 @@ tile_set = SubResource("TileSet_p0pgc")
 layer = -30
 
 [node name="ColorRect" type="ColorRect" parent="Background"]
-modulate = Color(0.17254902, 0.7647059, 0.7647059, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.18979973, 0.3374689, 0.10855555, 1)
+color = Color(0, 0.2571149, 0.09977906, 1)
 
 [node name="Label" type="Label" parent="Background"]
 offset_left = 1553.0
@@ -1003,10 +1003,6 @@ autowrap_mode = 3
 position = Vector2(936, 511)
 scale = Vector2(0.7137377, 0.7137377)
 
-[node name="Camera2D" type="Camera2D" parent="Brotat"]
-position_smoothing_enabled = true
-position_smoothing_speed = 2.8
-
 [node name="ColorRect" type="ColorRect" parent="Brotat"]
 top_level = true
 offset_left = -1052.0
@@ -1014,6 +1010,10 @@ offset_top = -39640.0
 offset_right = 2964.0
 offset_bottom = 34188.0
 color = Color(0.3647059, 0, 0.5254902, 0.24705882)
+
+[node name="Camera2D" type="Camera2D" parent="Brotat"]
+position_smoothing_enabled = true
+position_smoothing_speed = 2.8
 
 [node name="ProgressBar" type="ProgressBar" parent="Brotat"]
 unique_name_in_owner = true
@@ -1052,6 +1052,7 @@ rotation = -0.006255562
 
 [node name="HappyBoo" parent="Brotat" instance=ExtResource("3_hfi5g")]
 unique_name_in_owner = true
+modulate = Color(0.9999997, 0.959768, 0.9480342, 1)
 script = ExtResource("4_tg6hx")
 
 [node name="BlueWig" type="AnimatedSprite2D" parent="Brotat/HappyBoo"]
@@ -1079,12 +1080,14 @@ scale = Vector2(1.12, 1.16)
 shape = SubResource("CapsuleShape2D_7yhjp")
 
 [node name="gun" parent="Brotat" instance=ExtResource("7_bg3rl")]
+visible = false
 position = Vector2(2.0623207e-05, -43.433334)
 scale = Vector2(0.9318334, 0.99336606)
 audio_bus_name = &"shot"
 
 [node name="HurtBox" type="Area2D" parent="Brotat"]
 unique_name_in_owner = true
+visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -1092,6 +1095,10 @@ collision_mask = 2
 position = Vector2(-1, -33)
 shape = SubResource("CapsuleShape2D_46648")
 debug_color = Color(0.854248, 0.314498, 0.503126, 0.42)
+
+[node name="pizzacutter" parent="Brotat" instance=ExtResource("11_q1qpi")]
+visible = false
+position = Vector2(0, -32.224724)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
