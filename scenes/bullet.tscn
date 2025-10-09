@@ -26,7 +26,7 @@ shape = SubResource("CircleShape2D_h1aey")
 [node name="shot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_l5glv")
 volume_db = -20.175
-bus = &"shot"
+bus = &"Bullets"
 
 [node name="Timer" type="Timer" parent="."]
 

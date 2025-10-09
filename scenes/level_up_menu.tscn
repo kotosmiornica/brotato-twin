@@ -148,10 +148,10 @@ script = ExtResource("10_jqsxd")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel/bleach3"]
 layout_mode = 0
-offset_left = -34.0
-offset_top = -17.999998
-offset_right = 474.0
-offset_bottom = 490.0
+offset_left = -14.999998
+offset_top = -25.0
+offset_right = 457.71045
+offset_bottom = 483.0
 scale = Vector2(0.9286871, 0.9286871)
 texture = ExtResource("8_vnbc4")
 expand_mode = 1

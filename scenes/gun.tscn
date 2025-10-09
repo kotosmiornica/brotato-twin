@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://kvg3tmks0ch2"]
+[gd_scene load_steps=4 format=3 uid="uid://kvg3tmks0ch2"]
 
 [ext_resource type="Script" uid="uid://cwx78pc2dcoay" path="res://scripts/gun.gd" id="1_og67c"]
 [ext_resource type="Texture2D" uid="uid://cpes41qvm30ho" path="res://images/bettergun.png" id="2_gp1hk"]
-[ext_resource type="AudioStream" uid="uid://x6n81gfyplq7" path="res://SOUNDS/sounds/simpleshot.mp3" id="3_gp1hk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_og67c"]
 radius = 433.0104
@@ -30,10 +29,5 @@ scale = Vector2(0.18875425, 0.18875425)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
 autostart = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_gp1hk")
-volume_db = 24.0
-bus = &"Bullets"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
