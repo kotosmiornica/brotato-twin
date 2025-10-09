@@ -38,7 +38,7 @@ script = ExtResource("2_v2s22")
 [node name="Hook" type="Sprite2D" parent="FishingGame3"]
 top_level = true
 position = Vector2(953, 982)
-scale = Vector2(0.0820311, 0.11792)
+scale = Vector2(0.07664119, 0.09285226)
 texture = ExtResource("3_jue2y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FishingGame3/Hook"]

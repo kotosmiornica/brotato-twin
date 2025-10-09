@@ -3,11 +3,11 @@ extends Node2D
 
 @onready var hook = $Hook
 @onready var foods_container = $Foods
-@export var spawn_interval = 0.3
-@export var hook_end_y = 50.0    
+@export var spawn_interval = 0.4
+@export var hook_end_y = 10.0    
 @export var base_speed = 280.0  
 @export var max_speed = 380.0     
-@export var hook_start_offset = 500  
+@export var hook_start_offset = 800  
 
 
 

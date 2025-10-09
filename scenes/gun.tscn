@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cpes41qvm30ho" path="res://images/bettergun.png" id="2_gp1hk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_og67c"]
-radius = 433.0104
+radius = 484.3728
 
 [node name="gun" type="Area2D" node_paths=PackedStringArray("shooting_point")]
 collision_layer = 0
@@ -18,8 +18,8 @@ shape = SubResource("CircleShape2D_og67c")
 [node name="WeaponPivot" type="Marker2D" parent="."]
 
 [node name="Pistol" type="Sprite2D" parent="WeaponPivot"]
-position = Vector2(126.00001, 3)
-scale = Vector2(2.8707983, 2.8707986)
+position = Vector2(134, 3)
+scale = Vector2(2.7425423, 2.8707986)
 texture = ExtResource("2_gp1hk")
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]

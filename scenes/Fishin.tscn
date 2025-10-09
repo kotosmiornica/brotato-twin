@@ -36,7 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -9.0
 offset_right = 35.0
-offset_bottom = -416.0
+offset_bottom = -356.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_o24hs")
@@ -47,7 +47,7 @@ script = ExtResource("1_wacnr")
 [node name="Hook" type="Sprite2D" parent="FishingGame"]
 top_level = true
 position = Vector2(953, 982)
-scale = Vector2(0.11383044, 0.13683257)
+scale = Vector2(0.13775337, 0.17839165)
 texture = ExtResource("4_2kclr")
 
 [node name="PlayerFood" type="Sprite2D" parent="FishingGame"]
