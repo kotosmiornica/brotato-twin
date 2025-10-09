@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://gfuphujdhgtd" path="res://images/Leek.png" id="2_j1n3m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jwtx"]
-radius = 54.546432
+radius = 60.37736
 height = 168.04564
 
 [node name="Leek" type="Node2D"]
