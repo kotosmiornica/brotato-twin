@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://i1onmpal7tpf"]
 
 [ext_resource type="Script" uid="uid://ch3i4fnvptr74" path="res://scripts/area_2d.gd" id="1_ypdhd"]
-[ext_resource type="Texture2D" uid="uid://dxvyaijb50y7h" path="res://images/pouch_5896513.png" id="2_ypdhd"]
+[ext_resource type="Texture2D" uid="uid://dfqm2oskoq7mn" path="res://images/moneybag.png" id="2_ypdhd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_knfid"]
 radius = 42.0119
@@ -12,7 +12,7 @@ script = ExtResource("1_ypdhd")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visibility_layer = 2
 position = Vector2(-2.38419e-07, 2.38419e-07)
-scale = Vector2(0.09655755, 0.090833366)
+scale = Vector2(2.861149, 2.6915324)
 texture = ExtResource("2_ypdhd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
