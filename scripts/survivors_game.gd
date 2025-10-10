@@ -60,9 +60,8 @@ func _spawn_mob(path: PathFollow2D):
 	new_mob.global_position = path.global_position
 	add_child(new_mob)
 	alive_enemies += 1
-	new_mob.connect("died", Callable(self, "_on_enemy_died").bind(new_mob))
-
-
+	new_mob.connect("died", Callable(self,"on_enemy_died").bind(new_mob))
+	
 func _on_enemy_died(mob: Node):
 	alive_enemies -= 1
 	kill_count += 1
