@@ -20,12 +20,12 @@ var items = [
 	{
 		"Name": "BlueWig",
 		"Des": "Suddenly you want to sing at 750BPM.",
-		"Cost": 50
+		"Cost": 200
 	},
 	{
 		"Name": "Heart",
 		"Des": "Equipping this fills you with determination.",
-		"Cost": 80
+		"Cost": 179
 	}
 ]
 

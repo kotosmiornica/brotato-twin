@@ -9,7 +9,7 @@ height = 153.93292
 
 [node name="ToyKnife" type="Node2D"]
 script = ExtResource("1_mt8qc")
-food_type = "Black Monster"
+food_type = "ToyKnife"
 
 [node name="Area2D" type="Area2D" parent="."]
 

@@ -36,7 +36,7 @@ func trigger_flying_foods():
 
 func spawn_flying_food(food_type: String):
 	var scene_path = ""
-	
+
 	match food_type:
 		"Leek":
 			scene_path = "res://scenes/Leek.tscn"
@@ -44,12 +44,18 @@ func spawn_flying_food(food_type: String):
 			scene_path = "res://scenes/ToyKnife.tscn"
 		"BlackMonster":
 			scene_path = "res://scenes/BlackMonster.tscn"
+		_:
+			scene_path = "res://scenes/Leek.tscn"  # 👈 fallback so it never breaks
 
-
-	# Use load() instead of preload() for dynamic path
+	# Now it’s safe to load
 	var food_scene = load(scene_path)
+	if not food_scene:
+		push_error("Could not load food scene: " + scene_path)
+		return
+
 	var food = food_scene.instantiate()
 	flying_foods_container.add_child(food)
+
 
 	var screen_size = get_viewport_rect().size
 	food.global_position = Vector2(randf_range(100, screen_size.x - 100), screen_size.y + 20)
@@ -183,6 +189,7 @@ func _on_unlock_level_3_pressed() -> void:
 	# Update UI
 	fishing_level3_label.text = "Fishing Level " + str(next_level) + " unlocked!"
 	$UnlockLevel3/buy.play()
+
 
 
 func _on_settings_pressed():

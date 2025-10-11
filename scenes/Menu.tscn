@@ -876,7 +876,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(722, 316)
-color = Color(0.505882, 0.286275, 0.878431, 0.768627)
+color = Color(0.31319007, 0.12925631, 0.5768775, 0.9137255)
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 0

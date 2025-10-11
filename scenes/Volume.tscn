@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bnda3v2s6m0k3" path="res://SOUNDS/sounds/menuclick.wav" id="4_d5voq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_415nn"]
-bg_color = Color(1.2032688e-08, 0.12960142, 0.20890033, 0.7137255)
+bg_color = Color(0, 0.12941177, 0.20784314, 0.8627451)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fbos0"]
 content_margin_top = 10.0
