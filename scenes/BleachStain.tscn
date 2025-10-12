@@ -11,13 +11,17 @@ height = 556.319
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_scysm")
+duration = null
+damage_per_second = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 0.6313726, 0.8980392)
 position = Vector2(1, -2)
 scale = Vector2(1.23584, 1.14258)
 texture = ExtResource("2_y0w8r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(37, -10)
 rotation = 2.19515
 shape = SubResource("CapsuleShape2D_wivt3")

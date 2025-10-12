@@ -9,3 +9,4 @@ var equipped_hair: String = ""
 var equipped_accessory: String = ""
 # Default: only Level 1 unlocked
 var unlocked_fishing_levels := 1
+var bleach_level: int = 1
