@@ -12,7 +12,7 @@ modulate = Color(3.657937e-06, 0.9796271, 0.5142679, 1)
 self_modulate = Color(1, 0, 0, 1)
 top_level = true
 collision_layer = 2
-collision_mask = 3
+collision_mask = 7
 platform_floor_layers = 0
 script = ExtResource("1_bsing")
 

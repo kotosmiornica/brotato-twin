@@ -16,7 +16,7 @@ position = Vector2(682, 495)
 script = ExtResource("1_gfr5o")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-modulate = Color(1, 0.43137255, 0.49411765, 1)
+modulate = Color(0.7921569, 0.2627451, 1, 1)
 scale = Vector2(2.2758906, 2.2758906)
 texture = ExtResource("2_gfr5o")
 

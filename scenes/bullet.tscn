@@ -95,7 +95,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h1aey"]
-radius = 8.485282
+radius = 10.000001
 
 [node name="bullet" type="Area2D"]
 top_level = true
@@ -106,14 +106,14 @@ script = ExtResource("1_y25gk")
 hit_sound = ExtResource("2_qncy5")
 
 [node name="Projectile" type="AnimatedSprite2D" parent="."]
-position = Vector2(-2.733426, -1.5900884)
-scale = Vector2(2.385572, 2.366959)
+position = Vector2(0.08935022, -1.411388)
+scale = Vector2(1.8693467, 2.216969)
 sprite_frames = SubResource("SpriteFrames_in4mv")
 animation = &"bullet_purple"
 frame_progress = 0.72458386
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7.0569406, 0.44675028)
+position = Vector2(5.6455526, 0.35740054)
 shape = SubResource("CircleShape2D_h1aey")
 
 [node name="shot" type="AudioStreamPlayer2D" parent="."]
