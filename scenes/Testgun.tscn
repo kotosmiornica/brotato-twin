@@ -1,24 +1,30 @@
 [gd_scene load_steps=4 format=3 uid="uid://bkhag286w8414"]
 
-[ext_resource type="Script" uid="uid://byc8ftfrxw78v" path="res://scenes/character_body_2d.gd" id="1_gfr5o"]
-[ext_resource type="Texture2D" uid="uid://cswb5do8rrj7q" path="res://pistol/pistol.png" id="2_oo0bh"]
+[ext_resource type="Script" uid="uid://vq24pawfqgpu" path="res://scenes/testgun.gd" id="1_gfr5o"]
+[ext_resource type="Texture2D" uid="uid://cpes41qvm30ho" path="res://images/bettergun.png" id="2_gfr5o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evgla"]
 size = Vector2(19.130043, 13.948675)
 
-[node name="Node2D" type="Node2D"]
+[node name="YOUSHOOT" type="Node2D"]
+
+[node name="weapon" type="Marker2D" parent="."]
+position = Vector2(612, 488)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(682, 495)
 script = ExtResource("1_gfr5o")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("2_oo0bh")
+modulate = Color(1, 0.43137255, 0.49411765, 1)
+scale = Vector2(2.2758906, 2.2758906)
+texture = ExtResource("2_gfr5o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+visible = false
 position = Vector2(1.7151335, -0.50000143)
 scale = Vector2(3.9430265, 3.9430265)
 shape = SubResource("RectangleShape2D_evgla")
 
-[node name="Node2D" type="Node2D" parent="CharacterBody2D"]
-position = Vector2(44, -11)
+[node name="pivot" type="Node2D" parent="CharacterBody2D"]
+position = Vector2(51, -11)

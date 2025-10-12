@@ -1,15 +1,10 @@
 extends CharacterBody2D
-var pos: Vector2
-var rota: float
-var dir: float
-var speed = 2000
 
+@export var speed = 800.0
+var direction = Vector2.RIGHT
 
-func _ready() -> void:
-	global_position = pos
-	global_rotation = rota
+func _physics_process(delta):
+	position += direction * speed * delta
 
-
-func _physics_process(delta: float) -> void:
-	velocity = Vector2(speed, 0).rotated(dir)
-	move_and_slide()
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	queue_free()

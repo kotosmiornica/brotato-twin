@@ -1,90 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3dxgbdgjhjmh"]
+[gd_scene load_steps=6 format=3 uid="uid://c3dxgbdgjhjmh"]
 
 [ext_resource type="Script" uid="uid://cm12waiwqaill" path="res://testbullet.gd" id="1_j33vv"]
-[ext_resource type="Texture2D" uid="uid://dbrrj6h7wv0k8" path="res://images/New_All_Fire_Bullet_Pixel_16x16/All_Fire_Bullet_Pixel_16x16_05.png" id="1_radpi"]
+[ext_resource type="Texture2D" uid="uid://bkuclucouw5bc" path="res://images/New_All_Fire_Bullet_Pixel_16x16/All_Fire_Bullet_Pixel_16x16_01.png" id="2_vma1n"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1cfmv"]
-atlas = ExtResource("1_radpi")
-region = Rect2(208, 273, 16, 13)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k76ql"]
-atlas = ExtResource("1_radpi")
-region = Rect2(224, 273, 16, 13)
+[sub_resource type="AtlasTexture" id="AtlasTexture_radpi"]
+atlas = ExtResource("2_vma1n")
+region = Rect2(448, 204, 32, 12)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_in4mv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1cfmv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
+"texture": SubResource("AtlasTexture_radpi")
 }],
 "loop": true,
 "name": &"bullet_purple",
@@ -101,8 +28,8 @@ rotation = 0.722176
 script = ExtResource("1_j33vv")
 
 [node name="Projectile" type="AnimatedSprite2D" parent="."]
-position = Vector2(-2.733426, -1.5900884)
-scale = Vector2(2.385572, 2.366959)
+position = Vector2(1.1433377, 4.3235145)
+scale = Vector2(1.4997653, 1.8504275)
 sprite_frames = SubResource("SpriteFrames_in4mv")
 animation = &"bullet_purple"
 frame_progress = 0.72458386
