@@ -17,7 +17,7 @@ damage_per_second = null
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 1, 0.6313726, 0.8980392)
 position = Vector2(1, -2)
-scale = Vector2(1.23584, 1.14258)
+scale = Vector2(0.8572854, 0.68796754)
 texture = ExtResource("2_y0w8r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

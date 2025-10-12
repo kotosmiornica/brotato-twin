@@ -15,11 +15,12 @@ food_type = "ToyKnife"
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 position = Vector2(-8, 9.53674e-07)
-rotation = -0.013810843
-scale = Vector2(2.9168181, 2.9168181)
+rotation = -0.22099465
+scale = Vector2(3.6336894, 3.6336894)
 texture = ExtResource("2_5laxp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-6.0000005, -8)
-rotation = 0.43466216
+rotation = 0.5976673
+scale = Vector2(1.1774477, 1.0975015)
 shape = SubResource("CapsuleShape2D_2jwtx")

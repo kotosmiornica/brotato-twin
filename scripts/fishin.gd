@@ -17,7 +17,7 @@ var hook_rise_speed = 5.0
 var caught_foods := []
 
 func _ready():
-	PlayerData.caught_foods.clear()  # reset from previous fishing
+	PlayerData.caught_foods.clear()
 	var screen_size = get_viewport_rect().size
 	hook.position = Vector2(
 		screen_size.x / 2, 
@@ -37,7 +37,7 @@ func _process(delta):
 
 
 		var mouse_x = get_viewport().get_mouse_position().x
-		var hook_speed = 6.0  # tweak this value for more or less lag (higher = faster)
+		var hook_speed = 5
 		hook.position.x = lerp(hook.position.x, mouse_x, hook_speed * delta)
 
 

@@ -15,10 +15,11 @@ script = ExtResource("1_xs1tk")
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 position = Vector2(1.9869738, 6.654464)
 rotation = -0.35597646
-scale = Vector2(1.8652713, 1.6894284)
+scale = Vector2(2.457655, 2.2259667)
 texture = ExtResource("2_j1n3m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(2.3841858e-07, 6)
 rotation = -1.0274271
+scale = Vector2(1.1150491, 1.295891)
 shape = SubResource("CapsuleShape2D_2jwtx")
