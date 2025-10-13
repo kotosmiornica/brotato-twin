@@ -12,7 +12,7 @@ extends Control
 
 var food_counts := {} 
 var food_scenes := {
-	 "Leek": preload("res://scenes/Leek.tscn"), 
+	"Leek": preload("res://scenes/Leek.tscn"), 
 	"ToyKnife": preload("res://scenes/ToyKnife.tscn"), 
 	"BlackMonster": preload("res://scenes/BlackMonster.tscn") 
 	}
@@ -22,16 +22,15 @@ var active_coins := []
 
 func _ready() -> void:
 	apply_equipped_hair()
-	coins_label.text = str(Global.coins)
+	Global.connect("coins_changed", Callable(self, "_on_coins_changed"))
 	if PlayerData.caught_food_count > 0:
 		trigger_flying_foods()
 		PlayerData.caught_food_count = 0
 
-
 func trigger_flying_foods():
 	for food_type in PlayerData.caught_foods:
 		spawn_flying_food(food_type)
-	PlayerData.caught_food.clear()
+	PlayerData.caught_foods.clear()
 
 func spawn_flying_food(food_type: String):
 	var scene_path = ""
@@ -68,7 +67,7 @@ func spawn_coins_for_food():
 
 func spawn_single_coin(delay: float = 0.0):
 	var coin = coin_scene.instantiate()
-	get_tree().root.add_child(coin)
+	coins_container.add_child(coin)
 	active_coins.append(coin)
 	coin.set_meta("counted", false)
 	coin.global_position = eating_pet.global_position + Vector2(randf_range(-70, 10), randf_range(-70, 10))
@@ -93,8 +92,8 @@ func _on_coin_reached_label(coin):
 	coin.queue_free()
 	active_coins.erase(coin)
 	
-	Global.coins += 1
-	coins_label.text = str(Global.coins)
+	Global.add_coins(1)
+
 
 
 func _on_food_reached_pet(food):
@@ -192,3 +191,32 @@ func _on_settings_pressed():
 		anim.play("FadeIn")
 	else:
 		print("Animation note not found")
+
+
+func _buy_with_food(item_name: String, food_type: String, cost: int, player_node: Node) -> void:
+	var current_amount = PlayerData.food_counts.get(food_type, 0)
+	if current_amount < cost:
+		print("Not enough %s to buy %s!" % [food_type, item_name])
+		$NotEnough.play()
+		return
+
+	# Deduct the food cost
+	PlayerData.food_counts[food_type] = current_amount - cost
+
+	# Cosmetic application logic
+	var cosmetic_node = player_node.get_node_or_null(item_name)
+	if cosmetic_node:
+		cosmetic_node.visible = true
+		if cosmetic_node.has_method("play"):
+			cosmetic_node.play(item_name)
+		cosmetic_node.z_index = 10
+
+	# Track ownership
+	PlayerData.equipped_hair = item_name
+	PlayerData.owned_items.append(item_name)
+
+	$buy.play()
+	print("Bought %s for %d %s(s)" % [item_name, cost, food_type])
+
+func _on_coins_changed(new_amount):
+	coins_label.text = str(new_amount)
