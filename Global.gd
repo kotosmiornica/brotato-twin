@@ -20,27 +20,19 @@ var items = [
 	{
 		"Name": "BlueWig",
 		"Des": "Suddenly you want to sing at 750BPM.",
-		"Cost": 200
+		"Cost": 20,
+		"Currency": "Leek"  # 🧄 requires 50 Leeks
 	},
 	{
 		"Name": "Heart",
 		"Des": "Equipping this fills you with determination.",
-		"Cost": 179
-	}
-]
-
-
-
-
-var inventory = [
-	{
-		"Name": "BlueWig",
-		"Des": "Suddenly you want to sing at 750BPM.",
-		"Cost": 50
+		"Cost": 20,
+		"Currency": "ToyKnife"  # 🔪 requires 50 ToyKnives
 	},
 	{
-		"Name": "Heart",
-		"Des": "Equipping this fills you with determination.",
-		"Cost": 80
+		"Name": "EmotionalWig",
+		"Des": "Such deeply EMOtional hairstyle (wip).",
+		"Cost": 20,
+		"Currency": "BlackMonster"  # 👾 requires 50 BlackMonsters
 	}
 ]

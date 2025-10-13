@@ -15,7 +15,10 @@ func switch_item(index: int) -> void:
 	var item_data = Global.items[currItem]
 
 	$Control/Name.text = item_data["Name"]
-	$Control/Des.text = item_data["Des"] + "\nCost: " + str(item_data["Cost"])
+	var cost = item_data.get("Cost", 50)
+	var currency = item_data.get("Currency", "Leek")  # default fallback
+	$Control/Des.text = "%s\nCost: %d %s" % [item_data["Des"], cost, currency]
+
 	$Control/AnimatedSprite2D.play(item_data["Name"])
 
 func _on_prev_pressed() -> void:
@@ -26,53 +29,23 @@ func _on_next_pressed() -> void:
 
 func _on_buy_pressed() -> void:
 	var item_data = Global.items[currItem]
-	var cost = item_data.get("Cost", 0)
+	var item_name = item_data["Name"]
 
-	if Global.coins < cost:
-		print("Not enough coins!")
-		$NotEnough.play()
-		return
-	else:
-		$buy.play()
-
-	var player_node = get_tree().get_root().get_node("Control/MakeYourPlayer") 
+	var player_node = get_tree().get_root().get_node("Control/MakeYourPlayer")
 	if not player_node:
 		print("MakeYourPlayer node not found!")
 		return
 
-	if item_data["Name"] == "BlueWig":
-		var wig_node = player_node.get_node_or_null("BlueWig")
-		if wig_node:
-			wig_node.visible = true
-			wig_node.play("BlueWig")
-			wig_node.z_index = 10
-
-			# save globally which hair is equipped
-			PlayerData.equipped_hair = "BlueWig"
-
-			Global.coins -= cost
-			item_data["Owned"] = true
-			PlayerData.owned_items.append(item_data["Name"])
-			%CoinsLabel.text = str(Global.coins)
-
-		print("Bought:", item_data["Name"], "Remaining coins:", Global.coins)
-
-
-	elif item_data["Name"] == "Heart":
-		var heart_node = player_node.get_node_or_null("Heart")
-		if heart_node:
-			heart_node.visible = true
-			heart_node.play("Heart")
-			heart_node.z_index = 10
-
-			PlayerData.equipped_hair = "Heart"
-
-			Global.coins -= cost
-			item_data["Owned"] = true
-			PlayerData.owned_items.append(item_data["Name"])
-			%CoinsLabel.text = str(Global.coins)
-
-		print("Bought:", item_data["Name"], "Remaining coins:", Global.coins)
+	# Currency logic based on item type
+	match item_name:
+		"BlueWig":
+			_buy_with_food(item_name, "Leek", 20, player_node)
+		"Heart":
+			_buy_with_food(item_name, "ToyKnife", 20, player_node)
+		"EmotionalWig":
+			_buy_with_food(item_name, "BlackMonster", 20, player_node)
+		_:
+			print("Unknown item:", item_name)
 
 
 func _on_close_pressed() -> void:
@@ -85,3 +58,29 @@ func _on_close_pressed() -> void:
 	else:
 		print("Animation not found")
 		
+
+
+func _buy_with_food(item_name: String, food_type: String, cost: int, player_node: Node) -> void:
+	var current_amount = PlayerData.food_counts.get(food_type, 0)
+	if current_amount < cost:
+		print("Not enough %s to buy %s!" % [food_type, item_name])
+		$NotEnough.play()
+		return
+
+	# Deduct the food cost
+	PlayerData.food_counts[food_type] = current_amount - cost
+
+	# Cosmetic application logic
+	var cosmetic_node = player_node.get_node_or_null(item_name)
+	if cosmetic_node:
+		cosmetic_node.visible = true
+		if cosmetic_node.has_method("play"):
+			cosmetic_node.play(item_name)
+		cosmetic_node.z_index = 10
+
+	# Track ownership
+	PlayerData.equipped_hair = item_name
+	PlayerData.owned_items.append(item_name)
+
+	$buy.play()
+	print("Bought %s for %d %s(s)" % [item_name, cost, food_type])

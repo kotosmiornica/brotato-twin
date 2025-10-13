@@ -147,20 +147,17 @@ func _on_wardrobe_button_pressed():
 
 
 
-# ------------------------
-# Unlock next fishing level
-# ------------------------
 func _on_unlock_fishing_level2_pressed() -> void:
 	var next_level = PlayerData.unlocked_fishing_levels + 1
-	var cost = 15
+	var cost = 155  # 💰 coins required instead of food
 
-	if PlayerData.food_counts.get("Leek", 0) < cost:
-		print("Not enough Leeks to unlock this level!")
+	if Global.coins < cost:
+		print("Not enough coins to unlock level 2!")
 		$UnlockLevel2/NotEnough.play()
 		return
 
-	# Deduct Leeks
-	PlayerData.food_counts["Leek"] -= cost
+	# Deduct coins
+	Global.coins -= cost
 
 	# Unlock next level
 	PlayerData.unlocked_fishing_levels = next_level
@@ -168,19 +165,21 @@ func _on_unlock_fishing_level2_pressed() -> void:
 
 	# Update UI
 	fishing_level2_label.text = "Fishing Level " + str(next_level) + " unlocked!"
+	coins_label.text = str(Global.coins)
 	$UnlockLevel2/buy.play()
+
 
 func _on_unlock_level_3_pressed() -> void:
 	var next_level = PlayerData.unlocked_fishing_levels + 1
-	var cost = 20
+	var cost = 280  # 💰 more expensive for level 3
 
-	if PlayerData.food_counts.get("ToyKnife", 0) < cost:
-		print("Not enough Knives to unlock this level!")
+	if Global.coins < cost:
+		print("Not enough coins to unlock level 3!")
 		$UnlockLevel3/NotEnough.play()
 		return
 
-	# Deduct Leeks
-	PlayerData.food_counts["ToyKnife"] -= cost
+	# Deduct coins
+	Global.coins -= cost
 
 	# Unlock next level
 	PlayerData.unlocked_fishing_levels = next_level
@@ -188,8 +187,8 @@ func _on_unlock_level_3_pressed() -> void:
 
 	# Update UI
 	fishing_level3_label.text = "Fishing Level " + str(next_level) + " unlocked!"
+	coins_label.text = str(Global.coins)
 	$UnlockLevel3/buy.play()
-
 
 
 func _on_settings_pressed():

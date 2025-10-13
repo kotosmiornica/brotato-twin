@@ -12,7 +12,6 @@ func _physics_process(delta: float) -> void:
 
 func fire() -> void:
 	var bullet = bullet_scene.instantiate()
-
 	# Spawn bullet from your muzzle (rename Node2D to whatever your muzzle node is)
 	bullet.global_position = $pivot.global_position
 

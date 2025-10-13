@@ -1097,7 +1097,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_yt8fu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pp5m5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4umqm")
 text = "Unlock level 3!
-Cost: 20 Knives"
+Cost: 280 Coins"
 autowrap_mode = 3
 script = ExtResource("18_dek3k")
 
@@ -1134,7 +1134,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_yt8fu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pp5m5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4umqm")
 text = "Unlock level 2!
-Cost: 15 Leek"
+Cost: 155 Coins"
 autowrap_mode = 3
 script = ExtResource("18_dek3k")
 
