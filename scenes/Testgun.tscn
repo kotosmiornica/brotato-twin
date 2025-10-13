@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkhag286w8414"]
+[gd_scene load_steps=5 format=3 uid="uid://bkhag286w8414"]
 
 [ext_resource type="Script" uid="uid://vq24pawfqgpu" path="res://scenes/testgun.gd" id="1_gfr5o"]
 [ext_resource type="Texture2D" uid="uid://cpes41qvm30ho" path="res://images/bettergun.png" id="2_gfr5o"]
+[ext_resource type="AudioStream" uid="uid://c5wfgdpwu06th" path="res://SOUNDS/sounds/dead.mp3" id="3_oo0bh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evgla"]
 size = Vector2(19.130043, 13.948675)
@@ -28,3 +29,8 @@ shape = SubResource("RectangleShape2D_evgla")
 
 [node name="pivot" type="Node2D" parent="CharacterBody2D"]
 position = Vector2(51, -11)
+
+[node name="Bang" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_oo0bh")
+bus = &"Bullets"

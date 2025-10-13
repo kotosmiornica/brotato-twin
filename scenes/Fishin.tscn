@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbo0bd7qla4yd"]
+[gd_scene load_steps=7 format=3 uid="uid://cbo0bd7qla4yd"]
 
 [ext_resource type="Texture2D" uid="uid://dxjcywb4hgl76" path="res://free-underwater-world-pixel-art-backgrounds/background 1/1.png" id="1_o24hs"]
 [ext_resource type="Script" uid="uid://catu5hvsoll6o" path="res://scripts/fishin.gd" id="1_wacnr"]
-[ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://images/icon.jpg" id="3_aafxh"]
 [ext_resource type="Texture2D" uid="uid://bdghbxy6moeia" path="res://images/hook_4294182.png" id="4_2kclr"]
 [ext_resource type="AudioStream" uid="uid://w42b6prhlxu6" path="res://SOUNDS/music/fishmusic.mp3" id="6_2kclr"]
 [ext_resource type="AudioStream" uid="uid://lcfme426035c" path="res://SOUNDS/sounds/pop-402324.mp3" id="6_pqhp0"]
@@ -21,9 +20,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -36.0
+offset_left = -17.0
 offset_top = 18.0
-offset_right = 28.0
+offset_right = 47.0
 offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -44,18 +43,6 @@ texture = ExtResource("1_o24hs")
 [node name="FishingGame" type="Node2D" parent="."]
 script = ExtResource("1_wacnr")
 
-[node name="Hook" type="Sprite2D" parent="FishingGame"]
-top_level = true
-position = Vector2(953, 982)
-scale = Vector2(0.13775337, 0.17839165)
-texture = ExtResource("4_2kclr")
-
-[node name="PlayerFood" type="Sprite2D" parent="FishingGame"]
-visible = false
-position = Vector2(1492, 878)
-scale = Vector2(0.761719, 0.414062)
-texture = ExtResource("3_aafxh")
-
 [node name="2" type="Sprite2D" parent="FishingGame"]
 modulate = Color(0, 0, 0, 0.17254902)
 self_modulate = Color(0.5370113, 0.5370113, 0.5370113, 0.827451)
@@ -63,6 +50,12 @@ show_behind_parent = true
 position = Vector2(952, 662)
 scale = Vector2(3.2309763, 3.1563573)
 texture = ExtResource("7_pqhp0")
+
+[node name="Hook" type="Sprite2D" parent="FishingGame"]
+top_level = true
+position = Vector2(953, 982)
+scale = Vector2(0.13775337, 0.17839165)
+texture = ExtResource("4_2kclr")
 
 [node name="Foods" type="Node2D" parent="FishingGame"]
 

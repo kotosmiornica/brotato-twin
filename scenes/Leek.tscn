@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d4m44cc8pskx4"]
 
-[ext_resource type="Script" uid="uid://bww6gvdjx017p" path="res://scripts/food.gd" id="1_xs1tk"]
+[ext_resource type="Script" uid="uid://515f3j4uxiti" path="res://scenes/leek.gd" id="1_xs1tk"]
 [ext_resource type="Texture2D" uid="uid://gfuphujdhgtd" path="res://images/Leek.png" id="2_j1n3m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jwtx"]
@@ -15,11 +15,11 @@ script = ExtResource("1_xs1tk")
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 position = Vector2(1.9869738, 6.654464)
 rotation = -0.35597646
-scale = Vector2(2.457655, 2.2259667)
+scale = Vector2(2.2574017, 2.0445917)
 texture = ExtResource("2_j1n3m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(2.3841858e-07, 6)
 rotation = -1.0274271
-scale = Vector2(1.1150491, 1.295891)
+scale = Vector2(0.99539775, 1.1568342)
 shape = SubResource("CapsuleShape2D_2jwtx")
