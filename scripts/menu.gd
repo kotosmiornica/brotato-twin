@@ -28,7 +28,6 @@ func _ready():
 		trigger_flying_foods()
 		PlayerData.caught_food_count = 0
 	
-	# Disable already unlocked buttons
 	update_unlock_buttons()
 
 func trigger_flying_foods():
@@ -121,7 +120,6 @@ func _on_unlock_fishing_level2_pressed() -> void:
 	var next_level = 2
 	var cost = 155
 
-	# Already unlocked?
 	if PlayerData.unlocked_fishing_levels >= next_level:
 		print("Fishing level 2 already unlocked!")
 		return
@@ -141,13 +139,20 @@ func _on_unlock_fishing_level2_pressed() -> void:
 	fishing_level2_label.disabled = true
 	$UnlockLevel2/buy.play()
 
+	update_unlock_buttons()
+
 func _on_unlock_level_3_pressed() -> void:
 	var next_level = 3
 	var cost = 280
 
-	# Already unlocked?
 	if PlayerData.unlocked_fishing_levels >= next_level:
 		print("Fishing level 3 already unlocked!")
+		return
+
+
+	if PlayerData.unlocked_fishing_levels < 2:
+		print("You need to unlock Level 2 first!")
+		$UnlockLevel3/NotEnough.play()
 		return
 
 	if Global.coins < cost:
@@ -165,8 +170,13 @@ func _on_unlock_level_3_pressed() -> void:
 	fishing_level3_label.disabled = true
 	$UnlockLevel3/buy.play()
 
+	update_unlock_buttons()
+
 func update_unlock_buttons():
-	# Disable/mark buttons based on unlocked level
+
+	fishing_level3_label.visible = PlayerData.unlocked_fishing_levels >= 2
+
+
 	if PlayerData.unlocked_fishing_levels >= 2:
 		fishing_level2_label.text = "Fishing Level 2 Unlocked!"
 		fishing_level2_label.disabled = true

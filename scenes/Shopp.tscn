@@ -1,4 +1,4 @@
-[gd_scene load_steps=127 format=3 uid="uid://58ityb3umon8"]
+[gd_scene load_steps=128 format=3 uid="uid://58ityb3umon8"]
 
 [ext_resource type="Script" uid="uid://de51rx2m8hibh" path="res://scripts/Shopp.gd" id="1_24207"]
 [ext_resource type="Texture2D" uid="uid://bkcljvg88hmay" path="res://images/sheets/UndHeartSheet.png" id="2_24207"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://dnf2d832xwwjo" path="res://scripts/close.gd" id="9_fqaxf"]
 [ext_resource type="Script" uid="uid://dktoxo7y7qynr" path="res://scripts/next.gd" id="10_nrrf8"]
 [ext_resource type="AudioStream" uid="uid://bnda3v2s6m0k3" path="res://SOUNDS/sounds/menuclick.wav" id="10_oahkd"]
+[ext_resource type="StyleBox" uid="uid://djhk2ieukha32" path="res://scenes/purchasedshop.tres" id="12_hcwdo"]
 [ext_resource type="AudioStream" uid="uid://c6op7wtebnfrw" path="res://SOUNDS/sounds/cash-register-purchase-87313.mp3" id="12_xsnv8"]
 [ext_resource type="AudioStream" uid="uid://c5mhvf1525jn4" path="res://SOUNDS/sounds/wrong-47985.mp3" id="13_cn3sd"]
 
@@ -1050,6 +1051,7 @@ theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxFlat_1g78u")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_oahkd")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fqaxf")
+theme_override_styles/disabled = ExtResource("12_hcwdo")
 text = "Purchase"
 script = ExtResource("8_sf2aa")
 metadata/_edit_use_anchors_ = true
