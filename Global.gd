@@ -21,18 +21,18 @@ var items = [
 		"Name": "BlueWig",
 		"Des": "Suddenly you want to sing at 750BPM.",
 		"Cost": 20,
-		"Currency": "Leek"  # 🧄 requires 50 Leeks
+		"Currency": "Leek"  # 🧄 requires 20 Leeks
 	},
 	{
 		"Name": "Heart",
 		"Des": "Equipping this fills you with determination.",
 		"Cost": 20,
-		"Currency": "ToyKnife"  # 🔪 requires 50 ToyKnives
+		"Currency": "ToyKnife"  # 🔪 requires 20 ToyKnives
 	},
 	{
 		"Name": "EmotionalWig",
 		"Des": "Such deeply EMOtional hairstyle (wip).",
-		"Cost": 20,
-		"Currency": "BlackMonster"  # 👾 requires 50 BlackMonsters
+		"Cost": 25,
+		"Currency": "BlackMonster"  # 👾 requires 25 BlackMonsters
 	}
 ]

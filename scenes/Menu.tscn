@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=3 uid="uid://cqcwtk4w1gpdv"]
+[gd_scene load_steps=109 format=3 uid="uid://cqcwtk4w1gpdv"]
 
 [ext_resource type="Script" uid="uid://d1wrmtooq2n67" path="res://scripts/menu.gd" id="1_jmdev"]
 [ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="1_o0tnf"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://bbnfxam3713v5" path="res://scripts/WardrobeButton.gd" id="16_i7htd"]
 [ext_resource type="Script" uid="uid://cqleq4oyen4mn" path="res://scripts/EatingPet.gd" id="18_5p0sf"]
 [ext_resource type="Script" uid="uid://4pnebljmh7ua" path="res://scripts/unlock_level.gd" id="18_dek3k"]
+[ext_resource type="StyleBox" uid="uid://b1upj8scnx13" path="res://scenes/disabledpink.tres" id="19_760fv"]
 [ext_resource type="Script" uid="uid://hvak8g7kn2xr" path="res://scripts/settings.gd" id="23_8fhjo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6c8sk"]
@@ -1096,6 +1097,7 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_yt8fu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pp5m5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4umqm")
+theme_override_styles/disabled = ExtResource("19_760fv")
 text = "Unlock level 3!
 Cost: 280 Coins"
 autowrap_mode = 3
@@ -1133,6 +1135,7 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_yt8fu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pp5m5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4umqm")
+theme_override_styles/disabled = ExtResource("19_760fv")
 text = "Unlock level 2!
 Cost: 155 Coins"
 autowrap_mode = 3
