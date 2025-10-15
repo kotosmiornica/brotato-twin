@@ -29,7 +29,10 @@ func _ready():
 		PlayerData.caught_food_count = 0
 	
 	update_unlock_buttons()
-
+	if Global.extra_gun_unlocked:
+		$UnlockExtraGun.disabled = true
+		$UnlockExtraGun.text = "Already unlocked!"
+		
 func trigger_flying_foods():
 	for food_type in PlayerData.caught_foods:
 		spawn_flying_food(food_type)
@@ -189,3 +192,28 @@ func _on_settings_pressed():
 	var anim = get_node("/root/Control/SettingsMenu/Animations")
 	if anim:
 		anim.play("FadeIn")
+
+
+func _on_unlock_extra_gun_pressed() -> void:
+	var cost = 400
+
+	if Global.extra_gun_unlocked:
+		print("Extra gun already unlocked!")
+		$UnlockExtraGun.disabled = true
+		$UnlockExtraGun.text = "Already unlocked!"
+		return
+
+	if Global.coins < cost:
+		print("Not enough coins! Need %d more." % (cost - Global.coins))
+		$UnlockExtraGun/NotEnough.play()
+		$UnlockExtraGun.text = "Need 400 coins!"
+		return
+
+	Global.coins -= cost
+	coins_label.text = str(Global.coins)
+
+	Global.unlock_extra_gun()
+	$UnlockExtraGun.disabled = true
+	$UnlockExtraGun.text = "Now go and play with the slimes >:3!"
+	$UnlockExtraGun/buy.play()
+	print("Extra gun unlocked for %d coins!" % cost)

@@ -18,7 +18,7 @@ script = ExtResource("1_0kppa")
 
 [node name="BossSprite" parent="." instance=ExtResource("2_u8a1r")]
 unique_name_in_owner = true
-scale = Vector2(1.5956033, 1.4875215)
+scale = Vector2(2.6967015, 1.818082)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8.999999)

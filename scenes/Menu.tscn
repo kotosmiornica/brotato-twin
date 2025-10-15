@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://cqcwtk4w1gpdv"]
+[gd_scene load_steps=113 format=3 uid="uid://cqcwtk4w1gpdv"]
 
 [ext_resource type="Script" uid="uid://d1wrmtooq2n67" path="res://scripts/menu.gd" id="1_jmdev"]
 [ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="1_o0tnf"]
@@ -815,6 +815,94 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_size = 9
 shadow_offset = Vector2(2, 10)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rehui"]
+bg_color = Color(0.9607843, 0.07058824, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.5846233, 0.12707275, 9.62615e-08, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+expand_margin_left = 10.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 18
+shadow_offset = Vector2(2, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwbky"]
+content_margin_left = 25.0
+content_margin_right = 20.0
+bg_color = Color(0.65445584, 0.14683256, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.4176271, 0.078432314, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+expand_margin_left = 10.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_offset = Vector2(2, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvxia"]
+content_margin_left = 25.0
+content_margin_right = 20.0
+bg_color = Color(1, 0.21459296, 0.14025933, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.73891115, 0.16913682, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+expand_margin_left = 10.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 15
+shadow_offset = Vector2(2, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxcfj"]
+content_margin_left = 2.0
+content_margin_top = 4.0
+content_margin_right = 2.0
+content_margin_bottom = 4.0
+bg_color = Color(0.71863216, 0.0520197, 1.92523e-07, 0.62352943)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.65445584, 0.14683256, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+expand_margin_left = 10.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 18
+shadow_offset = Vector2(2, 10)
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -1182,6 +1270,42 @@ script = ExtResource("23_8fhjo")
 stream = ExtResource("11_rtd1e")
 bus = &"Sfx"
 
+[node name="UnlockExtraGun" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -354.0
+offset_right = 277.0
+offset_bottom = -224.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_o0tnf")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_rehui")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uwbky")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yvxia")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nxcfj")
+text = "Unlock an extra gun to fight for yourself >:3"
+autowrap_mode = 3
+
+[node name="click" type="AudioStreamPlayer" parent="UnlockExtraGun"]
+stream = ExtResource("11_rtd1e")
+bus = &"Sfx"
+
+[node name="NotEnough" type="AudioStreamPlayer" parent="UnlockExtraGun"]
+stream = ExtResource("6_5p0sf")
+bus = &"Sfx"
+
+[node name="buy" type="AudioStreamPlayer" parent="UnlockExtraGun"]
+stream = ExtResource("7_7t7qg")
+bus = &"Sfx"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_aaywf")
 autoplay = true
@@ -1205,3 +1329,4 @@ bus = &"Sfx"
 [connection signal="pressed" from="UnlockLevel3" to="." method="_on_unlock_level_3_pressed"]
 [connection signal="pressed" from="UnlockLevel2" to="." method="_on_unlock_fishing_level2_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="UnlockExtraGun" to="." method="_on_unlock_extra_gun_pressed"]

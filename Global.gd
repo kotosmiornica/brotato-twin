@@ -1,6 +1,7 @@
 extends Node
 
 var coins = 0
+var extra_gun_unlocked: bool = false
 signal coins_changed(new_amount)
 
 
@@ -14,6 +15,10 @@ func spend_coins(amount: int) -> bool:
 		emit_signal("coins_changed", coins)
 		return true
 	return false
+
+func unlock_extra_gun():
+	extra_gun_unlocked = true
+	print("Extra gun unlocked!")
 
 
 var items = [

@@ -40,5 +40,5 @@ frame_progress = 0.72458386
 visible = false
 position = Vector2(-1.5007386, 1.3220388)
 rotation = 1.5688825
-scale = Vector2(1.2137289, 0.86710984)
+scale = Vector2(1.2137289, 0.8671098)
 shape = SubResource("CapsuleShape2D_j33vv")

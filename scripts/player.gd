@@ -5,6 +5,7 @@ signal health_depleted
 @export var soda_cooldown: float = 10.0
 @export var throw_force: float = 600.0
 @onready var weapons_container = get_node("/root/game/Brotat/Weapons")
+@onready var extra_gun = %YOUSHOOT
 
 var health = 180.0
 var orbit_angle: float = 0.0
@@ -23,6 +24,8 @@ var pizza_cutters: Array = []
 var can_throw: bool = true
 var throw_cooldown: float = 10.0
 var xp_growth_factor = 1.4
+var extra_gun_unlocked: bool = false
+
 
 const MAX_PIZZA_CUTTERS = 4
 
@@ -137,8 +140,20 @@ func _ready():
 	add_to_group("player")
 	apply_equipped_hair()
 	apply_equipped_accessories()
+	if Global.extra_gun_unlocked:
+		extra_gun.visible = true
+		extra_gun.unlocked = true
+	else:
+		extra_gun.visible = false
+		extra_gun.unlocked = false
 
 
+
+
+func unlock_extra_gun():
+	extra_gun.visible = true
+	extra_gun.unlocked = true
+	Global.extra_gun_unlocked = true
 
 
 func _on_xp_collected():
