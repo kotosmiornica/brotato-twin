@@ -3,7 +3,7 @@ extends CharacterBody2D
 signal died
 
 var health = 3  
-@export var medkit_drop_chance: float = 0.00002 # 20% chance
+@export var medkit_drop_chance: float = 0.0002
 
 @onready var player = get_node("/root/game/Brotat")
 

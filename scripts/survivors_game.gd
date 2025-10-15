@@ -1,11 +1,13 @@
 extends Node2D
 
 @export var base_enemy_count: int = 10
-@export var kills_for_medkit: int = 5
+@export var kills_for_medkit: int = 20
 const MobScene = preload("res://scenes/mob.tscn")
 var current_wave: int = 0
 var alive_enemies: int = 0
 var kill_count: int = 0
+var spawning_wave: bool = false
+
 
 func _ready() -> void:
 	get_tree().paused = false
@@ -16,8 +18,9 @@ func _physics_process(_delta: float) -> void:
 		$Fade/ColorRect/AnimationPlayer.play("fade_in")
 		get_tree().paused = false
 
-	if not get_tree().paused and alive_enemies == 0:
+	if not get_tree().paused and alive_enemies == 0 and not spawning_wave:
 		start_next_wave()
+
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "fade_in":
@@ -31,27 +34,25 @@ func _on_button_pressed() -> void:
 # ------------------------
 
 func start_next_wave():
+	spawning_wave = true
 	current_wave += 1
 	var enemy_count = int(round(base_enemy_count * pow(1.2, current_wave - 1)))
 	print("Wave %d: Spawning %d enemies" % [current_wave, enemy_count])
 
-	_spawn_wave(enemy_count)
+	await _spawn_wave(enemy_count)
+	spawning_wave = false
 
 
-func _spawn_wave(enemy_count: int):
-	var half = enemy_count / 2
 
-	# Spawn from PathFollow2D
-	for i in range(half):
-		_spawn_mob(%PathFollow2D)
 
-	# Spawn from PathFollow2DSecond
-	for i in range(half):
-		_spawn_mob(%PathFollow2DSecond)
+func _spawn_wave(enemy_count: int) -> void:
+	var paths = [%PathFollow2D, %PathFollow2DSecond]
+	for i in range(enemy_count):
+		var path = paths[i % paths.size()]
+		_spawn_mob(path)
+		await get_tree().create_timer(0.4).timeout  # pause 0.1s
 
-	# If enemy_count is odd, spawn the extra one from PathFollow2DSecond (or alternate each wave if you want)
-	if enemy_count % 2 != 0:
-		_spawn_mob(%PathFollow2DSecond)
+
 
 
 func _spawn_mob(path: PathFollow2D):
