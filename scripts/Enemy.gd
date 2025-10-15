@@ -3,7 +3,7 @@ extends CharacterBody2D
 signal died
 
 var health = 3  
-@export var medkit_drop_chance: float = 0.00002 # 20% chance
+@export var medkit_drop_chance: float = 0.0002 
 
 @onready var player = get_node("/root/game/Brotat")
 
@@ -12,9 +12,11 @@ func _ready() -> void:
 	add_to_group("enemies")
 
 func _physics_process(_delta: float) -> void:
-	var direction = global_position.direction_to(player.global_position)
+	var target = player.global_position + Vector2(randf_range(-50, 50), randf_range(-50, 50))
+	var direction = (target - global_position).normalized()
 	velocity = direction * 300.0
 	move_and_slide()
+
 
 func take_damage(amount: int):
 	health -= amount
@@ -22,7 +24,7 @@ func take_damage(amount: int):
 	
 	if health <= 0:
 		drop_xp()
-		drop_medkit_random()  # random drop here
+		drop_medkit_random()
 		
 		const SMOKE_SCENE = preload("res://smoke_explosion/smoke_explosion.tscn")
 		var smoke = SMOKE_SCENE.instantiate()

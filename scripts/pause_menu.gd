@@ -5,12 +5,11 @@ func _ready() -> void:
 
 
 # -----------------------------
-# Helper functions
+# Help functions
 # -----------------------------
 func set_menu_active(active: bool) -> void:
 	%PauseMenu.visible = active
 	var filter = Control.MOUSE_FILTER_STOP if active else Control.MOUSE_FILTER_IGNORE
-	# Apply mouse_filter recursively to all children
 	apply_mouse_filter_recursive(%PauseMenu, filter)
 
 
@@ -27,7 +26,6 @@ func apply_mouse_filter_recursive(control: Control, filter_value: int) -> void:
 func show_pause_menu():
 	set_menu_active(true)
 	$CanvasLayer.visible = true
-	# Block input during fade animation
 	$CanvasLayer/ColorRect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	$CanvasLayer/ColorRect/PanelContainer.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	$AnimationPlayer.play("blur")
@@ -91,10 +89,7 @@ func _on_settings_pressed() -> void:
 		print("Animation node not found!")
 
 
-# -----------------------------
-# Animation finished signal
-# -----------------------------
+#other
 func _on_AnimationPlayer_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "blur":
-		# Animation finished → now allow input
 		apply_mouse_filter_recursive($PauseMenu, Control.MOUSE_FILTER_STOP)

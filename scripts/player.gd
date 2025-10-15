@@ -277,7 +277,6 @@ func give_weapon(weapon_id):
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
-		# Only spawn SodaCan if the player actually chose it
 		if "soda1" in equipped_weapons:
 			spawn_soda(event.position)
 
@@ -346,6 +345,6 @@ func equip_accessory(accessory_id):
 
 
 func heal(amount: int) -> void:
-	health = min(health + amount, 180) # or use your max health variable
+	health = min(health + amount, 180)
 	%ProgressBar.value = health
 	print("Healed by %d! Current HP: %d" % [amount, health])

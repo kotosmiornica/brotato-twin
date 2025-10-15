@@ -2,7 +2,10 @@ extends Node2D
 
 @export var base_enemy_count: int = 10
 @export var kills_for_medkit: int = 5
+
 const MobScene = preload("res://scenes/mob.tscn")
+const BossScene = preload("res://scenes/Boss1.tscn")
+
 var current_wave: int = 0
 var alive_enemies: int = 0
 var kill_count: int = 0
@@ -30,12 +33,24 @@ func _on_button_pressed() -> void:
 # Wave System
 # ------------------------
 
-func start_next_wave():
+func start_next_wave() -> void:
 	current_wave += 1
-	var enemy_count = int(round(base_enemy_count * pow(1.2, current_wave - 1)))
-	print("Wave %d: Spawning %d enemies" % [current_wave, enemy_count])
 
-	_spawn_wave(enemy_count)
+	if current_wave % 5 == 0:
+		print("Wave %d: Boss incoming!" % current_wave)
+		_spawn_boss()
+	else:
+		var enemy_count = int(round(base_enemy_count * pow(1.2, current_wave - 1)))
+		print("Wave %d: Spawning %d enemies" % [current_wave, enemy_count])
+		await _spawn_wave(enemy_count)
+
+
+func _spawn_boss() -> void:
+	var boss = BossScene.instantiate()
+	boss.global_position = Vector2(600, 300)
+	add_child(boss)
+	alive_enemies += 1
+	boss.connect("died", Callable(self, "_on_enemy_died").bind(boss))
 
 
 func _spawn_wave(enemy_count: int):
@@ -49,7 +64,6 @@ func _spawn_wave(enemy_count: int):
 	for i in range(half):
 		_spawn_mob(%PathFollow2DSecond)
 
-	# If enemy_count is odd, spawn the extra one from PathFollow2DSecond (or alternate each wave if you want)
 	if enemy_count % 2 != 0:
 		_spawn_mob(%PathFollow2DSecond)
 
@@ -73,3 +87,7 @@ func spawn_medkit(pos: Vector2):
 	var medkit = preload("res://scenes/MedKit.tscn").instantiate()
 	medkit.global_position = pos
 	call_deferred("add_child", medkit)
+	
+	
+	
+	
