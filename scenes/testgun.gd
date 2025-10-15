@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var bullet_scene = preload("res://testbullet.tscn")
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	# Make gun face the mouse
 	look_at(get_global_mouse_position())
 
