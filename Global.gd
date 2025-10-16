@@ -4,6 +4,7 @@ var coins = 0
 var extra_gun_unlocked: bool = false
 signal coins_changed(new_amount)
 
+var active_buffs = {}
 
 func add_coins(amount):
 	coins += amount
@@ -20,24 +21,41 @@ func unlock_extra_gun():
 	extra_gun_unlocked = true
 	print("Extra gun unlocked!")
 
+func activate_temp_buff(buff_type: String, multiplier: float, duration: float):
+	var now = Time.get_unix_time_from_system()
+	active_buffs[buff_type] = {
+		"multiplier": multiplier,
+		"end_time": now + duration
+	}
+	print("Activated buff:", buff_type, "for", duration, "seconds!")
+
+func get_buff_multiplier(buff_type: String) -> float:
+	if not active_buffs.has(buff_type):
+		return 1.0
+	var buff = active_buffs[buff_type]
+	var now = Time.get_unix_time_from_system()
+	if now > buff["end_time"]:
+		active_buffs.erase(buff_type)
+		return 1.0
+	return buff["multiplier"]
 
 var items = [
 	{
 		"Name": "BlueWig",
 		"Des": "Suddenly you want to sing at 750BPM.",
 		"Cost": 20,
-		"Currency": "Leek"  # 🧄 requires 20 Leeks
+		"Currency": "Leek"
 	},
 	{
 		"Name": "Heart",
 		"Des": "Equipping this fills you with determination.",
 		"Cost": 20,
-		"Currency": "ToyKnife"  # 🔪 requires 20 ToyKnives
+		"Currency": "ToyKnife"
 	},
 	{
 		"Name": "EmotionalWig",
 		"Des": "Such deeply EMOtional hairstyle (wip).",
 		"Cost": 25,
-		"Currency": "BlackMonster"  # 👾 requires 25 BlackMonsters
+		"Currency": "BlackMonster"
 	}
 ]
