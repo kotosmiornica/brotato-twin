@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var base_enemy_count: int = 10
-@export var kills_for_medkit: int = 5
+@export var kills_for_medkit: int = 20
 
 const MobScene = preload("res://scenes/mob.tscn")
 const BossScene = preload("res://scenes/Boss1.tscn")

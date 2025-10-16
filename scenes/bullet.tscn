@@ -106,8 +106,8 @@ script = ExtResource("1_y25gk")
 hit_sound = ExtResource("2_qncy5")
 
 [node name="Projectile" type="AnimatedSprite2D" parent="."]
-position = Vector2(0.08935022, -1.411388)
-scale = Vector2(1.8693467, 2.216969)
+position = Vector2(-5.5562024, -1.7687885)
+scale = Vector2(2.5186903, 2.23582)
 sprite_frames = SubResource("SpriteFrames_in4mv")
 animation = &"bullet_purple"
 frame_progress = 0.72458386
