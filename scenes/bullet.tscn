@@ -1,96 +1,62 @@
-[gd_scene load_steps=10 format=3 uid="uid://bsv2rmjhatw1m"]
+[gd_scene load_steps=9 format=3 uid="uid://bsv2rmjhatw1m"]
 
 [ext_resource type="Script" uid="uid://cl3rrd6squb5y" path="res://scripts/bullet.gd" id="1_y25gk"]
 [ext_resource type="AudioStream" uid="uid://6oainuiljw2o" path="res://SOUNDS/sounds/slime-squish-5-218569.mp3" id="2_eoqba"]
 [ext_resource type="AudioStream" uid="uid://u854bkrswh6e" path="res://SOUNDS/sounds/goopy-slime-4-219777.mp3" id="2_qncy5"]
 [ext_resource type="AudioStream" uid="uid://x6n81gfyplq7" path="res://SOUNDS/sounds/simpleshot.mp3" id="3_l5glv"]
-[ext_resource type="Texture2D" uid="uid://dbrrj6h7wv0k8" path="res://images/New_All_Fire_Bullet_Pixel_16x16/All_Fire_Bullet_Pixel_16x16_05.png" id="3_qncy5"]
+[ext_resource type="Texture2D" uid="uid://bkuclucouw5bc" path="res://images/New_All_Fire_Bullet_Pixel_16x16/All_Fire_Bullet_Pixel_16x16_01.png" id="3_qncy5"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1cfmv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tamys"]
 atlas = ExtResource("3_qncy5")
-region = Rect2(208, 273, 16, 13)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k76ql"]
-atlas = ExtResource("3_qncy5")
-region = Rect2(224, 273, 16, 13)
+region = Rect2(208, 272, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_in4mv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1cfmv")
+"texture": SubResource("AtlasTexture_tamys")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
+"texture": SubResource("AtlasTexture_tamys")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
+"texture": SubResource("AtlasTexture_tamys")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
+"texture": SubResource("AtlasTexture_tamys")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
+"texture": SubResource("AtlasTexture_tamys")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
+"texture": SubResource("AtlasTexture_tamys")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
+"texture": SubResource("AtlasTexture_tamys")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
+"texture": SubResource("AtlasTexture_tamys")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
+"texture": SubResource("AtlasTexture_tamys")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
+"texture": SubResource("AtlasTexture_tamys")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
+"texture": SubResource("AtlasTexture_tamys")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
+"texture": SubResource("AtlasTexture_tamys")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
+"texture": SubResource("AtlasTexture_tamys")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k76ql")
+"texture": SubResource("AtlasTexture_tamys")
 }],
 "loop": true,
-"name": &"bullet_purple",
+"name": &"bullet_orange",
 "speed": 10.0
 }]
 
@@ -109,8 +75,7 @@ hit_sound = ExtResource("2_qncy5")
 position = Vector2(-5.5562024, -1.7687885)
 scale = Vector2(2.5186903, 2.23582)
 sprite_frames = SubResource("SpriteFrames_in4mv")
-animation = &"bullet_purple"
-frame_progress = 0.72458386
+animation = &"bullet_orange"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5.6455526, 0.35740054)

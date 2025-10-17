@@ -16,3 +16,4 @@ func fire():
 	bullet.rotation = rotation
 	bullet.direction = Vector2.RIGHT.rotated(rotation)
 	get_tree().get_current_scene().add_child(bullet)
+	$Bang.play()

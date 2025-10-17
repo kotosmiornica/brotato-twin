@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://5ovyfih70ylx" path="res://scenes/shootyou.gd" id="1_0v2ix"]
 [ext_resource type="Script" uid="uid://vq24pawfqgpu" path="res://scenes/testgun.gd" id="1_gfr5o"]
 [ext_resource type="Texture2D" uid="uid://cpes41qvm30ho" path="res://images/bettergun.png" id="2_gfr5o"]
-[ext_resource type="AudioStream" uid="uid://c5wfgdpwu06th" path="res://SOUNDS/sounds/dead.mp3" id="3_oo0bh"]
+[ext_resource type="AudioStream" uid="uid://vuv3b1hhrp5e" path="res://SOUNDS/sounds/scifishoot.mp3" id="3_7222r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evgla"]
 size = Vector2(19.130043, 13.948675)
@@ -17,7 +17,9 @@ position = Vector2(452, 0)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(522, 7)
+scale = Vector2(1.5266232, 1.5266232)
 script = ExtResource("1_gfr5o")
+shoot_sound = ExtResource("3_7222r")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 modulate = Color(0.7921569, 0.2627451, 1, 1)
@@ -32,9 +34,9 @@ shape = SubResource("RectangleShape2D_evgla")
 
 [node name="pivot" type="Node2D" parent="CharacterBody2D"]
 unique_name_in_owner = true
-position = Vector2(51, -11)
+position = Vector2(68.77925, -11)
 
-[node name="Bang" type="AudioStreamPlayer" parent="."]
+[node name="Bang" type="AudioStreamPlayer" parent="CharacterBody2D"]
 unique_name_in_owner = true
-stream = ExtResource("3_oo0bh")
+stream = ExtResource("3_7222r")
 bus = &"Bullets"

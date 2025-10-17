@@ -1,21 +1,45 @@
 [gd_scene load_steps=6 format=3 uid="uid://c3dxgbdgjhjmh"]
 
 [ext_resource type="Script" uid="uid://cm12waiwqaill" path="res://testbullet.gd" id="1_j33vv"]
-[ext_resource type="Texture2D" uid="uid://bkuclucouw5bc" path="res://images/New_All_Fire_Bullet_Pixel_16x16/All_Fire_Bullet_Pixel_16x16_01.png" id="2_vma1n"]
+[ext_resource type="Texture2D" uid="uid://dbrrj6h7wv0k8" path="res://images/New_All_Fire_Bullet_Pixel_16x16/All_Fire_Bullet_Pixel_16x16_05.png" id="2_vma1n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_radpi"]
 atlas = ExtResource("2_vma1n")
-region = Rect2(448, 204, 32, 12)
+region = Rect2(352, 48, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_in4mv"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_j33vv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_radpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_radpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_radpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_radpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_radpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_radpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_radpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_radpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_radpi")
 }],
 "loop": true,
-"name": &"bullet_purple",
-"speed": 10.0
+"name": &"laserpurple",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j33vv"]
@@ -25,19 +49,19 @@ height = 49.037083
 [node name="TESTbullet" type="Area2D"]
 top_level = true
 rotation = 0.722176
+scale = Vector2(1.577973, 1.577973)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_j33vv")
+speed = 1400.0
 
 [node name="Projectile" type="AnimatedSprite2D" parent="."]
-position = Vector2(1.1433377, 4.3235145)
-scale = Vector2(1.4997653, 1.8504275)
-sprite_frames = SubResource("SpriteFrames_in4mv")
-animation = &"bullet_purple"
-frame_progress = 0.72458386
+position = Vector2(1.3699584, -0.36228037)
+scale = Vector2(3.7208238, 3.9003644)
+sprite_frames = SubResource("SpriteFrames_j33vv")
+animation = &"laserpurple"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-1.5007386, 1.3220388)
 rotation = 1.5688825
 scale = Vector2(1.2137289, 0.8671098)
