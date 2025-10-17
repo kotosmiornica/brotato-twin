@@ -15,10 +15,13 @@ var caught_foods := []
 func _ready():
 	PlayerData.caught_foods.clear()
 	var screen_size = get_viewport_rect().size
+	var hook_sprite = hook.get_node("Sprite2D")
 	hook.position = Vector2(
 		screen_size.x / 2,
-		screen_size.y - hook.texture.get_size().y + hook_start_offset)
-		
+		screen_size.y - hook_sprite.texture.get_size().y + hook_start_offset
+	)
+	hook.connect("area_entered", Callable(self, "_on_hook_area_entered"))
+
 func _process(delta):
 	if fishing_active:
 		var hook_start_y = get_viewport_rect().size.y - hook.texture.get_size().y

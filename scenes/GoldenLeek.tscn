@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://r8p0uwv7l8i7"]
 
-[ext_resource type="Script" uid="uid://jqdotroqtg1y" path="res://golden_leek.gd" id="1_bpqvw"]
+[ext_resource type="Script" uid="uid://daqynm36tggbu" path="res://scripts/GoldenLeek.gd" id="1_bpqvw"]
 [ext_resource type="Texture2D" uid="uid://gfuphujdhgtd" path="res://images/Leek.png" id="2_oe4r2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jwtx"]
@@ -8,9 +8,9 @@ radius = 70.13301
 height = 173.13216
 
 [node name="Leek" type="Node2D"]
-script = ExtResource("1_bpqvw")
 
 [node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_bpqvw")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 modulate = Color(0.98568314, 0.71436125, 0, 1)
