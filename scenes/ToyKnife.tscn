@@ -1,26 +1,23 @@
 [gd_scene load_steps=4 format=3 uid="uid://dsukki213sd11"]
 
-[ext_resource type="Script" uid="uid://bww6gvdjx017p" path="res://scripts/food.gd" id="1_mt8qc"]
+[ext_resource type="Script" uid="uid://bxsika4bqee6b" path="res://scenes/ToyKnife.gd" id="1_hdvt8"]
 [ext_resource type="Texture2D" uid="uid://d0mvvhslqi5n" path="res://images/toyknife.png" id="2_5laxp"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2jwtx"]
-radius = 52.44458
-height = 153.93292
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0rmkt"]
+radius = 37.70021
+height = 138.9989
 
-[node name="ToyKnife" type="Node2D"]
-script = ExtResource("1_mt8qc")
-food_type = "ToyKnife"
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_hdvt8")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-8, 9.53674e-07)
 rotation = -0.22099465
 scale = Vector2(3.6336894, 3.6336894)
 texture = ExtResource("2_5laxp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-6.0000005, -8)
 rotation = 0.5976673
 scale = Vector2(1.1774477, 1.0975015)
-shape = SubResource("CapsuleShape2D_2jwtx")
+shape = SubResource("CapsuleShape2D_0rmkt")

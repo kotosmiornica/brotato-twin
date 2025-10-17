@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bsing"]
 radius = 35.00817
-height = 80.0
+height = 146.22542
 
 [node name="Boss1" type="CharacterBody2D"]
 modulate = Color(0.71540785, 0, 0.31195807, 1)

@@ -1,14 +1,15 @@
 [gd_scene load_steps=8 format=3 uid="uid://ca504y61ha5df"]
 
 [ext_resource type="Texture2D" uid="uid://ck407cxkj4a3g" path="res://free-underwater-world-pixel-art-backgrounds/background 2/orig_big.png" id="1_c2xbu"]
-[ext_resource type="Script" uid="uid://c4o1njtusidya" path="res://scripts/fishing_game_2.gd" id="2_v2s22"]
+[ext_resource type="Script" uid="uid://kfuk8cke0kxp" path="res://scenes/fishing_game_3.gd" id="2_c2xbu"]
 [ext_resource type="Texture2D" uid="uid://bdghbxy6moeia" path="res://images/hook_4294182.png" id="3_jue2y"]
 [ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://images/icon.jpg" id="4_utonk"]
 [ext_resource type="AudioStream" uid="uid://lcfme426035c" path="res://SOUNDS/sounds/pop-402324.mp3" id="5_cvod5"]
 [ext_resource type="AudioStream" uid="uid://w42b6prhlxu6" path="res://SOUNDS/music/fishmusic.mp3" id="6_ivjuv"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_c2xbu"]
-radius = 304.88068
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c2xbu"]
+radius = 28.556396
+height = 66.92163
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -33,16 +34,21 @@ texture = ExtResource("1_c2xbu")
 expand_mode = 1
 
 [node name="FishingGame3" type="Node2D" parent="."]
-script = ExtResource("2_v2s22")
+script = ExtResource("2_c2xbu")
 
-[node name="Hook" type="Sprite2D" parent="FishingGame3"]
+[node name="Hook" type="Area2D" parent="FishingGame3"]
 top_level = true
 position = Vector2(953, 982)
-scale = Vector2(0.15264767, 0.20416327)
+scale = Vector2(0.20142613, 0.23636578)
+
+[node name="Sprite2D" type="Sprite2D" parent="FishingGame3/Hook"]
+scale = Vector2(0.7769418, 0.9115693)
 texture = ExtResource("3_jue2y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FishingGame3/Hook"]
-shape = SubResource("CircleShape2D_c2xbu")
+position = Vector2(19.858398, 93.07599)
+scale = Vector2(2.7816446, 2.7816446)
+shape = SubResource("CapsuleShape2D_c2xbu")
 
 [node name="PlayerFood" type="Sprite2D" parent="FishingGame3"]
 visible = false
