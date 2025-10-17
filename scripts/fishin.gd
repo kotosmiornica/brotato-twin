@@ -31,7 +31,7 @@ func _process(delta):
 		hook.position.y -= hook_rise_speed * delta
 		hook.position.y = max(hook.position.y, hook_end_y)
 		var mouse_x = get_viewport().get_mouse_position().x
-		var hook_speed = 5
+		var hook_speed = 2.5
 		hook.position.x = lerp(hook.position.x, mouse_x, hook_speed * delta)
 		spawn_timer += delta
 		if spawn_timer >= spawn_interval:
@@ -65,7 +65,7 @@ func get_food_scene() -> PackedScene:
 
 func spawn_food():
 	var food_scene = get_food_scene()
-	for i in range(5):
+	for i in range(6):
 		var new_food = food_scene.instantiate()
 		var y = randf_range(100, get_viewport_rect().size.y - 150)
 		new_food.position = Vector2(-50, y)

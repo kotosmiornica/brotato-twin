@@ -31,7 +31,7 @@ func _process(delta):
 		hook.position.y -= hook_rise_speed * delta
 		hook.position.y = max(hook.position.y, hook_end_y)
 		var mouse_x = get_viewport().get_mouse_position().x
-		var hook_speed = 5
+		var hook_speed = 2
 		hook.position.x = lerp(hook.position.x, mouse_x, hook_speed * delta)
 		spawn_timer += delta
 		if spawn_timer >= spawn_interval:
