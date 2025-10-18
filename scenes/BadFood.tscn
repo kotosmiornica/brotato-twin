@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bej2nywxeqrfw" path="res://images/big_green_32/big_green_32/decorative_objects/stone_01.png" id="2_fh1r7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0rmkt"]
-radius = 46.980537
-height = 159.1101
+radius = 36.183414
+height = 137.88214
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_f8wmf")
@@ -17,7 +17,7 @@ scale = Vector2(2.867057, 2.658988)
 texture = ExtResource("2_fh1r7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-7.0000005, -7)
+position = Vector2(-6.9999995, 9.536743e-07)
 rotation = 1.8581645
 scale = Vector2(0.8764456, 0.81693685)
 shape = SubResource("CapsuleShape2D_0rmkt")

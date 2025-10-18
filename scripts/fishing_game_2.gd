@@ -15,7 +15,7 @@ var hook_rise_speed = 5.0
 var caught_foods := []
 
 func _ready():
-	PlayerData.caught_foods.clear()
+	Global.caught_foods.clear()
 	var screen_size = get_viewport_rect().size
 	hook.position = Vector2(
 		screen_size.x / 2,
@@ -40,21 +40,21 @@ func _process(delta):
 	if hook.position.y <= hook_end_y:
 		fishing_active = false
 		hook.visible = false
-		PlayerData.caught_food_count = caught_foods.size()
+		Global.caught_food_count = caught_foods.size()
 		get_tree().change_scene_to_file("res://scenes/Menu.tscn")
 
 func _on_hook_area_entered(area: Area2D) -> void:
 	if area.is_in_group("food") and not caught_foods.has(area):
 		caught_foods.append(area)
 		if "food_type" in area:
-			PlayerData.caught_foods.append(area.food_type)
+			Global.caught_foods.append(area.food_type)
 		else:
-			PlayerData.caught_foods.append("Unknown")
+			Global.caught_foods.append("Unknown")
 		area.queue_free()
 		$caught.play()
 
 func get_food_scene() -> PackedScene:
-	var level = PlayerData.unlocked_fishing_levels
+	var level = Global.unlocked_fishing_levels
 	if level == 1:
 		return preload("res://scenes/Leek.tscn")
 	elif level == 2:

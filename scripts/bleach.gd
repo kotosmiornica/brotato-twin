@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 
 
 func spawn_stain() -> void:
-	var bleach_level = PlayerData.bleach_level
+	var bleach_level = Global.bleach_level
 	var stain = stain_scene.instantiate()
 	stain.global_position = player.global_position
 

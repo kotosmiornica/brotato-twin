@@ -3,7 +3,15 @@ extends Node
 var coins = 0
 var extra_gun_unlocked: bool = false
 signal coins_changed(new_amount)
+var caught_food_count:int = 0
+var caught_foods: Array[String] = []
+var owned_items = [] 
+var food_counts := {}
+var equipped_hair: String = ""
+var equipped_accessory: String = ""
 
+var unlocked_fishing_levels := 1
+var bleach_level: int = 1
 var active_buffs = {}
 
 func add_coins(amount):

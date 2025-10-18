@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://c3dxgbdgjhjmh"]
 
-[ext_resource type="Script" uid="uid://cm12waiwqaill" path="res://scripts/testbullet.gd" id="1_j33vv"]
-[ext_resource type="Texture2D" uid="uid://dbrrj6h7wv0k8" path="res://images/New_All_Fire_Bullet_Pixel_16x16/All_Fire_Bullet_Pixel_16x16_05.png" id="2_vma1n"]
+[ext_resource type="Script" uid="uid://cm12waiwqaill" path="res://scripts/testbullet.gd" id="1_keoj6"]
+[ext_resource type="Texture2D" uid="uid://dbrrj6h7wv0k8" path="res://images/New_All_Fire_Bullet_Pixel_16x16/All_Fire_Bullet_Pixel_16x16_05.png" id="2_jckar"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_radpi"]
-atlas = ExtResource("2_vma1n")
+atlas = ExtResource("2_jckar")
 region = Rect2(352, 48, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j33vv"]
@@ -52,7 +52,7 @@ rotation = 0.722176
 scale = Vector2(1.577973, 1.577973)
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("1_j33vv")
+script = ExtResource("1_keoj6")
 speed = 1400.0
 
 [node name="Projectile" type="AnimatedSprite2D" parent="."]

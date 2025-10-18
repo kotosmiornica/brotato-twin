@@ -9,8 +9,8 @@ func _ready():
 
 func _on_weapon_button_pressed(weapon_id):
 	if weapon_id == "bleach3":
-		PlayerData.bleach_level += 1
-		print("Bleach upgraded! Level:", PlayerData.bleach_level)
+		Global.bleach_level += 1
+		print("Bleach upgraded! Level:", Global.bleach_level)
 
 	emit_signal("weapon_chosen", weapon_id)
 	queue_free()

@@ -9,13 +9,13 @@
 [ext_resource type="StyleBox" uid="uid://cup4cjocnji48" path="res://scenes/fonts/normalshop.tres" id="4_24207"]
 [ext_resource type="StyleBox" uid="uid://dtnyfsfgiwow0" path="res://scenes/fonts/hoverrightshop.tres" id="5_402gu"]
 [ext_resource type="Script" uid="uid://cq3lke7m2pmed" path="res://scripts/prev.gd" id="5_oahkd"]
-[ext_resource type="Script" uid="uid://bwlrb2ya8fg2g" path="res://scripts/buy.gd" id="8_sf2aa"]
 [ext_resource type="Script" uid="uid://dnf2d832xwwjo" path="res://scripts/close.gd" id="9_fqaxf"]
 [ext_resource type="Script" uid="uid://dktoxo7y7qynr" path="res://scripts/next.gd" id="10_nrrf8"]
 [ext_resource type="AudioStream" uid="uid://bnda3v2s6m0k3" path="res://SOUNDS/sounds/menuclick.wav" id="10_oahkd"]
 [ext_resource type="StyleBox" uid="uid://djhk2ieukha32" path="res://scenes/purchasedshop.tres" id="12_hcwdo"]
 [ext_resource type="AudioStream" uid="uid://c6op7wtebnfrw" path="res://SOUNDS/sounds/cash-register-purchase-87313.mp3" id="12_xsnv8"]
 [ext_resource type="AudioStream" uid="uid://c5mhvf1525jn4" path="res://SOUNDS/sounds/wrong-47985.mp3" id="13_cn3sd"]
+[ext_resource type="Script" uid="uid://cvkm661xrtjpu" path="res://scenes/buy.gd" id="13_hcwdo"]
 
 [sub_resource type="Animation" id="Animation_auux5"]
 length = 0.001
@@ -1053,7 +1053,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_oahkd")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fqaxf")
 theme_override_styles/disabled = ExtResource("12_hcwdo")
 text = "Purchase"
-script = ExtResource("8_sf2aa")
+script = ExtResource("13_hcwdo")
 metadata/_edit_use_anchors_ = true
 
 [node name="buy" type="AudioStreamPlayer" parent="Control/Buy"]

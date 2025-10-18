@@ -20,10 +20,10 @@ func _ready():
 		buy_button.pressed.connect(Callable(self, "_on_buy_pressed"))
 
 func _on_buy_pressed():
-	if PlayerData.coins >= price:
-		PlayerData.coins -= price
-		if not PlayerData.owned_items.has(item_name):
-			PlayerData.owned_items.append(item_name)
+	if Global.coins >= price:
+		Global.coins -= price
+		if not Global.owned_items.has(item_name):
+			Global.owned_items.append(item_name)
 		print("Purchased:", item_name)
 		_update_ui()
 	else:

@@ -4,6 +4,7 @@ signal health_depleted
 
 @export var soda_cooldown: float = 10.0
 @export var throw_force: float = 600.0
+@export var cooldown: float = 4.0
 @onready var weapons_container = get_node("/root/game/Brotat/Weapons")
 @onready var extra_gun = %YOUSHOOT
 
@@ -25,6 +26,7 @@ var can_throw: bool = true
 var throw_cooldown: float = 10.0
 var xp_growth_factor = 1.4
 var extra_gun_unlocked: bool = false
+var cutters: Array = []
 
 
 const MAX_PIZZA_CUTTERS = 4
@@ -43,7 +45,7 @@ func apply_equipped_hair():
 		if n:
 			n.visible = false
 
-	var hair_name = PlayerData.equipped_hair
+	var hair_name = Global.equipped_hair
 	if hair_name == null or hair_name == "":
 		return
 
@@ -71,7 +73,7 @@ func apply_equipped_accessories():
 		if n:
 			n.visible = false
 
-	var accessory_name = PlayerData.equipped_accessory
+	var accessory_name = Global.equipped_accessory
 	if accessory_name == null or accessory_name == "":
 		return
 
@@ -113,7 +115,6 @@ func _physics_process(_delta: float) -> void:
 			get_tree().change_scene_to_file("res://scenes/Menu.tscn")
 				
 
-var cutters: Array = []
 
 func add_cutter(cutter_scene):
 	var cutter = cutter_scene.instantiate()
@@ -188,7 +189,6 @@ func update_xp_bar():
 	xp_bar.max_value = xp_per_level
 
 
-@export var cooldown: float = 4.0
 
 
 func _process(delta: float) -> void:
@@ -288,7 +288,7 @@ func give_weapon(weapon_id):
 	
 		#_update_pizza_cutters()
 
-# Call this when the player clicks
+
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
@@ -348,7 +348,7 @@ func show_weapon_menu():
 
 
 func apply_accessories():
-	for accessory_id in PlayerData.owned_items:
+	for accessory_id in Global.owned_items:
 		equip_accessory(accessory_id)
 
 func equip_accessory(accessory_id):

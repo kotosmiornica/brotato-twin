@@ -34,14 +34,14 @@ func _on_buy_pressed() -> void:
 		$NotEnough.play()
 		return
 
-	if not PlayerData.food_counts.has(currency) or PlayerData.food_counts[currency] < cost:
+	if not Global.food_counts.has(currency) or Global.food_counts[currency] < cost:
 		print("Not enough %s to buy %s!" % [currency, item_data["Name"]])
 		$NotEnough.play()
 		return
 	else:
 		$buy.play()
 
-	PlayerData.food_counts[currency] -= cost
+	Global.food_counts[currency] -= cost
 
 	var node_name = item_data["Name"]
 	var equip_node = player.get_node_or_null(node_name)
@@ -50,9 +50,9 @@ func _on_buy_pressed() -> void:
 		equip_node.play(node_name)
 		equip_node.z_index = 10
 
-	PlayerData.equipped_hair = node_name
+	Global.equipped_hair = node_name
 	item_data["Owned"] = true
-	PlayerData.owned_items.append(node_name)
+	Global.owned_items.append(node_name)
 
 	print("Bought:", item_data["Name"])
 	$Control/Buy.disabled = true

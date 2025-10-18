@@ -1,7 +1,7 @@
 extends Node2D
 
 var unlocked: bool = false
-var bullet_scene = preload("res://testbullet.tscn")
+var bullet_scene = preload("res://scenes/testbullet.tscn")
 
 func _physics_process(delta: float) -> void:
 	if not unlocked:

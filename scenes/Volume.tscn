@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d3cf6jg56kb2h" path="res://scripts/volume.gd" id="1_6a28u"]
 [ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="2_jvxff"]
-[ext_resource type="Script" uid="uid://d33027ggn042o" path="res://scripts/closing.gd" id="3_jvxff"]
+[ext_resource type="Script" uid="uid://c6ex1oog877fd" path="res://scripts/closing.gd" id="3_jvxff"]
 [ext_resource type="AudioStream" uid="uid://bnda3v2s6m0k3" path="res://SOUNDS/sounds/menuclick.wav" id="4_d5voq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_415nn"]

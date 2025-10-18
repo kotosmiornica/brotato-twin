@@ -24,9 +24,9 @@ var active_coins := []
 func _ready():
 	apply_equipped_hair()
 	coins_label.text = str(Global.coins)
-	if PlayerData.caught_food_count > 0:
+	if Global.caught_food_count > 0:
 		trigger_flying_foods()
-		PlayerData.caught_food_count = 0
+		Global.caught_food_count = 0
 	
 	update_unlock_buttons()
 	if Global.extra_gun_unlocked:
@@ -34,9 +34,9 @@ func _ready():
 		$UnlockExtraGun.text = "Already unlocked!"
 		
 func trigger_flying_foods():
-	for food_type in PlayerData.caught_foods:
+	for food_type in Global.caught_foods:
 		spawn_flying_food(food_type)
-	PlayerData.caught_foods.clear()
+	Global.caught_foods.clear()
 
 func spawn_flying_food(food_type: String):
 	var food_scene = food_scenes.get(food_type, food_scenes["Leek"])
@@ -91,21 +91,21 @@ func _on_food_reached_pet(food):
 
 	var food_type = food.food_type if "food_type" in food else "Unknown"
 
-	if not PlayerData.food_counts.has(food_type):
-		PlayerData.food_counts[food_type] = 0
-	PlayerData.food_counts[food_type] += 1
+	if not Global.food_counts.has(food_type):
+		Global.food_counts[food_type] = 0
+	Global.food_counts[food_type] += 1
 
 	update_food_counter_label()
 	spawn_coins_for_food()
 
 func update_food_counter_label():
 	var text = ""
-	for food_type in PlayerData.food_counts.keys():
-		text += "%s: %d\n" % [food_type, PlayerData.food_counts[food_type]]
+	for food_type in Global.food_counts.keys():
+		text += "%s: %d\n" % [food_type, Global.food_counts[food_type]]
 	food_counter_label.text = text
 
 func apply_equipped_hair():
-	var hair_name = PlayerData.equipped_hair
+	var hair_name = Global.equipped_hair
 	var player_node = $MakeYourPlayer
 	var wig_node = player_node.get_node_or_null(hair_name)
 	if wig_node:
@@ -123,7 +123,7 @@ func _on_unlock_fishing_level2_pressed() -> void:
 	var next_level = 2
 	var cost = 155
 
-	if PlayerData.unlocked_fishing_levels >= next_level:
+	if Global.unlocked_fishing_levels >= next_level:
 		print("Fishing level 2 already unlocked!")
 		return
 
@@ -135,7 +135,7 @@ func _on_unlock_fishing_level2_pressed() -> void:
 	Global.coins -= cost
 	coins_label.text = str(Global.coins)
 
-	PlayerData.unlocked_fishing_levels = next_level
+	Global.unlocked_fishing_levels = next_level
 	print("Unlocked fishing level", next_level)
 
 	fishing_level2_label.text = "Fishing Level 2 Unlocked!"
@@ -148,12 +148,12 @@ func _on_unlock_level_3_pressed() -> void:
 	var next_level = 3
 	var cost = 280
 
-	if PlayerData.unlocked_fishing_levels >= next_level:
+	if Global.unlocked_fishing_levels >= next_level:
 		print("Fishing level 3 already unlocked!")
 		return
 
 
-	if PlayerData.unlocked_fishing_levels < 2:
+	if Global.unlocked_fishing_levels < 2:
 		print("You need to unlock Level 2 first!")
 		$UnlockLevel3/NotEnough.play()
 		return
@@ -166,7 +166,7 @@ func _on_unlock_level_3_pressed() -> void:
 	Global.coins -= cost
 	coins_label.text = str(Global.coins)
 
-	PlayerData.unlocked_fishing_levels = next_level
+	Global.unlocked_fishing_levels = next_level
 	print("Unlocked fishing level", next_level)
 
 	fishing_level3_label.text = "Fishing Level 3 Unlocked!"
@@ -177,13 +177,13 @@ func _on_unlock_level_3_pressed() -> void:
 
 func update_unlock_buttons():
 
-	fishing_level3_label.visible = PlayerData.unlocked_fishing_levels >= 2
+	fishing_level3_label.visible = Global.unlocked_fishing_levels >= 2
 
 
-	if PlayerData.unlocked_fishing_levels >= 2:
+	if Global.unlocked_fishing_levels >= 2:
 		fishing_level2_label.text = "Fishing Level 2 Unlocked!"
 		fishing_level2_label.disabled = true
-	if PlayerData.unlocked_fishing_levels >= 3:
+	if Global.unlocked_fishing_levels >= 3:
 		fishing_level3_label.text = "Fishing Level 3 Unlocked!"
 		fishing_level3_label.disabled = true
 

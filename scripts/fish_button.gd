@@ -16,7 +16,7 @@ func _pressed() -> void:
 
 
 func _on_bubbles_finished():
-	var level = PlayerData.unlocked_fishing_levels
+	var level = Global.unlocked_fishing_levels
 
 	var scene_path = ""
 	match level:

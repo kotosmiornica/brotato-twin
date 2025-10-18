@@ -14,12 +14,11 @@ func _physics_process(_delta: float) -> void:
 		var target_enemy = enemies_in_range.front()
 		look_at(target_enemy.global_position)
 
-		# ✅ Start shooting timer if not already running
+
 		if not timer.is_stopped():
 			return
 		timer.start()
 	else:
-		# ✅ Stop shooting when no enemies are nearby
 		timer.stop()
 
 func shoot() -> void:

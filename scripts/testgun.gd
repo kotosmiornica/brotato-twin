@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var bullet_scene = preload("res://testbullet.tscn")
+var bullet_scene = preload("res:///scenes/testbullet.tscn")
 var unlocked: bool = false
 @export var shoot_sound: AudioStream
 
