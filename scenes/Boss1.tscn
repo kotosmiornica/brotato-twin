@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d4h4q4f0kp3rg"]
 
-[ext_resource type="Script" uid="uid://bmqd8cghhv2q4" path="res://Boss.gd" id="1_0kppa"]
+[ext_resource type="Script" uid="uid://bmqd8cghhv2q4" path="res://scripts/Boss.gd" id="1_0kppa"]
 [ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="2_u8a1r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bsing"]

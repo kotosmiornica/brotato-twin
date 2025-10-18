@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c3dxgbdgjhjmh"]
 
-[ext_resource type="Script" uid="uid://cm12waiwqaill" path="res://testbullet.gd" id="1_j33vv"]
+[ext_resource type="Script" uid="uid://cm12waiwqaill" path="res://scripts/testbullet.gd" id="1_j33vv"]
 [ext_resource type="Texture2D" uid="uid://dbrrj6h7wv0k8" path="res://images/New_All_Fire_Bullet_Pixel_16x16/All_Fire_Bullet_Pixel_16x16_05.png" id="2_vma1n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_radpi"]

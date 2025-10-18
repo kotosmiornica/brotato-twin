@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dsukki213sd11"]
 
-[ext_resource type="Script" uid="uid://bxsika4bqee6b" path="res://scenes/ToyKnife.gd" id="1_hdvt8"]
+[ext_resource type="Script" uid="uid://bxsika4bqee6b" path="res://scripts/ToyKnife.gd" id="1_hdvt8"]
 [ext_resource type="Texture2D" uid="uid://d0mvvhslqi5n" path="res://images/toyknife.png" id="2_5laxp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0rmkt"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4ar6fe58lgwc"]
+
+[ext_resource type="Script" uid="uid://ddhi450at41rd" path="res://scripts/BadFood.gd" id="1_f8wmf"]
+[ext_resource type="Texture2D" uid="uid://bej2nywxeqrfw" path="res://images/big_green_32/big_green_32/decorative_objects/stone_01.png" id="2_fh1r7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0rmkt"]
+radius = 46.980537
+height = 159.1101
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_f8wmf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8, 9.53674e-07)
+rotation = 0.31746173
+scale = Vector2(2.867057, 2.658988)
+texture = ExtResource("2_fh1r7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.0000005, -7)
+rotation = 1.8581645
+scale = Vector2(0.8764456, 0.81693685)
+shape = SubResource("CapsuleShape2D_0rmkt")

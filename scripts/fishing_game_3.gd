@@ -46,12 +46,18 @@ func _process(delta):
 func _on_hook_area_entered(area: Area2D) -> void:
 	if area.is_in_group("food") and not caught_foods.has(area):
 		caught_foods.append(area)
-		if "food_type" in area:
-			PlayerData.caught_foods.append(area.food_type)
+		
+		if "is_bad" in area and area.is_bad:
+			PlayerData.coins = max(PlayerData.coins - 100, 0)
+			$bad_sound.play()
 		else:
-			PlayerData.caught_foods.append("Unknown")
+			if "food_type" in area:
+				PlayerData.caught_foods.append(area.food_type)
+			else:
+				PlayerData.caught_foods.append("Unknown")
+			$caught.play()
+		
 		area.queue_free()
-		$caught.play()
 
 func get_food_scene() -> PackedScene:
 	var level = PlayerData.unlocked_fishing_levels
@@ -65,8 +71,16 @@ func get_food_scene() -> PackedScene:
 
 func spawn_food():
 	var food_scene = get_food_scene()
+	var bad_food_scene = preload("res://scenes/BadFood.tscn")
+	
 	for i in range(4):
-		var new_food = food_scene.instantiate()
+		var scene_to_spawn: PackedScene
+		if randf() < 0.2:
+			scene_to_spawn = bad_food_scene
+		else:
+			scene_to_spawn = food_scene
+		
+		var new_food = scene_to_spawn.instantiate()
 		var y = randf_range(100, get_viewport_rect().size.y - 150)
 		new_food.position = Vector2(-50, y)
 		foods_container.add_child(new_food)

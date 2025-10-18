@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://ca504y61ha5df"]
+[gd_scene load_steps=9 format=3 uid="uid://ca504y61ha5df"]
 
 [ext_resource type="Texture2D" uid="uid://ck407cxkj4a3g" path="res://free-underwater-world-pixel-art-backgrounds/background 2/orig_big.png" id="1_c2xbu"]
-[ext_resource type="Script" uid="uid://kfuk8cke0kxp" path="res://scenes/fishing_game_3.gd" id="2_c2xbu"]
+[ext_resource type="Script" uid="uid://kfuk8cke0kxp" path="res://scripts/fishing_game_3.gd" id="2_c2xbu"]
 [ext_resource type="Texture2D" uid="uid://bdghbxy6moeia" path="res://images/hook_4294182.png" id="3_jue2y"]
 [ext_resource type="Texture2D" uid="uid://bkqv5mmp0ataj" path="res://images/icon.jpg" id="4_utonk"]
 [ext_resource type="AudioStream" uid="uid://lcfme426035c" path="res://SOUNDS/sounds/pop-402324.mp3" id="5_cvod5"]
 [ext_resource type="AudioStream" uid="uid://w42b6prhlxu6" path="res://SOUNDS/music/fishmusic.mp3" id="6_ivjuv"]
+[ext_resource type="AudioStream" uid="uid://c8ptirwpseoat" path="res://SOUNDS/sounds/wrong-100536.mp3" id="6_v2s22"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c2xbu"]
 radius = 28.556396
@@ -109,6 +110,10 @@ offset_bottom = 23.0
 
 [node name="caught" type="AudioStreamPlayer" parent="FishingGame3"]
 stream = ExtResource("5_cvod5")
+bus = &"Sfx"
+
+[node name="bad_sound" type="AudioStreamPlayer" parent="FishingGame3"]
+stream = ExtResource("6_v2s22")
 bus = &"Sfx"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

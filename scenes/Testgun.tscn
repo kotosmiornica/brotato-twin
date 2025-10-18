@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bkhag286w8414"]
 
 [ext_resource type="Script" uid="uid://5ovyfih70ylx" path="res://scripts/shootyou.gd" id="1_0v2ix"]
-[ext_resource type="Script" uid="uid://vq24pawfqgpu" path="res://testgun.gd" id="1_gfr5o"]
+[ext_resource type="Script" uid="uid://vq24pawfqgpu" path="res://scripts/testgun.gd" id="1_gfr5o"]
 [ext_resource type="Texture2D" uid="uid://cpes41qvm30ho" path="res://images/bettergun.png" id="2_gfr5o"]
 [ext_resource type="AudioStream" uid="uid://vuv3b1hhrp5e" path="res://SOUNDS/sounds/scifishoot.mp3" id="3_7222r"]
 

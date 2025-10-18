@@ -74,7 +74,7 @@ Settings/Show_Tooltips=true
 
 [application]
 
-config/name="Brotato Twin First Game :3"
+config/name="Pixie Kitty"
 run/main_scene="uid://cqcwtk4w1gpdv"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.png"
