@@ -2,7 +2,7 @@ extends Area2D
 
 var player: Node = null
 @export var shooting_point: Node2D
-@onready var timer: Timer = $Timer  # reference to your Timer node
+@onready var timer: Timer = $Timer
 
 const BULLET = preload("res://scenes/bullet.tscn")
 var shoot_sound = preload("res://SOUNDS/sounds/simpleshot.mp3")

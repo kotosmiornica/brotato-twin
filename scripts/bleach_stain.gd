@@ -7,10 +7,8 @@ var _time_alive: float = 0.0
 var enemies_in_stain := []
 
 func _ready() -> void:
-	# Random rotation
-	rotation = randf_range(0, 2 * PI)  # radians
+	rotation = randf_range(0, 2 * PI)
 
-	# Connect signals
 	connect("body_entered", Callable(self, "_on_body_entered"))
 	connect("body_exited", Callable(self, "_on_body_exited"))
 	monitoring = true

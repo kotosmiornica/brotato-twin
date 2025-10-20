@@ -6,6 +6,7 @@ extends Node2D
 const MobScene = preload("res://scenes/mob.tscn")
 const BossScene = preload("res://scenes/Boss1.tscn")
 
+var boss_alive: bool = false
 var current_wave: int = 0
 var alive_enemies: int = 0
 var kill_count: int = 0
@@ -50,7 +51,14 @@ func _spawn_boss() -> void:
 	boss.global_position = Vector2(600, 300)
 	add_child(boss)
 	alive_enemies += 1
-	boss.connect("died", Callable(self, "_on_enemy_died").bind(boss))
+	boss_alive = true  # <-- set boss as alive
+
+	# Switch music to boss
+	if $Music.playing:
+		$Music.stop()
+	$BossMusic.play()
+
+	boss.connect("died", Callable(self, "_on_boss_died"))
 
 
 func _spawn_wave(enemy_count: int):
@@ -82,6 +90,9 @@ func _on_enemy_died(mob: Node):
 	
 	if kill_count % kills_for_medkit == 0:
 		spawn_medkit(mob.global_position)
+	if $BossMusic.playing:
+		$BossMusic.stop()
+		$Music.play()
 
 func spawn_medkit(pos: Vector2):
 	var medkit = preload("res://scenes/MedKit.tscn").instantiate()
@@ -89,5 +100,14 @@ func spawn_medkit(pos: Vector2):
 	call_deferred("add_child", medkit)
 	
 	
-	
+
+func _on_boss_died():
+	alive_enemies -= 1
+	boss_alive = false
+
+	# Switch back to normal music
+	if $BossMusic.playing:
+		$BossMusic.stop()
+	$Music.play()
+
 	

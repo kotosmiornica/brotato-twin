@@ -60,8 +60,9 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_h1aey"]
-radius = 10.000001
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qncy5"]
+radius = 6.388583
+height = 18.42873
 
 [node name="bullet" type="Area2D"]
 top_level = true
@@ -78,8 +79,9 @@ sprite_frames = SubResource("SpriteFrames_in4mv")
 animation = &"bullet_orange"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5.6455526, 0.35740054)
-shape = SubResource("CircleShape2D_h1aey")
+position = Vector2(6.395921, -0.30361843)
+rotation = 1.5907676
+shape = SubResource("CapsuleShape2D_qncy5")
 
 [node name="shot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_l5glv")
