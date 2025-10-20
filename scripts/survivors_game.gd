@@ -5,15 +5,17 @@ extends Node2D
 
 const MobScene = preload("res://scenes/mob.tscn")
 const BossScene = preload("res://scenes/Boss1.tscn")
-
 var FT_Script = preload("res://scripts/FightingText.gd")
 
 var current_wave: int = 0
 var alive_enemies: int = 0
 var kill_count: int = 0
+var player: Node = null
 
 func _ready() -> void:
 	get_tree().paused = false
+	player = get_node("/root/game/Brotat")
+	player.connect("xp_collected", Callable(self, "_on_player_xp_collected"))
 	start_next_wave()
 
 func _physics_process(_delta: float) -> void:
@@ -33,7 +35,6 @@ func _on_button_pressed() -> void:
 
 func start_next_wave() -> void:
 	current_wave += 1
-
 	if current_wave % 5 == 0:
 		_spawn_boss()
 	else:
@@ -49,13 +50,10 @@ func _spawn_boss() -> void:
 
 func _spawn_wave(enemy_count: int):
 	var half = enemy_count / 2
-
 	for i in range(half):
 		_spawn_mob(%PathFollow2D)
-
 	for i in range(half):
 		_spawn_mob(%PathFollow2DSecond)
-
 	if enemy_count % 2 != 0:
 		_spawn_mob(%PathFollow2DSecond)
 
@@ -70,7 +68,6 @@ func _spawn_mob(path: PathFollow2D):
 func _on_enemy_died(mob: Node):
 	alive_enemies -= 1
 	kill_count += 1
-
 	if kill_count % kills_for_medkit == 0:
 		spawn_medkit(mob.global_position)
 
@@ -79,7 +76,36 @@ func spawn_medkit(pos: Vector2):
 	medkit.global_position = pos
 	call_deferred("add_child", medkit)
 
-func _show_floating_text(text: String, pos: Vector2, type: int = 0):
+func _on_player_xp_collected(amount: int):
+	player.xp += amount
+	_show_floating_text("+" + str(amount) + " XP", player.global_position, Color(1,1,0,1))
+	while player.xp >= player.xp_per_level:
+		player.xp -= player.xp_per_level
+		player.xp_per_level = int(player.xp_per_level * player.xp_growth_factor)
+		show_level_up_menu()
+	update_xp_bar()
+
+func show_level_up_menu():
+	var menu_scene = preload("res://scenes/level_up_menu.tscn")
+	var menu = menu_scene.instantiate()
+	get_tree().current_scene.add_child(menu)
+	get_tree().paused = true
+	menu.connect("weapon_chosen", Callable(self, "_on_level_up_weapon_chosen").bind(menu))
+
+func _on_level_up_weapon_chosen(menu, weapon_id: String):
+	if weapon_id not in player.equipped_weapons:
+		player.equipped_weapons.append(weapon_id)
+		player.give_weapon(weapon_id)
+	menu.queue_free()
+	get_tree().paused = false
+
+func _show_floating_text(text: String, pos: Vector2, color: Color = Color(1,1,0,1)):
 	var popup = FT_Script.new()
-	popup.show_text(text, pos, type)
+	popup.show_text(text, pos, color)
 	get_tree().current_scene.add_child(popup)
+
+func update_xp_bar():
+	var xp_bar = get_node_or_null("../Bar/XPbar")
+	if xp_bar:
+		xp_bar.value = player.xp
+		xp_bar.max_value = player.xp_per_level

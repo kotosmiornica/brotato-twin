@@ -1,12 +1,12 @@
 extends Label
 
-@export var rise_distance: float = 30
-@export var duration: float = 0.6
+@export var rise_distance: float = 50
+@export var duration: float = 1.0
 
-func show_text(text_to_show: String, start_position: Vector2):
+func show_text(text_to_show: String, start_position: Vector2, color: Color = Color(1,1,0,1)):
 	text = text_to_show
 	position = start_position
-	modulate = Color(1, 0, 0, 1) # red for damage
+	modulate = color
 	tween_up()
 
 func tween_up():

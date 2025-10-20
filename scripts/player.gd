@@ -74,11 +74,9 @@ func apply_damage(amount: float) -> void:
 	health = max(health - amount, 0)
 	progress_bar.value = health
 
-	var popup = FT_Script.new()
-	_show_floating_text("-" + str(round(amount)), global_position, popup.Type.DAMAGE)
-
 	if health <= 0:
 		die()
+
 
 func die() -> void:
 	emit_signal("health_depleted")
@@ -149,11 +147,10 @@ func update_cutter_angles():
 
 func _on_xp_collected(amount: int = 1):
 	xp += amount
-	_show_floating_text("+" + str(amount) + " XP", global_position, FT_Script.Type.XP)
-	while xp >= xp_per_level:
-		xp -= xp_per_level
-		level_up()
+	_show_floating_text("+" + str(amount) + " XP", global_position, Color(1,1,0,1))
+	emit_signal("xp_collected", amount)  # let game script handle level up
 	update_xp_bar()
+
 
 func update_xp_bar():
 	var xp_bar = get_node_or_null("../Bar/XPbar")
@@ -161,13 +158,7 @@ func update_xp_bar():
 		xp_bar.value = xp
 		xp_bar.max_value = xp_per_level
 
-func level_up():
-	xp_per_level = int(xp_per_level * xp_growth_factor)
-	var menu_scene = preload("res://scenes/level_up_menu.tscn")
-	level_up_menu = menu_scene.instantiate()
-	get_tree().current_scene.add_child(level_up_menu)
-	level_up_menu.connect("weapon_chosen", Callable(self, "_on_weapon_chosen"))
-	emit_signal("leveled_up")
+
 
 func _on_weapon_chosen(weapon_id: String):
 	if weapon_id == "pizzacutter2" and cutters.size() >= MAX_CUTTERS:
@@ -211,13 +202,14 @@ func unlock_extra_gun():
 func heal(amount: int) -> void:
 	health = min(health + amount, 180)
 	progress_bar.value = health
-	_show_floating_text("+" + str(amount) + " HP", global_position, FT_Script.Type.HEAL)
 	print("Healed by %d! Current HP: %d" % [amount, health])
 
-func _show_floating_text(text: String, pos: Vector2, type: int):
+
+func _show_floating_text(text: String, pos: Vector2, color: Color = Color(1,1,0,1)):
 	var popup = FT_Script.new()
-	popup.show_text(text, pos, type)
+	popup.show_text(text, pos, color)
 	get_tree().current_scene.add_child(popup)
+
 
 func apply_equipped_item(node_list: Array[String], equipped_name: String, z: int):
 	for n in node_list:
