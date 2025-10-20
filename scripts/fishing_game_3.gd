@@ -8,7 +8,7 @@ extends Node2D
 @export var base_speed = 280.0
 @export var max_speed = 380.0
 @export var hook_start_offset = 800
-@export var hook_height_fallback = 64
+@export var hook_height_fallback = 64   # fallback if texture is missing
 
 var fishing_active = true
 var spawn_timer = 0.0
