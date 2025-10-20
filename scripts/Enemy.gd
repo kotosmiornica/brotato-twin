@@ -7,6 +7,9 @@ var health = 3
 
 @onready var player = get_node("/root/game/Brotat")
 
+# Preload the floating text script
+var FT_Script = preload("res://scripts/FightingText.gd")
+
 func _ready() -> void:
 	%Slime.play_walk()
 	add_to_group("enemies")
@@ -17,11 +20,12 @@ func _physics_process(_delta: float) -> void:
 	velocity = direction * 300.0
 	move_and_slide()
 
-
 func take_damage(amount: int):
 	health -= amount
 	%Slime.play_hurt()
-	
+
+	_show_damage_popup(amount)
+
 	if health <= 0:
 		drop_xp()
 		drop_medkit_random()
@@ -34,6 +38,10 @@ func take_damage(amount: int):
 		emit_signal("died")
 		queue_free()
 
+func _show_damage_popup(amount: int):
+	var popup = FT_Script.new()
+	popup.show_text(str(amount), global_position)
+	get_tree().current_scene.add_child(popup)
 
 func drop_xp():
 	var xp = preload("res://scenes/XPpickups.tscn").instantiate()

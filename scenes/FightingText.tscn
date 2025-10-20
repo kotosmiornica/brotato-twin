@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnpsol2egrv35"]
+
+[ext_resource type="Script" uid="uid://d3mwoi8m3fosl" path="res://scripts/FightingText.gd" id="1_blen4"]
+
+[node name="Label" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_blen4")

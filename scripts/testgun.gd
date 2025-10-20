@@ -4,7 +4,7 @@ var bullet_scene = preload("res:///scenes/testbullet.tscn")
 var unlocked: bool = false
 @export var shoot_sound: AudioStream
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not unlocked:
 		return
 

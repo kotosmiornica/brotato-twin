@@ -3,7 +3,7 @@ extends Node2D
 var unlocked: bool = false
 var bullet_scene = preload("res://scenes/testbullet.tscn")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not unlocked:
 		return
 	look_at(get_global_mouse_position())
