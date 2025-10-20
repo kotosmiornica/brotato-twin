@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var duration: float = 5.0
-@export var damage_per_second: float = 1
+@export var damage_per_second: float = 2
 
 var _time_alive: float = 0.0
 var enemies_in_stain := []

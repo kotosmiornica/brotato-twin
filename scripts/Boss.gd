@@ -6,6 +6,8 @@ var health = 100
 
 @onready var player = get_node("/root/game/Brotat")
 
+var FT_Script = preload("res://scripts/FightingText.gd")
+
 func _ready() -> void:
 	%BossSprite.play_walk()
 	add_to_group("enemies")
@@ -29,6 +31,11 @@ func take_damage(amount: int):
 
 		emit_signal("died")
 		queue_free()
+
+func _show_damage_popup(amount: int):
+	var popup = FT_Script.new()
+	popup.show_text(str(amount), global_position)
+	get_tree().current_scene.add_child(popup)
 
 
 func drop_xp():

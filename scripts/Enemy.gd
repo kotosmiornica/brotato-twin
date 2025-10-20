@@ -7,7 +7,6 @@ var health = 3
 
 @onready var player = get_node("/root/game/Brotat")
 
-# Preload the floating text script
 var FT_Script = preload("res://scripts/FightingText.gd")
 
 func _ready() -> void:
