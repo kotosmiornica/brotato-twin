@@ -1,6 +1,6 @@
 [gd_scene load_steps=158 format=3 uid="uid://wrkhxgmvgjup"]
 
-[ext_resource type="Script" uid="uid://cdiihpb8rt7gb" path="res://scripts/wardrobe.gd" id="1_d5b0y"]
+[ext_resource type="Script" uid="uid://cv6we2rj6kekl" path="res://scripts/wardrobe.gd" id="1_d5b0y"]
 [ext_resource type="Texture2D" uid="uid://5eiwexwlw540" path="res://images/sheets/FINALlyCatIdleAnim.png" id="2_jv5sr"]
 [ext_resource type="Texture2D" uid="uid://btlwbyjjf7a0l" path="res://images/sheets/MIKUMIKU.png" id="3_qtexn"]
 [ext_resource type="Texture2D" uid="uid://bkcljvg88hmay" path="res://images/sheets/UndHeartSheet.png" id="4_47cij"]
@@ -11,7 +11,7 @@
 [ext_resource type="StyleBox" uid="uid://gobly3ka8bph" path="res://scenes/fonts/pressedshop.tres" id="9_kcx1o"]
 [ext_resource type="StyleBox" uid="uid://dtnyfsfgiwow0" path="res://scenes/fonts/hoverrightshop.tres" id="10_mgkt5"]
 [ext_resource type="Script" uid="uid://dktoxo7y7qynr" path="res://scripts/next.gd" id="11_f2f1e"]
-[ext_resource type="Script" uid="uid://bwlrb2ya8fg2g" path="res://scripts/buy.gd" id="12_k25x8"]
+[ext_resource type="Script" uid="uid://cvkm661xrtjpu" path="res://scenes/buy.gd" id="12_k25x8"]
 [ext_resource type="AudioStream" uid="uid://c6op7wtebnfrw" path="res://SOUNDS/sounds/cash-register-purchase-87313.mp3" id="13_5rq1t"]
 [ext_resource type="AudioStream" uid="uid://c5mhvf1525jn4" path="res://SOUNDS/sounds/wrong-47985.mp3" id="14_6lvyd"]
 [ext_resource type="StyleBox" uid="uid://cphxerjchfv3f" path="res://scenes/closenormal.tres" id="15_lcp0g"]

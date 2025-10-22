@@ -5,6 +5,9 @@ signal health_depleted
 @export var soda_cooldown: float = 10.0
 @export var throw_force: float = 600.0
 @export var cooldown: float = 4.0
+@export var dash_speed: float = 1200.0
+@export var dash_duration: float = 0.15
+@export var dash_cooldown: float = 1.2
 @onready var weapons_container = get_node("/root/game/Brotat/Weapons")
 @onready var extra_gun = %YOUSHOOT
 
@@ -27,6 +30,9 @@ var throw_cooldown: float = 10.0
 var xp_growth_factor = 1.4
 var extra_gun_unlocked: bool = false
 var cutters: Array = []
+var is_dashing: bool = false
+var can_dash: bool = true
+var dash_timer: float = 0.0
 
 
 const MAX_PIZZA_CUTTERS = 4
@@ -89,31 +95,43 @@ func apply_equipped_accessories():
 		acc_node.visible = true
 		acc_node.z_index = 11
 
-func _physics_process(_delta: float) -> void:
-	#print("Player:", position, "| BlueWig:", %BlueWig.global_position)
-	#if %BlueWig:
-	#	print("BlueWig's parent:", %BlueWig.get_parent())
+func _physics_process(delta: float) -> void:
+	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
-	var direction = Input.get_vector("move_left", "move_right","move_up","move_down")
-	velocity = direction * 400
-	move_and_slide()
+	if Input.is_action_just_pressed("dash") and can_dash and direction != Vector2.ZERO:
+		start_dash(direction)
 	
-	if velocity.length() > 0.0:
-		%HappyBoo.play_walk_animation()
+	if not is_dashing:
+		velocity = direction * 400
 	else:
-		%HappyBoo.play_idle_animation()
+		dash_timer -= delta
+		if dash_timer <= 0.0:
+			end_dash()
 
-	const DAMAGE_RATE = 25.0
+	move_and_slide()
 
-	var overlapping_mobs = %HurtBox.get_overlapping_bodies()
-	if overlapping_mobs.size() > 0:
-		health -= DAMAGE_RATE * overlapping_mobs.size() * _delta
-		$ProgressBar.value = health
-		if health <= 0.0:
-			health_depleted.emit()
-			get_tree().paused = false
-			get_tree().change_scene_to_file("res://scenes/Menu.tscn")
-				
+	if not is_dashing:
+		if velocity.length() > 0.0:
+			%HappyBoo.play_walk_animation()
+		else:
+			%HappyBoo.play_idle_animation()
+
+
+
+func start_dash(direction: Vector2) -> void:
+	is_dashing = true
+	can_dash = false
+	dash_timer = dash_duration
+
+	velocity = direction.normalized() * dash_speed
+
+	await get_tree().create_timer(dash_cooldown).timeout
+	can_dash = true
+
+
+func end_dash() -> void:
+	is_dashing = false
+	velocity = Vector2.ZERO
 
 
 func add_cutter(cutter_scene):
