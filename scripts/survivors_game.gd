@@ -64,18 +64,15 @@ func _spawn_boss() -> void:
 func _spawn_wave(enemy_count: int):
 	var half = enemy_count / 2
 
-	# Spawn from PathFollow2D
 	for i in range(half):
-		_spawn_mob(%PathFollow2D)
+		_spawn_mob($Brotat/Path2D/PathFollow2D)
 
-	# Spawn from PathFollow2DSecond
 	for i in range(half):
-		_spawn_mob(%PathFollow2DSecond)
+		_spawn_mob($Brotat/Path2DSecond/PathFollor2DSecond)
 
 	if enemy_count % 2 != 0:
-		_spawn_mob(%PathFollow2DSecond)
-
-
+		_spawn_mob($Brotat/Path2DSecond/PathFollor2DSecond)
+		
 func _spawn_mob(path: PathFollow2D):
 	var new_mob = MobScene.instantiate()
 	path.progress_ratio = randf()

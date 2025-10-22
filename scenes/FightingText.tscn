@@ -11,6 +11,6 @@ offset_right = 101.0
 offset_bottom = 44.0
 scale = Vector2(1.8171328, 1.8171328)
 theme_override_fonts/font = ExtResource("1_wh3be")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 90
 script = ExtResource("1_blen4")
 font_file = ExtResource("1_wh3be")
