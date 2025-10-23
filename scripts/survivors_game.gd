@@ -102,7 +102,6 @@ func _on_boss_died():
 	alive_enemies -= 1
 	boss_alive = false
 
-	# Switch back to normal music
 	if $BossMusic.playing:
 		$BossMusic.stop()
 	$Music.play()

@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://i3060v1tubje"]
+[gd_scene load_steps=6 format=3 uid="uid://i3060v1tubje"]
 
 [ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="1_4are2"]
 [ext_resource type="Script" uid="uid://foueo18lbmjv" path="res://scripts/Enemy.gd" id="1_bsing"]
+[ext_resource type="Script" uid="uid://jnhs83704ana" path="res://scenes/kill_zone.gd" id="3_d4cuo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bsing"]
 radius = 31.400637
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d4cuo"]
+radius = 17.188997
+height = 39.937637
 
 [node name="mob" type="CharacterBody2D"]
 modulate = Color(3.657937e-06, 0.9796271, 0.5142679, 1)
@@ -23,3 +28,12 @@ self_modulate = Color(1, 0, 0, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_bsing")
+
+[node name="KillZone" type="Area2D" parent="."]
+script = ExtResource("3_d4cuo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(0, -6)
+rotation = 1.6126145
+scale = Vector2(2.860329, 2.860329)
+shape = SubResource("CapsuleShape2D_d4cuo")

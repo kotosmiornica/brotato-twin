@@ -381,3 +381,17 @@ func heal(amount: int) -> void:
 	health = min(health + amount, 180)
 	%ProgressBar.value = health
 	print("Healed by %d! Current HP: %d" % [amount, health])
+
+func take_damage(amount: float) -> void:
+	health -= amount
+	%ProgressBar.value = health
+	print("Took %d damage! Current HP: %d" % [amount, health])
+
+	if health <= 0:
+		health = 0
+		emit_signal("health_depleted")
+		die()
+
+func die() -> void:
+	print("Player died")
+	queue_free()
