@@ -8,8 +8,8 @@
 radius = 31.400637
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d4cuo"]
-radius = 17.188997
-height = 39.937637
+radius = 14.641556
+height = 34.31953
 
 [node name="mob" type="CharacterBody2D"]
 modulate = Color(3.657937e-06, 0.9796271, 0.5142679, 1)
