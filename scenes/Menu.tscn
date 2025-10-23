@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=3 uid="uid://cqcwtk4w1gpdv"]
+[gd_scene load_steps=148 format=3 uid="uid://cqcwtk4w1gpdv"]
 
 [ext_resource type="Script" uid="uid://d1wrmtooq2n67" path="res://scripts/menu.gd" id="1_jmdev"]
 [ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="1_o0tnf"]
@@ -722,6 +722,10 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rehui"]
+radius = 70.62833
+height = 390.62256
+
 [sub_resource type="Animation" id="Animation_auux5"]
 length = 0.001
 tracks/0/type = "value"
@@ -1178,6 +1182,14 @@ sprite_frames = SubResource("SpriteFrames_760fv")
 animation = &"EmotionalWig"
 autoplay = "EmotionalWig"
 
+[node name="ClickArea" type="Area2D" parent="MakeYourPlayer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MakeYourPlayer/ClickArea"]
+position = Vector2(0.99999976, -307)
+rotation = 1.5703442
+scale = Vector2(1.3167772, 0.69118565)
+shape = SubResource("CapsuleShape2D_rehui")
+
 [node name="SettingsMenu" parent="." instance=ExtResource("5_760fv")]
 
 [node name="Shop" parent="." instance=ExtResource("3_pp5m5")]
@@ -1564,6 +1576,7 @@ script = ExtResource("18_5p0sf")
 stream = ExtResource("11_rtd1e")
 bus = &"Sfx"
 
+[connection signal="input_event" from="MakeYourPlayer/ClickArea" to="MakeYourPlayer" method="_on_ClickArea_input_event"]
 [connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="WardrobeButton" to="." method="_on_wardrobe_pressed"]
 [connection signal="pressed" from="FishButton" to="Button" method="_on_fish_button_pressed"]

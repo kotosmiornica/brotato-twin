@@ -12,10 +12,9 @@ script = ExtResource("1_ypdhd")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visibility_layer = 2
 position = Vector2(-2.38419e-07, 2.38419e-07)
-scale = Vector2(2.861149, 2.6915324)
+scale = Vector2(2.0875287, 1.9637743)
 texture = ExtResource("2_ypdhd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-scale = Vector2(0.8356658, 0.8356658)
+scale = Vector2(0.6771433, 0.6771433)
 shape = SubResource("CircleShape2D_knfid")
