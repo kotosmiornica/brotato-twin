@@ -2,16 +2,14 @@ extends CharacterBody2D
 
 signal died
 
-var health = 3  
 @export var medkit_drop_chance: float = 0.0002 
-
-@onready var player = get_node("/root/game/Brotat")
 @export var damage_amount: int = 1
 @export var damage_interval: float = 2.0
+@onready var player = get_node("/root/game/Brotat")
 
 var player_in_zone: Node = null
 var damage_timer: float = 0.0
-
+var health = 3  
 var FT_Script = preload("res://scripts/FightingText.gd")
 
 func _ready() -> void:

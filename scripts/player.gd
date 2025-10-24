@@ -206,6 +206,11 @@ func update_xp_bar():
 	xp_bar.value = xp
 	xp_bar.max_value = xp_per_level
 
+func update_health_bar():
+	var health = get_node("../Brotat/ProgressBar")  
+	health.value = health
+
+
 
 
 
@@ -383,10 +388,8 @@ func heal(amount: int) -> void:
 	print("Healed by %d! Current HP: %d" % [amount, health])
 
 func take_damage(amount: float) -> void:
-	health -= amount
-	%ProgressBar.value = health
-	print("Took %d damage! Current HP: %d" % [amount, health])
-
+	health -= 1
+	
 	if health <= 0:
 		health = 0
 		emit_signal("health_depleted")

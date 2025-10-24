@@ -195,7 +195,7 @@ func _on_settings_pressed():
 
 
 func _on_unlock_extra_gun_pressed() -> void:
-	var cost = 60
+	var cost = 400
 
 	if Global.extra_gun_unlocked:
 		print("Extra gun already unlocked!")
