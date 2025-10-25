@@ -21,7 +21,15 @@ var food_scenes := {
 var coin_scene: PackedScene = preload("res://scenes/Coin.tscn")
 var active_coins := []
 
+func authenticate():
+	var guestLoginResponse = await LL_Authentication.GuestSession.new("test").send()
+	if(!guestLoginResponse.success):
+		printerr("Guest login failed with reason: " + guestLoginResponse.error_data.to_string())
+		return
+	print("Guest user was successfully signed in to LootLocker")
+
 func _ready():
+	authenticate()
 	apply_equipped_hair()
 	coins_label.text = str(Global.coins)
 	if Global.caught_food_count > 0:
