@@ -10,11 +10,11 @@ var shoot_sound_randomizer: AudioStreamRandomizer
 
 func _ready():
 	shoot_sound_randomizer = AudioStreamRandomizer.new()
-	shoot_sound_randomizer.add_stream(0, load("res://SOUNDS/sounds/simpleshot1.mp3"))
+	shoot_sound_randomizer.add_stream(0, load("res://SOUNDS/sounds/simpleshot.mp3"))
 	shoot_sound_randomizer.add_stream(1, load("res://SOUNDS/sounds/simpleshot2.mp3"))
 	shoot_sound_randomizer.add_stream(2, load("res://SOUNDS/sounds/simpleshot3.mp3"))
 	shoot_sound_randomizer.random_pitch = 0.15
-	shoot_sound_randomizer.random_volume_offset = 0.05
+	shoot_sound_randomizer.random_volume_offset_db = 1.0
 
 func _physics_process(_delta: float) -> void:
 	var enemies_in_range = get_overlapping_bodies()
