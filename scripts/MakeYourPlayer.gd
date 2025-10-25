@@ -35,9 +35,9 @@ func buy_heart() -> void:
 
 
 
-func _on_ClickArea_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		play_meow()
+#func _on_ClickArea_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+#	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+#		play_meow()
 
 func play_meow() -> void:
 	if not meow_player.playing:

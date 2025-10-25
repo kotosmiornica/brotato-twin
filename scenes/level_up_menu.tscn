@@ -96,12 +96,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -746.0
-offset_top = -456.0
-offset_right = 746.0
-offset_bottom = 456.0
+offset_left = -684.0
+offset_top = -435.0
+offset_right = 808.0
+offset_bottom = 477.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.93678576, 0.93678576)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_2tu1p")
@@ -163,14 +164,14 @@ bus = &"popup"
 [node name="Label2" type="Label" parent="CanvasLayer/Panel"]
 top_level = true
 layout_mode = 0
-offset_left = 702.0
-offset_top = 89.0
-offset_right = 1314.0
-offset_bottom = 265.0
+offset_left = 712.0
+offset_top = 120.0
+offset_right = 1324.0
+offset_bottom = 296.0
 theme_override_colors/font_color = Color(0, 0.99215686, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0.78039217, 0)
 theme_override_fonts/font = ExtResource("10_vtln1")
-theme_override_font_sizes/font_size = 110
+theme_override_font_sizes/font_size = 100
 text = "Level up!!!"
 
 [node name="Label3" type="Label" parent="CanvasLayer/Panel"]

@@ -9,14 +9,13 @@
 size = Vector2(19.130043, 13.948675)
 
 [node name="YOUSHOOT" type="Node2D"]
-position = Vector2(705, 519)
 script = ExtResource("1_0v2ix")
 
 [node name="weapon" type="Marker2D" parent="."]
-position = Vector2(452, 0)
+position = Vector2(201, -25)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(522, 7)
+position = Vector2(569.00006, 1)
 scale = Vector2(1.5266232, 1.5266232)
 script = ExtResource("1_gfr5o")
 shoot_sound = ExtResource("3_7222r")

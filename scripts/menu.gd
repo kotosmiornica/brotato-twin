@@ -7,7 +7,6 @@ extends Control
 @onready var food_counter_label = $ColorRect/FoodCounterLabel
 @onready var fishing_level2_label = $UnlockLevel2
 @onready var fishing_level3_label = $UnlockLevel3
-
 @export var coins_per_food: int = 14
 @export var coin_stagger: float = 0.05
 
@@ -203,7 +202,7 @@ func _on_settings_pressed():
 
 
 func _on_unlock_extra_gun_pressed() -> void:
-	var cost = 400
+	var cost = 40
 
 	if Global.extra_gun_unlocked:
 		print("Extra gun already unlocked!")

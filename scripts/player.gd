@@ -207,7 +207,6 @@ func update_xp_bar():
 	xp_bar.max_value = xp_per_level
 
 func update_health_bar():
-	var health = get_node("../Brotat/ProgressBar")  
 	health.value = health
 
 
