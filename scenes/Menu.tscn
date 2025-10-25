@@ -1296,7 +1296,8 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_upctu")
 text = "WASD/arrows - move
 P -pause menu
-Move mouse - move hook"
+Move mouse - move hook
+space/rmb - dash"
 
 [node name="FoodCounterLabel" type="Label" parent="ColorRect"]
 layout_mode = 0
@@ -1565,7 +1566,7 @@ autoplay = true
 bus = &"Music"
 
 [node name="EatingPet" type="Sprite2D" parent="."]
-position = Vector2(1015, 798)
+position = Vector2(1015, 752.99994)
 scale = Vector2(2.0512311, 1.9623342)
 texture = ExtResource("3_yt8fu")
 script = ExtResource("18_5p0sf")
