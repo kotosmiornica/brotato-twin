@@ -21,10 +21,8 @@ func spawn_stain() -> void:
 	var stain = stain_scene.instantiate()
 	stain.global_position = player.global_position
 
-	# 🧠 make it much more obvious visually (big difference)
 	stain.scale = Vector2.ONE * (1.0 + (bleach_level - 1) * 0.7)
 
-	# 🪄 debug print — shows what scale it got
 	print("Bleach level:", bleach_level, " | Scale:", stain.scale)
 
 	get_tree().current_scene.add_child(stain)

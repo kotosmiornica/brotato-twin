@@ -386,7 +386,7 @@ func heal(amount: int) -> void:
 	%ProgressBar.value = health
 	print("Healed by %d! Current HP: %d" % [amount, health])
 
-func take_damage(amount: float) -> void:
+func take_damage(_amount: float) -> void:
 	health -= 1
 	
 	if health <= 0:

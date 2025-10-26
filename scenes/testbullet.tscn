@@ -43,8 +43,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j33vv"]
-radius = 8.21481
-height = 49.037083
+radius = 7.018346
+height = 45.20946
 
 [node name="TESTbullet" type="Area2D"]
 top_level = true
@@ -57,12 +57,12 @@ speed = 1400.0
 
 [node name="Projectile" type="AnimatedSprite2D" parent="."]
 position = Vector2(1.3699584, -0.36228037)
-scale = Vector2(3.7208238, 3.9003644)
+scale = Vector2(1.8501458, 1.9394208)
 sprite_frames = SubResource("SpriteFrames_j33vv")
 animation = &"laserpurple"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5007386, 1.3220388)
+position = Vector2(-0.47552705, 0.41890395)
 rotation = 1.5688825
-scale = Vector2(1.2137289, 0.8671098)
+scale = Vector2(0.8034332, 0.5739871)
 shape = SubResource("CapsuleShape2D_j33vv")

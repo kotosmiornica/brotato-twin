@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node) -> void:
 	if body and body.has_method("take_damage"):
-		var base_damage := 2
+		var base_damage := 1
 		var dmg_multiplier := Global.get_buff_multiplier("damage")
 		body.take_damage(base_damage * dmg_multiplier)
 

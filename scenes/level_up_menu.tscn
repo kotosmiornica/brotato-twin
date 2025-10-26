@@ -134,6 +134,20 @@ stream = ExtResource("5_buj6g")
 autoplay = true
 bus = &"popup"
 
+[node name="des2" type="Label" parent="CanvasLayer/Panel/pizzacutter2"]
+layout_mode = 0
+offset_left = -104.0
+offset_top = 436.0
+offset_right = 537.0
+offset_bottom = 621.0
+theme_override_colors/font_color = Color(0.69411767, 0.87058824, 1, 1)
+theme_override_fonts/font = ExtResource("10_vtln1")
+theme_override_font_sizes/font_size = 42
+text = "Pizza cutter that cuts through shlams - cause not every pizza is made of dough."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
 [node name="bleach3" type="Button" parent="CanvasLayer/Panel"]
 layout_mode = 0
 offset_left = 851.0
@@ -161,6 +175,20 @@ stream = ExtResource("5_buj6g")
 autoplay = true
 bus = &"popup"
 
+[node name="des3" type="Label" parent="CanvasLayer/Panel/bleach3"]
+layout_mode = 0
+offset_left = -104.99988
+offset_top = 429.0
+offset_right = 586.0001
+offset_bottom = 622.0
+theme_override_colors/font_color = Color(0.69411767, 0.87058824, 1, 1)
+theme_override_fonts/font = ExtResource("10_vtln1")
+theme_override_font_sizes/font_size = 42
+text = "AntiGloopX3000 - 99.9% effective on organic sludge. The 0.1% becomes your problem."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
 [node name="Label2" type="Label" parent="CanvasLayer/Panel"]
 top_level = true
 layout_mode = 0
@@ -185,32 +213,4 @@ theme_override_fonts/font = ExtResource("10_vtln1")
 theme_override_font_sizes/font_size = 60
 text = "Choose your new weapon or upgrade the one you already have :3"
 horizontal_alignment = 1
-autowrap_mode = 3
-
-[node name="Label4" type="Label" parent="CanvasLayer/Panel"]
-layout_mode = 0
-offset_left = 80.0
-offset_top = 702.0
-offset_right = 721.0
-offset_bottom = 887.0
-theme_override_colors/font_color = Color(0.69411767, 0.87058824, 1, 1)
-theme_override_fonts/font = ExtResource("10_vtln1")
-theme_override_font_sizes/font_size = 42
-text = "Pizza cutter that cuts through shlams - cause not every pizza is made of dough."
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="Label6" type="Label" parent="CanvasLayer/Panel"]
-layout_mode = 0
-offset_left = 746.0
-offset_top = 696.0
-offset_right = 1437.0
-offset_bottom = 889.0
-theme_override_colors/font_color = Color(0.69411767, 0.87058824, 1, 1)
-theme_override_fonts/font = ExtResource("10_vtln1")
-theme_override_font_sizes/font_size = 42
-text = "AntiGloopX3000 - 99.9% effective on organic sludge. The 0.1% becomes your problem."
-horizontal_alignment = 1
-vertical_alignment = 1
 autowrap_mode = 3
