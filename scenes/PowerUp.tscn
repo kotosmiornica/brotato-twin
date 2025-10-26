@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://crga2m8pafqkf"]
+
+[ext_resource type="Texture2D" uid="uid://kc5ltioajpbp" path="res://images/MonsterEnergyDrink.png" id="1_vxdkk"]
+
+[node name="PoweruUPMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vxdkk")

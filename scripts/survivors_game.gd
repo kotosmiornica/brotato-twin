@@ -51,9 +51,8 @@ func _spawn_boss() -> void:
 	boss.global_position = Vector2(600, 300)
 	add_child(boss)
 	alive_enemies += 1
-	boss_alive = true  # <-- set boss as alive
+	boss_alive = true
 
-	# Switch music to boss
 	if $Music.playing:
 		$Music.stop()
 	$BossMusic.play()
