@@ -179,6 +179,7 @@ func _on_xp_collected():
 	xp += 1
 	print("Collected XP. Current: %d" % xp)
 	update_xp_bar()
+	$moneybag.play()
 
 	if xp >= xp_per_level:
 		xp -= xp_per_level

@@ -35,6 +35,7 @@ func _physics_process(delta: float) -> void:
 func take_damage(amount: int):
 	health -= amount
 	%Slime.play_hurt()
+	$slimehurt.play()
 	_show_damage_popup(amount)
 	if health <= 0:
 		drop_xp()

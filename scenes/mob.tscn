@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://i3060v1tubje"]
+[gd_scene load_steps=7 format=3 uid="uid://i3060v1tubje"]
 
 [ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="1_4are2"]
 [ext_resource type="Script" uid="uid://foueo18lbmjv" path="res://scripts/Enemy.gd" id="1_bsing"]
 [ext_resource type="Script" uid="uid://jnhs83704ana" path="res://scenes/kill_zone.gd" id="3_d4cuo"]
+[ext_resource type="AudioStream" uid="uid://6oainuiljw2o" path="res://SOUNDS/sounds/slime-squish-5-218569.mp3" id="4_71rcx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bsing"]
 radius = 31.400637
@@ -37,3 +38,9 @@ position = Vector2(0, -6)
 rotation = 1.6126145
 scale = Vector2(2.860329, 2.860329)
 shape = SubResource("CapsuleShape2D_d4cuo")
+
+[node name="slimehurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_71rcx")
+volume_db = 8.946
+pitch_scale = 1.69
+bus = &"Sfx"
