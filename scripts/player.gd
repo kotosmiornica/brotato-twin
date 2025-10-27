@@ -386,7 +386,7 @@ func heal(amount: int) -> void:
 	health = min(health + amount, 180)
 	%ProgressBar.value = health
 	print("Healed by %d! Current HP: %d" % [amount, health])
-
+	$healing.play()
 func take_damage(_amount: float) -> void:
 	health -= 1
 	
