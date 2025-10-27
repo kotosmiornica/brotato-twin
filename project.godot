@@ -77,7 +77,8 @@ Settings/Show_Tooltips=true
 config/name="Pixie Kitty"
 run/main_scene="uid://cqcwtk4w1gpdv"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.png"
+boot_splash/image="uid://cc5um4awmhd8b"
+config/icon="uid://biggnkfn2sa25"
 
 [autoload]
 
