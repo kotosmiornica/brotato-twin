@@ -1,0 +1,179 @@
+[gd_scene load_steps=9 format=3 uid="uid://biyv6bkx73783"]
+
+[ext_resource type="StyleBox" uid="uid://diaewu28mnlyu" path="res://scenes/fonts/pressedbasicblu.tres" id="1_3vdsa"]
+[ext_resource type="StyleBox" uid="uid://cldy7x0vrp0c" path="res://scenes/buttonupgradecharacter.tres" id="1_uab3i"]
+[ext_resource type="StyleBox" uid="uid://ctnedtyf78d1o" path="res://scenes/fonts/basicblu.tres" id="2_epbnv"]
+[ext_resource type="Script" uid="uid://dh3omuiod7mt8" path="res://scripts/pizzacutter_2.gd" id="3_ix55p"]
+[ext_resource type="AudioStream" uid="uid://cn254y6phru30" path="res://SOUNDS/sounds/plop.wav" id="5_yq7q4"]
+[ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="6_w23jj"]
+[ext_resource type="Script" uid="uid://ofh0s2kyo5el" path="res://scripts/bleach_3.gd" id="7_33dp5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2kf7"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.54509807, 0.3137255, 0.8901961, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.7529087, 0.0026999426, 0.97619146, 1)
+corner_radius_top_left = 95
+corner_radius_top_right = 95
+corner_radius_bottom_right = 95
+corner_radius_bottom_left = 95
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.847059)
+shadow_size = 26
+shadow_offset = Vector2(0, 20)
+
+[node name="UpgradeMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+top_level = true
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -684.0
+offset_top = -435.0
+offset_right = 808.0
+offset_bottom = 477.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.93678576, 0.93678576)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_b2kf7")
+
+[node name="damage" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 68.318695
+offset_top = 315.97406
+offset_right = 506.3187
+offset_bottom = 725.97406
+scale = Vector2(0.89060056, 0.89060056)
+focus_mode = 0
+theme_override_styles/normal = ExtResource("1_uab3i")
+theme_override_styles/pressed = ExtResource("1_3vdsa")
+theme_override_styles/hover = ExtResource("2_epbnv")
+script = ExtResource("3_ix55p")
+
+[node name="click" type="AudioStreamPlayer" parent="CanvasLayer/Panel/damage"]
+stream = ExtResource("5_yq7q4")
+autoplay = true
+bus = &"popup"
+
+[node name="des2" type="Label" parent="CanvasLayer/Panel/damage"]
+layout_mode = 0
+offset_left = -10.7873955
+offset_top = 456.68393
+offset_right = 450.98605
+offset_bottom = 627.4807
+theme_override_colors/font_color = Color(1, 0.7110669, 0.6969494, 1)
+theme_override_fonts/font = ExtResource("6_w23jj")
+theme_override_font_sizes/font_size = 64
+text = "Damage +8%"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="movementspeed" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 1034.3882
+offset_top = 316.97406
+offset_right = 1472.3882
+offset_bottom = 733.97406
+scale = Vector2(0.89060056, 0.89060056)
+focus_mode = 0
+theme_override_styles/normal = ExtResource("1_uab3i")
+theme_override_styles/pressed = ExtResource("1_3vdsa")
+theme_override_styles/hover = ExtResource("2_epbnv")
+script = ExtResource("7_33dp5")
+
+[node name="click" type="AudioStreamPlayer" parent="CanvasLayer/Panel/movementspeed"]
+stream = ExtResource("5_yq7q4")
+autoplay = true
+bus = &"popup"
+
+[node name="des3" type="Label" parent="CanvasLayer/Panel/movementspeed"]
+layout_mode = 0
+offset_left = -2.3973312
+offset_top = 453.54892
+offset_right = 471.74805
+offset_bottom = 619.0083
+theme_override_colors/font_color = Color(1, 0.7110669, 0.6969494, 1)
+theme_override_fonts/font = ExtResource("6_w23jj")
+theme_override_font_sizes/font_size = 64
+text = "Movement speed +5%"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="health" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 556.15704
+offset_top = 315.97406
+offset_right = 994.15704
+offset_bottom = 725.97406
+scale = Vector2(0.89060056, 0.89060056)
+focus_mode = 0
+theme_override_styles/normal = ExtResource("1_uab3i")
+theme_override_styles/pressed = ExtResource("1_3vdsa")
+theme_override_styles/hover = ExtResource("2_epbnv")
+script = ExtResource("3_ix55p")
+
+[node name="click" type="AudioStreamPlayer" parent="CanvasLayer/Panel/health"]
+stream = ExtResource("5_yq7q4")
+autoplay = true
+bus = &"popup"
+
+[node name="des2" type="Label" parent="CanvasLayer/Panel/health"]
+layout_mode = 0
+offset_left = -11.986048
+offset_top = 460.26495
+offset_right = 463.08475
+offset_bottom = 631.756
+theme_override_colors/font_color = Color(1, 0.7110669, 0.6969494, 1)
+theme_override_fonts/font = ExtResource("6_w23jj")
+theme_override_font_sizes/font_size = 64
+text = "Health +5%"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="CanvasLayer/Panel"]
+top_level = true
+layout_mode = 0
+offset_left = 667.0
+offset_top = 118.0
+offset_right = 1279.0
+offset_bottom = 294.0
+theme_override_colors/font_color = Color(1, 0.77489007, 0.9058078, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0.78039217, 0)
+theme_override_fonts/font = ExtResource("6_w23jj")
+theme_override_font_sizes/font_size = 100
+text = "Wave ended!"
+
+[node name="Label3" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 103.0
+offset_right = 1473.0
+offset_bottom = 226.0
+theme_override_colors/font_color = Color(1, 0.77489007, 0.9058078, 1)
+theme_override_fonts/font = ExtResource("6_w23jj")
+theme_override_font_sizes/font_size = 60
+text = "Choose an upgrade for your character:"
+horizontal_alignment = 1
+autowrap_mode = 3

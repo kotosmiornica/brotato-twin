@@ -62,9 +62,9 @@ position = Vector2(0, -23)
 scale = Vector2(2.5254145, 2.5254145)
 sprite_frames = SubResource("SpriteFrames_gqapn")
 animation = &"Idle"
-frame_progress = 0.20681484
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -0.9999995)
 scale = Vector2(0.62329316, 0.62329316)
 shape = SubResource("CircleShape2D_bsing")
@@ -73,6 +73,7 @@ shape = SubResource("CircleShape2D_bsing")
 script = ExtResource("2_6kmse")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+visible = false
 position = Vector2(0, -2)
 rotation = 3.1579926
 scale = Vector2(2.860329, 2.860329)
