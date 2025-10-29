@@ -293,7 +293,7 @@ func give_weapon(weapon_id):
 		_:
 			print("Unknown weapon:", weapon_id)
 			return
-			
+
 	var weapon = weapon_scene.instantiate()
 	weapon.player = self
 	weapons_container.add_child(weapon)
@@ -387,9 +387,18 @@ func heal(amount: int) -> void:
 	%ProgressBar.value = health
 	print("Healed by %d! Current HP: %d" % [amount, health])
 	$healing.play()
-func take_damage(_amount: float) -> void:
-	health -= 1
-	
+
+
+func take_damage(amount: float) -> void:
+	health -= amount
+	print("Player took", amount, "damage! Current HP:", health)
+	%ProgressBar.value = health
+	if health <= 0:
+		health = 0
+		emit_signal("health_depleted")
+		die()
+
+
 	if health <= 0:
 		health = 0
 		emit_signal("health_depleted")

@@ -10,7 +10,7 @@ radius = 31.400637
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d4cuo"]
 radius = 14.641556
-height = 34.31953
+height = 29.341576
 
 [node name="mob" type="CharacterBody2D"]
 modulate = Color(3.657937e-06, 0.9796271, 0.5142679, 1)
@@ -34,7 +34,7 @@ shape = SubResource("CircleShape2D_bsing")
 script = ExtResource("3_d4cuo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-position = Vector2(0, -6)
+position = Vector2(-1.4901161e-08, -8)
 rotation = 1.6126145
 scale = Vector2(2.860329, 2.860329)
 shape = SubResource("CapsuleShape2D_d4cuo")
@@ -44,3 +44,7 @@ stream = ExtResource("4_71rcx")
 volume_db = 8.946
 pitch_scale = 1.69
 bus = &"Sfx"
+
+[node name="DamageTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="DamageTimer" to="." method="_on_DamageTimer_timeout"]

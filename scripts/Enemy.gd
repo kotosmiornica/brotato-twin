@@ -68,10 +68,16 @@ func drop_medkit_random():
 
 func _on_KillZone_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
+		print("KillZone entered by:", body.name)
 		player_in_zone = body
 		damage_timer = 0.0
+
 
 func _on_KillZone_body_exited(body: Node) -> void:
 	if body == player_in_zone:
 		player_in_zone = null
 		damage_timer = 0.0
+
+func _on_DamageTimer_timeout():
+	if player_in_zone:
+		player.take_damage(damage_amount)
