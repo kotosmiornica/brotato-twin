@@ -13,6 +13,7 @@ var dash_target: Vector2
 var FT_Script = preload("res://scripts/FightingText.gd")
 var SMOKE_SCENE = preload("res://smoke_explosion/smoke_explosion.tscn")
 var XP_SCENE = preload("res://scenes/XPpickups.tscn")
+var POWERUP_SCENE = preload("res://scenes/PowerUp.tscn")
 
 @onready var player = get_node("/root/game/Brotat")
 @onready var sprite = $BossSprite
@@ -38,7 +39,7 @@ func _physics_process(_delta: float) -> void:
 		elif can_dash:
 			can_dash = false
 			velocity = Vector2.ZERO
-			await get_tree().create_timer(3).timeout
+			await get_tree().create_timer(2).timeout
 			_start_dash()
 			await get_tree().create_timer(dash_cooldown).timeout
 			can_dash = true
@@ -62,16 +63,19 @@ func _show_damage_popup(amount: int) -> void:
 	get_tree().current_scene.add_child(popup)
 
 func _die() -> void:
-	drop_xp()
+	drop_powerup()
 	var smoke = SMOKE_SCENE.instantiate()
 	smoke.global_position = global_position
 	get_parent().add_child(smoke)
 	emit_signal("died")
 	queue_free()
 
-func drop_xp() -> void:
-	var xp = XP_SCENE.instantiate()
-	xp.global_position = global_position
+
+
+
+func drop_powerup() -> void:
+	var powerup = POWERUP_SCENE.instantiate()
+	powerup.global_position = global_position
 	var root = get_tree().current_scene
-	root.call_deferred("add_child", xp)
-	xp.connect("collected", root.get_node("Brotat")._on_xp_collected)
+	root.call_deferred("add_child", powerup)
+	powerup.connect("collected", root.get_node("Brotat")._on_xp_collected)
