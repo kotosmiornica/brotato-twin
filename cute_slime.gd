@@ -9,7 +9,7 @@ signal died
 
 var player_in_zone: Node = null
 var damage_timer: float = 0.0
-var health = 3
+var health = 4
 var FT_Script = preload("res://scripts/FightingText.gd")
 const XP_SCENE = preload("res://scenes/XPpickups.tscn")
 const MEDKIT_SCENE = preload("res://scenes/MedKit.tscn")
@@ -26,7 +26,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var target = player.global_position + Vector2(randf_range(-50, 50), randf_range(-50, 50))
 	var direction = (target - global_position).normalized()
-	velocity = direction * 300.0
+	velocity = direction * 500.0
 	move_and_slide()
 
 	if player_in_zone:

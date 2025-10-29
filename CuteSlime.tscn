@@ -1,15 +1,52 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvhvdoroj2mu3"]
+[gd_scene load_steps=12 format=3 uid="uid://dvhvdoroj2mu3"]
 
 [ext_resource type="Script" uid="uid://bgdbrtai4g7lr" path="res://cute_slime.gd" id="1_xy4hn"]
 [ext_resource type="Script" uid="uid://jnhs83704ana" path="res://scenes/kill_zone.gd" id="2_6kmse"]
+[ext_resource type="Texture2D" uid="uid://dlvq1pb2ovrmj" path="res://images/sheets/momo_idle_shadow.png" id="2_cgmw8"]
 [ext_resource type="AudioStream" uid="uid://6oainuiljw2o" path="res://SOUNDS/sounds/slime-squish-5-218569.mp3" id="3_cgmw8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcvqd"]
+atlas = ExtResource("2_cgmw8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdwpq"]
+atlas = ExtResource("2_cgmw8")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kksin"]
+atlas = ExtResource("2_cgmw8")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr2hv"]
+atlas = ExtResource("2_cgmw8")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gqapn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcvqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdwpq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kksin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr2hv")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bsing"]
 radius = 31.400637
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d4cuo"]
-radius = 12.298736
-height = 30.12788
+radius = 8.400494
+height = 23.071165
 
 [node name="CuteSlime" type="CharacterBody2D"]
 modulate = Color(3.657937e-06, 0.9796271, 0.5142679, 1)
@@ -20,16 +57,24 @@ collision_mask = 7
 platform_floor_layers = 0
 script = ExtResource("1_xy4hn")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -23)
+scale = Vector2(2.5254145, 2.5254145)
+sprite_frames = SubResource("SpriteFrames_gqapn")
+animation = &"Idle"
+frame_progress = 0.20681484
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6)
+position = Vector2(0, -0.9999995)
+scale = Vector2(0.62329316, 0.62329316)
 shape = SubResource("CircleShape2D_bsing")
 
 [node name="KillZone" type="Area2D" parent="."]
 script = ExtResource("2_6kmse")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-position = Vector2(1.4901158e-08, -8)
-rotation = 1.6126145
+position = Vector2(0, -2)
+rotation = 3.1579926
 scale = Vector2(2.860329, 2.860329)
 shape = SubResource("CapsuleShape2D_d4cuo")
 
