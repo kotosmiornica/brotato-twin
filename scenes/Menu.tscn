@@ -1224,9 +1224,9 @@ color = Color(0.31319007, 0.12925631, 0.5768775, 0.9137255)
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 0
 offset_left = 19.0
-offset_top = 82.0
+offset_top = 132.0
 offset_right = 202.0
-offset_bottom = 144.0
+offset_bottom = 194.0
 theme_override_colors/font_color = Color(0.69426936, 1, 0.6830813, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 61
@@ -1262,9 +1262,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -944.0
-offset_top = -397.0
+offset_top = -347.0
 offset_right = -742.0
-offset_bottom = -301.0
+offset_bottom = -251.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.54901963, 1, 0.4627451, 1)
@@ -1278,6 +1278,7 @@ stream = ExtResource("10_i7htd")
 bus = &"Sfx"
 
 [node name="Instructions!" type="Label" parent="ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -1302,9 +1303,9 @@ space/rmb - dash"
 [node name="FoodCounterLabel" type="Label" parent="ColorRect"]
 layout_mode = 0
 offset_left = 10.0
-offset_top = 267.0
+offset_top = 296.0
 offset_right = 184.0
-offset_bottom = 762.0
+offset_bottom = 791.0
 theme_override_colors/font_color = Color(1, 0.7882353, 1, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 40
@@ -1316,7 +1317,7 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 355.0
+offset_left = 435.0
 offset_top = -370.0
 offset_right = 924.0
 offset_bottom = -200.0
@@ -1329,7 +1330,7 @@ theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_dek3k")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pp5m5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4umqm")
-text = "Go to FIGHT! (endless)"
+text = "Fight!(endless)"
 autowrap_mode = 3
 script = ExtResource("2_5yleq")
 
@@ -1531,10 +1532,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -129.0
-offset_top = -354.0
-offset_right = 277.0
-offset_bottom = -224.0
+offset_left = 21.0
+offset_top = -379.0
+offset_right = 357.0
+offset_bottom = -191.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
@@ -1545,7 +1546,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_rehui")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_uwbky")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yvxia")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_nxcfj")
-text = "Unlock an extra gun to fight for yourself >:3"
+text = "UNLOCK NON AUTOMATIC GUN
+-400coins-"
 autowrap_mode = 3
 
 [node name="click" type="AudioStreamPlayer" parent="UnlockExtraGun"]
@@ -1566,7 +1568,7 @@ autoplay = true
 bus = &"Music"
 
 [node name="EatingPet" type="Sprite2D" parent="."]
-position = Vector2(1015, 752.99994)
+position = Vector2(1126, 925)
 scale = Vector2(2.0512311, 1.9623342)
 texture = ExtResource("3_yt8fu")
 script = ExtResource("18_5p0sf")

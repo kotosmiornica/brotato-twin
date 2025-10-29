@@ -20,12 +20,23 @@ var alive_enemies: int = 0
 var kill_count: int = 0
 
 func _ready() -> void:
+	print("READY! WaveTimer autostart:", wave_timer.autostart, " is stopped:", wave_timer.is_stopped())
+
+	if wave_timer.timeout.is_connected(_on_WaveTimer_timeout):
+		wave_timer.timeout.disconnect(_on_WaveTimer_timeout)
+	wave_timer.timeout.connect(_on_WaveTimer_timeout)
+
+	wave_timer.stop()
+	wave_timer.wait_time = wave_duration
+
 	upgrade_menu = upgrade_menu_scene.instantiate()
 	add_child(upgrade_menu)
 	upgrade_menu.hide()
 	upgrade_menu.connect("upgrade_selected", Callable(self, "_on_upgrade_selected"))
+
 	get_tree().paused = false
 	start_next_wave()
+
 
 func _process(delta: float) -> void:
 	if wave_timer.is_stopped() == false:
@@ -54,19 +65,22 @@ func _on_button_pressed() -> void:
 # ------------------------
 
 func start_next_wave() -> void:
+	print("Starting next wave... wave:", current_wave + 1)
 	current_wave += 1
 	kill_count = 0
 	alive_enemies = 0
 
+	wave_timer.wait_time = wave_duration
+	wave_timer.start()
+	print("Timer started! Wait time: ", wave_timer.wait_time)
+	
 	if current_wave % 5 == 0:
 		print("Wave %d: Boss incoming!" % current_wave)
 		_spawn_boss()
 	else:
 		var enemy_count = int(round(base_enemy_count * pow(1.2, current_wave - 1)))
 		print("Wave %d: Spawning %d enemies" % [current_wave, enemy_count])
-		await _spawn_wave(enemy_count)
-	wave_timer.wait_time = wave_duration
-	wave_timer.start()
+		_spawn_wave(enemy_count)
 
 
 func _spawn_boss() -> void:
@@ -131,6 +145,7 @@ func _on_boss_died():
 
 
 func _on_WaveTimer_timeout() -> void:
+	print("WaveTimer timeout triggered! Time left:", wave_timer.time_left)
 	print("Wave ended! Enemies killer: %d" % kill_count)
 	show_upgrade_menu()
 
