@@ -8,8 +8,14 @@ signal health_depleted
 @export var dash_speed: float = 1200.0
 @export var dash_duration: float = 0.15
 @export var dash_cooldown: float = 1.2
+@export var max_health: float = 180
+@export var move_speed: float = 350
+@export var damage: float = 2
+
+
 @onready var weapons_container = get_node("/root/game/Brotat/Weapons")
 @onready var extra_gun = %YOUSHOOT
+
 
 var health = 180.0
 var orbit_angle: float = 0.0
@@ -20,7 +26,7 @@ var can_throw_soda: bool = true
 var current_weapon: String = "gun"
 var weapons: Array = []
 var stain_scene = preload("res://scenes/BleachStain.tscn")
-var equipped_weapons = []  
+var equipped_weapons: Array = []  
 var _time_passed: float = 0.0
 var cutter_scene = preload("res://scenes/pizzacutter.tscn")
 var level_up_menu = null
@@ -34,7 +40,6 @@ var is_dashing: bool = false
 var can_dash: bool = true
 var dash_timer: float = 0.0
 
-
 const MAX_PIZZA_CUTTERS = 4
 
 
@@ -45,7 +50,6 @@ const MAX_PIZZA_CUTTERS = 4
 func apply_equipped_hair():
 	var possible_hairs = ["BlueWig"]  # only BlueWig for now
 
-	# hide all possible hairs
 	for hair_id in possible_hairs:
 		var n = $HappyBoo.get_node_or_null(NodePath(hair_id))
 		if n:
@@ -73,7 +77,6 @@ func apply_equipped_hair():
 func apply_equipped_accessories():
 	var possible_accessories = ["Heart"]
 
-	# hide all possible accessories
 	for acc_id in possible_accessories:
 		var n = $HappyBoo.get_node_or_null(NodePath(acc_id))
 		if n:
@@ -102,7 +105,7 @@ func _physics_process(delta: float) -> void:
 		start_dash(direction)
 	
 	if not is_dashing:
-		velocity = direction * 400
+		velocity = direction * move_speed
 	else:
 		dash_timer -= delta
 		if dash_timer <= 0.0:
@@ -156,6 +159,8 @@ func update_cutter_angles():
 		cutters[i].angle_offset = (360.0 / n) * i
 
 func _ready():
+	for weapon in equipped_weapons:
+		weapon.player = self
 	add_to_group("player")
 	apply_equipped_hair()
 	apply_equipped_accessories()
@@ -188,7 +193,6 @@ func _on_xp_collected():
 func level_up():
 	get_tree().paused = true
 
-	# Increase XP needed for next level
 	xp_per_level = int(xp_per_level * xp_growth_factor)
 
 	var LevelUpMenuScene = preload("res://scenes/level_up_menu.tscn")
@@ -396,7 +400,9 @@ func take_damage(amount: float) -> void:
 	if health <= 0:
 		health = 0
 		emit_signal("health_depleted")
+		get_tree().change_scene_to_file("res://scenes/Menu.tscn")
 		die()
+		
 
 
 	if health <= 0:

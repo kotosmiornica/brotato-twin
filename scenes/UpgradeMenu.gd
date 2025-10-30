@@ -2,11 +2,11 @@ extends Control
 
 signal upgrade_selected(upgrade_name: String)
 
-func _ready():
-	print("Upgrade menu ready")
-	$CanvasLayer/Panel/health.pressed.connect(_on_health_pressed)
-	$CanvasLayer/Panel/damage.pressed.connect(_on_damage_pressed)
-	$CanvasLayer/Panel/movementspeed.pressed.connect(_on_movementspeed_pressed)
+
+func _ready() -> void:
+	visible = false 
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
+	mouse_filter = MOUSE_FILTER_IGNORE
 
 func _on_damage_pressed() -> void:
 	print("Damage button pressed!")

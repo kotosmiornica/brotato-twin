@@ -54,7 +54,7 @@ func resume():
 
 # -----------------------------
 # Input handling
-# -----------------------------
+
 func _input(event):
 	if event.is_action_pressed("esc"):
 		if get_tree().paused:
@@ -65,7 +65,7 @@ func _input(event):
 
 # -----------------------------
 # Button signals
-# -----------------------------
+
 func _on_resume_pressed() -> void:
 	$click.play()
 	resume()

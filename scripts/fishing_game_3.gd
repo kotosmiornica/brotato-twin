@@ -5,8 +5,8 @@ extends Node2D
 @onready var foods_container = $Foods
 @export var spawn_interval = 0.4
 @export var hook_end_y = 10.0
-@export var base_speed = 280.0
-@export var max_speed = 380.0
+@export var base_speed = 180.0
+@export var max_speed = 220.0
 @export var hook_start_offset = 800
 @export var hook_height_fallback = 64
 
@@ -20,7 +20,6 @@ func _ready():
 	Global.caught_foods.clear()
 	var screen_size = get_viewport_rect().size
 
-	# safe hook height
 	var hook_height = hook_height_fallback
 	if hook_sprite.texture:
 		hook_height = hook_sprite.texture.get_size().y

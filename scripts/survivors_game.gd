@@ -2,48 +2,18 @@ extends Node2D
 
 @export var base_enemy_count: int = 10
 @export var kills_for_medkit: int = 20
-@export var wave_duration: float = 20.0
-
-@onready var wave_timer: Timer = $WaveTimer
-@onready var timer_label: Label = $WaveTimerLabel
-@onready var points_label: Label = $PointsLabel
-@onready var upgrade_menu_scene = preload("res://scenes/UpgradeMenu.tscn")
 
 const MobScene = preload("res://scenes/mob.tscn")
 const BossScene = preload("res://scenes/Boss1.tscn")
 
-var upgrade_menu: Control
-var player_points: int = 0
 var boss_alive: bool = false
 var current_wave: int = 0
 var alive_enemies: int = 0
 var kill_count: int = 0
 
 func _ready() -> void:
-	print("READY! WaveTimer autostart:", wave_timer.autostart, " is stopped:", wave_timer.is_stopped())
-
-	if wave_timer.timeout.is_connected(_on_WaveTimer_timeout):
-		wave_timer.timeout.disconnect(_on_WaveTimer_timeout)
-	wave_timer.timeout.connect(_on_WaveTimer_timeout)
-
-	wave_timer.stop()
-	wave_timer.wait_time = wave_duration
-
-	upgrade_menu = upgrade_menu_scene.instantiate()
-	add_child(upgrade_menu)
-	upgrade_menu.hide()
-	upgrade_menu.connect("upgrade_selected", Callable(self, "_on_upgrade_selected"))
-
 	get_tree().paused = false
 	start_next_wave()
-
-
-func _process(delta: float) -> void:
-	if wave_timer.is_stopped() == false:
-		timer_label.text = "Time Left: %.1f" % wave_timer.time_left
-	else:
-		timer_label.text = ""
-	points_label.text = "Points: %d" % player_points
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("restart") and !$Fade/ColorRect/AnimationPlayer.is_playing():
@@ -62,25 +32,18 @@ func _on_button_pressed() -> void:
 
 # ------------------------
 # Wave System
-# ------------------------
+
 
 func start_next_wave() -> void:
-	print("Starting next wave... wave:", current_wave + 1)
 	current_wave += 1
-	kill_count = 0
-	alive_enemies = 0
 
-	wave_timer.wait_time = wave_duration
-	wave_timer.start()
-	print("Timer started! Wait time: ", wave_timer.wait_time)
-	
 	if current_wave % 5 == 0:
 		print("Wave %d: Boss incoming!" % current_wave)
 		_spawn_boss()
 	else:
 		var enemy_count = int(round(base_enemy_count * pow(1.2, current_wave - 1)))
 		print("Wave %d: Spawning %d enemies" % [current_wave, enemy_count])
-		_spawn_wave(enemy_count)
+		await _spawn_wave(enemy_count)
 
 
 func _spawn_boss() -> void:
@@ -120,7 +83,6 @@ func _spawn_mob(path: PathFollow2D):
 func _on_enemy_died(mob: Node):
 	alive_enemies -= 1
 	kill_count += 1
-	player_points += 1
 	
 	if kill_count % kills_for_medkit == 0:
 		spawn_medkit(mob.global_position)
@@ -143,29 +105,4 @@ func _on_boss_died():
 		$BossMusic.stop()
 	$Music.play()
 
-
-func _on_WaveTimer_timeout() -> void:
-	print("WaveTimer timeout triggered! Time left:", wave_timer.time_left)
-	print("Wave ended! Enemies killer: %d" % kill_count)
-	show_upgrade_menu()
-
-
-func show_upgrade_menu() -> void:
-	get_tree().paused = true
-	upgrade_menu.show()
-
-
-func _on_upgrade_selected(upgrade_name: String) -> void:
-	match upgrade_name:
-		"health":
-			$Brotat.max_health += 20
-			player_points -= 5
-		"damage":
-			$Brotat.damage += 4
-			player_points -= 8
-		"movement speed":
-			$Brotat.speed += 50
-			player_points -= 5
-	upgrade_menu.hide()
-	get_tree().paused = false
-	start_next_wave()
+	

@@ -1,15 +1,12 @@
 extends CanvasLayer
 
-# Player node
 @onready var player = get_node("/root/Control/MakeYourPlayer")
 
-# Shop state
 var currItem: int = 0
 
 func _ready() -> void:
 	switch_item(currItem)
 
-# Switch displayed item in the shop
 func switch_item(index: int) -> void:
 	currItem = index % Global.items.size()
 	var item_data = Global.items[currItem]
@@ -28,28 +25,22 @@ func _on_buy_pressed() -> void:
 	var item_data = Global.items[currItem]
 	var cost = item_data.get("Cost", 0)
 
-	# Initialize inventory array if it doesn't exist
 	if not Global.has("inventory"):
 		Global.inventory = []
 
-	# Check if item already bought
 	for inv_item in Global.inventory:
 		if inv_item["Name"] == item_data["Name"]:
 			print("Item already bought!")
 			return
 
-	# Check coins
 	if Global.coins < cost:
 		print("Not enough coins!")
 		return
 
-	# Subtract coins
 	Global.spend_coins(cost)
 
-	# Add item to inventory
 	Global.inventory.append(item_data.duplicate())
 
-	# Instance the item's scene and add to the player
 	if item_data.has("ScenePath"):
 		var item_scene = load(item_data["ScenePath"])
 		if item_scene:

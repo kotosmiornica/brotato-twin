@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=3 uid="uid://cqcwtk4w1gpdv"]
+[gd_scene load_steps=147 format=3 uid="uid://cqcwtk4w1gpdv"]
 
 [ext_resource type="Script" uid="uid://d1wrmtooq2n67" path="res://scripts/menu.gd" id="1_jmdev"]
 [ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="1_o0tnf"]
@@ -19,12 +19,15 @@
 [ext_resource type="AudioStream" uid="uid://v4y5xtej0idp" path="res://SOUNDS/sounds/coin-and-money-bag-1-185262.mp3" id="10_i7htd"]
 [ext_resource type="AudioStream" uid="uid://bnda3v2s6m0k3" path="res://SOUNDS/sounds/menuclick.wav" id="11_rtd1e"]
 [ext_resource type="AudioStream" uid="uid://byna2qakpej8u" path="res://SOUNDS/sounds/popping-bubbles-406647.mp3" id="14_6c8sk"]
+[ext_resource type="StyleBox" uid="uid://8xyrm3wauh3k" path="res://scenes/menupress.tres" id="14_uwbky"]
+[ext_resource type="StyleBox" uid="uid://cp4kb2w7q3l6k" path="res://scenes/menuhoverrr.tres" id="15_r54wa"]
 [ext_resource type="Texture2D" uid="uid://bkcljvg88hmay" path="res://images/sheets/UndHeartSheet.png" id="15_rtd1e"]
 [ext_resource type="Script" uid="uid://bbnfxam3713v5" path="res://scripts/WardrobeButton.gd" id="16_i7htd"]
 [ext_resource type="Script" uid="uid://cqleq4oyen4mn" path="res://scripts/EatingPet.gd" id="18_5p0sf"]
 [ext_resource type="Script" uid="uid://4pnebljmh7ua" path="res://scripts/unlock_level.gd" id="18_dek3k"]
 [ext_resource type="StyleBox" uid="uid://b1upj8scnx13" path="res://scenes/disabledpink.tres" id="19_760fv"]
 [ext_resource type="Script" uid="uid://hvak8g7kn2xr" path="res://scripts/settings.gd" id="23_8fhjo"]
+[ext_resource type="Texture2D" uid="uid://bjiaqbuwy0wx1" path="res://images/settingsimage.png" id="23_yvxia"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6c8sk"]
 atlas = ExtResource("4_rtd1e")
@@ -798,162 +801,6 @@ corner_detail = 20
 shadow_color = Color(0, 0, 0, 0.682353)
 shadow_offset = Vector2(10, 10)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dek3k"]
-bg_color = Color(0.914398, 0.454448, 5.77569e-07, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(1, 0.759345, 0.291028, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-corner_detail = 10
-expand_margin_left = 10.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 18
-shadow_offset = Vector2(2, 10)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pp5m5"]
-content_margin_left = 25.0
-content_margin_right = 20.0
-bg_color = Color(0.723401, 0.354722, 1.92523e-07, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.792444, 0.570892, 9.62615e-07, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-corner_detail = 10
-expand_margin_left = 10.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 4
-shadow_offset = Vector2(2, 10)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4umqm"]
-content_margin_left = 25.0
-content_margin_right = 20.0
-bg_color = Color(1, 0.54131, 0.194125, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(1, 0.770593, 0.330888, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-corner_detail = 10
-expand_margin_left = 10.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 15
-shadow_offset = Vector2(2, 10)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtd1e"]
-content_margin_left = 2.0
-content_margin_top = 4.0
-content_margin_right = 2.0
-content_margin_bottom = 4.0
-bg_color = Color(0.770226, 0.378682, 9.62615e-07, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(1, 0.759345, 0.291028, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-corner_detail = 10
-expand_margin_left = 10.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 9
-shadow_offset = Vector2(2, 10)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ycwl"]
-content_margin_left = 2.0
-content_margin_top = 4.0
-content_margin_right = 2.0
-content_margin_bottom = 4.0
-bg_color = Color(0.98834, 0.493307, 1.73271e-06, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(1, 0.759345, 0.291028, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-corner_detail = 10
-expand_margin_left = 10.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 15
-shadow_offset = Vector2(2, 10)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2af52"]
-content_margin_left = 25.0
-content_margin_right = 20.0
-bg_color = Color(0.723401, 0.354722, 1.92523e-07, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.792444, 0.570892, 9.62615e-07, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-corner_detail = 10
-expand_margin_left = 10.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 4
-shadow_offset = Vector2(2, 10)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thu7x"]
-content_margin_left = 25.0
-content_margin_right = 20.0
-bg_color = Color(1, 0.54131, 0.194125, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(1, 0.770593, 0.330888, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-corner_detail = 10
-expand_margin_left = 10.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 15
-shadow_offset = Vector2(2, 10)
-
 [sub_resource type="Animation" id="Animation_6c8sk"]
 resource_name = "Fade"
 tracks/0/type = "value"
@@ -991,16 +838,16 @@ _data = {
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yt8fu"]
-bg_color = Color(1, 0.56078434, 0.45490196, 1)
-border_width_left = 5
+bg_color = Color(0.88831145, 0.53119427, 1, 1)
+border_width_left = 8
 border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(1, 0.81132144, 0.7636301, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.8939078, 0.2377046, 0.99999994, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 corner_detail = 10
 expand_margin_left = 10.0
 expand_margin_top = 2.0
@@ -1010,35 +857,15 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_size = 18
 shadow_offset = Vector2(2, 10)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fhjo"]
-bg_color = Color(0.914398, 0.454448, 5.77569e-07, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(1, 0.759345, 0.291028, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-corner_detail = 10
-expand_margin_left = 10.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-shadow_color = Color(0, 0, 0, 1)
-shadow_size = 12
-shadow_offset = Vector2(2, 10)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_760fv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m74h7"]
 content_margin_left = 25.0
 content_margin_right = 20.0
-bg_color = Color(1, 0.54131, 0.194125, 1)
+bg_color = Color(1, 0.41106445, 0.5207558, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color(1, 0.770593, 0.330888, 1)
+border_color = Color(0.99999994, 0.24848044, 0.53861535, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -1049,20 +876,110 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 shadow_color = Color(0, 0, 0, 1)
-shadow_size = 9
+shadow_size = 4
+shadow_offset = Vector2(2, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gut0v"]
+content_margin_left = 25.0
+content_margin_right = 20.0
+bg_color = Color(0.9120606, 0.643254, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.9229453, 0.47495234, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+expand_margin_left = 10.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 15
+shadow_offset = Vector2(2, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r54wa"]
+content_margin_left = 2.0
+content_margin_top = 4.0
+content_margin_right = 2.0
+content_margin_bottom = 4.0
+bg_color = Color(0.88608027, 0.449526, 0.81815034, 1)
+border_width_left = 8
+border_width_top = 5
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.81780624, 0.1930348, 1, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+corner_detail = 10
+expand_margin_left = 10.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 18
+shadow_offset = Vector2(2, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uds2g"]
+content_margin_left = 25.0
+content_margin_right = 20.0
+bg_color = Color(0.7543668, 0.23953617, 0.6901471, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.65268236, 0.0015114981, 0.81227005, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+corner_detail = 10
+expand_margin_left = 10.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_offset = Vector2(2, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvsdq"]
+content_margin_left = 25.0
+content_margin_right = 20.0
+bg_color = Color(0.902923, 0.52401525, 0.84040207, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.81617117, 0.1966213, 0.9999992, 1)
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+corner_detail = 10
+expand_margin_left = 10.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 15
 shadow_offset = Vector2(2, 10)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rehui"]
 bg_color = Color(0.9607843, 0.07058824, 0, 1)
-border_width_left = 5
+border_width_left = 8
 border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+border_width_right = 8
+border_width_bottom = 8
 border_color = Color(0.5846233, 0.12707275, 9.62615e-08, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 corner_detail = 10
 expand_margin_left = 10.0
 expand_margin_top = 2.0
@@ -1224,9 +1141,9 @@ color = Color(0.31319007, 0.12925631, 0.5768775, 0.9137255)
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 0
 offset_left = 19.0
-offset_top = 132.0
+offset_top = 186.0
 offset_right = 202.0
-offset_bottom = 194.0
+offset_bottom = 248.0
 theme_override_colors/font_color = Color(0.69426936, 1, 0.6830813, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 61
@@ -1236,22 +1153,23 @@ text = "Coins:"
 anchors_preset = 0
 
 [node name="GameName" type="Label" parent="ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -651.0
+offset_left = -946.0
 offset_top = -523.0
-offset_right = 562.0
+offset_right = 267.0
 offset_bottom = -397.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
-theme_override_font_sizes/font_size = 110
-text = "DESTROY THE BLOBS!!!"
+theme_override_font_sizes/font_size = 100
+text = "Pixie Kitty! >w<"
 
 [node name="CoinsLabel" type="Label" parent="ColorRect"]
 unique_name_in_owner = true
@@ -1262,9 +1180,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -944.0
-offset_top = -347.0
-offset_right = -742.0
-offset_bottom = -251.0
+offset_top = -293.0
+offset_right = -726.0
+offset_bottom = -197.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.54901963, 1, 0.4627451, 1)
@@ -1302,10 +1220,10 @@ space/rmb - dash"
 
 [node name="FoodCounterLabel" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 296.0
-offset_right = 184.0
-offset_bottom = 791.0
+offset_left = 21.0
+offset_top = 350.0
+offset_right = 232.0
+offset_bottom = 845.0
 theme_override_colors/font_color = Color(1, 0.7882353, 1, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 40
@@ -1317,19 +1235,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 435.0
-offset_top = -370.0
-offset_right = 924.0
-offset_bottom = -200.0
+offset_left = 444.0
+offset_top = -283.0
+offset_right = 889.0
+offset_bottom = -135.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 0.7727881, 0.91755927, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
-theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxFlat_dek3k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_pp5m5")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4umqm")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = ExtResource("7_el213")
+theme_override_styles/pressed = ExtResource("14_uwbky")
+theme_override_styles/hover = ExtResource("15_r54wa")
 text = "Fight!(endless)"
 autowrap_mode = 3
 script = ExtResource("2_5yleq")
@@ -1340,16 +1258,17 @@ bus = &"Sfx"
 
 [node name="ShopButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1610.0
-offset_top = 18.0
-offset_right = 1895.0
-offset_bottom = 110.0
+offset_left = 39.0
+offset_top = 36.0
+offset_right = 345.0
+offset_bottom = 128.0
 focus_mode = 0
+theme_override_colors/font_color = Color(1, 0.7727881, 0.91755927, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = ExtResource("7_el213")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_rtd1e")
-theme_override_styles/hover = SubResource("StyleBoxFlat_7ycwl")
+theme_override_styles/pressed = ExtResource("14_uwbky")
+theme_override_styles/hover = ExtResource("15_r54wa")
 text = "Shop :3"
 script = ExtResource("6_4umqm")
 
@@ -1380,18 +1299,18 @@ bus = &"Sfx"
 
 [node name="FishButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1201.0
-offset_top = 429.0
-offset_right = 1891.0
-offset_bottom = 514.0
+offset_left = 1402.0
+offset_top = 446.0
+offset_right = 1850.0
+offset_bottom = 575.0
 focus_mode = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 0.7727881, 0.91755927, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
-theme_override_font_sizes/font_size = 65
+theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = ExtResource("7_el213")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2af52")
-theme_override_styles/hover = SubResource("StyleBoxFlat_thu7x")
-text = "FISHIN >:3 (demo)
+theme_override_styles/pressed = ExtResource("14_uwbky")
+theme_override_styles/hover = ExtResource("15_r54wa")
+text = "Go fishing!
 "
 autowrap_mode = 3
 script = ExtResource("6_yt8fu")
@@ -1427,10 +1346,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 563.0
-offset_top = 135.0
-offset_right = 938.0
-offset_bottom = 225.0
+offset_left = -111.0
+offset_top = 408.0
+offset_right = 261.0
+offset_bottom = 502.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
@@ -1438,8 +1357,8 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_yt8fu")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_pp5m5")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4umqm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m74h7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gut0v")
 theme_override_styles/disabled = ExtResource("19_760fv")
 text = "Unlock level 3!
 Cost: 280 Coins"
@@ -1465,10 +1384,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 564.0
-offset_top = 10.0
-offset_right = 933.0
-offset_bottom = 100.0
+offset_left = 322.0
+offset_top = 407.0
+offset_right = 691.0
+offset_bottom = 502.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
@@ -1476,8 +1395,8 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_yt8fu")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_pp5m5")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4umqm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m74h7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gut0v")
 theme_override_styles/disabled = ExtResource("19_760fv")
 text = "Unlock level 2!
 Cost: 155 Coins"
@@ -1503,23 +1422,34 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 698.0
-offset_top = 442.0
-offset_right = 926.0
-offset_bottom = 498.0
+offset_left = 929.0
+offset_top = 293.99994
+offset_right = 1135.0
+offset_bottom = 493.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.75438267, 0.75438267)
 pivot_offset = Vector2(-672, 231)
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_8fhjo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_pp5m5")
-theme_override_styles/hover = SubResource("StyleBoxFlat_760fv")
-text = "Settings"
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxFlat_r54wa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uds2g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jvsdq")
 autowrap_mode = 3
 script = ExtResource("23_8fhjo")
+
+[node name="TextureRect" type="TextureRect" parent="Settings"]
+modulate = Color(0.7529412, 0, 1, 1)
+layout_mode = 0
+offset_left = 15.000008
+offset_top = 20.000004
+offset_right = 55.000008
+offset_bottom = 60.0
+scale = Vector2(4.152408, 4.152408)
+texture = ExtResource("23_yvxia")
+expand_mode = 1
 
 [node name="click" type="AudioStreamPlayer" parent="Settings"]
 stream = ExtResource("11_rtd1e")
@@ -1532,10 +1462,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 21.0
-offset_top = -379.0
-offset_right = 357.0
-offset_bottom = -191.0
+offset_left = 527.0
+offset_top = -506.0
+offset_right = 905.0
+offset_bottom = -349.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
@@ -1546,8 +1476,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_rehui")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_uwbky")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yvxia")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_nxcfj")
-text = "UNLOCK NON AUTOMATIC GUN
--400coins-"
+text = "UNLOCK NON AUTOMATIC GUN!
+<400coins>"
 autowrap_mode = 3
 
 [node name="click" type="AudioStreamPlayer" parent="UnlockExtraGun"]
@@ -1568,14 +1498,44 @@ autoplay = true
 bus = &"Music"
 
 [node name="EatingPet" type="Sprite2D" parent="."]
-position = Vector2(1126, 925)
-scale = Vector2(2.0512311, 1.9623342)
+modulate = Color(0.81075084, 0.9999998, 0.99649805, 1)
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(1799.0001, 811)
+scale = Vector2(2.4631162, 2.6061652)
 texture = ExtResource("3_yt8fu")
 script = ExtResource("18_5p0sf")
 
 [node name="FlyingFoodsContainer" type="Node2D" parent="."]
 
 [node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_rtd1e")
+bus = &"Sfx"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 444.0
+offset_top = -283.0
+offset_right = 889.0
+offset_bottom = -135.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 0.7727881, 0.91755927, 1)
+theme_override_fonts/font = ExtResource("1_o0tnf")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = ExtResource("7_el213")
+theme_override_styles/pressed = ExtResource("14_uwbky")
+theme_override_styles/hover = ExtResource("15_r54wa")
+text = "Fight!(endless)"
+autowrap_mode = 3
+script = ExtResource("2_5yleq")
+
+[node name="click" type="AudioStreamPlayer" parent="Button2"]
 stream = ExtResource("11_rtd1e")
 bus = &"Sfx"
 

@@ -13,9 +13,10 @@ radius = 8.400494
 height = 23.071165
 
 [node name="mob" type="CharacterBody2D"]
-modulate = Color(3.657937e-06, 0.9796271, 0.5142679, 1)
-self_modulate = Color(1, 0, 0, 1)
+modulate = Color(0, 1, 1, 1)
 top_level = true
+z_index = 20
+y_sort_enabled = true
 collision_layer = 2
 collision_mask = 7
 platform_floor_layers = 0
@@ -23,10 +24,9 @@ script = ExtResource("1_bsing")
 
 [node name="Slime" parent="." instance=ExtResource("1_4are2")]
 unique_name_in_owner = true
-modulate = Color(3.657937e-06, 0.9796271, 0.5142679, 1)
-self_modulate = Color(1, 0, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_bsing")
 
@@ -34,9 +34,10 @@ shape = SubResource("CircleShape2D_bsing")
 script = ExtResource("3_d4cuo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+visible = false
 position = Vector2(1.4901158e-08, -8)
 rotation = 1.6126145
-scale = Vector2(2.860329, 2.860329)
+scale = Vector2(4.25023, 4.25023)
 shape = SubResource("CapsuleShape2D_d4cuo")
 
 [node name="slimehurt" type="AudioStreamPlayer" parent="."]

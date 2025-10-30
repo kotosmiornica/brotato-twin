@@ -4,7 +4,7 @@ extends Area2D
 @export var orbit_radius: float = 25
 @export var orbit_speed: float = 70
 @export var damage: int = 2
-
+@export var damage_multiplier: float = 0.5
 
 var orbit_angle: float = 0
 var angle_offset: float = 0
@@ -25,5 +25,5 @@ func _physics_process(delta):
 	rotation += deg_to_rad(spin_speed) * delta
 
 func _on_body_entered(body):
-	if body.has_method("take_damage"):
-		body.take_damage(1.7)
+	if body.has_method("take_damage") and player:
+		body.take_damage(player.damage * damage_multiplier)

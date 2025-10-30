@@ -7,10 +7,12 @@
 radius = 42.0119
 
 [node name="XPpickups" type="Area2D"]
+z_index = 15
+y_sort_enabled = true
 script = ExtResource("1_ypdhd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visibility_layer = 2
+visibility_layer = 3
 position = Vector2(-2.38419e-07, 2.38419e-07)
 scale = Vector2(2.0875287, 1.9637743)
 texture = ExtResource("2_ypdhd")
