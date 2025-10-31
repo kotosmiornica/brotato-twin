@@ -3,8 +3,8 @@ extends Node2D
 @export var base_enemy_count: int = 10
 @export var kills_for_medkit: int = 20
 @export var wave_duration: float = 20.0
-@onready var score_label: Label = $Brotat/PointsLabel
-@onready var timer_label: Label = $Brotat/TimerLabel
+@onready var score_label: Label = $Background/PointsLabel
+@onready var timer_label: Label = $Background/TimerLabel
 
 const MobScene = preload("res://scenes/mob.tscn")
 const BossScene = preload("res://scenes/Boss1.tscn")
@@ -21,7 +21,6 @@ var player_score:int = kill_count * 50
 func _ready() -> void:
 	get_tree().paused = false
 	start_next_wave()
-
 
 
 
