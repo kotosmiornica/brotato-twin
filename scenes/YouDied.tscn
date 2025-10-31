@@ -1,13 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0ivg4reyd48l"]
+[gd_scene load_steps=9 format=3 uid="uid://b0ivg4reyd48l"]
 
 [ext_resource type="Script" uid="uid://b1jflxxxyw67b" path="res://scripts/YouDied.gd" id="1_3akcy"]
 [ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="1_txxux"]
 [ext_resource type="StyleBox" uid="uid://bf5lod7pf26wg" path="res://scenes/fonts/orange.tres" id="3_fi02i"]
 [ext_resource type="StyleBox" uid="uid://8xyrm3wauh3k" path="res://scenes/menupress.tres" id="4_8keu4"]
 [ext_resource type="StyleBox" uid="uid://cp4kb2w7q3l6k" path="res://scenes/menuhoverrr.tres" id="5_j8nn3"]
+[ext_resource type="AudioStream" uid="uid://b6ionpskgprpw" path="res://SOUNDS/music/dark-ambient-music-354475.mp3" id="6_8keu4"]
+[ext_resource type="AudioStream" uid="uid://bnda3v2s6m0k3" path="res://SOUNDS/sounds/menuclick.wav" id="6_j8nn3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fi02i"]
-bg_color = Color(0.4378288, 0, 0.09600688, 1)
+bg_color = Color(0.45977718, 0, 0.19735622, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.7714383, 0, 0.33835897, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.91764706)
+shadow_size = 16
+shadow_offset = Vector2(0, 5)
 
 [node name="YouDied" type="Control"]
 layout_mode = 3
@@ -23,6 +37,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = 24.0
+offset_right = -19.0
+offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fi02i")
@@ -32,14 +50,19 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -420.5
-offset_top = 40.0
-offset_right = 420.5
-offset_bottom = 176.0
+offset_left = -463.0
+offset_top = 61.0
+offset_right = 463.0
+offset_bottom = 241.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.88877124, 0, 0.24145472, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.61960787)
+theme_override_colors/font_outline_color = Color(0.32044965, 1.6544945e-07, 9.62615e-08, 1)
+theme_override_constants/shadow_offset_x = 16
+theme_override_constants/shadow_offset_y = -10
+theme_override_constants/outline_size = 19
 theme_override_fonts/font = ExtResource("1_txxux")
-theme_override_font_sizes/font_size = 155
+theme_override_font_sizes/font_size = 180
 text = "You died!"
 horizontal_alignment = 1
 
@@ -51,13 +74,19 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -391.0
-offset_top = 92.0
+offset_top = 28.0
 offset_right = 391.0
-offset_bottom = 228.0
+offset_bottom = 164.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.7176471, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.7254902, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0.6784314, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = -8
+theme_override_constants/outline_size = 9
 theme_override_fonts/font = ExtResource("1_txxux")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 105
 text = "Score: "
 horizontal_alignment = 1
 
@@ -66,13 +95,19 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -541.5
+offset_left = -541.0
 offset_top = 398.0
-offset_right = 541.5
+offset_right = 542.0
 offset_bottom = 534.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.7176471, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.7254902, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0.6784314, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = -8
+theme_override_constants/outline_size = 9
 theme_override_fonts/font = ExtResource("1_txxux")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 105
 text = "Waves cleared:"
 horizontal_alignment = 1
 
@@ -83,10 +118,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -411.0
-offset_top = -237.0
-offset_right = 411.0
-offset_bottom = -99.0
+offset_left = 73.0
+offset_top = -236.0
+offset_right = 771.0
+offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 0
 focus_mode = 0
@@ -98,4 +133,39 @@ theme_override_styles/hover = ExtResource("5_j8nn3")
 text = "Main Menu"
 autowrap_mode = 3
 
+[node name="click" type="AudioStreamPlayer" parent="MainMenuButton"]
+stream = ExtResource("6_j8nn3")
+bus = &"Sfx"
+
+[node name="Retry" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -764.0
+offset_top = -236.0
+offset_right = -66.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_txxux")
+theme_override_font_sizes/font_size = 115
+theme_override_styles/normal = ExtResource("3_fi02i")
+theme_override_styles/pressed = ExtResource("4_8keu4")
+theme_override_styles/hover = ExtResource("5_j8nn3")
+text = "Retry...?"
+autowrap_mode = 3
+
+[node name="click" type="AudioStreamPlayer" parent="Retry"]
+stream = ExtResource("6_j8nn3")
+bus = &"Sfx"
+
+[node name="SadAmbient" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_8keu4")
+bus = &"Music"
+
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]

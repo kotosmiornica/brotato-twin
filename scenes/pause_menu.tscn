@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwyddtn83ubaj"]
+[gd_scene load_steps=11 format=3 uid="uid://cwyddtn83ubaj"]
 
 [ext_resource type="Script" uid="uid://bjsl6ysnftgno" path="res://scripts/pause_menu.gd" id="1_myx47"]
 [ext_resource type="Shader" uid="uid://b2w8n2w26ciqr" path="res://scenes/pause_menu.gdshader" id="1_n87rw"]
+[ext_resource type="StyleBox" uid="uid://bf5lod7pf26wg" path="res://scenes/fonts/orange.tres" id="3_5d2l8"]
 [ext_resource type="AudioStream" uid="uid://bnda3v2s6m0k3" path="res://SOUNDS/sounds/menuclick.wav" id="3_kukqi"]
+[ext_resource type="StyleBox" uid="uid://8xyrm3wauh3k" path="res://scenes/menupress.tres" id="4_v4r4p"]
+[ext_resource type="StyleBox" uid="uid://cp4kb2w7q3l6k" path="res://scenes/menuhoverrr.tres" id="5_1s2dm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uahpa"]
 shader = ExtResource("1_n87rw")
@@ -84,10 +87,11 @@ script = ExtResource("1_myx47")
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 process_mode = 3
 material = SubResource("ShaderMaterial_uahpa")
-offset_left = 7.0
-offset_top = 28.0
-offset_right = 1949.0
-offset_bottom = 1123.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/ColorRect"]
 modulate = Color(1, 1, 1, 0)
@@ -95,14 +99,19 @@ layout_mode = 0
 offset_left = 549.0
 offset_top = 430.0
 offset_right = 1343.8306
-offset_bottom = 588.0
+offset_bottom = 669.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect/PanelContainer"]
 layout_mode = 2
+alignment = 1
 
 [node name="Resume" type="Button" parent="CanvasLayer/ColorRect/PanelContainer/VBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("3_5d2l8")
+theme_override_styles/pressed = ExtResource("4_v4r4p")
+theme_override_styles/hover = ExtResource("5_1s2dm")
 text = "Resume"
 
 [node name="click" type="AudioStreamPlayer" parent="CanvasLayer/ColorRect/PanelContainer/VBoxContainer/Resume"]
@@ -111,10 +120,27 @@ bus = &"Sfx"
 
 [node name="Restart" type="Button" parent="CanvasLayer/ColorRect/PanelContainer/VBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("3_5d2l8")
+theme_override_styles/pressed = ExtResource("4_v4r4p")
+theme_override_styles/hover = ExtResource("5_1s2dm")
 text = "Restart :("
 
 [node name="click" type="AudioStreamPlayer" parent="CanvasLayer/ColorRect/PanelContainer/VBoxContainer/Restart"]
+stream = ExtResource("3_kukqi")
+bus = &"Sfx"
+
+[node name="MainMenu" type="Button" parent="CanvasLayer/ColorRect/PanelContainer/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("3_5d2l8")
+theme_override_styles/pressed = ExtResource("4_v4r4p")
+theme_override_styles/hover = ExtResource("5_1s2dm")
+text = "Main Menu"
+
+[node name="click" type="AudioStreamPlayer" parent="CanvasLayer/ColorRect/PanelContainer/VBoxContainer/MainMenu"]
 stream = ExtResource("3_kukqi")
 bus = &"Sfx"
 
@@ -125,3 +151,4 @@ libraries = {
 
 [connection signal="pressed" from="CanvasLayer/ColorRect/PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/ColorRect/PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/PanelContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]

@@ -93,3 +93,10 @@ func _on_settings_pressed() -> void:
 func _on_AnimationPlayer_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "blur":
 		apply_mouse_filter_recursive($PauseMenu, Control.MOUSE_FILTER_STOP)
+
+
+func _on_main_menu_pressed() -> void:
+	get_tree().paused = false
+	$CanvasLayer/ColorRect/PanelContainer/VBoxContainer/MainMenu/click.play()
+	Global.reset_run_data()
+	get_tree().change_scene_to_file("res://scenes/Menu.tscn")
