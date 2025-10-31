@@ -2,6 +2,7 @@ extends Node2D
 
 @export var base_enemy_count: int = 10
 @export var kills_for_medkit: int = 20
+@onready var score_label: Label = $Brotat/PointsLabel
 
 const MobScene = preload("res://scenes/mob.tscn")
 const BossScene = preload("res://scenes/Boss1.tscn")
@@ -10,6 +11,8 @@ var boss_alive: bool = false
 var current_wave: int = 0
 var alive_enemies: int = 0
 var kill_count: int = 0
+var player_score:int = kill_count * 50
+
 
 func _ready() -> void:
 	get_tree().paused = false
@@ -77,12 +80,17 @@ func _on_enemy_died(mob: Node):
 	alive_enemies -= 1
 	kill_count += 1
 	Global.score = kill_count
+	update_score_display()
 
 	if kill_count % kills_for_medkit == 0:
 		spawn_medkit(mob.global_position)
 	if $BossMusic.playing:
 		$BossMusic.stop()
 		$Music.play()
+
+func update_score_display():
+	player_score = kill_count * 50
+	score_label.text = "Score: %d" % player_score
 
 func spawn_medkit(pos: Vector2):
 	var medkit = preload("res://scenes/MedKit.tscn").instantiate()
@@ -96,3 +104,6 @@ func _on_boss_died():
 	if $BossMusic.playing:
 		$BossMusic.stop()
 	$Music.play()
+
+	
+	

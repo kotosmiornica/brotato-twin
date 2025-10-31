@@ -1,8 +1,9 @@
 extends Control
 
+var player_score = Global.score * 50
 
 func _ready() -> void:
-	$text_score.text = "Score: %d" % Global.score
+	$text_score.text = "Score: %d" % player_score
 	$text_waves.text = "Waves Survived: %d" % Global.waves_survived
 	$SadAmbient.play()
 
