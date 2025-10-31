@@ -93,10 +93,11 @@ bus = &"popup"
 
 [node name="des2" type="Label" parent="CanvasLayer/Panel/damage"]
 layout_mode = 0
-offset_left = -10.7873955
-offset_top = 441.63602
-offset_right = 450.98605
-offset_bottom = 612.4328
+offset_left = -16.079668
+offset_top = 448.4832
+offset_right = 464.38583
+offset_bottom = 619.2799
+scale = Vector2(1.0418998, 0.9498274)
 theme_override_colors/font_color = Color(1, 0.7110669, 0.6969494, 1)
 theme_override_fonts/font = ExtResource("6_w23jj")
 theme_override_font_sizes/font_size = 64
@@ -136,10 +137,11 @@ bus = &"popup"
 
 [node name="des3" type="Label" parent="CanvasLayer/Panel/movementspeed"]
 layout_mode = 0
-offset_left = -30.819572
-offset_top = 453.54892
-offset_right = 471.74805
-offset_bottom = 619.0083
+offset_left = -33.499477
+offset_top = 455.83136
+offset_right = 469.06815
+offset_bottom = 621.2908
+scale = Vector2(1.1273489, 0.949215)
 theme_override_colors/font_color = Color(1, 0.7110669, 0.6969494, 1)
 theme_override_fonts/font = ExtResource("6_w23jj")
 theme_override_font_sizes/font_size = 64
@@ -178,10 +180,11 @@ bus = &"popup"
 
 [node name="des2" type="Label" parent="CanvasLayer/Panel/health"]
 layout_mode = 0
-offset_left = -11.986048
-offset_top = 445.21704
-offset_right = 463.08475
-offset_bottom = 616.70807
+offset_left = -30.8194
+offset_top = 447.34192
+offset_right = 444.2514
+offset_bottom = 618.8329
+scale = Vector2(1.063372, 0.9498274)
 theme_override_colors/font_color = Color(1, 0.7110669, 0.6969494, 1)
 theme_override_fonts/font = ExtResource("6_w23jj")
 theme_override_font_sizes/font_size = 64

@@ -30,21 +30,15 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 func _on_button_pressed() -> void:
 	get_tree().reload_current_scene()
 
-# ------------------------
-# Wave System
-
-
 func start_next_wave() -> void:
 	current_wave += 1
+	Global.waves_survived = current_wave - 1
 
 	if current_wave % 5 == 0:
-		print("Wave %d: Boss incoming!" % current_wave)
 		_spawn_boss()
 	else:
 		var enemy_count = int(round(base_enemy_count * pow(1.2, current_wave - 1)))
-		print("Wave %d: Spawning %d enemies" % [current_wave, enemy_count])
 		await _spawn_wave(enemy_count)
-
 
 func _spawn_boss() -> void:
 	var boss = BossScene.instantiate()
@@ -58,7 +52,6 @@ func _spawn_boss() -> void:
 	$BossMusic.play()
 
 	boss.connect("died", Callable(self, "_on_boss_died"))
-
 
 func _spawn_wave(enemy_count: int):
 	var half = enemy_count / 2
@@ -83,7 +76,8 @@ func _spawn_mob(path: PathFollow2D):
 func _on_enemy_died(mob: Node):
 	alive_enemies -= 1
 	kill_count += 1
-	
+	Global.score = kill_count
+
 	if kill_count % kills_for_medkit == 0:
 		spawn_medkit(mob.global_position)
 	if $BossMusic.playing:
@@ -95,8 +89,6 @@ func spawn_medkit(pos: Vector2):
 	medkit.global_position = pos
 	call_deferred("add_child", medkit)
 	
-	
-
 func _on_boss_died():
 	alive_enemies -= 1
 	boss_alive = false
@@ -104,5 +96,3 @@ func _on_boss_died():
 	if $BossMusic.playing:
 		$BossMusic.stop()
 	$Music.play()
-
-	

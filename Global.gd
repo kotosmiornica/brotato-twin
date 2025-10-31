@@ -9,10 +9,15 @@ var owned_items = []
 var food_counts := {}
 var equipped_hair: String = ""
 var equipped_accessory: String = ""
+var score: int = 0
+var waves_survived: int = 0
 
 var unlocked_fishing_levels := 1
 var bleach_level: int = 1
 var active_buffs = {}
+
+
+
 
 var items = [
 	{
@@ -34,6 +39,11 @@ var items = [
 		"Currency": "BlackMonster"
 	}
 ]
+
+
+func reset_run_data():
+	score = 0
+	waves_survived = 0
 
 
 func add_coins(amount):

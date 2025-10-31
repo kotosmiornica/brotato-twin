@@ -400,16 +400,12 @@ func take_damage(amount: float) -> void:
 	if health <= 0:
 		health = 0
 		emit_signal("health_depleted")
-		get_tree().change_scene_to_file("res://scenes/Menu.tscn")
 		die()
-		
 
 
-	if health <= 0:
-		health = 0
-		emit_signal("health_depleted")
-		die()
+
 
 func die() -> void:
 	print("Player died")
+	get_tree().change_scene_to_file("res://scenes/YouDied.tscn")
 	queue_free()

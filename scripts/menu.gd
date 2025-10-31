@@ -26,10 +26,14 @@ func authenticate():
 		printerr("Guest login failed with reason: " + guestLoginResponse.error_data.to_string())
 		return
 	print("Guest user was successfully signed in to LootLocker")
-	var score_list: LL_Leaderboards._LL_GetScoreListResponse = await LL_Leaderboards.GetScoreList.new("main").send()
-	for entry in score_list.items:
-		print(entry.member_id, entry.player, entry.rank, entry.score)
-	score_list.items.get(0)
+	var score_list_response: LL_Leaderboards._LL_GetScoreListResponse = await LL_Leaderboards.GetScoreList.new("main").send()
+	if(!score_list_response.success):
+		printerr("Failed to get score list response: " + score_list_response.error_data.to_string())
+	else:
+		pass
+	#for entry in score_list.items:
+	#	print(entry.member_id, entry.player, entry.rank, entry.score)
+	#score_list.items.get(0)
 
 func _ready():
 	authenticate()

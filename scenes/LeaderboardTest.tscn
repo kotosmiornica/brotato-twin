@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://djprrgdvplv2p"]
+
+[ext_resource type="Script" uid="uid://b82syicfo45nh" path="res://scenes/leaderboard_test.gd" id="1_6jav6"]
+[ext_resource type="FontFile" uid="uid://b8ok8fndx02wu" path="res://Pansy Hand/pansyhand.ttf" id="1_qhqi0"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6jav6")
+
+[node name="SubmitBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 848.0
+offset_top = 604.0
+offset_right = 1048.0
+offset_bottom = 692.0
+theme_override_fonts/font = ExtResource("1_qhqi0")
+theme_override_font_sizes/font_size = 85
+text = "Submit"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 835.0
+offset_top = 267.0
+offset_right = 1053.0
+offset_bottom = 474.0
+theme_override_font_sizes/font_size = 90
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 797.0
+offset_top = 496.0
+offset_right = 1089.0
+offset_bottom = 587.0
+theme_override_fonts/font = ExtResource("1_qhqi0")
+theme_override_font_sizes/font_size = 90
+placeholder_text = "ENTER NAME"
+alignment = 1
+
+[node name="StatusLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="pressed" from="SubmitBtn" to="." method="_on_submit_btn_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
