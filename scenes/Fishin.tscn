@@ -63,6 +63,7 @@ scale = Vector2(0.20142613, 0.23636578)
 [node name="Sprite2D" type="Sprite2D" parent="FishingGame/Hook"]
 scale = Vector2(0.7769418, 0.9115693)
 texture = ExtResource("4_2kclr")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FishingGame/Hook"]
 position = Vector2(19.858398, 93.07599)

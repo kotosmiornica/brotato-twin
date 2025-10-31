@@ -24,7 +24,8 @@ corner_radius_bottom_left = 30
 corner_detail = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1iri3"]
-content_margin_left = 5.0
+content_margin_left = 15.0
+content_margin_top = 8.0
 bg_color = Color(0, 0, 0, 0.658824)
 border_width_left = 4
 border_width_top = 4
@@ -58,7 +59,8 @@ shadow_size = 2
 shadow_offset = Vector2(0, 8)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qdkmh"]
-content_margin_left = 5.0
+content_margin_left = 8.0
+content_margin_top = 2.0
 bg_color = Color(0.0117647, 0.0117647, 0.0117647, 1)
 border_width_left = 4
 border_width_top = 4
@@ -329,10 +331,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Closing" type="Button" parent="Menusettings"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.14819759
-anchor_top = -0.023603775
-anchor_right = -0.14819759
-anchor_bottom = -0.023603775
+anchor_left = -0.1635514
+anchor_top = -0.027537817
+anchor_right = -0.1435247
+anchor_bottom = 0.0027234175
 offset_left = 1559.0
 offset_top = 84.00002
 offset_right = 1652.0
@@ -342,7 +344,7 @@ theme_override_colors/font_color = Color(0.76862746, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.66560405, 8.061901e-07, 4.3317675e-07, 1)
 theme_override_colors/font_hover_color = Color(0.9682372, 0.003346892, 0.0018343591, 1)
 theme_override_fonts/font = ExtResource("2_jvxff")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 75
 theme_override_styles/normal = SubResource("StyleBoxFlat_1iri3")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_aosop")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qdkmh")

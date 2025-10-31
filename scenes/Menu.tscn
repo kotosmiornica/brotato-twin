@@ -1062,7 +1062,7 @@ resource_name = "Slide"
 
 [sub_resource type="Animation" id="Animation_r54wa"]
 resource_name = "Jump"
-length = 2.5
+length = 2.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false

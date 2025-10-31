@@ -2,11 +2,15 @@ extends Node2D
 
 @export var base_enemy_count: int = 10
 @export var kills_for_medkit: int = 20
+@export var wave_duration: float = 20.0
 @onready var score_label: Label = $Brotat/PointsLabel
+@onready var timer_label: Label = $Brotat/TimerLabel
 
 const MobScene = preload("res://scenes/mob.tscn")
 const BossScene = preload("res://scenes/Boss1.tscn")
 
+var wave_time_left: float = 0.0
+var wave_active: bool = false
 var boss_alive: bool = false
 var current_wave: int = 0
 var alive_enemies: int = 0
@@ -17,6 +21,9 @@ var player_score:int = kill_count * 50
 func _ready() -> void:
 	get_tree().paused = false
 	start_next_wave()
+
+
+
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("restart") and !$Fade/ColorRect/AnimationPlayer.is_playing():
@@ -36,6 +43,9 @@ func _on_button_pressed() -> void:
 func start_next_wave() -> void:
 	current_wave += 1
 	Global.waves_survived = current_wave - 1
+
+	wave_time_left = wave_duration
+	wave_active = true
 
 	if current_wave % 5 == 0:
 		_spawn_boss()

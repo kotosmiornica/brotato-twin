@@ -63,7 +63,7 @@ theme_override_constants/shadow_offset_y = -10
 theme_override_constants/outline_size = 19
 theme_override_fonts/font = ExtResource("1_txxux")
 theme_override_font_sizes/font_size = 180
-text = "You died!"
+text = "You died! :<"
 horizontal_alignment = 1
 
 [node name="text_score" type="Label" parent="."]
@@ -135,6 +135,7 @@ autowrap_mode = 3
 
 [node name="click" type="AudioStreamPlayer" parent="MainMenuButton"]
 stream = ExtResource("6_j8nn3")
+pitch_scale = 0.61
 bus = &"Sfx"
 
 [node name="Retry" type="Button" parent="."]
@@ -161,10 +162,12 @@ autowrap_mode = 3
 
 [node name="click" type="AudioStreamPlayer" parent="Retry"]
 stream = ExtResource("6_j8nn3")
+pitch_scale = 1.34
 bus = &"Sfx"
 
 [node name="SadAmbient" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_8keu4")
+volume_db = 8.878
 bus = &"Music"
 
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
