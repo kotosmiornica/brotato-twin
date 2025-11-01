@@ -1263,14 +1263,14 @@ autoplay = "waterr"
 
 [node name="MakeYourPlayer" parent="." instance=ExtResource("9_yt8fu")]
 unique_name_in_owner = true
-position = Vector2(643, 765)
+position = Vector2(699, 770.00006)
 scale = Vector2(0.6905899, 0.6905899)
 
 [node name="BlueWig" type="AnimatedSprite2D" parent="MakeYourPlayer"]
 visible = false
 show_behind_parent = true
 top_level = true
-position = Vector2(597.00006, 539.00006)
+position = Vector2(652.00006, 544.00006)
 scale = Vector2(4.5499563, 4.5499563)
 sprite_frames = SubResource("SpriteFrames_sm01i")
 animation = &"BlueWig"
@@ -1789,7 +1789,7 @@ scale = Vector2(11.111277, 11.111277)
 texture = ExtResource("31_m74h7")
 
 [node name="FishingHut" type="Sprite2D" parent="."]
-position = Vector2(137, 821)
+position = Vector2(166, 821)
 scale = Vector2(7.0863204, 7.0863204)
 texture = ExtResource("32_m74h7")
 

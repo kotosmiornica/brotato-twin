@@ -114,5 +114,8 @@ func _on_boss_died():
 		$BossMusic.stop()
 	$Music.play()
 
-	
-	
+
+func _show_upgrade_menu():
+	if Global.waves_survived == 1:
+		$UpgradeMenu.visible = true
+		get_tree().paused = true
