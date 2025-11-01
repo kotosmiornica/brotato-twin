@@ -5,6 +5,8 @@ extends Node2D
 @export var wave_duration: float = 20.0
 @onready var score_label: Label = $Background/PointsLabel
 @onready var timer_label: Label = $Background/TimerLabel
+@onready var boss_warning_label: Label = $Brotat/BossWarningLabel
+@onready var boss_warning_anim: AnimationPlayer = $BossWarningAnimation
 
 const MobScene = preload("res://scenes/mob.tscn")
 const BossScene = preload("res://scenes/Boss1.tscn")
@@ -16,7 +18,6 @@ var current_wave: int = 0
 var alive_enemies: int = 0
 var kill_count: int = 0
 var player_score:int = kill_count * 50
-
 
 func _ready() -> void:
 	get_tree().paused = false
@@ -53,6 +54,11 @@ func start_next_wave() -> void:
 		await _spawn_wave(enemy_count)
 
 func _spawn_boss() -> void:
+	boss_warning_label.visible = true
+	boss_warning_anim.play("boss_warning")
+	
+	await get_tree().create_timer(2.0).timeout
+	
 	var boss = BossScene.instantiate()
 	boss.global_position = Vector2(600, 300)
 	add_child(boss)

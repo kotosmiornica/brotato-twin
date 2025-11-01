@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=4 uid="uid://dsl247xnk6knu"]
+[gd_scene load_steps=124 format=4 uid="uid://dsl247xnk6knu"]
 
 [ext_resource type="Script" uid="uid://crgvxr0vdaef6" path="res://scripts/survivors_game.gd" id="1_vt6sv"]
 [ext_resource type="PackedScene" uid="uid://dpi6hxo5ndgqr" path="res://scenes/player.tscn" id="2_mrt1k"]
@@ -36,6 +36,7 @@
 [ext_resource type="FontFile" uid="uid://b8ok8fndx02wu" path="res://Pansy Hand/pansyhand.ttf" id="35_aheiu"]
 [ext_resource type="Texture2D" uid="uid://18f080mn1t8u" path="res://images/straight_tree.png" id="36_wih21"]
 [ext_resource type="Texture2D" uid="uid://dc1e0885m4mew" path="res://images/notstraight_tree.png" id="37_d0lry"]
+[ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="37_wih21"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q1qpi"]
 texture = ExtResource("2_q1qpi")
@@ -967,6 +968,47 @@ normal = Vector2(1, 0)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5fga3"]
 normal = Vector2(-1, 0)
 
+[sub_resource type="Animation" id="Animation_d0lry"]
+resource_name = "boss_Warning"
+
+[sub_resource type="Animation" id="Animation_dymio"]
+resource_name = "boss_warning"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Brotat/BossWarningLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6807392),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.83137256, 0, 0, 0), Color(0.83137256, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3py4s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Brotat/BossWarningLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.83137256, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qi3jo"]
+_data = {
+&"RESET": SubResource("Animation_3py4s"),
+&"boss_Warning": SubResource("Animation_d0lry"),
+&"boss_warning": SubResource("Animation_dymio")
+}
+
 [node name="game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_vt6sv")
@@ -1022,7 +1064,7 @@ offset_left = -1052.0
 offset_top = -48619.0
 offset_right = 2964.0
 offset_bottom = 43167.0
-color = Color(0.3647059, 0, 0.5254902, 0.3529412)
+color = Color(0.3647059, 0, 0.5254902, 0.29411766)
 
 [node name="Camera2D" type="Camera2D" parent="Brotat"]
 zoom = Vector2(2, 2)
@@ -1031,10 +1073,11 @@ position_smoothing_speed = 2.8
 
 [node name="ProgressBar" type="ProgressBar" parent="Brotat"]
 unique_name_in_owner = true
-offset_left = -55.0
-offset_top = 55.0
-offset_right = 65.0
-offset_bottom = 78.55322
+z_index = 298
+offset_left = -58.84512
+offset_top = 49.037582
+offset_right = 61.15488
+offset_bottom = 72.590805
 theme_override_styles/background = SubResource("StyleBoxFlat_l26od")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qqaft")
 max_value = 180.0
@@ -1071,9 +1114,8 @@ script = ExtResource("4_tg6hx")
 
 [node name="BlueWig" type="AnimatedSprite2D" parent="Brotat/HappyBoo"]
 visible = false
-top_level = true
-position = Vector2(914, 431)
-scale = Vector2(2.0676599, 2.0676599)
+position = Vector2(-21.016106, -93.87202)
+scale = Vector2(1.999914, 1.999914)
 sprite_frames = SubResource("SpriteFrames_hs66j")
 animation = &"BlueWig"
 autoplay = "BlueWig"
@@ -1081,8 +1123,7 @@ offset = Vector2(10.638298, 9.422493)
 
 [node name="Heart" type="AnimatedSprite2D" parent="Brotat/HappyBoo"]
 visible = false
-top_level = true
-position = Vector2(936.99994, 419.00003)
+position = Vector2(1.4010744, -95.2731)
 scale = Vector2(2.5600002, 2.5599997)
 sprite_frames = SubResource("SpriteFrames_fp0yo")
 animation = &"Heart"
@@ -1133,6 +1174,28 @@ bus = &"Sfx"
 stream = ExtResource("15_5plyu")
 volume_db = 9.007
 bus = &"Sfx"
+
+[node name="BossWarningLabel" type="Label" parent="Brotat"]
+visible = false
+modulate = Color(0.83137256, 0, 0, 1)
+z_index = 86
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -308.23648
+offset_top = -351.6698
+offset_right = 299.76352
+offset_bottom = -289.6698
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2544069, 1.2544069)
+theme_override_fonts/font = ExtResource("37_wih21")
+theme_override_font_sizes/font_size = 60
+text = "⚠️BOSS INCOMING⚠️"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
@@ -14073,6 +14136,11 @@ shape = SubResource("WorldBoundaryShape2D_5fga3")
 
 [node name="WaveTimer" type="Timer" parent="."]
 wait_time = 20.0
+
+[node name="BossWarningAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qi3jo")
+}
 
 [connection signal="health_depleted" from="Brotat" to="." method="_on_brotat_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
