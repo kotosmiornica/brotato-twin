@@ -72,6 +72,10 @@ _data = {
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_402gu"]
 bg_color = Color(0, 0.12941177, 0.20784314, 0.8627451)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cb6n5"]
 atlas = ExtResource("2_hcwdo")
@@ -1049,7 +1053,7 @@ offset_right = 893.0
 offset_bottom = 971.99646
 focus_mode = 0
 theme_override_fonts/font = ExtResource("4_402gu")
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 46
 theme_override_styles/normal = SubResource("StyleBoxFlat_1g78u")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_oahkd")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fqaxf")

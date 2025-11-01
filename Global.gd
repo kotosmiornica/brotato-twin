@@ -1,8 +1,10 @@
 extends Node
 
+signal coins_changed(new_amount)
+
+
 var coins = 0
 var extra_gun_unlocked: bool = false
-signal coins_changed(new_amount)
 var caught_food_count: int = 0
 var caught_foods: Array[String] = []
 var owned_items = []

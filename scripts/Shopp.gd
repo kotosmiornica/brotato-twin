@@ -40,8 +40,7 @@ func _on_buy_pressed() -> void:
 		return
 	else:
 		$buy.play()
-
-	Global.food_counts[currency] -= cost
+		Global.food_counts[currency] -= cost
 
 	var node_name = item_data["Name"]
 	var equip_node = player.get_node_or_null(node_name)
@@ -51,11 +50,23 @@ func _on_buy_pressed() -> void:
 
 	Global.equipped_hair = node_name
 	item_data["Owned"] = true
-	Global.owned_items.append(node_name)
+	if node_name not in Global.owned_items:
+		Global.owned_items.append(node_name)
 
 	print("Bought:", item_data["Name"])
 	$Control/Buy.disabled = true
 	$Control/Name.text = item_data["Name"] + " (Owned)"
+
+	refresh_wardrobe()
+
+
+func refresh_wardrobe() -> void:
+	for i in range(Global.items.size()):
+		var item = Global.items[i]
+		if item.has("Owned") and item["Owned"]:
+			$Control/Wardrobe.update_item(i, item)
+
+
 
 func _on_close_pressed() -> void:
 	var anim = get_node("/root/Control/Shop/Anim")

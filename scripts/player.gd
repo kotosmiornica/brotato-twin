@@ -75,7 +75,7 @@ func apply_equipped_hair():
 #  ACCESSORY HANDLING
 # -------------------------
 func apply_equipped_accessories():
-	var possible_accessories = ["Heart"]
+	var possible_accessories = ["Heart", "Blue Wig", "Emotional Wig"]
 
 	for acc_id in possible_accessories:
 		var n = $HappyBoo.get_node_or_null(NodePath(acc_id))
@@ -117,9 +117,11 @@ func _physics_process(delta: float) -> void:
 		if velocity.length() > 0.0:
 			%HappyBoo.play_walk_animation()
 			$HappyBoo/BlueWig.play("BlueWig_walk")
+			$HappyBoo/Heart.play("Heart_walk")
 		else:
 			%HappyBoo.play_idle_animation()
 			$HappyBoo/BlueWig.play("BlueWig")
+			$HappyBoo/Heart.play("Heart")
 
 
 
