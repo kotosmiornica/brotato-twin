@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cv4mqueu3hps6" path="res://free-underwater-world-pixel-art-backgrounds/background 1/2.png" id="7_pqhp0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2kclr"]
-radius = 28.556396
-height = 66.92163
+radius = 33.460815
+height = 79.08911
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -61,12 +61,13 @@ position = Vector2(953, 982)
 scale = Vector2(0.20142613, 0.23636578)
 
 [node name="Sprite2D" type="Sprite2D" parent="FishingGame/Hook"]
-scale = Vector2(0.7769418, 0.9115693)
+position = Vector2(9.929192, -3794.9656)
+scale = Vector2(9.062867, 10.633269)
 texture = ExtResource("4_2kclr")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FishingGame/Hook"]
-position = Vector2(19.858398, 93.07599)
+position = Vector2(3.8146973e-06, 122.69111)
 scale = Vector2(2.7816446, 2.7816446)
 shape = SubResource("CapsuleShape2D_2kclr")
 

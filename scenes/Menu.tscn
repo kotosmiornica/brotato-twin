@@ -15,7 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://c6op7wtebnfrw" path="res://SOUNDS/sounds/cash-register-purchase-87313.mp3" id="7_7t7qg"]
 [ext_resource type="AudioStream" uid="uid://bpbp3s3y853s5" path="res://SOUNDS/music/mobile-casual-video-game-music-158301.mp3" id="7_aaywf"]
 [ext_resource type="StyleBox" uid="uid://bf5lod7pf26wg" path="res://scenes/fonts/orange.tres" id="7_el213"]
-[ext_resource type="Texture2D" uid="uid://bhixe8o2y37nb" path="res://images/free-fishing-game-assets-pixel-art-pack/4 Icons/Icons_03.png" id="7_jvsdq"]
+[ext_resource type="Texture2D" uid="uid://cuq1785qsnfrb" path="res://images/fishing_rod_OG.png" id="7_m74h7"]
 [ext_resource type="PackedScene" uid="uid://ir2j60as2m8m" path="res://scenes/ChooseYourPlayer.tscn" id="9_yt8fu"]
 [ext_resource type="AudioStream" uid="uid://v4y5xtej0idp" path="res://SOUNDS/sounds/coin-and-money-bag-1-185262.mp3" id="10_i7htd"]
 [ext_resource type="AudioStream" uid="uid://bnda3v2s6m0k3" path="res://SOUNDS/sounds/menuclick.wav" id="11_rtd1e"]
@@ -1303,13 +1303,13 @@ scale = Vector2(1.3167772, 0.69118565)
 shape = SubResource("CapsuleShape2D_rehui")
 
 [node name="TextureRect2" type="TextureRect" parent="MakeYourPlayer"]
-offset_left = 133.0
-offset_top = -400.00003
-offset_right = 173.0
-offset_bottom = -360.00003
-rotation = 0.08763698
-scale = Vector2(7.5791817, 9.344315)
-texture = ExtResource("7_jvsdq")
+offset_left = 137.56357
+offset_top = -340.2888
+offset_right = 177.56357
+offset_bottom = -300.2888
+rotation = 0.14403276
+scale = Vector2(7.6484547, 9.260785)
+texture = ExtResource("7_m74h7")
 expand_mode = 1
 
 [node name="SettingsMenu" parent="." instance=ExtResource("5_760fv")]
