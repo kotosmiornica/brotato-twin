@@ -53,7 +53,7 @@ scale = Vector2(1.577973, 1.577973)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_keoj6")
-speed = 1400.0
+speed = 1600.0
 
 [node name="Projectile" type="AnimatedSprite2D" parent="."]
 position = Vector2(1.3699584, -0.36228037)

@@ -153,7 +153,7 @@ func _on_unlock_fishing_level2_pressed() -> void:
 	Global.unlocked_fishing_levels = next_level
 	print("Unlocked fishing level", next_level)
 
-	fishing_level2_label.text = "Fishing Level 2 Unlocked!"
+	fishing_level2_label.visible = false
 	fishing_level2_label.disabled = true
 	$UnlockLevel2/buy.play()
 

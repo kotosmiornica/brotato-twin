@@ -1,6 +1,8 @@
 extends Area2D
 
 var player: Node = null
+var unlocked: bool = false
+
 @export var shooting_point: Node2D
 @onready var timer: Timer = $Timer
 
@@ -9,6 +11,8 @@ const BULLET = preload("res://scenes/bullet.tscn")
 var shoot_sound_randomizer: AudioStreamRandomizer
 
 func _ready():
+	if Global.extra_gun_unlocked != true:
+		return
 	shoot_sound_randomizer = AudioStreamRandomizer.new()
 	shoot_sound_randomizer.add_stream(0, load("res://SOUNDS/sounds/simpleshot.mp3"))
 	shoot_sound_randomizer.add_stream(1, load("res://SOUNDS/sounds/simpleshot2.mp3"))
@@ -17,6 +21,8 @@ func _ready():
 	shoot_sound_randomizer.random_volume_offset_db = 1.0
 
 func _physics_process(_delta: float) -> void:
+	if not unlocked:
+		return
 	var enemies_in_range = get_overlapping_bodies()
 
 	if enemies_in_range.size() > 0:
@@ -30,6 +36,8 @@ func _physics_process(_delta: float) -> void:
 		timer.stop()
 
 func shoot() -> void:
+	if Global.extra_gun_unlocked != true:
+		return
 	var new_bullet = BULLET.instantiate()
 	new_bullet.global_position = shooting_point.global_position
 	new_bullet.global_rotation = shooting_point.global_rotation
@@ -40,6 +48,8 @@ func _on_timer_timeout() -> void:
 	shoot()
 
 func _play_detached_sound(sound_stream: AudioStream, sound_position: Vector2):
+	if Global.extra_gun_unlocked != true:
+		return
 	var sound = AudioStreamPlayer2D.new()
 	sound.stream = sound_stream
 	sound.global_position = sound_position

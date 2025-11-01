@@ -1,41 +1,39 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkhag286w8414"]
+[gd_scene load_steps=5 format=3 uid="uid://bkhag286w8414"]
 
 [ext_resource type="Script" uid="uid://5ovyfih70ylx" path="res://scripts/shootyou.gd" id="1_0v2ix"]
-[ext_resource type="Script" uid="uid://vq24pawfqgpu" path="res://scripts/testgun.gd" id="1_gfr5o"]
 [ext_resource type="Texture2D" uid="uid://cpes41qvm30ho" path="res://images/bettergun.png" id="2_gfr5o"]
 [ext_resource type="AudioStream" uid="uid://vuv3b1hhrp5e" path="res://SOUNDS/sounds/scifishoot.mp3" id="3_7222r"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_evgla"]
-size = Vector2(19.130043, 13.948675)
+[sub_resource type="CircleShape2D" id="CircleShape2D_oo0bh"]
+radius = 75.83897
 
-[node name="YOUSHOOT" type="Node2D"]
+[node name="YOUSHOOT" type="Area2D"]
 script = ExtResource("1_0v2ix")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(-14.123313, -14.123313)
+shape = SubResource("CircleShape2D_oo0bh")
+
 [node name="weapon" type="Marker2D" parent="."]
-position = Vector2(201, -25)
+position = Vector2(0, 1)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(167.00009, 1)
-scale = Vector2(1.5266232, 1.5266232)
-script = ExtResource("1_gfr5o")
-shoot_sound = ExtResource("3_7222r")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-modulate = Color(0.7921569, 0.2627451, 1, 1)
-scale = Vector2(2.2758906, 2.2758906)
+[node name="Sprite2D" type="Sprite2D" parent="weapon"]
+modulate = Color(1, 0.51078683, 0.9864206, 1)
+position = Vector2(193, -1)
+scale = Vector2(3.9235835, 3.9235835)
 texture = ExtResource("2_gfr5o")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-visible = false
-position = Vector2(1.7151335, -0.50000143)
-scale = Vector2(3.9430265, 3.9430265)
-shape = SubResource("RectangleShape2D_evgla")
-
-[node name="pivot" type="Node2D" parent="CharacterBody2D"]
+[node name="pivot" type="Node2D" parent="weapon/Sprite2D"]
 unique_name_in_owner = true
-position = Vector2(68.77925, -11)
+position = Vector2(17.840836, -4.332774)
+rotation = 3.1415927
+scale = Vector2(16.135855, -1.7876614)
 
-[node name="Bang" type="AudioStreamPlayer" parent="CharacterBody2D"]
+[node name="Muzzle" type="Marker2D" parent="weapon/Sprite2D/pivot"]
+position = Vector2(-0.031590164, 2.682209e-07)
+
+[node name="Bang" type="AudioStreamPlayer" parent="weapon/Sprite2D"]
 unique_name_in_owner = true
 stream = ExtResource("3_7222r")
+volume_db = 3.815
 bus = &"Bullets"

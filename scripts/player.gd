@@ -14,7 +14,7 @@ signal health_depleted
 
 
 @onready var weapons_container = get_node("/root/game/Brotat/Weapons")
-@onready var extra_gun = %YOUSHOOT
+@onready var extra_gun = %gun
 
 
 var health = 180.0
@@ -23,7 +23,7 @@ var xp: int = 0
 var level: int = 1
 var xp_per_level: int = 10
 var can_throw_soda: bool = true
-var current_weapon: String = "gun"
+var current_weapon: String = "YOUSHOOT"
 var weapons: Array = []
 var stain_scene = preload("res://scenes/BleachStain.tscn")
 var equipped_weapons: Array = []  
@@ -48,7 +48,7 @@ const MAX_PIZZA_CUTTERS = 4
 #  HAIR HANDLING
 # -------------------------
 func apply_equipped_hair():
-	var possible_hairs = ["BlueWig"]  # only BlueWig for now
+	var possible_hairs = ["BlueWig"]
 
 	for hair_id in possible_hairs:
 		var n = $HappyBoo.get_node_or_null(NodePath(hair_id))

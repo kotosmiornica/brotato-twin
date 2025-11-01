@@ -1,11 +1,12 @@
-extends Node2D
+extends Area2D
 
-var unlocked: bool = false
+var player: Node = null
+
 var bullet_scene = preload("res://scenes/testbullet.tscn")
+@export var shoot_sound: AudioStream
 
 func _physics_process(_delta: float) -> void:
-	if not unlocked:
-		return
+
 	look_at(get_global_mouse_position())
 	if Input.is_action_just_pressed("shoot"):
 		fire()

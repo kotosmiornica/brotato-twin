@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsv2rmjhatw1m"]
+[gd_scene load_steps=7 format=3 uid="uid://bsv2rmjhatw1m"]
 
 [ext_resource type="Script" uid="uid://cl3rrd6squb5y" path="res://scripts/bullet.gd" id="1_y25gk"]
-[ext_resource type="AudioStream" uid="uid://u854bkrswh6e" path="res://SOUNDS/sounds/goopy-slime-4-219777.mp3" id="2_qncy5"]
 [ext_resource type="AudioStream" uid="uid://x6n81gfyplq7" path="res://SOUNDS/sounds/simpleshot.mp3" id="3_l5glv"]
 [ext_resource type="Texture2D" uid="uid://bkuclucouw5bc" path="res://images/New_All_Fire_Bullet_Pixel_16x16/All_Fire_Bullet_Pixel_16x16_01.png" id="3_qncy5"]
 
@@ -69,9 +68,9 @@ rotation = 0.722176
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_y25gk")
-hit_sound = ExtResource("2_qncy5")
 
 [node name="Projectile" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(-5.5562024, -1.7687885)
 scale = Vector2(2.5186903, 2.23582)
 sprite_frames = SubResource("SpriteFrames_in4mv")

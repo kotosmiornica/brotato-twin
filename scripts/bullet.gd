@@ -6,6 +6,9 @@ const SPEED := 1800.0
 const RANGE := 1100.0
 
 func _physics_process(delta: float) -> void:
+	if Global.extra_gun_unlocked != true:
+		return
+	$Projectile.visible = true
 	var direction = Vector2.RIGHT.rotated(rotation)
 	position += direction * SPEED * delta
 
@@ -25,6 +28,8 @@ func _on_body_entered(body: Node) -> void:
 	queue_free()
 
 func _play_detached_sound(sound_stream: AudioStream, sound_position: Vector2) -> void:
+	if Global.extra_gun_unlocked != true:
+		return
 	var sound := AudioStreamPlayer2D.new()
 	sound.stream = sound_stream
 	sound.global_position = sound_position

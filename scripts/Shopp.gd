@@ -48,7 +48,6 @@ func _on_buy_pressed() -> void:
 	if equip_node:
 		equip_node.visible = true
 		equip_node.play(node_name)
-		equip_node.z_index = 10
 
 	Global.equipped_hair = node_name
 	item_data["Owned"] = true
