@@ -33,6 +33,21 @@
 [ext_resource type="Texture2D" uid="uid://cdx13jajsldf8" path="res://images/free-fishing-game-assets-pixel-art-pack/4 Icons/Icons_20.png" id="31_m74h7"]
 [ext_resource type="Texture2D" uid="uid://docbnxwnj2qle" path="res://images/free-fishing-game-assets-pixel-art-pack/3 Objects/Fishing_hut.png" id="32_m74h7"]
 
+[sub_resource type="Animation" id="Animation_gut0v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-50, 317)]
+}
+
 [sub_resource type="Animation" id="Animation_m74h7"]
 resource_name = "water"
 length = 70.0
@@ -48,21 +63,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-1573, 450), Vector2(-769, 317)]
-}
-
-[sub_resource type="Animation" id="Animation_gut0v"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-50, 317)]
 }
 
 [sub_resource type="Animation" id="Animation_5fdov"]
@@ -897,6 +897,21 @@ _data = {
 &"RESET": SubResource("Animation_5p0sf")
 }
 
+[sub_resource type="Animation" id="Animation_22i10"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.6689031, 0.9386557, 0.99999994, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_yqqfh"]
 resource_name = "gofishing"
 length = 4.0
@@ -912,21 +927,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(0, 0.81960785, 0.9411765, 1), Color(0.6689031, 0.9386557, 0.99999994, 1), Color(7.315874e-06, 0.76019526, 0.8771224, 1), Color(0.72860503, 0.94757205, 1, 1), Color(5.968213e-06, 0.7422563, 0.8539709, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_22i10"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:theme_override_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.6689031, 0.9386557, 0.99999994, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gwo1h"]
