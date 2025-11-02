@@ -62,7 +62,7 @@ scale = Vector2(0.20142613, 0.23636578)
 
 [node name="Sprite2D" type="Sprite2D" parent="FishingGame/Hook"]
 position = Vector2(9.929192, -3794.9656)
-scale = Vector2(9.062867, 10.633269)
+scale = Vector2(9.678996, 10.609541)
 texture = ExtResource("4_2kclr")
 flip_h = true
 

@@ -8,7 +8,9 @@
 radius = 75.83897
 
 [node name="YOUSHOOT" type="Area2D"]
+audio_bus_name = &"Bullets"
 script = ExtResource("1_0v2ix")
+shoot_sound = ExtResource("3_7222r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(-14.123313, -14.123313)
@@ -32,9 +34,3 @@ scale = Vector2(16.135855, -1.7876614)
 
 [node name="Muzzle" type="Marker2D" parent="weapon/Sprite2D/pivot"]
 position = Vector2(-0.031590164, 2.682209e-07)
-
-[node name="Bang" type="AudioStreamPlayer" parent="weapon/Sprite2D"]
-unique_name_in_owner = true
-stream = ExtResource("3_7222r")
-volume_db = 3.815
-bus = &"Bullets"

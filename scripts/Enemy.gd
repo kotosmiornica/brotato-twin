@@ -74,6 +74,7 @@ func take_damage(amount: int):
 		get_parent().add_child(smoke)
 		smoke.global_position = global_position
 		emit_signal("died")
+		$slimehurt.play()
 		queue_free()
 
 func _show_damage_popup(amount: int):

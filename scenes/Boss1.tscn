@@ -4,14 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="2_u8a1r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bsing"]
-radius = 43.315914
-height = 134.53035
+radius = 46.019886
+height = 169.99019
 
 [node name="Boss1" type="CharacterBody2D"]
 modulate = Color(0.71540785, 0, 0.31195807, 1)
 top_level = true
 z_index = 1
-scale = Vector2(0.8888889, 1.725)
+scale = Vector2(0.8888889, 1.5502404)
 collision_layer = 2
 collision_mask = 7
 platform_floor_layers = 0
@@ -22,8 +22,8 @@ unique_name_in_owner = true
 scale = Vector2(2.747013, 1.4584614)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, -11.594202)
+z_index = 40
+position = Vector2(-8.381903e-09, -28.382694)
 rotation = 1.580676
 scale = Vector2(0.8835116, 0.95309967)
 shape = SubResource("CapsuleShape2D_bsing")

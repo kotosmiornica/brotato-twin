@@ -14,6 +14,7 @@ const BossScene = preload("res://scenes/Boss1.tscn")
 var wave_time_left: float = 0.0
 var wave_active: bool = false
 var boss_alive: bool = false
+var boss_count = 0
 var current_wave: int = 0
 var alive_enemies: int = 0
 var kill_count: int = 0
@@ -31,7 +32,7 @@ func _physics_process(_delta: float) -> void:
 		$Fade/ColorRect/AnimationPlayer.play("fade_in")
 		get_tree().paused = false
 
-	if not get_tree().paused and alive_enemies == 0 and not boss_alive and not wave_locked:
+	if not get_tree().paused and alive_enemies == 0 and boss_alive == false and wave_locked == false:
 		start_next_wave()
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
@@ -65,7 +66,7 @@ func _spawn_boss() -> void:
 	var boss = BossScene.instantiate()
 	boss.global_position = Vector2(600, 300)
 	add_child(boss)
-	alive_enemies += 1
+	boss_count += 1
 	boss_alive = true
 
 	if $Music.playing:

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3dxgbdgjhjmh"]
+[gd_scene load_steps=7 format=3 uid="uid://c3dxgbdgjhjmh"]
 
 [ext_resource type="Script" uid="uid://cm12waiwqaill" path="res://scripts/testbullet.gd" id="1_keoj6"]
 [ext_resource type="Texture2D" uid="uid://dbrrj6h7wv0k8" path="res://images/New_All_Fire_Bullet_Pixel_16x16/All_Fire_Bullet_Pixel_16x16_05.png" id="2_jckar"]
+[ext_resource type="AudioStream" uid="uid://6oainuiljw2o" path="res://SOUNDS/sounds/slime-squish-5-218569.mp3" id="2_nk8ob"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_radpi"]
 atlas = ExtResource("2_jckar")
@@ -52,7 +53,9 @@ rotation = 0.722176
 scale = Vector2(1.577973, 1.577973)
 collision_layer = 4
 collision_mask = 2
+audio_bus_name = &"Sfx"
 script = ExtResource("1_keoj6")
+hit_sound = ExtResource("2_nk8ob")
 speed = 1600.0
 
 [node name="Projectile" type="AnimatedSprite2D" parent="."]

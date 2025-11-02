@@ -84,6 +84,7 @@ shape = SubResource("CapsuleShape2D_qncy5")
 [node name="shot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_l5glv")
 volume_db = -20.175
+pitch_scale = 1.61
 bus = &"Bullets"
 
 [node name="Timer" type="Timer" parent="."]

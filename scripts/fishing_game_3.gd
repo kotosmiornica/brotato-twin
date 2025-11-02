@@ -42,7 +42,7 @@ func _process(delta):
 		hook_rise_speed = lerp(base_speed, max_speed, progress)
 
 		if hook_locked:
-			var locked_speed = max_speed * 2
+			var locked_speed = max_speed * 4
 			hook.position.y -= locked_speed * delta
 			if hook.position.y <= hook_end_y:
 				end_fishing()
