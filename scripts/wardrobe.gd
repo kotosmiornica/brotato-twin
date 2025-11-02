@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 @onready var player = get_node("/root/Control/MakeYourPlayer")
-@onready var buy_button = $Control/Buy
 @onready var confirm_button = $Control/Confirm
 var currItem: int = 0
 var wardrobe_items: Array = []
@@ -14,6 +13,17 @@ func _ready() -> void:
 	if wardrobe_items.size() > 0:
 		switch_item(0)
 
+func equip_wig(wig_name: String):
+	$Player/BlueWig.visible = false
+	$Player/EmotionalWig.visible = false
+
+	var wig_node = $Player.get_node_or_null(wig_name)
+	if wig_node:
+		wig_node.visible = true
+
+	Global.equipped_hair = wig_name
+
+
 func switch_item(index: int) -> void:
 	if wardrobe_items.size() == 0:
 		return
@@ -22,6 +32,13 @@ func switch_item(index: int) -> void:
 	$Control/Name.text = item_data["Name"]
 	$Control/Des.text = item_data["Des"]
 	$Control/AnimatedSprite2D.play(item_data["Name"])
+
+
+func _on_close_pressed() -> void:
+	var anim = get_node("AnimationPlayerWardrobe")
+	if anim:
+		anim.play("fadeout")
+
 
 func _on_prev_pressed() -> void:
 	switch_item(currItem - 1)

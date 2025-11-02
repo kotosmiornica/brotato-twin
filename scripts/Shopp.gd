@@ -3,10 +3,16 @@ extends CanvasLayer
 @onready var player = get_node("/root/Control/MakeYourPlayer")
 @onready var buy_button = $Control/Buy
 var currItem: int = 0
+var wardrobe_ref: Node = null
 
 func _ready() -> void:
 	switch_item(currItem)
 
+
+func open_shop(wardrobe: Node) -> void:
+	wardrobe_ref = wardrobe
+#	refresh_wardrobe()
+	
 func switch_item(index: int) -> void:
 	currItem = index % Global.items.size()
 	var item_data = Global.items[currItem]
@@ -57,14 +63,16 @@ func _on_buy_pressed() -> void:
 	$Control/Buy.disabled = true
 	$Control/Name.text = item_data["Name"] + " (Owned)"
 
-	refresh_wardrobe()
+	#refresh_wardrobe()
 
 
-func refresh_wardrobe() -> void:
-	for i in range(Global.items.size()):
-		var item = Global.items[i]
-		if item.has("Owned") and item["Owned"]:
-			$Control/Wardrobe.update_item(i, item)
+#func refresh_wardrobe() -> void:
+#	var wardrobe = get_node("/root/Control/Wardrobe")
+#	if wardrobe:
+#		for i in range(Global.items.size()):
+#			var item = Global.items[i]
+#			if item.has("Owned") and item["Owned"]:
+#				wardrobe.update_item(i, item)
 
 
 

@@ -10,6 +10,8 @@ signal died
 var player_in_zone: Node = null
 var damage_timer: float = 0.0
 var health = 8
+var active_effects = {}
+
 var FT_Script = preload("res://scripts/FightingText.gd")
 const XP_SCENE = preload("res://scenes/XPpickups.tscn")
 const MEDKIT_SCENE = preload("res://scenes/MedKit.tscn")
@@ -35,6 +37,31 @@ func _physics_process(delta: float) -> void:
 			player.take_damage(damage_amount)
 			damage_timer = 0.0
 
+	_update_effects(delta)
+
+func _update_effects(delta: float) -> void:
+	for effect_name in active_effects.keys():
+		var effect = active_effects[effect_name]
+		if effect.has("damage_per_second"):
+			effect["time_accum"] += delta
+			while effect["time_accum"] >= 1.0:
+				var dmg = int(effect["damage_per_second"])
+				take_damage(dmg)
+				effect["time_accum"] -= 1.0
+		effect["time_left"] -= delta
+		if effect["time_left"] <= 0:
+			active_effects.erase(effect_name)
+
+func apply_status_effect(effect_name: String, duration: float, damage_per_second: float) -> void:
+	if active_effects.has(effect_name):
+		active_effects[effect_name]["time_left"] = duration
+		return
+	active_effects[effect_name] = {
+		"time_left": duration,
+		"damage_per_second": damage_per_second,
+		"time_accum": 0.0
+	}
+
 func take_damage(amount: int):
 	health -= amount
 	%Slime.play_hurt()
@@ -50,9 +77,10 @@ func take_damage(amount: int):
 		queue_free()
 
 func _show_damage_popup(amount: int):
-	var popup = FT_Script.new()
-	popup.show_text(str(amount), global_position)
-	get_tree().current_scene.add_child(popup)
+	if amount > 0:
+		var popup = FT_Script.new()
+		popup.show_text(str(amount), global_position)
+		get_tree().current_scene.add_child(popup)
 
 func drop_xp():
 	var xp = XP_SCENE.instantiate()
@@ -72,7 +100,6 @@ func drop_medkit_random():
 
 func _on_KillZone_body_entered(body: Node) -> void:
 	if body.is_in_group("player") and player_in_zone == null:
-		print("KillZone entered by:", body.name)
 		player_in_zone = body
 		damage_timer = 0.0
 

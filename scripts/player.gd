@@ -118,10 +118,12 @@ func _physics_process(delta: float) -> void:
 			%HappyBoo.play_walk_animation()
 			$HappyBoo/BlueWig.play("BlueWig_walk")
 			$HappyBoo/Heart.play("Heart_walk")
+			$HappyBoo/EmotionalWig.play("EmotionalWig_walk")
 		else:
 			%HappyBoo.play_idle_animation()
 			$HappyBoo/BlueWig.play("BlueWig")
 			$HappyBoo/Heart.play("Heart")
+			$HappyBoo/EmotionalWig.play("EmotionalWig")
 
 
 

@@ -137,7 +137,7 @@ func _on_wardrobe_button_pressed():
 func _on_unlock_fishing_level2_pressed() -> void:
 	var next_level = 2
 	var cost = 155
-
+	
 	if Global.unlocked_fishing_levels >= next_level:
 		print("Fishing level 2 already unlocked!")
 		return
@@ -153,8 +153,7 @@ func _on_unlock_fishing_level2_pressed() -> void:
 	Global.unlocked_fishing_levels = next_level
 	print("Unlocked fishing level", next_level)
 
-	fishing_level2_label.visible = false
-	fishing_level2_label.disabled = true
+	$UnlockLevel2.visible = false
 	$UnlockLevel2/buy.play()
 
 	update_unlock_buttons()
@@ -196,7 +195,7 @@ func update_unlock_buttons():
 
 
 	if Global.unlocked_fishing_levels >= 2:
-		fishing_level2_label.text = "Fishing Level 2 Unlocked!"
+		$UnlockLevel2.visible = false
 		fishing_level2_label.disabled = true
 	if Global.unlocked_fishing_levels >= 3:
 		fishing_level3_label.text = "Fishing Level 3 Unlocked!"

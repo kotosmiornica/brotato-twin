@@ -958,8 +958,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(763, 401.99646)
 scale = Vector2(4.66, 4.66)
 sprite_frames = SubResource("SpriteFrames_lfgh4")
-animation = &"EmotionalWig"
-frame_progress = 0.85859334
+animation = &"Heart"
 
 [node name="Name" type="Label" parent="Control"]
 layout_mode = 1

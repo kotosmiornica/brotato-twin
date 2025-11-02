@@ -2,10 +2,10 @@ extends CharacterBody2D
 
 signal died
 
-var health: int = 100
+var health: int = 60
 var speed: float = 220.0
 var dash_speed: float = 600.0
-var dash_distance: float = 150.0
+var dash_distance: float = 40.0
 var dash_cooldown: float = 2.0
 var can_dash = true
 var is_dashing = false

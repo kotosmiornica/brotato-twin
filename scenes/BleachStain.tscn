@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://d1idbpvrn0b7q" path="res://images/stainn.png" id="2_y0w8r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wivt3"]
-radius = 200.346
-height = 556.319
+radius = 99.71959
+height = 288.06207
 
 [node name="BleachStain" type="Area2D"]
 collision_layer = 8
@@ -14,14 +14,16 @@ script = ExtResource("1_scysm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 1, 0.6313726, 0.8980392)
-position = Vector2(1, -2)
-scale = Vector2(0.8572854, 0.68796754)
+z_index = 15
+position = Vector2(1, -25.059845)
+scale = Vector2(0.65923095, 0.45976242)
 texture = ExtResource("2_y0w8r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(37, -10)
+z_index = 12
+position = Vector2(17, -27.000002)
 rotation = 2.19515
 shape = SubResource("CapsuleShape2D_wivt3")
+one_way_collision = true
 
 [node name="Timer" type="Timer" parent="."]

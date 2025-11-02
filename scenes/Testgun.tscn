@@ -19,13 +19,14 @@ position = Vector2(0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="weapon"]
 modulate = Color(1, 0.51078683, 0.9864206, 1)
-position = Vector2(193, -1)
+z_index = 21
+position = Vector2(150, -1)
 scale = Vector2(3.9235835, 3.9235835)
 texture = ExtResource("2_gfr5o")
 
 [node name="pivot" type="Node2D" parent="weapon/Sprite2D"]
 unique_name_in_owner = true
-position = Vector2(17.840836, -4.332774)
+position = Vector2(21.663872, -4.332774)
 rotation = 3.1415927
 scale = Vector2(16.135855, -1.7876614)
 

@@ -1,6 +1,7 @@
 extends Node
 
 signal coins_changed(new_amount)
+signal item_bought(item_name: String)
 
 
 var coins = 0
@@ -37,7 +38,7 @@ var items = [
 	{
 		"Name": "EmotionalWig",
 		"Des": "Such deeply EMOtional hairstyle (wip).",
-		"Cost": 25,
+		"Cost": 10,
 		"Currency": "BlackMonster"
 	}
 ]
@@ -96,3 +97,13 @@ func upgrade_bleach():
 		print("Bleach upgraded! Level:", bleach_level)
 	else:
 		print("Bleach already maxed out!")
+
+
+func mark_item_owned(item_name: String) -> void:
+	if not owned_items.has(item_name):
+		owned_items.append(item_name)
+	for i in range(items.size()):
+		if items[i]["Name"] == item_name:
+			items[i]["Owned"] = true
+			break
+	emit_signal("item_bought", item_name)

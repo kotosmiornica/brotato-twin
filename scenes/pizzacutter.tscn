@@ -13,13 +13,13 @@ collision_mask = 2
 script = ExtResource("1_jyhhi")
 
 [node name="Pistol" type="Sprite2D" parent="."]
-position = Vector2(227, -3)
+position = Vector2(251.86783, -43.473995)
 rotation = 1.5707964
 scale = Vector2(3.3947144, 3.3947134)
 texture = ExtResource("2_jyhhi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(234.00002, -2)
+position = Vector2(258.86786, -42.473995)
 rotation = 1.5665213
 scale = Vector2(2.7646852, 2.7646852)
 shape = SubResource("CapsuleShape2D_jyhhi")

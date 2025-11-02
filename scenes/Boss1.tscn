@@ -10,6 +10,7 @@ height = 134.53035
 [node name="Boss1" type="CharacterBody2D"]
 modulate = Color(0.71540785, 0, 0.31195807, 1)
 top_level = true
+z_index = 1
 scale = Vector2(0.8888889, 1.725)
 collision_layer = 2
 collision_mask = 7

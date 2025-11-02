@@ -17,6 +17,7 @@ modulate = Color(0, 1, 1, 1)
 top_level = true
 z_index = 20
 y_sort_enabled = true
+scale = Vector2(0.8245604, 0.8245604)
 collision_layer = 2
 collision_mask = 7
 platform_floor_layers = 0

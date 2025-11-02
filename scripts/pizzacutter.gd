@@ -18,8 +18,8 @@ func _physics_process(delta):
 		return
 
 	orbit_angle += deg_to_rad(orbit_speed) * delta
-	var rad = orbit_angle + deg_to_rad(angle_offset)
-	global_position = player.global_position + Vector2(orbit_radius, 0).rotated(rad)
+	var _rad = orbit_angle + deg_to_rad(angle_offset)
+	#global_position = player.global_position + Vector2(orbit_radius, 0).rotated(rad)
 
 
 	rotation += deg_to_rad(spin_speed) * delta

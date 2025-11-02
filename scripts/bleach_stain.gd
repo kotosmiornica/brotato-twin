@@ -1,10 +1,10 @@
 extends Area2D
 
-@export var duration: float = 5.0
-@export var damage_per_second: float = 2
+@export var duration: float = 6.0
+@export var bluey_duration: float = 4.0
+@export var bluey_damage_per_second: float = 2.0
 
 var _time_alive: float = 0.0
-var enemies_in_stain := []
 
 func _ready() -> void:
 	rotation = randf_range(0, 2 * PI)
@@ -20,14 +20,6 @@ func _process(delta: float) -> void:
 	if _time_alive >= duration:
 		queue_free()
 
-	for enemy in enemies_in_stain:
-		if enemy and enemy.has_method("take_damage"):
-			enemy.take_damage(damage_per_second * delta)
-
 func _on_body_entered(body: Node) -> void:
-	if body.is_in_group("enemies"):
-		enemies_in_stain.append(body)
-
-func _on_body_exited(body: Node) -> void:
-	if body.is_in_group("enemies"):
-		enemies_in_stain.erase(body)
+	if body.is_in_group("enemies") and body.has_method("apply_status_effect"):
+		body.apply_status_effect("Bluey", bluey_duration, bluey_damage_per_second)

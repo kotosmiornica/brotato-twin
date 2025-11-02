@@ -252,30 +252,33 @@ scale = Vector2(0.7155996, 0.66712683)
 script = ExtResource("1_87y5x")
 
 [node name="GroundShadow" type="Sprite2D" parent="."]
-modulate = Color(0.43165058, 0.8280059, 0.49295044, 1)
-self_modulate = Color(0.32730642, 0.6632922, 0.3830831, 1)
-z_index = -1
+modulate = Color(0.38603455, 0.37787375, 0, 1)
+z_index = 2
 z_as_relative = false
-position = Vector2(0, 20.999998)
-scale = Vector2(0.71428573, 0.65000004)
+position = Vector2(0, 16.488619)
+scale = Vector2(0.8650755, 0.65000004)
 texture = ExtResource("1_cq7ej")
 
 [node name="Anchor" type="Marker2D" parent="."]
 
 [node name="SlimeBody" type="Sprite2D" parent="Anchor"]
+z_index = 2
 position = Vector2(0, 20)
 texture = ExtResource("1_3j35h")
 offset = Vector2(0, -36)
 
 [node name="SlimeBodyHurt" type="Sprite2D" parent="Anchor/SlimeBody"]
 modulate = Color(0.9443645, 0.7609742, 0.7678369, 0)
+z_index = 2
 texture = ExtResource("4_0qu0c")
 offset = Vector2(0, -36)
 
 [node name="Face" type="Marker2D" parent="Anchor"]
+z_index = 2
 position = Vector2(0, -25)
 
 [node name="SlimeFace" type="Sprite2D" parent="Anchor/Face"]
+z_index = 2
 position = Vector2(0, 27.99203)
 scale = Vector2(0.9285716, 0.92857134)
 texture = ExtResource("2_ygydt")

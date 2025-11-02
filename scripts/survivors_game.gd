@@ -3,9 +3,9 @@ extends Node2D
 @export var base_enemy_count: int = 10
 @export var kills_for_medkit: int = 20
 @export var wave_duration: float = 20.0
-@onready var score_label: Label = $Background/PointsLabel
-@onready var timer_label: Label = $Background/TimerLabel
-@onready var boss_warning_label: Label = $Brotat/BossWarningLabel
+@onready var score_label: Label = $Bar/XPbar/PointsLabel
+@onready var timer_label: Label = $Brotat/TimerLabel
+@onready var boss_warning_label: Label = $Bar/XPbar/BossWarningLabel
 @onready var boss_warning_anim: AnimationPlayer = $BossWarningAnimation
 
 const MobScene = preload("res://scenes/mob.tscn")
@@ -18,6 +18,7 @@ var current_wave: int = 0
 var alive_enemies: int = 0
 var kill_count: int = 0
 var player_score:int = kill_count * 50
+var wave_locked: bool = false
 
 func _ready() -> void:
 	get_tree().paused = false
@@ -30,7 +31,7 @@ func _physics_process(_delta: float) -> void:
 		$Fade/ColorRect/AnimationPlayer.play("fade_in")
 		get_tree().paused = false
 
-	if not get_tree().paused and alive_enemies == 0:
+	if not get_tree().paused and alive_enemies == 0 and not boss_alive and not wave_locked:
 		start_next_wave()
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
@@ -50,6 +51,8 @@ func start_next_wave() -> void:
 	if current_wave % 5 == 0:
 		_spawn_boss()
 	else:
+		if boss_alive:
+			return
 		var enemy_count = int(round(base_enemy_count * pow(1.2, current_wave - 1)))
 		await _spawn_wave(enemy_count)
 
@@ -72,6 +75,8 @@ func _spawn_boss() -> void:
 	boss.connect("died", Callable(self, "_on_boss_died"))
 
 func _spawn_wave(enemy_count: int):
+	if boss_alive != false:
+		return
 	var half = enemy_count / 2
 
 	for i in range(half):

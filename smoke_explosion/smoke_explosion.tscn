@@ -128,6 +128,7 @@ script = ExtResource("1_kb8ql")
 [node name="Smoke" type="ColorRect" parent="."]
 unique_name_in_owner = true
 modulate = Color(0.396078, 0.396078, 0.396078, 1)
+z_index = 17
 material = SubResource("ShaderMaterial_dssfe")
 anchors_preset = 8
 anchor_left = 0.5

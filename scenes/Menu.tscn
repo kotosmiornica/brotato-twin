@@ -1,4 +1,4 @@
-[gd_scene load_steps=162 format=3 uid="uid://cqcwtk4w1gpdv"]
+[gd_scene load_steps=167 format=3 uid="uid://cqcwtk4w1gpdv"]
 
 [ext_resource type="Script" uid="uid://d1wrmtooq2n67" path="res://scripts/menu.gd" id="1_jmdev"]
 [ext_resource type="FontFile" uid="uid://dsq4oypst8yrs" path="res://Dusk Fonts/Dusk Font B3.ttf" id="1_o0tnf"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://brts17jeddvu4" path="res://free-underwater-world-pixel-art-backgrounds/background 4/4.png" id="29_r54wa"]
 [ext_resource type="Texture2D" uid="uid://cdx13jajsldf8" path="res://images/free-fishing-game-assets-pixel-art-pack/4 Icons/Icons_20.png" id="31_m74h7"]
 [ext_resource type="Texture2D" uid="uid://docbnxwnj2qle" path="res://images/free-fishing-game-assets-pixel-art-pack/3 Objects/Fishing_hut.png" id="32_m74h7"]
+[ext_resource type="PackedScene" uid="uid://yol17uvac0dx" path="res://scenes/Wardrobe.tscn" id="33_gut0v"]
 
 [sub_resource type="Animation" id="Animation_gut0v"]
 length = 0.001
@@ -1235,6 +1236,94 @@ _data = {
 &"Slide": SubResource("Animation_uwbky")
 }
 
+[sub_resource type="Animation" id="Animation_g78dv"]
+resource_name = "fadein"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(167, -1046), Vector2(167, 61)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -1107), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d5b0y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(167, -1046)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1107)]
+}
+
+[sub_resource type="Animation" id="Animation_jv5sr"]
+resource_name = "fadeout"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(167, 61), Vector2(167, 1214)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1153)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qtexn"]
+_data = {
+&"RESET": SubResource("Animation_d5b0y"),
+&"fadein": SubResource("Animation_g78dv"),
+&"fadeout": SubResource("Animation_jv5sr")
+}
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -1748,7 +1837,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.9015093, 0.9015093)
 focus_mode = 0
-theme_override_colors/font_color = Color(1, 0.7727881, 0.91755927, 1)
+theme_override_colors/font_color = Color(1, 0.77254903, 0.91764706, 1)
 theme_override_fonts/font = ExtResource("1_o0tnf")
 theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = ExtResource("7_el213")
@@ -1796,6 +1885,13 @@ position = Vector2(2182, 821)
 scale = Vector2(7.0863204, 7.0863204)
 texture = ExtResource("32_m74h7")
 flip_h = true
+
+[node name="Wardrobe" parent="." instance=ExtResource("33_gut0v")]
+
+[node name="AnimationPlayerWardrobe2" type="AnimationPlayer" parent="Wardrobe"]
+libraries = {
+&"": SubResource("AnimationLibrary_qtexn")
+}
 
 [connection signal="input_event" from="MakeYourPlayer/ClickArea" to="MakeYourPlayer" method="_on_ClickArea_input_event"]
 [connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]
